@@ -11,10 +11,12 @@
 
 @implementation DKAppDelegate
 
+using namespace CEC;
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	// Insert code here to initialize your application
-	CEC::libcec_configuration config;
+	libcec_configuration config;
 	memset(&config, 0, sizeof(config));
 	
 	int retCode = cec_initialise(&config);
