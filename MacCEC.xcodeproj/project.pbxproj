@@ -1,0 +1,301 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F564C15DD8179007F2F3E /* Cocoa.framework */; };
+		503F565715DD8179007F2F3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 503F565515DD8179007F2F3E /* InfoPlist.strings */; };
+		503F565915DD8179007F2F3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565815DD8179007F2F3E /* main.m */; };
+		503F565D15DD8179007F2F3E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 503F565B15DD8179007F2F3E /* Credits.rtf */; };
+		503F566015DD8179007F2F3E /* DKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565F15DD8179007F2F3E /* DKAppDelegate.m */; };
+		503F566315DD8179007F2F3E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 503F566115DD8179007F2F3E /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		503F564815DD8179007F2F3E /* MacCEC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacCEC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		503F564C15DD8179007F2F3E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		503F564F15DD8179007F2F3E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		503F565015DD8179007F2F3E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		503F565115DD8179007F2F3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		503F565415DD8179007F2F3E /* MacCEC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MacCEC-Info.plist"; sourceTree = "<group>"; };
+		503F565615DD8179007F2F3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		503F565815DD8179007F2F3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		503F565A15DD8179007F2F3E /* MacCEC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacCEC-Prefix.pch"; sourceTree = "<group>"; };
+		503F565C15DD8179007F2F3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		503F565E15DD8179007F2F3E /* DKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKAppDelegate.h; sourceTree = "<group>"; };
+		503F565F15DD8179007F2F3E /* DKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKAppDelegate.m; sourceTree = "<group>"; };
+		503F566215DD8179007F2F3E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		503F564515DD8179007F2F3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		503F563D15DD8179007F2F3E = {
+			isa = PBXGroup;
+			children = (
+				503F565215DD8179007F2F3E /* MacCEC */,
+				503F564B15DD8179007F2F3E /* Frameworks */,
+				503F564915DD8179007F2F3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		503F564915DD8179007F2F3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				503F564815DD8179007F2F3E /* MacCEC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		503F564B15DD8179007F2F3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				503F564C15DD8179007F2F3E /* Cocoa.framework */,
+				503F564E15DD8179007F2F3E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		503F564E15DD8179007F2F3E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				503F564F15DD8179007F2F3E /* AppKit.framework */,
+				503F565015DD8179007F2F3E /* CoreData.framework */,
+				503F565115DD8179007F2F3E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		503F565215DD8179007F2F3E /* MacCEC */ = {
+			isa = PBXGroup;
+			children = (
+				503F565E15DD8179007F2F3E /* DKAppDelegate.h */,
+				503F565F15DD8179007F2F3E /* DKAppDelegate.m */,
+				503F566115DD8179007F2F3E /* MainMenu.xib */,
+				503F565315DD8179007F2F3E /* Supporting Files */,
+			);
+			path = MacCEC;
+			sourceTree = "<group>";
+		};
+		503F565315DD8179007F2F3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				503F565415DD8179007F2F3E /* MacCEC-Info.plist */,
+				503F565515DD8179007F2F3E /* InfoPlist.strings */,
+				503F565815DD8179007F2F3E /* main.m */,
+				503F565A15DD8179007F2F3E /* MacCEC-Prefix.pch */,
+				503F565B15DD8179007F2F3E /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		503F564715DD8179007F2F3E /* MacCEC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 503F566615DD8179007F2F3E /* Build configuration list for PBXNativeTarget "MacCEC" */;
+			buildPhases = (
+				503F564415DD8179007F2F3E /* Sources */,
+				503F564515DD8179007F2F3E /* Frameworks */,
+				503F564615DD8179007F2F3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacCEC;
+			productName = MacCEC;
+			productReference = 503F564815DD8179007F2F3E /* MacCEC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		503F563F15DD8179007F2F3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DK;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Daniel Kennett";
+			};
+			buildConfigurationList = 503F564215DD8179007F2F3E /* Build configuration list for PBXProject "MacCEC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 503F563D15DD8179007F2F3E;
+			productRefGroup = 503F564915DD8179007F2F3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				503F564715DD8179007F2F3E /* MacCEC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		503F564615DD8179007F2F3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				503F565715DD8179007F2F3E /* InfoPlist.strings in Resources */,
+				503F565D15DD8179007F2F3E /* Credits.rtf in Resources */,
+				503F566315DD8179007F2F3E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		503F564415DD8179007F2F3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				503F565915DD8179007F2F3E /* main.m in Sources */,
+				503F566015DD8179007F2F3E /* DKAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		503F565515DD8179007F2F3E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				503F565615DD8179007F2F3E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		503F565B15DD8179007F2F3E /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				503F565C15DD8179007F2F3E /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		503F566115DD8179007F2F3E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				503F566215DD8179007F2F3E /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		503F566415DD8179007F2F3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		503F566515DD8179007F2F3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		503F566715DD8179007F2F3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MacCEC/MacCEC-Prefix.pch";
+				INFOPLIST_FILE = "MacCEC/MacCEC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		503F566815DD8179007F2F3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MacCEC/MacCEC-Prefix.pch";
+				INFOPLIST_FILE = "MacCEC/MacCEC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		503F564215DD8179007F2F3E /* Build configuration list for PBXProject "MacCEC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				503F566415DD8179007F2F3E /* Debug */,
+				503F566515DD8179007F2F3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		503F566615DD8179007F2F3E /* Build configuration list for PBXNativeTarget "MacCEC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				503F566715DD8179007F2F3E /* Debug */,
+				503F566815DD8179007F2F3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 503F563F15DD8179007F2F3E /* Project object */;
+}
