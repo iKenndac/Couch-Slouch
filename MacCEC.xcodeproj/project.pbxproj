@@ -11,8 +11,40 @@
 		503F565715DD8179007F2F3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 503F565515DD8179007F2F3E /* InfoPlist.strings */; };
 		503F565915DD8179007F2F3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565815DD8179007F2F3E /* main.m */; };
 		503F565D15DD8179007F2F3E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 503F565B15DD8179007F2F3E /* Credits.rtf */; };
-		503F566015DD8179007F2F3E /* DKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565F15DD8179007F2F3E /* DKAppDelegate.m */; };
+		503F566015DD8179007F2F3E /* DKAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503F565F15DD8179007F2F3E /* DKAppDelegate.mm */; };
 		503F566315DD8179007F2F3E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 503F566115DD8179007F2F3E /* MainMenu.xib */; };
+		503F572A15DD8221007F2F3E /* AdapterFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F569C15DD8221007F2F3E /* AdapterFactory.cpp */; };
+		503F572B15DD8221007F2F3E /* USBCECAdapterCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F569F15DD8221007F2F3E /* USBCECAdapterCommands.cpp */; };
+		503F572C15DD8221007F2F3E /* USBCECAdapterCommunication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A115DD8221007F2F3E /* USBCECAdapterCommunication.cpp */; };
+		503F572D15DD8221007F2F3E /* USBCECAdapterDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A315DD8221007F2F3E /* USBCECAdapterDetection.cpp */; };
+		503F572E15DD8221007F2F3E /* USBCECAdapterMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A515DD8221007F2F3E /* USBCECAdapterMessage.cpp */; };
+		503F572F15DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A715DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp */; };
+		503F573015DD8221007F2F3E /* RPiCECAdapterCommunication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56AA15DD8221007F2F3E /* RPiCECAdapterCommunication.cpp */; };
+		503F573115DD8221007F2F3E /* RPiCECAdapterDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56AC15DD8221007F2F3E /* RPiCECAdapterDetection.cpp */; };
+		503F573215DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56AE15DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp */; };
+		503F573315DD8221007F2F3E /* CECClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B015DD8221007F2F3E /* CECClient.cpp */; };
+		503F573415DD8221007F2F3E /* CECProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B315DD8221007F2F3E /* CECProcessor.cpp */; };
+		503F573515DD8221007F2F3E /* CECAudioSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B715DD8221007F2F3E /* CECAudioSystem.cpp */; };
+		503F573615DD8221007F2F3E /* CECBusDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B915DD8221007F2F3E /* CECBusDevice.cpp */; };
+		503F573715DD8221007F2F3E /* CECDeviceMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56BB15DD8221007F2F3E /* CECDeviceMap.cpp */; };
+		503F573815DD8221007F2F3E /* CECPlaybackDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56BD15DD8221007F2F3E /* CECPlaybackDevice.cpp */; };
+		503F573915DD8221007F2F3E /* CECRecordingDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56BF15DD8221007F2F3E /* CECRecordingDevice.cpp */; };
+		503F573A15DD8221007F2F3E /* CECTuner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C115DD8221007F2F3E /* CECTuner.cpp */; };
+		503F573B15DD8221007F2F3E /* CECTV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C315DD8221007F2F3E /* CECTV.cpp */; };
+		503F573C15DD8221007F2F3E /* ANCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C615DD8221007F2F3E /* ANCommandHandler.cpp */; };
+		503F573D15DD8221007F2F3E /* CECCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C815DD8221007F2F3E /* CECCommandHandler.cpp */; };
+		503F573E15DD8221007F2F3E /* RLCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56CA15DD8221007F2F3E /* RLCommandHandler.cpp */; };
+		503F573F15DD8221007F2F3E /* SLCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56CC15DD8221007F2F3E /* SLCommandHandler.cpp */; };
+		503F574015DD8221007F2F3E /* VLCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56CE15DD8221007F2F3E /* VLCommandHandler.cpp */; };
+		503F574115DD8221007F2F3E /* LibCEC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56D015DD8221007F2F3E /* LibCEC.cpp */; };
+		503F574315DD8221007F2F3E /* LibCECC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56D315DD8221007F2F3E /* LibCECC.cpp */; };
+		503F574615DD8221007F2F3E /* adl-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56D815DD8221007F2F3E /* adl-edid.cpp */; };
+		503F574715DD8221007F2F3E /* nv-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56DE15DD8221007F2F3E /* nv-edid.cpp */; };
+		503F574815DD8221007F2F3E /* os-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E215DD8221007F2F3E /* os-edid.cpp */; };
+		503F574915DD8221007F2F3E /* serialport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E615DD8221007F2F3E /* serialport.cpp */; };
+		503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E715DD8221007F2F3E /* serversocket.cpp */; };
+		503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575315DD845B007F2F3E /* IOKit.framework */; };
+		503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575515DD848E007F2F3E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +59,93 @@
 		503F565A15DD8179007F2F3E /* MacCEC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacCEC-Prefix.pch"; sourceTree = "<group>"; };
 		503F565C15DD8179007F2F3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		503F565E15DD8179007F2F3E /* DKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKAppDelegate.h; sourceTree = "<group>"; };
-		503F565F15DD8179007F2F3E /* DKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKAppDelegate.m; sourceTree = "<group>"; };
+		503F565F15DD8179007F2F3E /* DKAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DKAppDelegate.mm; sourceTree = "<group>"; };
 		503F566215DD8179007F2F3E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		503F566B15DD81D2007F2F3E /* cec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cec.h; sourceTree = "<group>"; };
+		503F566C15DD81D2007F2F3E /* cecc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecc.h; sourceTree = "<group>"; };
+		503F566D15DD81D2007F2F3E /* cecloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecloader.h; sourceTree = "<group>"; };
+		503F566E15DD81D2007F2F3E /* cectypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cectypes.h; sourceTree = "<group>"; };
+		503F569815DD8221007F2F3E /* env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = env.h; sourceTree = "<group>"; };
+		503F569B15DD8221007F2F3E /* AdapterCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdapterCommunication.h; sourceTree = "<group>"; };
+		503F569C15DD8221007F2F3E /* AdapterFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdapterFactory.cpp; sourceTree = "<group>"; };
+		503F569D15DD8221007F2F3E /* AdapterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdapterFactory.h; sourceTree = "<group>"; };
+		503F569F15DD8221007F2F3E /* USBCECAdapterCommands.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = USBCECAdapterCommands.cpp; sourceTree = "<group>"; };
+		503F56A015DD8221007F2F3E /* USBCECAdapterCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBCECAdapterCommands.h; sourceTree = "<group>"; };
+		503F56A115DD8221007F2F3E /* USBCECAdapterCommunication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = USBCECAdapterCommunication.cpp; sourceTree = "<group>"; };
+		503F56A215DD8221007F2F3E /* USBCECAdapterCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBCECAdapterCommunication.h; sourceTree = "<group>"; };
+		503F56A315DD8221007F2F3E /* USBCECAdapterDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = USBCECAdapterDetection.cpp; sourceTree = "<group>"; };
+		503F56A415DD8221007F2F3E /* USBCECAdapterDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBCECAdapterDetection.h; sourceTree = "<group>"; };
+		503F56A515DD8221007F2F3E /* USBCECAdapterMessage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = USBCECAdapterMessage.cpp; sourceTree = "<group>"; };
+		503F56A615DD8221007F2F3E /* USBCECAdapterMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBCECAdapterMessage.h; sourceTree = "<group>"; };
+		503F56A715DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = USBCECAdapterMessageQueue.cpp; sourceTree = "<group>"; };
+		503F56A815DD8221007F2F3E /* USBCECAdapterMessageQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBCECAdapterMessageQueue.h; sourceTree = "<group>"; };
+		503F56AA15DD8221007F2F3E /* RPiCECAdapterCommunication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RPiCECAdapterCommunication.cpp; sourceTree = "<group>"; };
+		503F56AB15DD8221007F2F3E /* RPiCECAdapterCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPiCECAdapterCommunication.h; sourceTree = "<group>"; };
+		503F56AC15DD8221007F2F3E /* RPiCECAdapterDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RPiCECAdapterDetection.cpp; sourceTree = "<group>"; };
+		503F56AD15DD8221007F2F3E /* RPiCECAdapterDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPiCECAdapterDetection.h; sourceTree = "<group>"; };
+		503F56AE15DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RPiCECAdapterMessageQueue.cpp; sourceTree = "<group>"; };
+		503F56AF15DD8221007F2F3E /* RPiCECAdapterMessageQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPiCECAdapterMessageQueue.h; sourceTree = "<group>"; };
+		503F56B015DD8221007F2F3E /* CECClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECClient.cpp; sourceTree = "<group>"; };
+		503F56B115DD8221007F2F3E /* CECClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECClient.h; sourceTree = "<group>"; };
+		503F56B215DD8221007F2F3E /* CECInputBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECInputBuffer.h; sourceTree = "<group>"; };
+		503F56B315DD8221007F2F3E /* CECProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECProcessor.cpp; sourceTree = "<group>"; };
+		503F56B415DD8221007F2F3E /* CECProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECProcessor.h; sourceTree = "<group>"; };
+		503F56B515DD8221007F2F3E /* CECTypeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECTypeUtils.h; sourceTree = "<group>"; };
+		503F56B715DD8221007F2F3E /* CECAudioSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECAudioSystem.cpp; sourceTree = "<group>"; };
+		503F56B815DD8221007F2F3E /* CECAudioSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECAudioSystem.h; sourceTree = "<group>"; };
+		503F56B915DD8221007F2F3E /* CECBusDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECBusDevice.cpp; sourceTree = "<group>"; };
+		503F56BA15DD8221007F2F3E /* CECBusDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECBusDevice.h; sourceTree = "<group>"; };
+		503F56BB15DD8221007F2F3E /* CECDeviceMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECDeviceMap.cpp; sourceTree = "<group>"; };
+		503F56BC15DD8221007F2F3E /* CECDeviceMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECDeviceMap.h; sourceTree = "<group>"; };
+		503F56BD15DD8221007F2F3E /* CECPlaybackDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECPlaybackDevice.cpp; sourceTree = "<group>"; };
+		503F56BE15DD8221007F2F3E /* CECPlaybackDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECPlaybackDevice.h; sourceTree = "<group>"; };
+		503F56BF15DD8221007F2F3E /* CECRecordingDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECRecordingDevice.cpp; sourceTree = "<group>"; };
+		503F56C015DD8221007F2F3E /* CECRecordingDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECRecordingDevice.h; sourceTree = "<group>"; };
+		503F56C115DD8221007F2F3E /* CECTuner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECTuner.cpp; sourceTree = "<group>"; };
+		503F56C215DD8221007F2F3E /* CECTuner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECTuner.h; sourceTree = "<group>"; };
+		503F56C315DD8221007F2F3E /* CECTV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECTV.cpp; sourceTree = "<group>"; };
+		503F56C415DD8221007F2F3E /* CECTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECTV.h; sourceTree = "<group>"; };
+		503F56C615DD8221007F2F3E /* ANCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ANCommandHandler.cpp; sourceTree = "<group>"; };
+		503F56C715DD8221007F2F3E /* ANCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCommandHandler.h; sourceTree = "<group>"; };
+		503F56C815DD8221007F2F3E /* CECCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECCommandHandler.cpp; sourceTree = "<group>"; };
+		503F56C915DD8221007F2F3E /* CECCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECCommandHandler.h; sourceTree = "<group>"; };
+		503F56CA15DD8221007F2F3E /* RLCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RLCommandHandler.cpp; sourceTree = "<group>"; };
+		503F56CB15DD8221007F2F3E /* RLCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLCommandHandler.h; sourceTree = "<group>"; };
+		503F56CC15DD8221007F2F3E /* SLCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SLCommandHandler.cpp; sourceTree = "<group>"; };
+		503F56CD15DD8221007F2F3E /* SLCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCommandHandler.h; sourceTree = "<group>"; };
+		503F56CE15DD8221007F2F3E /* VLCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VLCommandHandler.cpp; sourceTree = "<group>"; };
+		503F56CF15DD8221007F2F3E /* VLCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLCommandHandler.h; sourceTree = "<group>"; };
+		503F56D015DD8221007F2F3E /* LibCEC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LibCEC.cpp; sourceTree = "<group>"; };
+		503F56D115DD8221007F2F3E /* LibCEC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibCEC.h; sourceTree = "<group>"; };
+		503F56D315DD8221007F2F3E /* LibCECC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LibCECC.cpp; sourceTree = "<group>"; };
+		503F56D815DD8221007F2F3E /* adl-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "adl-edid.cpp"; sourceTree = "<group>"; };
+		503F56D915DD8221007F2F3E /* adl-edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "adl-edid.h"; sourceTree = "<group>"; };
+		503F56DA15DD8221007F2F3E /* adl_defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adl_defines.h; sourceTree = "<group>"; };
+		503F56DB15DD8221007F2F3E /* adl_sdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adl_sdk.h; sourceTree = "<group>"; };
+		503F56DC15DD8221007F2F3E /* adl_structures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adl_structures.h; sourceTree = "<group>"; };
+		503F56DE15DD8221007F2F3E /* nv-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "nv-edid.cpp"; sourceTree = "<group>"; };
+		503F56DF15DD8221007F2F3E /* nv-edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "nv-edid.h"; sourceTree = "<group>"; };
+		503F56E015DD8221007F2F3E /* os.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = os.h; sourceTree = "<group>"; };
+		503F56E215DD8221007F2F3E /* os-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "os-edid.cpp"; sourceTree = "<group>"; };
+		503F56E315DD8221007F2F3E /* os-socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "os-socket.h"; sourceTree = "<group>"; };
+		503F56E415DD8221007F2F3E /* os-threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "os-threads.h"; sourceTree = "<group>"; };
+		503F56E515DD8221007F2F3E /* os-types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "os-types.h"; sourceTree = "<group>"; };
+		503F56E615DD8221007F2F3E /* serialport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = serialport.cpp; sourceTree = "<group>"; };
+		503F56E715DD8221007F2F3E /* serversocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = serversocket.cpp; sourceTree = "<group>"; };
+		503F56E915DD8221007F2F3E /* serialport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serialport.h; sourceTree = "<group>"; };
+		503F56EA15DD8221007F2F3E /* serversocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serversocket.h; sourceTree = "<group>"; };
+		503F56EB15DD8221007F2F3E /* socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = socket.h; sourceTree = "<group>"; };
+		503F56EC15DD8221007F2F3E /* tcp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tcp.h; sourceTree = "<group>"; };
+		503F56EE15DD8221007F2F3E /* mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mutex.h; sourceTree = "<group>"; };
+		503F56EF15DD8221007F2F3E /* threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threads.h; sourceTree = "<group>"; };
+		503F56F115DD8221007F2F3E /* baudrate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baudrate.h; sourceTree = "<group>"; };
+		503F56F215DD8221007F2F3E /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		503F56F315DD8221007F2F3E /* edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = edid.h; sourceTree = "<group>"; };
+		503F56F415DD8221007F2F3E /* StdString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StdString.h; sourceTree = "<group>"; };
+		503F56F515DD8221007F2F3E /* timeutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeutils.h; sourceTree = "<group>"; };
+		503F56F615DD8221007F2F3E /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		503F575315DD845B007F2F3E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		503F575515DD848E007F2F3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +153,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */,
+				503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */,
 				503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +182,8 @@
 		503F564B15DD8179007F2F3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				503F575515DD848E007F2F3E /* QuartzCore.framework */,
+				503F575315DD845B007F2F3E /* IOKit.framework */,
 				503F564C15DD8179007F2F3E /* Cocoa.framework */,
 				503F564E15DD8179007F2F3E /* Other Frameworks */,
 			);
@@ -83,8 +204,9 @@
 			isa = PBXGroup;
 			children = (
 				503F565E15DD8179007F2F3E /* DKAppDelegate.h */,
-				503F565F15DD8179007F2F3E /* DKAppDelegate.m */,
+				503F565F15DD8179007F2F3E /* DKAppDelegate.mm */,
 				503F566115DD8179007F2F3E /* MainMenu.xib */,
+				503F566915DD819B007F2F3E /* libCEC */,
 				503F565315DD8179007F2F3E /* Supporting Files */,
 			);
 			path = MacCEC;
@@ -100,6 +222,218 @@
 				503F565B15DD8179007F2F3E /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		503F566915DD819B007F2F3E /* libCEC */ = {
+			isa = PBXGroup;
+			children = (
+				503F566F15DD8221007F2F3E /* src */,
+				503F566A15DD81D2007F2F3E /* include */,
+			);
+			name = libCEC;
+			sourceTree = "<group>";
+		};
+		503F566A15DD81D2007F2F3E /* include */ = {
+			isa = PBXGroup;
+			children = (
+				503F566B15DD81D2007F2F3E /* cec.h */,
+				503F566C15DD81D2007F2F3E /* cecc.h */,
+				503F566D15DD81D2007F2F3E /* cecloader.h */,
+				503F566E15DD81D2007F2F3E /* cectypes.h */,
+			);
+			name = include;
+			path = libcec/include;
+			sourceTree = SOURCE_ROOT;
+		};
+		503F566F15DD8221007F2F3E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				503F569815DD8221007F2F3E /* env.h */,
+				503F569915DD8221007F2F3E /* lib */,
+			);
+			name = src;
+			path = libcec/src;
+			sourceTree = SOURCE_ROOT;
+		};
+		503F569915DD8221007F2F3E /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				503F569A15DD8221007F2F3E /* adapter */,
+				503F56B015DD8221007F2F3E /* CECClient.cpp */,
+				503F56B115DD8221007F2F3E /* CECClient.h */,
+				503F56B215DD8221007F2F3E /* CECInputBuffer.h */,
+				503F56B315DD8221007F2F3E /* CECProcessor.cpp */,
+				503F56B415DD8221007F2F3E /* CECProcessor.h */,
+				503F56B515DD8221007F2F3E /* CECTypeUtils.h */,
+				503F56B615DD8221007F2F3E /* devices */,
+				503F56C515DD8221007F2F3E /* implementations */,
+				503F56D015DD8221007F2F3E /* LibCEC.cpp */,
+				503F56D115DD8221007F2F3E /* LibCEC.h */,
+				503F56D315DD8221007F2F3E /* LibCECC.cpp */,
+				503F56D615DD8221007F2F3E /* platform */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		503F569A15DD8221007F2F3E /* adapter */ = {
+			isa = PBXGroup;
+			children = (
+				503F569B15DD8221007F2F3E /* AdapterCommunication.h */,
+				503F569C15DD8221007F2F3E /* AdapterFactory.cpp */,
+				503F569D15DD8221007F2F3E /* AdapterFactory.h */,
+				503F569E15DD8221007F2F3E /* Pulse-Eight */,
+				503F56A915DD8221007F2F3E /* RPi */,
+			);
+			path = adapter;
+			sourceTree = "<group>";
+		};
+		503F569E15DD8221007F2F3E /* Pulse-Eight */ = {
+			isa = PBXGroup;
+			children = (
+				503F569F15DD8221007F2F3E /* USBCECAdapterCommands.cpp */,
+				503F56A015DD8221007F2F3E /* USBCECAdapterCommands.h */,
+				503F56A115DD8221007F2F3E /* USBCECAdapterCommunication.cpp */,
+				503F56A215DD8221007F2F3E /* USBCECAdapterCommunication.h */,
+				503F56A315DD8221007F2F3E /* USBCECAdapterDetection.cpp */,
+				503F56A415DD8221007F2F3E /* USBCECAdapterDetection.h */,
+				503F56A515DD8221007F2F3E /* USBCECAdapterMessage.cpp */,
+				503F56A615DD8221007F2F3E /* USBCECAdapterMessage.h */,
+				503F56A715DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp */,
+				503F56A815DD8221007F2F3E /* USBCECAdapterMessageQueue.h */,
+			);
+			path = "Pulse-Eight";
+			sourceTree = "<group>";
+		};
+		503F56A915DD8221007F2F3E /* RPi */ = {
+			isa = PBXGroup;
+			children = (
+				503F56AA15DD8221007F2F3E /* RPiCECAdapterCommunication.cpp */,
+				503F56AB15DD8221007F2F3E /* RPiCECAdapterCommunication.h */,
+				503F56AC15DD8221007F2F3E /* RPiCECAdapterDetection.cpp */,
+				503F56AD15DD8221007F2F3E /* RPiCECAdapterDetection.h */,
+				503F56AE15DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp */,
+				503F56AF15DD8221007F2F3E /* RPiCECAdapterMessageQueue.h */,
+			);
+			path = RPi;
+			sourceTree = "<group>";
+		};
+		503F56B615DD8221007F2F3E /* devices */ = {
+			isa = PBXGroup;
+			children = (
+				503F56B715DD8221007F2F3E /* CECAudioSystem.cpp */,
+				503F56B815DD8221007F2F3E /* CECAudioSystem.h */,
+				503F56B915DD8221007F2F3E /* CECBusDevice.cpp */,
+				503F56BA15DD8221007F2F3E /* CECBusDevice.h */,
+				503F56BB15DD8221007F2F3E /* CECDeviceMap.cpp */,
+				503F56BC15DD8221007F2F3E /* CECDeviceMap.h */,
+				503F56BD15DD8221007F2F3E /* CECPlaybackDevice.cpp */,
+				503F56BE15DD8221007F2F3E /* CECPlaybackDevice.h */,
+				503F56BF15DD8221007F2F3E /* CECRecordingDevice.cpp */,
+				503F56C015DD8221007F2F3E /* CECRecordingDevice.h */,
+				503F56C115DD8221007F2F3E /* CECTuner.cpp */,
+				503F56C215DD8221007F2F3E /* CECTuner.h */,
+				503F56C315DD8221007F2F3E /* CECTV.cpp */,
+				503F56C415DD8221007F2F3E /* CECTV.h */,
+			);
+			path = devices;
+			sourceTree = "<group>";
+		};
+		503F56C515DD8221007F2F3E /* implementations */ = {
+			isa = PBXGroup;
+			children = (
+				503F56C615DD8221007F2F3E /* ANCommandHandler.cpp */,
+				503F56C715DD8221007F2F3E /* ANCommandHandler.h */,
+				503F56C815DD8221007F2F3E /* CECCommandHandler.cpp */,
+				503F56C915DD8221007F2F3E /* CECCommandHandler.h */,
+				503F56CA15DD8221007F2F3E /* RLCommandHandler.cpp */,
+				503F56CB15DD8221007F2F3E /* RLCommandHandler.h */,
+				503F56CC15DD8221007F2F3E /* SLCommandHandler.cpp */,
+				503F56CD15DD8221007F2F3E /* SLCommandHandler.h */,
+				503F56CE15DD8221007F2F3E /* VLCommandHandler.cpp */,
+				503F56CF15DD8221007F2F3E /* VLCommandHandler.h */,
+			);
+			path = implementations;
+			sourceTree = "<group>";
+		};
+		503F56D615DD8221007F2F3E /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				503F56D715DD8221007F2F3E /* adl */,
+				503F56DD15DD8221007F2F3E /* nvidia */,
+				503F56E015DD8221007F2F3E /* os.h */,
+				503F56E115DD8221007F2F3E /* posix */,
+				503F56E815DD8221007F2F3E /* sockets */,
+				503F56ED15DD8221007F2F3E /* threads */,
+				503F56F015DD8221007F2F3E /* util */,
+			);
+			path = platform;
+			sourceTree = "<group>";
+		};
+		503F56D715DD8221007F2F3E /* adl */ = {
+			isa = PBXGroup;
+			children = (
+				503F56D815DD8221007F2F3E /* adl-edid.cpp */,
+				503F56D915DD8221007F2F3E /* adl-edid.h */,
+				503F56DA15DD8221007F2F3E /* adl_defines.h */,
+				503F56DB15DD8221007F2F3E /* adl_sdk.h */,
+				503F56DC15DD8221007F2F3E /* adl_structures.h */,
+			);
+			path = adl;
+			sourceTree = "<group>";
+		};
+		503F56DD15DD8221007F2F3E /* nvidia */ = {
+			isa = PBXGroup;
+			children = (
+				503F56DE15DD8221007F2F3E /* nv-edid.cpp */,
+				503F56DF15DD8221007F2F3E /* nv-edid.h */,
+			);
+			path = nvidia;
+			sourceTree = "<group>";
+		};
+		503F56E115DD8221007F2F3E /* posix */ = {
+			isa = PBXGroup;
+			children = (
+				503F56E215DD8221007F2F3E /* os-edid.cpp */,
+				503F56E315DD8221007F2F3E /* os-socket.h */,
+				503F56E415DD8221007F2F3E /* os-threads.h */,
+				503F56E515DD8221007F2F3E /* os-types.h */,
+				503F56E615DD8221007F2F3E /* serialport.cpp */,
+				503F56E715DD8221007F2F3E /* serversocket.cpp */,
+			);
+			path = posix;
+			sourceTree = "<group>";
+		};
+		503F56E815DD8221007F2F3E /* sockets */ = {
+			isa = PBXGroup;
+			children = (
+				503F56E915DD8221007F2F3E /* serialport.h */,
+				503F56EA15DD8221007F2F3E /* serversocket.h */,
+				503F56EB15DD8221007F2F3E /* socket.h */,
+				503F56EC15DD8221007F2F3E /* tcp.h */,
+			);
+			path = sockets;
+			sourceTree = "<group>";
+		};
+		503F56ED15DD8221007F2F3E /* threads */ = {
+			isa = PBXGroup;
+			children = (
+				503F56EE15DD8221007F2F3E /* mutex.h */,
+				503F56EF15DD8221007F2F3E /* threads.h */,
+			);
+			path = threads;
+			sourceTree = "<group>";
+		};
+		503F56F015DD8221007F2F3E /* util */ = {
+			isa = PBXGroup;
+			children = (
+				503F56F115DD8221007F2F3E /* baudrate.h */,
+				503F56F215DD8221007F2F3E /* buffer.h */,
+				503F56F315DD8221007F2F3E /* edid.h */,
+				503F56F415DD8221007F2F3E /* StdString.h */,
+				503F56F515DD8221007F2F3E /* timeutils.h */,
+				503F56F615DD8221007F2F3E /* util.h */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +502,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				503F565915DD8179007F2F3E /* main.m in Sources */,
-				503F566015DD8179007F2F3E /* DKAppDelegate.m in Sources */,
+				503F566015DD8179007F2F3E /* DKAppDelegate.mm in Sources */,
+				503F572A15DD8221007F2F3E /* AdapterFactory.cpp in Sources */,
+				503F572B15DD8221007F2F3E /* USBCECAdapterCommands.cpp in Sources */,
+				503F572C15DD8221007F2F3E /* USBCECAdapterCommunication.cpp in Sources */,
+				503F572D15DD8221007F2F3E /* USBCECAdapterDetection.cpp in Sources */,
+				503F572E15DD8221007F2F3E /* USBCECAdapterMessage.cpp in Sources */,
+				503F572F15DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp in Sources */,
+				503F573015DD8221007F2F3E /* RPiCECAdapterCommunication.cpp in Sources */,
+				503F573115DD8221007F2F3E /* RPiCECAdapterDetection.cpp in Sources */,
+				503F573215DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp in Sources */,
+				503F573315DD8221007F2F3E /* CECClient.cpp in Sources */,
+				503F573415DD8221007F2F3E /* CECProcessor.cpp in Sources */,
+				503F573515DD8221007F2F3E /* CECAudioSystem.cpp in Sources */,
+				503F573615DD8221007F2F3E /* CECBusDevice.cpp in Sources */,
+				503F573715DD8221007F2F3E /* CECDeviceMap.cpp in Sources */,
+				503F573815DD8221007F2F3E /* CECPlaybackDevice.cpp in Sources */,
+				503F573915DD8221007F2F3E /* CECRecordingDevice.cpp in Sources */,
+				503F573A15DD8221007F2F3E /* CECTuner.cpp in Sources */,
+				503F573B15DD8221007F2F3E /* CECTV.cpp in Sources */,
+				503F573C15DD8221007F2F3E /* ANCommandHandler.cpp in Sources */,
+				503F573D15DD8221007F2F3E /* CECCommandHandler.cpp in Sources */,
+				503F573E15DD8221007F2F3E /* RLCommandHandler.cpp in Sources */,
+				503F573F15DD8221007F2F3E /* SLCommandHandler.cpp in Sources */,
+				503F574015DD8221007F2F3E /* VLCommandHandler.cpp in Sources */,
+				503F574115DD8221007F2F3E /* LibCEC.cpp in Sources */,
+				503F574315DD8221007F2F3E /* LibCECC.cpp in Sources */,
+				503F574615DD8221007F2F3E /* adl-edid.cpp in Sources */,
+				503F574715DD8221007F2F3E /* nv-edid.cpp in Sources */,
+				503F574815DD8221007F2F3E /* os-edid.cpp in Sources */,
+				503F574915DD8221007F2F3E /* serialport.cpp in Sources */,
+				503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +621,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacCEC/MacCEC-Prefix.pch";
+				HEADER_SEARCH_PATHS = libcec/src;
 				INFOPLIST_FILE = "MacCEC/MacCEC-Info.plist";
+				OTHER_CFLAGS = "-DHAVE_P8_USB=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -269,7 +635,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacCEC/MacCEC-Prefix.pch";
+				HEADER_SEARCH_PATHS = libcec/src;
 				INFOPLIST_FILE = "MacCEC/MacCEC-Info.plist";
+				OTHER_CFLAGS = "-DHAVE_P8_USB=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
