@@ -11,7 +11,7 @@
 		503F565715DD8179007F2F3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 503F565515DD8179007F2F3E /* InfoPlist.strings */; };
 		503F565915DD8179007F2F3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565815DD8179007F2F3E /* main.m */; };
 		503F565D15DD8179007F2F3E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 503F565B15DD8179007F2F3E /* Credits.rtf */; };
-		503F566015DD8179007F2F3E /* DKAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503F565F15DD8179007F2F3E /* DKAppDelegate.mm */; };
+		503F566015DD8179007F2F3E /* DKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565F15DD8179007F2F3E /* DKAppDelegate.m */; };
 		503F566315DD8179007F2F3E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 503F566115DD8179007F2F3E /* MainMenu.xib */; };
 		503F572A15DD8221007F2F3E /* AdapterFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F569C15DD8221007F2F3E /* AdapterFactory.cpp */; };
 		503F572B15DD8221007F2F3E /* USBCECAdapterCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F569F15DD8221007F2F3E /* USBCECAdapterCommands.cpp */; };
@@ -45,6 +45,7 @@
 		503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E715DD8221007F2F3E /* serversocket.cpp */; };
 		503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575315DD845B007F2F3E /* IOKit.framework */; };
 		503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575515DD848E007F2F3E /* QuartzCore.framework */; };
+		503F575D15DD9148007F2F3E /* DKCECController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503F575C15DD9148007F2F3E /* DKCECController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +60,7 @@
 		503F565A15DD8179007F2F3E /* MacCEC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacCEC-Prefix.pch"; sourceTree = "<group>"; };
 		503F565C15DD8179007F2F3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		503F565E15DD8179007F2F3E /* DKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKAppDelegate.h; sourceTree = "<group>"; };
-		503F565F15DD8179007F2F3E /* DKAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DKAppDelegate.mm; sourceTree = "<group>"; };
+		503F565F15DD8179007F2F3E /* DKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKAppDelegate.m; sourceTree = "<group>"; };
 		503F566215DD8179007F2F3E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		503F566B15DD81D2007F2F3E /* cec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cec.h; sourceTree = "<group>"; };
 		503F566C15DD81D2007F2F3E /* cecc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecc.h; sourceTree = "<group>"; };
@@ -146,6 +147,8 @@
 		503F56F615DD8221007F2F3E /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		503F575315DD845B007F2F3E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		503F575515DD848E007F2F3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		503F575B15DD9148007F2F3E /* DKCECController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECController.h; sourceTree = "<group>"; };
+		503F575C15DD9148007F2F3E /* DKCECController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DKCECController.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,8 +207,10 @@
 			isa = PBXGroup;
 			children = (
 				503F565E15DD8179007F2F3E /* DKAppDelegate.h */,
-				503F565F15DD8179007F2F3E /* DKAppDelegate.mm */,
+				503F565F15DD8179007F2F3E /* DKAppDelegate.m */,
 				503F566115DD8179007F2F3E /* MainMenu.xib */,
+				503F575B15DD9148007F2F3E /* DKCECController.h */,
+				503F575C15DD9148007F2F3E /* DKCECController.mm */,
 				503F566915DD819B007F2F3E /* libCEC */,
 				503F565315DD8179007F2F3E /* Supporting Files */,
 			);
@@ -502,7 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				503F565915DD8179007F2F3E /* main.m in Sources */,
-				503F566015DD8179007F2F3E /* DKAppDelegate.mm in Sources */,
+				503F566015DD8179007F2F3E /* DKAppDelegate.m in Sources */,
 				503F572A15DD8221007F2F3E /* AdapterFactory.cpp in Sources */,
 				503F572B15DD8221007F2F3E /* USBCECAdapterCommands.cpp in Sources */,
 				503F572C15DD8221007F2F3E /* USBCECAdapterCommunication.cpp in Sources */,
@@ -533,6 +538,7 @@
 				503F574815DD8221007F2F3E /* os-edid.cpp in Sources */,
 				503F574915DD8221007F2F3E /* serialport.cpp in Sources */,
 				503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */,
+				503F575D15DD9148007F2F3E /* DKCECController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +668,7 @@
 				503F566815DD8179007F2F3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
