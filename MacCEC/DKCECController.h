@@ -34,36 +34,36 @@
 // ----
 
 // Transmit a raw command the the local connected device.
--(BOOL)transmitCommand:(cec_command)command;
+-(void)sendRawCommand:(cec_command)command completion:(void (^)(BOOL success))block;
 
 // Send a power on command to the given device.
--(BOOL)sendPowerOnToDevice:(cec_logical_address)address;
+-(void)sendPowerOnToDevice:(cec_logical_address)address completion:(void (^)(BOOL success))block;
 
 // Send a standby command to the given device.
--(BOOL)sendPowerOffToDevice:(cec_logical_address)address;
+-(void)sendPowerOffToDevice:(cec_logical_address)address completion:(void (^)(BOOL success))block;
 
 // Get the power status of the given device
--(cec_power_status)powerStatusOfDevice:(cec_logical_address)device;
+-(void)requestPowerStatusOfDevice:(cec_logical_address)device completion:(void (^)(cec_power_status status))block;
 
 // Get the devices available on the HDMI bus, not including the local connected device.
--(cec_logical_addresses)activeDevicesOnHDMIBus;
+-(void)requestActiveDevicesOnHDMIBus:(void (^)(cec_logical_addresses devices))block;
 
 // Get the local connected device address(es)
--(cec_logical_addresses)localDevices;
+-(void)requestLocalDevices:(void (^)(cec_logical_addresses devices))block;
 
 // Returns YES if the given device type is present on the bus.
--(BOOL)hasDeviceOfType:(cec_device_type)wantedDevice;
+-(void)requestIfAvailableDeviceOfType:(cec_device_type)wantedDevice completion:(void (^)(BOOL hasDeviceType))block;
 
 // Returns YES when the given device is present on the bus.
--(BOOL)hasDevice:(cec_logical_address)device;
+-(void)requestIfAvailableDevice:(cec_logical_address)device completion:(void (^)(BOOL hasDevice))block;
 
 // Returns the device that is the current source (i.e., being presented on the TV)
--(cec_logical_address)sourceDevice;
+-(void)requestSourceDevice:(void (^)(cec_logical_address sourceDevice))block;
 
 // Returns YES if the given device is being presented on the TV
--(BOOL)deviceIsSource:(cec_logical_address)device;
+-(void)requestIfDeviceIsSource:(cec_logical_address)device completion:(void (^)(BOOL isSource))block;
 
 // Returns YES if the local connected device is being presented on the TV.
--(BOOL)isSource;
+-(void)requestIfLocalIsSource:(void (^)(BOOL isSource))block;
 
 @end
