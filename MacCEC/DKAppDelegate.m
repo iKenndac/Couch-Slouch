@@ -7,13 +7,17 @@
 //
 
 #import "DKAppDelegate.h"
-#import "DKCECController.h"
 
 @implementation DKAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	self.controller = [DKCECController new];
+	self.controller.delegate = self;
+}
+
+-(void)cecController:(DKCECController *)controller didLogMessage:(NSString *)message ofSeverity:(cec_log_level)logLevel {
+	NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), message);
 }
 
 @end
