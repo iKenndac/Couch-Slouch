@@ -29,5 +29,6 @@
 @property (nonatomic, readonly) cec_menu_state menuState;
 @property (nonatomic, readonly) libcec_configuration configuration;
 @property (nonatomic, readwrite, weak) id <DKCECControllerDelegate> delegate;
+@property (nonatomic, readonly) BOOL hasConnection;
 
 @end

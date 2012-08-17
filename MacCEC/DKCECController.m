@@ -10,6 +10,7 @@
 #import "cecc.h"
 
 static NSTimeInterval const kDevicePollInterval = 2.0;
+static NSTimeInterval const kDevicePingInterval = 10.0;
 
 #define DK_WITH_DEBUG_LOGGING YES
 
@@ -19,6 +20,7 @@ static NSTimeInterval const kDevicePollInterval = 2.0;
 @property (nonatomic, readwrite) libcec_configuration configuration;
 @property (nonatomic, readwrite) BOOL hasConnection;
 @property (nonatomic, readwrite) NSTimer *pollTimer;
+@property (nonatomic, readwrite) NSTimer *pingTimer;
 
 @end
 
@@ -134,7 +136,9 @@ static void CBCecSourceActivated(void *param, const cec_logical_address logicalA
 		}
 
 		[self checkForDevices:nil];
-		if (!self.hasConnection)
+		if (self.hasConnection)
+			[self startDevicePinging];
+		else
 			[self startDevicePolling];
 	}
 	
@@ -143,6 +147,7 @@ static void CBCecSourceActivated(void *param, const cec_logical_address logicalA
 
 -(void)dealloc {
 	[self stopDevicePolling];
+	[self stopDevicePinging];
 	cec_close();
 	cec_destroy();
 }
@@ -179,10 +184,44 @@ static void CBCecSourceActivated(void *param, const cec_logical_address logicalA
 		if (retCode > 0) {
 			self.hasConnection = YES;
 			[self stopDevicePolling];
+			[self startDevicePinging];
 		}
 	} else {
 		if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"No devices found.");
 	}
 }
+
+-(void)startDevicePinging {
+	
+	[self stopDevicePinging];
+	self.pingTimer = [NSTimer scheduledTimerWithTimeInterval:kDevicePingInterval
+													  target:self
+													selector:@selector(pingDevice:)
+													userInfo:nil
+													 repeats:YES];
+}
+
+-(void)stopDevicePinging {
+	[self.pingTimer invalidate];
+	self.pingTimer = nil;
+}
+
+-(void)pingDevice:(NSTimer *)timer {
+
+	if (!self.hasConnection) return;
+	int retCode = cec_ping_adapters();
+	if (retCode == 1) return;
+
+	if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"Connection lost.");
+	cec_close();
+	self.hasConnection = NO;
+
+	[self stopDevicePinging];
+	[self startDevicePolling];
+}
+
+#pragma mark - Device Control
+
+
 
 @end
