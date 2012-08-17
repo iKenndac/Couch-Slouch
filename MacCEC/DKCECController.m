@@ -222,6 +222,71 @@ static void CBCecSourceActivated(void *param, const cec_logical_address logicalA
 
 #pragma mark - Device Control
 
+-(BOOL)transmitCommand:(cec_command)command {
+	if (!self.hasConnection) return NO;
+	return (BOOL)cec_transmit(&command);
+}
 
+-(BOOL)sendPowerOnToDevice:(cec_logical_address)address {
+	if (!self.hasConnection) return NO;
+	return (BOOL)cec_power_on_devices(address);
+}
+
+-(BOOL)sendPowerOffToDevice:(cec_logical_address)address {
+	if (!self.hasConnection) return NO;
+	return (BOOL)cec_standby_devices(address);
+}
+
+-(cec_power_status)powerStatusOfDevice:(cec_logical_address)device {
+	if (!self.hasConnection) return CEC_POWER_STATUS_UNKNOWN;
+	return cec_get_device_power_status(device);
+}
+
+-(cec_logical_addresses)activeDevicesOnHDMIBus {
+	if (!self.hasConnection) {
+		cec_logical_addresses nothing;
+		memset(&nothing, 0, sizeof(cec_logical_address));
+		nothing.primary = CECDEVICE_UNKNOWN;
+		return nothing;
+	}
+
+	return cec_get_active_devices();
+}
+
+-(cec_logical_addresses)localDevices {
+	if (!self.hasConnection) {
+		cec_logical_addresses nothing;
+		memset(&nothing, 0, sizeof(cec_logical_address));
+		nothing.primary = CECDEVICE_UNKNOWN;
+		return nothing;
+	}
+
+	return cec_get_logical_addresses();
+}
+
+-(BOOL)hasDeviceOfType:(cec_device_type)wantedDevice {
+	if (!self.hasConnection) return NO;
+	return (BOOL)cec_is_active_device_type(wantedDevice);
+}
+
+-(BOOL)hasDevice:(cec_logical_address)device {
+	if (!self.hasConnection) return NO;
+	return (BOOL)cec_is_active_device(device);
+}
+
+-(cec_logical_address)sourceDevice {
+	if (!self.hasConnection) return CECDEVICE_UNKNOWN;
+	return cec_get_active_source();
+}
+
+-(BOOL)deviceIsSource:(cec_logical_address)device {
+	if (!self.hasConnection) return NO;
+	return (BOOL)cec_is_active_source(device);
+}
+
+-(BOOL)isSource {
+	if (!self.hasConnection) return NO;
+	return (BOOL)cec_is_libcec_active_source();
+}
 
 @end
