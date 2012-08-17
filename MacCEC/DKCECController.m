@@ -9,10 +9,16 @@
 #import "DKCECController.h"
 #import "cecc.h"
 
+static NSTimeInterval const kDevicePollInterval = 2.0;
+
+#define DK_WITH_DEBUG_LOGGING YES
+
 @interface DKCECController ()
 
 @property (nonatomic, readwrite) cec_menu_state menuState;
 @property (nonatomic, readwrite) libcec_configuration configuration;
+@property (nonatomic, readwrite) BOOL hasConnection;
+@property (nonatomic, readwrite) NSTimer *pollTimer;
 
 @end
 
@@ -85,23 +91,32 @@ static void CBCecSourceActivated(void *param, const cec_logical_address logicalA
 @implementation DKCECController
 
 -(id)init {
+	return [self initWithDeviceName:nil];
+}
+
+-(id)initWithDeviceName:(NSString *)name  {
 	
 	self = [super init];
 	
 	if (self) {
-		
-		// Insert code here to initialize your application
-		libcec_configuration config;
-		memset(&config, 0, sizeof(config));
-		
-		int retCode = cec_initialise(&config);
-		if (retCode == 0)
-			NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"CEC init failed");
-		
-		const char * info = cec_get_lib_info();
-		if (info != NULL)
-			NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), [NSString stringWithUTF8String:info]);
-		
+
+		if (name.length == 0)
+			name = [[NSProcessInfo processInfo] hostName];
+
+		cec_device_type_list list;
+		memset(&list, 0, sizeof(cec_device_type_list));
+		list.types[0] = CEC_DEVICE_TYPE_PLAYBACK_DEVICE;
+		list.types[1] = CEC_DEVICE_TYPE_RESERVED;
+		list.types[2] = CEC_DEVICE_TYPE_RESERVED;
+		list.types[3] = CEC_DEVICE_TYPE_RESERVED;
+		list.types[4] = CEC_DEVICE_TYPE_RESERVED;
+
+		int retCode = cec_init_typed([name UTF8String], list);
+		if (retCode < 1) {
+			if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"CEC init failed");
+			return nil;
+		}
+
 		ICECCallbacks callbacks;
 		memset(&callbacks, 0, sizeof(ICECCallbacks));
 		
@@ -113,12 +128,61 @@ static void CBCecSourceActivated(void *param, const cec_logical_address logicalA
 		callbacks.CBCecSourceActivated = CBCecSourceActivated;
 		
 		retCode = cec_enable_callbacks((__bridge void *)self, &callbacks);
-		if (retCode < 1)
-			NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"CEC callbacks failed");
-		
+		if (retCode < 1) {
+			if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"CEC callbacks failed");
+			return nil;
+		}
+
+		[self checkForDevices:nil];
+		if (!self.hasConnection)
+			[self startDevicePolling];
 	}
 	
 	return self;
+}
+
+-(void)dealloc {
+	[self stopDevicePolling];
+	cec_close();
+	cec_destroy();
+}
+
+#pragma mark - Device Detection
+
+-(void)startDevicePolling {
+
+	[self stopDevicePolling];
+	self.pollTimer = [NSTimer scheduledTimerWithTimeInterval:kDevicePollInterval
+													  target:self
+													selector:@selector(checkForDevices:)
+													userInfo:nil
+													 repeats:YES];
+
+}
+
+-(void)stopDevicePolling {
+	[self.pollTimer invalidate];
+	self.pollTimer = nil;
+}
+
+-(void)checkForDevices:(NSTimer *)timer {
+
+	cec_adapter deviceList;
+	memset(&deviceList, 0, sizeof(cec_adapter));
+	int retCode = cec_find_adapters(&deviceList, 1, NULL);
+
+	if (retCode < 0) {
+		if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: Failed with %u", NSStringFromClass([self class]), NSStringFromSelector(_cmd), retCode);
+	} else if (retCode > 0) {
+
+		retCode = cec_open(deviceList.path, CEC_DEFAULT_CONNECT_TIMEOUT);
+		if (retCode > 0) {
+			self.hasConnection = YES;
+			[self stopDevicePolling];
+		}
+	} else {
+		if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"No devices found.");
+	}
 }
 
 @end
