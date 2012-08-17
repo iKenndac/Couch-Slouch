@@ -45,7 +45,7 @@
 		503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E715DD8221007F2F3E /* serversocket.cpp */; };
 		503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575315DD845B007F2F3E /* IOKit.framework */; };
 		503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575515DD848E007F2F3E /* QuartzCore.framework */; };
-		503F575D15DD9148007F2F3E /* DKCECController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503F575C15DD9148007F2F3E /* DKCECController.mm */; };
+		503F575D15DD9148007F2F3E /* DKCECController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F575C15DD9148007F2F3E /* DKCECController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,7 +148,7 @@
 		503F575315DD845B007F2F3E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		503F575515DD848E007F2F3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		503F575B15DD9148007F2F3E /* DKCECController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECController.h; sourceTree = "<group>"; };
-		503F575C15DD9148007F2F3E /* DKCECController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DKCECController.mm; sourceTree = "<group>"; };
+		503F575C15DD9148007F2F3E /* DKCECController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +210,7 @@
 				503F565F15DD8179007F2F3E /* DKAppDelegate.m */,
 				503F566115DD8179007F2F3E /* MainMenu.xib */,
 				503F575B15DD9148007F2F3E /* DKCECController.h */,
-				503F575C15DD9148007F2F3E /* DKCECController.mm */,
+				503F575C15DD9148007F2F3E /* DKCECController.m */,
 				503F566915DD819B007F2F3E /* libCEC */,
 				503F565315DD8179007F2F3E /* Supporting Files */,
 			);
@@ -538,7 +538,7 @@
 				503F574815DD8221007F2F3E /* os-edid.cpp in Sources */,
 				503F574915DD8221007F2F3E /* serialport.cpp in Sources */,
 				503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */,
-				503F575D15DD9148007F2F3E /* DKCECController.mm in Sources */,
+				503F575D15DD9148007F2F3E /* DKCECController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
