@@ -46,6 +46,14 @@
 		503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575315DD845B007F2F3E /* IOKit.framework */; };
 		503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575515DD848E007F2F3E /* QuartzCore.framework */; };
 		503F575D15DD9148007F2F3E /* DKCECController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F575C15DD9148007F2F3E /* DKCECController.m */; };
+		5055C7C715DF9EE800B6B497 /* DKCECWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7C515DF9EE800B6B497 /* DKCECWindowController.m */; };
+		5055C7CA15DF9EF800B6B497 /* DKCECWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5055C7CC15DF9EF800B6B497 /* DKCECWindowController.xib */; };
+		5055C7D415DFA5EB00B6B497 /* DKKeybindsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7D215DFA5EB00B6B497 /* DKKeybindsViewController.m */; };
+		5055C7D915DFA5FA00B6B497 /* DKBehavioursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7D715DFA5FA00B6B497 /* DKBehavioursViewController.m */; };
+		5055C7DE15DFA60600B6B497 /* DKSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7DC15DFA60600B6B497 /* DKSetupViewController.m */; };
+		5055C7E015DFA60E00B6B497 /* DKSetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5055C7E215DFA60E00B6B497 /* DKSetupViewController.xib */; };
+		5055C7E315DFA61200B6B497 /* DKBehavioursViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5055C7E515DFA61200B6B497 /* DKBehavioursViewController.xib */; };
+		5055C7E615DFA61600B6B497 /* DKKeybindsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5055C7E815DFA61600B6B497 /* DKKeybindsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +157,18 @@
 		503F575515DD848E007F2F3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		503F575B15DD9148007F2F3E /* DKCECController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECController.h; sourceTree = "<group>"; };
 		503F575C15DD9148007F2F3E /* DKCECController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECController.m; sourceTree = "<group>"; };
+		5055C7C415DF9EE800B6B497 /* DKCECWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECWindowController.h; sourceTree = "<group>"; };
+		5055C7C515DF9EE800B6B497 /* DKCECWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECWindowController.m; sourceTree = "<group>"; };
+		5055C7CB15DF9EF800B6B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKCECWindowController.xib; sourceTree = "<group>"; };
+		5055C7D115DFA5EB00B6B497 /* DKKeybindsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKKeybindsViewController.h; sourceTree = "<group>"; };
+		5055C7D215DFA5EB00B6B497 /* DKKeybindsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKKeybindsViewController.m; sourceTree = "<group>"; };
+		5055C7D615DFA5FA00B6B497 /* DKBehavioursViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBehavioursViewController.h; sourceTree = "<group>"; };
+		5055C7D715DFA5FA00B6B497 /* DKBehavioursViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBehavioursViewController.m; sourceTree = "<group>"; };
+		5055C7DB15DFA60600B6B497 /* DKSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKSetupViewController.h; sourceTree = "<group>"; };
+		5055C7DC15DFA60600B6B497 /* DKSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKSetupViewController.m; sourceTree = "<group>"; };
+		5055C7E115DFA60E00B6B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKSetupViewController.xib; sourceTree = "<group>"; };
+		5055C7E415DFA61200B6B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKBehavioursViewController.xib; sourceTree = "<group>"; };
+		5055C7E715DFA61600B6B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKKeybindsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +231,7 @@
 				503F566115DD8179007F2F3E /* MainMenu.xib */,
 				503F575B15DD9148007F2F3E /* DKCECController.h */,
 				503F575C15DD9148007F2F3E /* DKCECController.m */,
+				5055C7CD15DFA08900B6B497 /* UI */,
 				503F566915DD819B007F2F3E /* libCEC */,
 				503F565315DD8179007F2F3E /* Supporting Files */,
 			);
@@ -441,6 +462,49 @@
 			path = util;
 			sourceTree = "<group>";
 		};
+		5055C7CD15DFA08900B6B497 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5055C7C415DF9EE800B6B497 /* DKCECWindowController.h */,
+				5055C7C515DF9EE800B6B497 /* DKCECWindowController.m */,
+				5055C7CC15DF9EF800B6B497 /* DKCECWindowController.xib */,
+				5055C7CE15DFA5AC00B6B497 /* Keybinds */,
+				5055C7CF15DFA5B800B6B497 /* Behaviours */,
+				5055C7D015DFA5BE00B6B497 /* Setup */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		5055C7CE15DFA5AC00B6B497 /* Keybinds */ = {
+			isa = PBXGroup;
+			children = (
+				5055C7D115DFA5EB00B6B497 /* DKKeybindsViewController.h */,
+				5055C7D215DFA5EB00B6B497 /* DKKeybindsViewController.m */,
+				5055C7E815DFA61600B6B497 /* DKKeybindsViewController.xib */,
+			);
+			name = Keybinds;
+			sourceTree = "<group>";
+		};
+		5055C7CF15DFA5B800B6B497 /* Behaviours */ = {
+			isa = PBXGroup;
+			children = (
+				5055C7D615DFA5FA00B6B497 /* DKBehavioursViewController.h */,
+				5055C7D715DFA5FA00B6B497 /* DKBehavioursViewController.m */,
+				5055C7E515DFA61200B6B497 /* DKBehavioursViewController.xib */,
+			);
+			name = Behaviours;
+			sourceTree = "<group>";
+		};
+		5055C7D015DFA5BE00B6B497 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				5055C7DB15DFA60600B6B497 /* DKSetupViewController.h */,
+				5055C7DC15DFA60600B6B497 /* DKSetupViewController.m */,
+				5055C7E215DFA60E00B6B497 /* DKSetupViewController.xib */,
+			);
+			name = Setup;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -496,6 +560,10 @@
 				503F565715DD8179007F2F3E /* InfoPlist.strings in Resources */,
 				503F565D15DD8179007F2F3E /* Credits.rtf in Resources */,
 				503F566315DD8179007F2F3E /* MainMenu.xib in Resources */,
+				5055C7CA15DF9EF800B6B497 /* DKCECWindowController.xib in Resources */,
+				5055C7E615DFA61600B6B497 /* DKKeybindsViewController.xib in Resources */,
+				5055C7E315DFA61200B6B497 /* DKBehavioursViewController.xib in Resources */,
+				5055C7E015DFA60E00B6B497 /* DKSetupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +607,10 @@
 				503F574915DD8221007F2F3E /* serialport.cpp in Sources */,
 				503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */,
 				503F575D15DD9148007F2F3E /* DKCECController.m in Sources */,
+				5055C7C715DF9EE800B6B497 /* DKCECWindowController.m in Sources */,
+				5055C7D415DFA5EB00B6B497 /* DKKeybindsViewController.m in Sources */,
+				5055C7D915DFA5FA00B6B497 /* DKBehavioursViewController.m in Sources */,
+				5055C7DE15DFA60600B6B497 /* DKSetupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +639,38 @@
 				503F566215DD8179007F2F3E /* en */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		5055C7CC15DF9EF800B6B497 /* DKCECWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5055C7CB15DF9EF800B6B497 /* en */,
+			);
+			name = DKCECWindowController.xib;
+			sourceTree = "<group>";
+		};
+		5055C7E215DFA60E00B6B497 /* DKSetupViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5055C7E115DFA60E00B6B497 /* en */,
+			);
+			name = DKSetupViewController.xib;
+			sourceTree = "<group>";
+		};
+		5055C7E515DFA61200B6B497 /* DKBehavioursViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5055C7E415DFA61200B6B497 /* en */,
+			);
+			name = DKBehavioursViewController.xib;
+			sourceTree = "<group>";
+		};
+		5055C7E815DFA61600B6B497 /* DKKeybindsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5055C7E715DFA61600B6B497 /* en */,
+			);
+			name = DKKeybindsViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
