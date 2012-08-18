@@ -46,14 +46,15 @@ static NSString * const kLocalKeyCodeKey = @"keyboardCode";
 }
 
 -(void)performActionWithKeyPress:(cec_keypress)keyPress {
-	CGEventRef down = CGEventCreateKeyboardEvent (NULL, self.localKeyCode, true);
-	CGEventRef up = CGEventCreateKeyboardEvent (NULL, self.localKeyCode, false);
+	CGEventRef down = CGEventCreateKeyboardEvent(NULL, self.localKeyCode, true);
+	CGEventRef up = CGEventCreateKeyboardEvent(NULL, self.localKeyCode, false);
 
 	CGEventPost(kCGHIDEventTap, down);
 	CGEventPost(kCGHIDEventTap, up);
 
 	CFRelease(down);
 	CFRelease(up);
+	// TODO: Take keyboard layouts into account. Shortcut Recorder has sample code.
 }
 
 -(BOOL)matchesKeyPress:(cec_keypress)keyPress {

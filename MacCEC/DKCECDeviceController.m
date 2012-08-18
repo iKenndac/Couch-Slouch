@@ -216,13 +216,12 @@ static dispatch_queue_t cec_global_queue;
 			retCode = cec_open(deviceList.path, CEC_DEFAULT_CONNECT_TIMEOUT);
 			if (retCode > 0) {
 				dispatch_async(dispatch_get_main_queue(), ^{
+					if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"Found device.");
 					self.hasConnection = YES;
 					[self stopDevicePolling];
 					[self startDevicePinging];
 				});
 			}
-		} else {
-			if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"No devices found.");
 		}
 	});
 }
