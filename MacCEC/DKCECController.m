@@ -249,7 +249,10 @@ static dispatch_queue_t cec_global_queue;
 	dispatch_async([DKCECController cecQueue], ^{
 		
 		int retCode = cec_ping_adapters();
-		if (retCode == 1) return;
+		if (retCode == 1) {
+			if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"Adapter ping successful.");
+			return;
+		}
 
 		if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"Connection lost.");
 		cec_close();
