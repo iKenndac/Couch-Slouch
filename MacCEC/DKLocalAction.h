@@ -15,7 +15,6 @@
 -(id)propertyListRepresentation;
 
 -(void)performActionWithKeyPress:(cec_keypress)keyPress;
-
 -(BOOL)matchesKeyPress:(cec_keypress)keyPress;
 
 @end

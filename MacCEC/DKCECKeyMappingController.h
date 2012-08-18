@@ -30,6 +30,11 @@
 -(id)initWithPropertyListRepresentation:(NSDictionary *)plist;
 -(NSDictionary *)propertyListRepresentation;
 
+-(void)addAction:(id <DKLocalAction>)action;
+-(void)removeAction:(id <DKLocalAction>)action;
+-(void)addActions:(NSArray *)actions;
+-(void)removeActions:(NSArray *)actions;
+
 @property (nonatomic, readwrite, copy) NSString *applicationIdentifier;
 @property (nonatomic, readonly, copy) NSString *lastKnownName;
 @property (nonatomic, readonly, copy) NSArray *actions;

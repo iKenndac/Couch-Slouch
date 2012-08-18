@@ -55,6 +55,7 @@
 		5055C7E315DFA61200B6B497 /* DKBehavioursViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5055C7E515DFA61200B6B497 /* DKBehavioursViewController.xib */; };
 		5055C7E615DFA61600B6B497 /* DKKeybindsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5055C7E815DFA61600B6B497 /* DKKeybindsViewController.xib */; };
 		5055C7EC15DFB54C00B6B497 /* DKCECKeyMappingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */; };
+		5055C80115DFF18800B6B497 /* DKSingleKeypressLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C80015DFF18800B6B497 /* DKSingleKeypressLocalAction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,6 +174,8 @@
 		5055C7EA15DFB54C00B6B497 /* DKCECKeyMappingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECKeyMappingController.h; sourceTree = "<group>"; };
 		5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECKeyMappingController.m; sourceTree = "<group>"; };
 		5055C7ED15DFB60F00B6B497 /* DKLocalAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKLocalAction.h; sourceTree = "<group>"; };
+		5055C7FF15DFF18800B6B497 /* DKSingleKeypressLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKSingleKeypressLocalAction.h; sourceTree = "<group>"; };
+		5055C80015DFF18800B6B497 /* DKSingleKeypressLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKSingleKeypressLocalAction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,6 +519,8 @@
 				5055C7EA15DFB54C00B6B497 /* DKCECKeyMappingController.h */,
 				5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */,
 				5055C7ED15DFB60F00B6B497 /* DKLocalAction.h */,
+				5055C7FF15DFF18800B6B497 /* DKSingleKeypressLocalAction.h */,
+				5055C80015DFF18800B6B497 /* DKSingleKeypressLocalAction.m */,
 			);
 			name = CEC;
 			sourceTree = "<group>";
@@ -627,6 +632,7 @@
 				5055C7D915DFA5FA00B6B497 /* DKBehavioursViewController.m in Sources */,
 				5055C7DE15DFA60600B6B497 /* DKSetupViewController.m in Sources */,
 				5055C7EC15DFB54C00B6B497 /* DKCECKeyMappingController.m in Sources */,
+				5055C80115DFF18800B6B497 /* DKSingleKeypressLocalAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

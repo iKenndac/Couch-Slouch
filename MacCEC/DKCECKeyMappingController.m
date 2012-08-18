@@ -185,4 +185,22 @@ static NSString * const kLocalActionClassKey = @"class";
 	return nil;
 }
 
+-(void)addAction:(id <DKLocalAction>)action {
+	if (action) [self addActions:@[action]];
+}
+
+-(void)removeAction:(id <DKLocalAction>)action {
+	if (action) [self removeActions:@[action]];
+}
+
+-(void)addActions:(NSArray *)actions {
+	self.actions = [self.actions arrayByAddingObjectsFromArray:actions];
+}
+
+-(void)removeActions:(NSArray *)actions {
+	NSMutableArray *mutableActions = [self.actions mutableCopy];
+	[mutableActions removeObjectsInArray:actions];
+	self.actions = [NSArray arrayWithArray:mutableActions];
+}
+
 @end
