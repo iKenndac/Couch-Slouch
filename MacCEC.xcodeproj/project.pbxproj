@@ -45,7 +45,7 @@
 		503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E715DD8221007F2F3E /* serversocket.cpp */; };
 		503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575315DD845B007F2F3E /* IOKit.framework */; };
 		503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575515DD848E007F2F3E /* QuartzCore.framework */; };
-		503F575D15DD9148007F2F3E /* DKCECController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F575C15DD9148007F2F3E /* DKCECController.m */; };
+		503F575D15DD9148007F2F3E /* DKCECDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F575C15DD9148007F2F3E /* DKCECDeviceController.m */; };
 		5055C7C715DF9EE800B6B497 /* DKCECWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7C515DF9EE800B6B497 /* DKCECWindowController.m */; };
 		5055C7CA15DF9EF800B6B497 /* DKCECWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5055C7CC15DF9EF800B6B497 /* DKCECWindowController.xib */; };
 		5055C7D415DFA5EB00B6B497 /* DKKeybindsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7D215DFA5EB00B6B497 /* DKKeybindsViewController.m */; };
@@ -54,6 +54,7 @@
 		5055C7E015DFA60E00B6B497 /* DKSetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5055C7E215DFA60E00B6B497 /* DKSetupViewController.xib */; };
 		5055C7E315DFA61200B6B497 /* DKBehavioursViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5055C7E515DFA61200B6B497 /* DKBehavioursViewController.xib */; };
 		5055C7E615DFA61600B6B497 /* DKKeybindsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5055C7E815DFA61600B6B497 /* DKKeybindsViewController.xib */; };
+		5055C7EC15DFB54C00B6B497 /* DKCECKeyMappingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,8 +156,8 @@
 		503F56F615DD8221007F2F3E /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		503F575315DD845B007F2F3E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		503F575515DD848E007F2F3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		503F575B15DD9148007F2F3E /* DKCECController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECController.h; sourceTree = "<group>"; };
-		503F575C15DD9148007F2F3E /* DKCECController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECController.m; sourceTree = "<group>"; };
+		503F575B15DD9148007F2F3E /* DKCECDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECDeviceController.h; sourceTree = "<group>"; };
+		503F575C15DD9148007F2F3E /* DKCECDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECDeviceController.m; sourceTree = "<group>"; };
 		5055C7C415DF9EE800B6B497 /* DKCECWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECWindowController.h; sourceTree = "<group>"; };
 		5055C7C515DF9EE800B6B497 /* DKCECWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECWindowController.m; sourceTree = "<group>"; };
 		5055C7CB15DF9EF800B6B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKCECWindowController.xib; sourceTree = "<group>"; };
@@ -169,6 +170,9 @@
 		5055C7E115DFA60E00B6B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKSetupViewController.xib; sourceTree = "<group>"; };
 		5055C7E415DFA61200B6B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKBehavioursViewController.xib; sourceTree = "<group>"; };
 		5055C7E715DFA61600B6B497 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKKeybindsViewController.xib; sourceTree = "<group>"; };
+		5055C7EA15DFB54C00B6B497 /* DKCECKeyMappingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECKeyMappingController.h; sourceTree = "<group>"; };
+		5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECKeyMappingController.m; sourceTree = "<group>"; };
+		5055C7ED15DFB60F00B6B497 /* DKLocalAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKLocalAction.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,9 +233,8 @@
 				503F565E15DD8179007F2F3E /* DKAppDelegate.h */,
 				503F565F15DD8179007F2F3E /* DKAppDelegate.m */,
 				503F566115DD8179007F2F3E /* MainMenu.xib */,
-				503F575B15DD9148007F2F3E /* DKCECController.h */,
-				503F575C15DD9148007F2F3E /* DKCECController.m */,
 				5055C7CD15DFA08900B6B497 /* UI */,
+				5055C7E915DFB4F000B6B497 /* CEC */,
 				503F566915DD819B007F2F3E /* libCEC */,
 				503F565315DD8179007F2F3E /* Supporting Files */,
 			);
@@ -505,6 +508,18 @@
 			name = Setup;
 			sourceTree = "<group>";
 		};
+		5055C7E915DFB4F000B6B497 /* CEC */ = {
+			isa = PBXGroup;
+			children = (
+				503F575B15DD9148007F2F3E /* DKCECDeviceController.h */,
+				503F575C15DD9148007F2F3E /* DKCECDeviceController.m */,
+				5055C7EA15DFB54C00B6B497 /* DKCECKeyMappingController.h */,
+				5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */,
+				5055C7ED15DFB60F00B6B497 /* DKLocalAction.h */,
+			);
+			name = CEC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -606,11 +621,12 @@
 				503F574815DD8221007F2F3E /* os-edid.cpp in Sources */,
 				503F574915DD8221007F2F3E /* serialport.cpp in Sources */,
 				503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */,
-				503F575D15DD9148007F2F3E /* DKCECController.m in Sources */,
+				503F575D15DD9148007F2F3E /* DKCECDeviceController.m in Sources */,
 				5055C7C715DF9EE800B6B497 /* DKCECWindowController.m in Sources */,
 				5055C7D415DFA5EB00B6B497 /* DKKeybindsViewController.m in Sources */,
 				5055C7D915DFA5FA00B6B497 /* DKBehavioursViewController.m in Sources */,
 				5055C7DE15DFA60600B6B497 /* DKSetupViewController.m in Sources */,
+				5055C7EC15DFB54C00B6B497 /* DKCECKeyMappingController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,26 +9,26 @@
 #import <Foundation/Foundation.h>
 #import "cectypes.h"
 
-@class DKCECController;
+@class DKCECDeviceController;
 
-@protocol DKCECControllerDelegate <NSObject>
+@protocol DKCECDeviceControllerDelegate <NSObject>
 @optional
 
--(void)cecController:(DKCECController *)controller didLogMessage:(NSString *)message ofSeverity:(cec_log_level)logLevel;
--(void)cecController:(DKCECController *)controller didReceiveKeyPress:(cec_keypress)keyPress;
--(void)cecController:(DKCECController *)controller didReceiveCommand:(cec_command)command;
--(void)cecController:(DKCECController *)controller didReceiveAlert:(libcec_alert)alert forParamter:(libcec_parameter)parameter;
--(void)cecController:(DKCECController *)controller activationDidChangeForLogicalDevice:(cec_logical_address)device toState:(BOOL)activated;
+-(void)cecController:(DKCECDeviceController *)controller didLogMessage:(NSString *)message ofSeverity:(cec_log_level)logLevel;
+-(void)cecController:(DKCECDeviceController *)controller didReceiveKeyPress:(cec_keypress)keyPress;
+-(void)cecController:(DKCECDeviceController *)controller didReceiveCommand:(cec_command)command;
+-(void)cecController:(DKCECDeviceController *)controller didReceiveAlert:(libcec_alert)alert forParamter:(libcec_parameter)parameter;
+-(void)cecController:(DKCECDeviceController *)controller activationDidChangeForLogicalDevice:(cec_logical_address)device toState:(BOOL)activated;
 
 @end
 
-@interface DKCECController : NSObject
+@interface DKCECDeviceController : NSObject
 
 -(id)initWithDeviceName:(NSString *)name;
 
 @property (nonatomic, readonly) cec_menu_state menuState;
 @property (nonatomic, readonly) libcec_configuration configuration;
-@property (nonatomic, readwrite, weak) id <DKCECControllerDelegate> delegate;
+@property (nonatomic, readwrite, weak) id <DKCECDeviceControllerDelegate> delegate;
 @property (nonatomic, readonly) BOOL hasConnection;
 
 // ----

@@ -12,7 +12,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	self.cecController = [DKCECController new];
+	self.cecController = [DKCECDeviceController new];
 	self.cecController.delegate = self;
 
 	self.windowController = [DKCECWindowController new];

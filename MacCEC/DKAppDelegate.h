@@ -7,12 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "DKCECController.h"
+#import "DKCECDeviceController.h"
 #import "DKCECWindowController.h"
 
-@interface DKAppDelegate : NSObject <NSApplicationDelegate, DKCECControllerDelegate>
+@interface DKAppDelegate : NSObject <NSApplicationDelegate, DKCECDeviceControllerDelegate>
 
-@property (nonatomic, strong, readwrite) DKCECController *cecController;
+@property (nonatomic, strong, readwrite) DKCECDeviceController *cecController;
 @property (nonatomic, strong, readwrite) DKCECWindowController *windowController;
 
 @end
