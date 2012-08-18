@@ -49,13 +49,12 @@
 		[self.window.contentView addSubview:_currentViewController.view];
 
 		NSView *contentView = self.window.contentView;
-		[contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[view(>=0)]-0-|"
+		[contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[view]-0-|"
 																			options:NSLayoutAttributeBaseline | NSLayoutFormatDirectionLeadingToTrailing
 																			metrics:nil
 																			  views:@{@"view": _currentViewController.view}]];
 
-		
-		[contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view(>=0)]-0-|"
+		[contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|"
 																			options:NSLayoutAttributeBaseline | NSLayoutFormatDirectionLeadingToTrailing
 																			metrics:nil
 																			  views:@{@"view": _currentViewController.view}]];
