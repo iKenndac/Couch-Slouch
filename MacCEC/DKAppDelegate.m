@@ -7,6 +7,14 @@
 //
 
 #import "DKAppDelegate.h"
+#import "DKCECKeyMappingController.h"
+#import "DKSingleKeypressLocalAction.h"
+
+@interface DKAppDelegate ()
+
+@property (readwrite, nonatomic, copy) NSString *targetApplicationIdentifier;
+
+@end
 
 @implementation DKAppDelegate
 
@@ -16,12 +24,42 @@
 	self.cecController.delegate = self;
 
 	self.windowController = [DKCECWindowController new];
+	
+	for (NSRunningApplication *app in [[NSWorkspace sharedWorkspace] runningApplications]) {
+		if (app.active) {
+			self.targetApplicationIdentifier = app.bundleIdentifier;
+			break;
+		}
+	}
 
+	[[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
+														   selector:@selector(applicationDidActivate:)
+															   name:NSWorkspaceDidActivateApplicationNotification
+															 object:nil];
 }
 
 -(BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {
 	[self.windowController showWindow:nil];
     return YES;
+}
+
+#pragma mark - Key Mapping
+
+-(void)applicationDidActivate:(NSNotification *)notification {
+	NSRunningApplication *app = [notification.userInfo valueForKey:NSWorkspaceApplicationKey];
+	self.targetApplicationIdentifier = app.bundleIdentifier;
+}
+
+-(void)cecController:(DKCECDeviceController *)controller didReceiveKeyPress:(cec_keypress)keyPress {
+
+	DKCECKeyMappingController *keyMapper = [DKCECKeyMappingController sharedController];
+	DKCECKeyMapping *appMapping = [keyMapper keyMappingForApplicationWithIdentifier:self.targetApplicationIdentifier];
+	id <DKLocalAction> action = [appMapping actionForKeyPress:keyPress];
+
+	if (action != nil)
+		[action performActionWithKeyPress:keyPress];
+	else
+		[[[keyMapper baseMapping] actionForKeyPress:keyPress] performActionWithKeyPress:keyPress];
 }
 
 
