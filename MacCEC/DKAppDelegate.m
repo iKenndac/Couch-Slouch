@@ -16,11 +16,11 @@
 	self.cecController.delegate = self;
 
 	self.windowController = [DKCECWindowController new];
-	[self.windowController showWindow:nil];
 
 }
 
 -(BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {
+	[self.windowController showWindow:nil];
     return YES;
 }
 
