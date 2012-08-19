@@ -56,6 +56,9 @@
 		5055C7E615DFA61600B6B497 /* DKKeybindsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5055C7E815DFA61600B6B497 /* DKKeybindsViewController.xib */; };
 		5055C7EC15DFB54C00B6B497 /* DKCECKeyMappingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */; };
 		5055C80115DFF18800B6B497 /* DKSingleKeypressLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C80015DFF18800B6B497 /* DKSingleKeypressLocalAction.m */; };
+		50AE64E515E15967006E7DA9 /* KNStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */; };
+		50AE64E815E1597D006E7DA9 /* KNGradientExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */; };
+		50AE64EB15E15CB2006E7DA9 /* KNEmbossedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +179,12 @@
 		5055C7ED15DFB60F00B6B497 /* DKLocalAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKLocalAction.h; sourceTree = "<group>"; };
 		5055C7FF15DFF18800B6B497 /* DKSingleKeypressLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKSingleKeypressLocalAction.h; sourceTree = "<group>"; };
 		5055C80015DFF18800B6B497 /* DKSingleKeypressLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKSingleKeypressLocalAction.m; sourceTree = "<group>"; };
+		50AE64E315E1590C006E7DA9 /* KNStatusBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KNStatusBarView.h; path = KNSharedCodeRepository/Views/KNStatusBarView.h; sourceTree = SOURCE_ROOT; };
+		50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KNStatusBarView.m; path = KNSharedCodeRepository/Views/KNStatusBarView.m; sourceTree = SOURCE_ROOT; };
+		50AE64E615E1597D006E7DA9 /* KNGradientExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KNGradientExtensions.h; path = KNSharedCodeRepository/Extensions/KNGradientExtensions.h; sourceTree = SOURCE_ROOT; };
+		50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KNGradientExtensions.m; path = KNSharedCodeRepository/Extensions/KNGradientExtensions.m; sourceTree = SOURCE_ROOT; };
+		50AE64E915E15CB2006E7DA9 /* KNEmbossedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KNEmbossedTextField.h; path = KNSharedCodeRepository/Controls/KNEmbossedTextField.h; sourceTree = SOURCE_ROOT; };
+		50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KNEmbossedTextField.m; path = KNSharedCodeRepository/Controls/KNEmbossedTextField.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +248,12 @@
 				5055C7CD15DFA08900B6B497 /* UI */,
 				5055C7E915DFB4F000B6B497 /* CEC */,
 				503F566915DD819B007F2F3E /* libCEC */,
+				50AE64E615E1597D006E7DA9 /* KNGradientExtensions.h */,
+				50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */,
+				50AE64E315E1590C006E7DA9 /* KNStatusBarView.h */,
+				50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */,
+				50AE64E915E15CB2006E7DA9 /* KNEmbossedTextField.h */,
+				50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */,
 				503F565315DD8179007F2F3E /* Supporting Files */,
 			);
 			path = MacCEC;
@@ -633,6 +648,9 @@
 				5055C7DE15DFA60600B6B497 /* DKSetupViewController.m in Sources */,
 				5055C7EC15DFB54C00B6B497 /* DKCECKeyMappingController.m in Sources */,
 				5055C80115DFF18800B6B497 /* DKSingleKeypressLocalAction.m in Sources */,
+				50AE64E515E15967006E7DA9 /* KNStatusBarView.m in Sources */,
+				50AE64E815E1597D006E7DA9 /* KNGradientExtensions.m in Sources */,
+				50AE64EB15E15CB2006E7DA9 /* KNEmbossedTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

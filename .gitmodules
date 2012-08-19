@@ -1,3 +1,6 @@
 [submodule "libcec"]
 	path = libcec
 	url = git://github.com/iKenndac/libcec.git
+[submodule "KNSharedCodeRepository"]
+	path = KNSharedCodeRepository
+	url = git://github.com/iKenndac/KNSharedCodeRepository.git
