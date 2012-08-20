@@ -36,6 +36,20 @@
 														   selector:@selector(applicationDidActivate:)
 															   name:NSWorkspaceDidActivateApplicationNotification
 															 object:nil];
+
+	DKCECKeyMapping *base = [[DKCECKeyMappingController sharedController] baseMapping];
+
+	[base removeActions:base.actions];
+	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"↑" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_UP]];
+	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"↓" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_DOWN]];
+	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"←" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_LEFT]];
+	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"→" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_RIGHT]];
+	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"↩" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_SELECT]];
+	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"⎋" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_EXIT]];
+	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"Space" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_PAUSE]];
+
+	[[DKCECKeyMappingController sharedController] duplicateMapping:base withNewApplicationIdentifier:@"com.plexapp.plex"];
+	
 }
 
 -(BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {

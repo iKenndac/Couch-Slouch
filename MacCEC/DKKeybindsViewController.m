@@ -7,12 +7,15 @@
 //
 
 #import "DKKeybindsViewController.h"
+#import "SRRecorderControl.h"
+#import "SRKeyCodeTransformer.h"
 
 @interface DKKeybindsViewController ()
 
 @end
 
 @implementation DKKeybindsViewController
+@synthesize recorder;
 @synthesize sourceList;
 @synthesize openPanelView;
 
@@ -45,6 +48,7 @@
 
 -(void)awakeFromNib {
 	[self tableViewSelectionDidChange:nil];
+	[self.recorder setAllowsKeyOnly:YES escapeKeysRecord:YES];
 }
 
 #pragma mark -
@@ -119,6 +123,20 @@
 
 		return NO;
 	}
+}
+
+#pragma mark -
+
+- (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder isKeyCode:(NSInteger)keyCode andFlagsTaken:(NSUInteger)flags reason:(NSString **)aReason {
+	return NO;
+}
+
+- (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo {
+	SRKeyCodeTransformer *trans = [SRKeyCodeTransformer new];
+	NSString *translated = [trans transformedValue:@(newKeyCombo.code)];
+	NSNumber *back = [trans reverseTransformedValue:translated];
+	NSLog(@"[%@ %@]: %@ -> %@ -> %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @(newKeyCombo.code), translated, back);
+	
 }
 
 #pragma mark - TableView

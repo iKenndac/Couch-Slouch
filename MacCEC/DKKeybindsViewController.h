@@ -8,12 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 #import "DKCECKeyMappingController.h"
+#import "SRRecorderControl.h"
 
 @interface DKKeybindsViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource, NSOpenSavePanelDelegate>
 
 @property (nonatomic, readwrite, strong) DKCECKeyMapping *currentMapping;
 @property (nonatomic, readwrite, strong) DKCECKeyMapping *chosenSourceMapping;
 @property (nonatomic, readonly) NSArray *flattenedMappingList;
+@property (weak) IBOutlet SRRecorderControl *recorder;
 
 @property (weak) IBOutlet NSTableView *sourceList;
 @property (strong) IBOutlet NSView *openPanelView;
