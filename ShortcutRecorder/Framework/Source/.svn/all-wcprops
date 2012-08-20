@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/89/trunk/Framework/Source
+END
+SRValidator.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/64/trunk/Framework/Source/SRValidator.h
+END
+SRRecorderCell.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/64/trunk/Framework/Source/SRRecorderCell.h
+END
+SRRecorderControl.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/64/trunk/Framework/Source/SRRecorderControl.h
+END
+SRKeyCodeTransformer.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/64/trunk/Framework/Source/SRKeyCodeTransformer.h
+END
+SRCommon.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/64/trunk/Framework/Source/SRCommon.h
+END
+SRRecorderCell.m
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/89/trunk/Framework/Source/SRRecorderCell.m
+END
+SRValidator.m
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/64/trunk/Framework/Source/SRValidator.m
+END
+SRRecorderControl.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/75/trunk/Framework/Source/SRRecorderControl.m
+END
+SRKeyCodeTransformer.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/64/trunk/Framework/Source/SRKeyCodeTransformer.m
+END
+SRCommon.m
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/64/trunk/Framework/Source/SRCommon.m
+END
