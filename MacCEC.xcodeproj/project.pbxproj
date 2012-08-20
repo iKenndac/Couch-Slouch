@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5017A2F015E2CBEF00B88FE6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5017A2F215E2CBEF00B88FE6 /* Localizable.strings */; };
+		5017A30315E2D85A00B88FE6 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FA15E2D85A00B88FE6 /* SRCommon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5017A30415E2D85A00B88FE6 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FC15E2D85A00B88FE6 /* SRKeyCodeTransformer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5017A30515E2D85A00B88FE6 /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FE15E2D85A00B88FE6 /* SRRecorderCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5017A30615E2D85A00B88FE6 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A30015E2D85A00B88FE6 /* SRRecorderControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5017A30715E2D85A00B88FE6 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A30215E2D85A00B88FE6 /* SRValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5017A30B15E2D93400B88FE6 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5017A30A15E2D93400B88FE6 /* Carbon.framework */; };
 		503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F564C15DD8179007F2F3E /* Cocoa.framework */; };
 		503F565715DD8179007F2F3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 503F565515DD8179007F2F3E /* InfoPlist.strings */; };
 		503F565915DD8179007F2F3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565815DD8179007F2F3E /* main.m */; };
@@ -64,6 +70,17 @@
 
 /* Begin PBXFileReference section */
 		5017A2F115E2CBEF00B88FE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5017A2F915E2D85A00B88FE6 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
+		5017A2FA15E2D85A00B88FE6 /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = "<group>"; };
+		5017A2FB15E2D85A00B88FE6 /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = "<group>"; };
+		5017A2FC15E2D85A00B88FE6 /* SRKeyCodeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRKeyCodeTransformer.m; sourceTree = "<group>"; };
+		5017A2FD15E2D85A00B88FE6 /* SRRecorderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderCell.h; sourceTree = "<group>"; };
+		5017A2FE15E2D85A00B88FE6 /* SRRecorderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderCell.m; sourceTree = "<group>"; };
+		5017A2FF15E2D85A00B88FE6 /* SRRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderControl.h; sourceTree = "<group>"; };
+		5017A30015E2D85A00B88FE6 /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = "<group>"; };
+		5017A30115E2D85A00B88FE6 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
+		5017A30215E2D85A00B88FE6 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
+		5017A30A15E2D93400B88FE6 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		503F564815DD8179007F2F3E /* MacCEC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacCEC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		503F564C15DD8179007F2F3E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		503F564F15DD8179007F2F3E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -194,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5017A30B15E2D93400B88FE6 /* Carbon.framework in Frameworks */,
 				503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */,
 				503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */,
 				503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */,
@@ -203,6 +221,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5017A2F815E2D85A00B88FE6 /* ShortcutRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				5017A2F915E2D85A00B88FE6 /* SRCommon.h */,
+				5017A2FA15E2D85A00B88FE6 /* SRCommon.m */,
+				5017A2FB15E2D85A00B88FE6 /* SRKeyCodeTransformer.h */,
+				5017A2FC15E2D85A00B88FE6 /* SRKeyCodeTransformer.m */,
+				5017A2FD15E2D85A00B88FE6 /* SRRecorderCell.h */,
+				5017A2FE15E2D85A00B88FE6 /* SRRecorderCell.m */,
+				5017A2FF15E2D85A00B88FE6 /* SRRecorderControl.h */,
+				5017A30015E2D85A00B88FE6 /* SRRecorderControl.m */,
+				5017A30115E2D85A00B88FE6 /* SRValidator.h */,
+				5017A30215E2D85A00B88FE6 /* SRValidator.m */,
+			);
+			name = ShortcutRecorder;
+			path = ShortcutRecorder/Framework/Source;
+			sourceTree = SOURCE_ROOT;
+		};
 		503F563D15DD8179007F2F3E = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +259,7 @@
 		503F564B15DD8179007F2F3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5017A30A15E2D93400B88FE6 /* Carbon.framework */,
 				503F575515DD848E007F2F3E /* QuartzCore.framework */,
 				503F575315DD845B007F2F3E /* IOKit.framework */,
 				503F564C15DD8179007F2F3E /* Cocoa.framework */,
@@ -250,6 +287,7 @@
 				5055C7CD15DFA08900B6B497 /* UI */,
 				5055C7E915DFB4F000B6B497 /* CEC */,
 				503F566915DD819B007F2F3E /* libCEC */,
+				5017A2F815E2D85A00B88FE6 /* ShortcutRecorder */,
 				50AE64E615E1597D006E7DA9 /* KNGradientExtensions.h */,
 				50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */,
 				50AE64E315E1590C006E7DA9 /* KNStatusBarView.h */,
@@ -655,6 +693,11 @@
 				50AE64E515E15967006E7DA9 /* KNStatusBarView.m in Sources */,
 				50AE64E815E1597D006E7DA9 /* KNGradientExtensions.m in Sources */,
 				50AE64EB15E15CB2006E7DA9 /* KNEmbossedTextField.m in Sources */,
+				5017A30315E2D85A00B88FE6 /* SRCommon.m in Sources */,
+				5017A30415E2D85A00B88FE6 /* SRKeyCodeTransformer.m in Sources */,
+				5017A30515E2D85A00B88FE6 /* SRRecorderCell.m in Sources */,
+				5017A30615E2D85A00B88FE6 /* SRRecorderControl.m in Sources */,
+				5017A30715E2D85A00B88FE6 /* SRValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

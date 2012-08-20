@@ -52,7 +52,9 @@
 
 -(void)cecController:(DKCECDeviceController *)controller didReceiveKeyPress:(cec_keypress)keyPress {
 
-	NSLog(@"Got keypress!");
+	NSLog(@"Got keypress with duration: %@", @(keyPress.duration));
+	if (keyPress.duration > 0)
+		return;
 
 	DKCECKeyMappingController *keyMapper = [DKCECKeyMappingController sharedController];
 	DKCECKeyMapping *appMapping = [keyMapper keyMappingForApplicationWithIdentifier:self.targetApplicationIdentifier];

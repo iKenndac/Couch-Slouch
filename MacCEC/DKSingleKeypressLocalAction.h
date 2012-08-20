@@ -12,9 +12,10 @@
 
 @interface DKSingleKeypressLocalAction : NSObject <DKLocalAction>
 
--(id)initWithLocalKeyCode:(CGKeyCode)keyCode forDeviceKeyCode:(cec_user_control_code)deviceCode;
+-(id)initWithLocalKey:(NSString *)key flags:(NSUInteger)flags forDeviceKeyCode:(cec_user_control_code)deviceCode;
 
 @property (nonatomic, readonly) cec_user_control_code deviceKeyCode;
-@property (nonatomic, readonly) CGKeyCode localKeyCode;
+@property (nonatomic, readonly, copy) NSString *localKey;
+@property (nonatomic, readonly) NSUInteger flags;
 
 @end

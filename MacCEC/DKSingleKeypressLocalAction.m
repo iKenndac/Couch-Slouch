@@ -7,54 +7,68 @@
 //
 
 #import "DKSingleKeypressLocalAction.h"
+#import "SRKeyCodeTransformer.h"
 
 static NSString * const kDeviceKeyCodeKey = @"deviceCode";
-static NSString * const kLocalKeyCodeKey = @"keyboardCode";
+static NSString * const kLocalKeyKey = @"keyboardKey";
+static NSString * const kLocalFlagsKey = @"flags";
+
+static SRKeyCodeTransformer *staticTransformer;
 
 @interface DKSingleKeypressLocalAction ()
 
 @property (nonatomic, readwrite) cec_user_control_code deviceKeyCode;
-@property (nonatomic, readwrite) CGKeyCode localKeyCode;
+@property (nonatomic, readwrite, copy) NSString *localKey;
+@property (nonatomic, readwrite) NSUInteger flags;
 
 @end
 
 @implementation DKSingleKeypressLocalAction
+
++(void)initialize {
+	staticTransformer = [SRKeyCodeTransformer new];
+}
 
 -(id)initWithPropertyListRepresentation:(id)plist {
 	self = [super init];
 
 	if (self) {
 		self.deviceKeyCode = [[plist valueForKey:kDeviceKeyCodeKey] integerValue];
-		self.localKeyCode = [[plist valueForKey:kLocalKeyCodeKey] integerValue];
+		self.localKey = [plist valueForKey:kLocalKeyKey];
+		self.flags = [[plist valueForKey:kLocalFlagsKey] unsignedIntegerValue];
 	}
 	return self;
 }
 
--(id)initWithLocalKeyCode:(CGKeyCode)keyCode forDeviceKeyCode:(cec_user_control_code)deviceCode {
+-(id)initWithLocalKey:(NSString *)key flags:(NSUInteger)flags forDeviceKeyCode:(cec_user_control_code)deviceCode {
 	self = [super init];
 
 	if (self) {
 		self.deviceKeyCode = deviceCode;
-		self.localKeyCode = keyCode;
+		self.localKey = key;
+		self.flags = flags;
 	}
 	return self;
 
 }
 
 -(id)propertyListRepresentation {
-	return @{ kDeviceKeyCodeKey : @(self.deviceKeyCode), kLocalKeyCodeKey : @(self.localKeyCode) };
+	return @{ kDeviceKeyCodeKey : @(self.deviceKeyCode), kLocalKeyKey : self.localKey, kLocalFlagsKey : @(self.flags) };
 }
 
 -(void)performActionWithKeyPress:(cec_keypress)keyPress {
-	CGEventRef down = CGEventCreateKeyboardEvent(NULL, self.localKeyCode, true);
-	CGEventRef up = CGEventCreateKeyboardEvent(NULL, self.localKeyCode, false);
+
+	CGKeyCode theMainKey = (CGKeyCode)[[staticTransformer reverseTransformedValue:self.localKey] integerValue];
+
+	CGEventRef down = CGEventCreateKeyboardEvent(NULL, theMainKey, true);
+	CGEventRef up = CGEventCreateKeyboardEvent(NULL, theMainKey, false);
 
 	CGEventPost(kCGHIDEventTap, down);
 	CGEventPost(kCGHIDEventTap, up);
 
 	CFRelease(down);
 	CFRelease(up);
-	// TODO: Take keyboard layouts into account. Shortcut Recorder has sample code.
+	// TODO: Modifiers
 }
 
 -(BOOL)matchesKeyPress:(cec_keypress)keyPress {
