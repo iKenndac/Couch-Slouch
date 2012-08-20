@@ -8,6 +8,7 @@
 
 #import "DKSingleKeypressLocalAction.h"
 #import "SRKeyCodeTransformer.h"
+#import "Constants.h"
 
 static NSString * const kDeviceKeyCodeKey = @"deviceCode";
 static NSString * const kLocalKeyKey = @"keyboardKey";
@@ -53,7 +54,10 @@ static SRKeyCodeTransformer *staticTransformer;
 }
 
 -(id)propertyListRepresentation {
-	return @{ kDeviceKeyCodeKey : @(self.deviceKeyCode), kLocalKeyKey : self.localKey, kLocalFlagsKey : @(self.flags) };
+	return @{ kDeviceKeyCodeKey : @(self.deviceKeyCode),
+	kLocalKeyKey : self.localKey,
+	kLocalFlagsKey : @(self.flags),
+	kLocalActionPlistRepClassKey : NSStringFromClass(self.class)};
 }
 
 -(void)performActionWithKeyPress:(cec_keypress)keyPress {

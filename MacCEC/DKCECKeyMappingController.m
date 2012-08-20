@@ -7,6 +7,7 @@
 //
 
 #import "DKCECKeyMappingController.h"
+#import "Constants.h"
 
 static NSString * const kBaseMappingUserDefaultsKey = @"BaseMapping";
 static NSString * const kAppMappingsUserDefaultsKey = @"ApplicationMappings";
@@ -100,7 +101,6 @@ static DKCECKeyMappingController *sharedController;
 static NSString * const kKeyMappingApplicationIdentifierKey = @"identifier";
 static NSString * const kKeyMappingLastKnownNameKey = @"name";
 static NSString * const kKeyMappingActionsKey = @"actions";
-static NSString * const kLocalActionClassKey = @"class";
 
 @interface DKCECKeyMapping ()
 
@@ -131,7 +131,7 @@ static NSString * const kLocalActionClassKey = @"class";
 
 		for (NSDictionary *dict in actionRepresentations) {
 
-			NSString *className = [dict valueForKey:kLocalActionClassKey];
+			NSString *className = [dict valueForKey:kLocalActionPlistRepClassKey];
 			Class actionClass = NSClassFromString(className);
 
 			if (actionClass != nil) {

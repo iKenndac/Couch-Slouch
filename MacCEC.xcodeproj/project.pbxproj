@@ -204,6 +204,7 @@
 		50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KNGradientExtensions.m; path = KNSharedCodeRepository/Extensions/KNGradientExtensions.m; sourceTree = SOURCE_ROOT; };
 		50AE64E915E15CB2006E7DA9 /* KNEmbossedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KNEmbossedTextField.h; path = KNSharedCodeRepository/Controls/KNEmbossedTextField.h; sourceTree = SOURCE_ROOT; };
 		50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KNEmbossedTextField.m; path = KNSharedCodeRepository/Controls/KNEmbossedTextField.m; sourceTree = SOURCE_ROOT; };
+		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +282,7 @@
 		503F565215DD8179007F2F3E /* MacCEC */ = {
 			isa = PBXGroup;
 			children = (
+				50ED687015E2EA2E0078261D /* Constants.h */,
 				503F565E15DD8179007F2F3E /* DKAppDelegate.h */,
 				503F565F15DD8179007F2F3E /* DKAppDelegate.m */,
 				503F566115DD8179007F2F3E /* MainMenu.xib */,
