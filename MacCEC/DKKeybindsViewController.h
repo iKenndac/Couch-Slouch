@@ -7,7 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "DKCECKeyMappingController.h"
 
-@interface DKKeybindsViewController : NSViewController
+@interface DKKeybindsViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource, NSOpenSavePanelDelegate>
+
+@property (nonatomic, readwrite, strong) DKCECKeyMapping *currentMapping;
+@property (nonatomic, readwrite, strong) DKCECKeyMapping *chosenSourceMapping;
+@property (nonatomic, readonly) NSArray *flattenedMappingList;
+
+@property (weak) IBOutlet NSTableView *sourceList;
+@property (strong) IBOutlet NSView *openPanelView;
+
+
+-(IBAction)addApplication:(id)sender;
 
 @end

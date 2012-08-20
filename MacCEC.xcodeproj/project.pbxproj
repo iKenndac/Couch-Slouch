@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5017A2F015E2CBEF00B88FE6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5017A2F215E2CBEF00B88FE6 /* Localizable.strings */; };
 		503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F564C15DD8179007F2F3E /* Cocoa.framework */; };
 		503F565715DD8179007F2F3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 503F565515DD8179007F2F3E /* InfoPlist.strings */; };
 		503F565915DD8179007F2F3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565815DD8179007F2F3E /* main.m */; };
@@ -62,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5017A2F115E2CBEF00B88FE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		503F564815DD8179007F2F3E /* MacCEC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacCEC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		503F564C15DD8179007F2F3E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		503F564F15DD8179007F2F3E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -262,6 +264,7 @@
 		503F565315DD8179007F2F3E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5017A2F215E2CBEF00B88FE6 /* Localizable.strings */,
 				503F565415DD8179007F2F3E /* MacCEC-Info.plist */,
 				503F565515DD8179007F2F3E /* InfoPlist.strings */,
 				503F565815DD8179007F2F3E /* main.m */,
@@ -599,6 +602,7 @@
 				5055C7E615DFA61600B6B497 /* DKKeybindsViewController.xib in Resources */,
 				5055C7E315DFA61200B6B497 /* DKBehavioursViewController.xib in Resources */,
 				5055C7E015DFA60E00B6B497 /* DKSetupViewController.xib in Resources */,
+				5017A2F015E2CBEF00B88FE6 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +661,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5017A2F215E2CBEF00B88FE6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5017A2F115E2CBEF00B88FE6 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		503F565515DD8179007F2F3E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

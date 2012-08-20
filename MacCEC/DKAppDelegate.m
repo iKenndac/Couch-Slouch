@@ -52,6 +52,8 @@
 
 -(void)cecController:(DKCECDeviceController *)controller didReceiveKeyPress:(cec_keypress)keyPress {
 
+	NSLog(@"Got keypress!");
+
 	DKCECKeyMappingController *keyMapper = [DKCECKeyMappingController sharedController];
 	DKCECKeyMapping *appMapping = [keyMapper keyMappingForApplicationWithIdentifier:self.targetApplicationIdentifier];
 	id <DKLocalAction> action = [appMapping actionForKeyPress:keyPress];

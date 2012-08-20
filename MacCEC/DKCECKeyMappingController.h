@@ -17,6 +17,7 @@
 +(DKCECKeyMappingController *)sharedController;
 
 @property (nonatomic, readonly, strong) DKCECKeyMapping *baseMapping;
+@property (nonatomic, readonly) NSArray *applicationMappings;
 
 -(DKCECKeyMapping *)keyMappingForApplicationWithIdentifier:(NSString *)appIdentifier;
 -(DKCECKeyMapping *)duplicateMapping:(DKCECKeyMapping *)mapping withNewApplicationIdentifier:(NSString *)appIdentifier;
@@ -38,5 +39,8 @@
 @property (nonatomic, readwrite, copy) NSString *applicationIdentifier;
 @property (nonatomic, readonly, copy) NSString *lastKnownName;
 @property (nonatomic, readonly, copy) NSArray *actions;
+
+@property (nonatomic, readonly, copy) NSString *displayName;
+@property (nonatomic, readonly, copy) NSImage *displayImage;
 
 @end

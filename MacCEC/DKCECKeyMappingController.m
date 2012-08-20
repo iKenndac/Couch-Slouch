@@ -23,7 +23,7 @@ static NSString * const kAppMappingsUserDefaultsKey = @"ApplicationMappings";
 static DKCECKeyMappingController *sharedController;
 
 +(DKCECKeyMappingController *)sharedController {
-	if (sharedController != nil)
+	if (sharedController == nil)
 		sharedController = [DKCECKeyMappingController new];
 	return sharedController;
 }
@@ -61,9 +61,11 @@ static DKCECKeyMappingController *sharedController;
 
 -(DKCECKeyMapping *)duplicateMapping:(DKCECKeyMapping *)mapping withNewApplicationIdentifier:(NSString *)appIdentifier {
 	if (appIdentifier.length == 0) return nil;
+	[self willChangeValueForKey:@"applicationMappings"];
 	DKCECKeyMapping *newMapping = [mapping copy];
 	newMapping.applicationIdentifier = appIdentifier;
 	[self.mappingStorage setValue:newMapping forKey:appIdentifier];
+	[self didChangeValueForKey:@"applicationMappings"];
 	[self performSelector:@selector(saveMappings) withObject:nil afterDelay:5.0];
 	return newMapping;
 }
@@ -84,6 +86,15 @@ static DKCECKeyMappingController *sharedController;
 	[defaults synchronize];
 }
 
+-(NSArray *)applicationMappings {
+	return [[self.mappingStorage allValues] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+		DKCECKeyMapping *mapping1 = obj1;
+		DKCECKeyMapping *mapping2 = obj2;
+		return ([mapping1.lastKnownName caseInsensitiveCompare:mapping2.lastKnownName]);
+	}];
+	//TODO: This API is slow and dumb
+}
+
 @end
 
 static NSString * const kKeyMappingApplicationIdentifierKey = @"identifier";
@@ -95,6 +106,7 @@ static NSString * const kLocalActionClassKey = @"class";
 
 @property (nonatomic, readwrite, copy) NSString *lastKnownName;
 @property (nonatomic, readwrite, copy) NSArray *actions;
+@property (nonatomic, readwrite, strong) NSImage *cachedDisplayImage;
 
 @end
 
@@ -158,6 +170,8 @@ static NSString * const kLocalActionClassKey = @"class";
 		NSString *bundleName = [[appBundle infoDictionary] valueForKey:(__bridge NSString *)kCFBundleNameKey];
 		if (bundleName.length > 0)
 			self.lastKnownName = bundleName;
+		else
+			self.lastKnownName = [[appPath lastPathComponent] stringByDeletingPathExtension];
 
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -201,6 +215,38 @@ static NSString * const kLocalActionClassKey = @"class";
 	NSMutableArray *mutableActions = [self.actions mutableCopy];
 	[mutableActions removeObjectsInArray:actions];
 	self.actions = [NSArray arrayWithArray:mutableActions];
+}
+
++(NSSet *)keyPathsForValuesAffectingDisplayName {
+	return [NSSet setWithObjects:@"applicationIdentifier", @"lastKnownName", nil];
+}
+
+-(NSString *)displayName {
+	if (self.applicationIdentifier.length == 0) {
+		if ([DKCECKeyMappingController sharedController].applicationMappings.count == 0)
+			return NSLocalizedString(@"all applications title", @"");
+		else
+			return NSLocalizedString(@"all other applications title", @"");
+	}
+	if (self.lastKnownName.length == 0) return self.applicationIdentifier;
+	return self.lastKnownName;
+}
+
++(NSSet *)keyPathsForValuesAffectingDisplayImage {
+	return [NSSet setWithObjects:@"applicationIdentifier", nil];
+}
+
+-(NSImage *)displayImage {
+
+	if (self.cachedDisplayImage == nil) {
+		NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
+		NSString *path = [workspace absolutePathForAppBundleWithIdentifier:self.applicationIdentifier];
+		if (path.length > 0) self.cachedDisplayImage = [workspace iconForFile:path];
+
+		if (self.cachedDisplayImage == nil)
+			self.cachedDisplayImage = [NSImage imageNamed:NSImageNameApplicationIcon];
+	}
+	return self.cachedDisplayImage;
 }
 
 @end

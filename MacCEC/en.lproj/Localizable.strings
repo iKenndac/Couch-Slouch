@@ -1,0 +1,16 @@
+/* 
+  Localized.strings
+  MacCEC
+
+  Created by Daniel Kennett on 20/08/2012.
+  Copyright (c) 2012 Daniel Kennett. All rights reserved.
+*/
+
+"ok button title" = "OK";
+
+"all applications title" = "All Applications";
+"all other applications title" = "Other Applications";
+
+"please choose the application title" = "Please choose the application to control.";
+"invalid application chosen title" = "Invalid application";
+"invalid application chosen description" = "The item chosen doesn't appear to be a valid application. Please choose another.";
