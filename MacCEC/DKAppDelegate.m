@@ -62,5 +62,13 @@
 		[[[keyMapper baseMapping] actionForKeyPress:keyPress] performActionWithKeyPress:keyPress];
 }
 
+-(void)cecController:(DKCECDeviceController *)controller didLogMessage:(NSString *)message ofSeverity:(cec_log_level)logLevel {
+	NSLog(@"%@", message);
+}
+
+-(void)cecController:(DKCECDeviceController *)controller didReceiveCommand:(cec_command)command {}
+-(void)cecController:(DKCECDeviceController *)controller didReceiveAlert:(libcec_alert)alert forParamter:(libcec_parameter)parameter {}
+-(void)cecController:(DKCECDeviceController *)controller activationDidChangeForLogicalDevice:(cec_logical_address)device toState:(BOOL)activated {}
+
 
 @end

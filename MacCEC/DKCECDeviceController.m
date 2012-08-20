@@ -26,7 +26,7 @@ static NSTimeInterval const kDevicePingInterval = 10.0;
 
 // ------------- Callbacks ------------------
 
-static int CBCecLogMessage(void *param, const cec_log_message message) {
+static int DKCBCecLogMessage(void *param, const cec_log_message message) {
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
@@ -38,7 +38,7 @@ static int CBCecLogMessage(void *param, const cec_log_message message) {
 	return 1;
 }
 
-static int CBCecKeyPress(void *param, const cec_keypress keyPress) {
+static int DKCBCecKeyPress(void *param, const cec_keypress keyPress) {
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 	DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
@@ -50,7 +50,7 @@ static int CBCecKeyPress(void *param, const cec_keypress keyPress) {
 }
 
 
-static int CBCecCommand(void *param, const cec_command command) {
+static int DKCBCecCommand(void *param, const cec_command command) {
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 	DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
@@ -61,7 +61,7 @@ static int CBCecCommand(void *param, const cec_command command) {
 	return 1;
 }
 
-static int CBCecConfigurationChanged(void *param, const libcec_configuration config) {
+static int DKCBCecConfigurationChanged(void *param, const libcec_configuration config) {
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
@@ -70,7 +70,7 @@ static int CBCecConfigurationChanged(void *param, const libcec_configuration con
 	return 1;
 }
 
-static int CBCecAlert(void *param, const libcec_alert alert, const libcec_parameter parameter) {
+static int DKCBCecAlert(void *param, const libcec_alert alert, const libcec_parameter parameter) {
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
@@ -82,7 +82,7 @@ static int CBCecAlert(void *param, const libcec_alert alert, const libcec_parame
 	return 1;
 }
 
-static int CBCecMenuStateChanged(void *param, const cec_menu_state menuState) {
+static int DKCBCecMenuStateChanged(void *param, const cec_menu_state menuState) {
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
@@ -91,7 +91,7 @@ static int CBCecMenuStateChanged(void *param, const cec_menu_state menuState) {
 	return 1;
 }
 
-static void CBCecSourceActivated(void *param, const cec_logical_address logicalAddress, const uint8_t isActivated) {
+static void DKCBCecSourceActivated(void *param, const cec_logical_address logicalAddress, const uint8_t isActivated) {
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
@@ -102,7 +102,7 @@ static void CBCecSourceActivated(void *param, const cec_logical_address logicalA
 	});
 }
 
-
+static ICECCallbacks callbacks;
 
 @implementation DKCECDeviceController
 
@@ -113,6 +113,15 @@ static dispatch_queue_t cec_global_queue;
 	dispatch_once(&onceToken, ^{
 		cec_global_queue = dispatch_queue_create("org.danielkennett.CECController", DISPATCH_QUEUE_SERIAL);
 	});
+
+	memset(&callbacks, 0, sizeof(ICECCallbacks));
+	callbacks.CBCecKeyPress = &DKCBCecKeyPress;
+	callbacks.CBCecCommand = &DKCBCecCommand;
+	callbacks.CBCecConfigurationChanged = &DKCBCecConfigurationChanged;
+	callbacks.CBCecAlert = &DKCBCecAlert;
+	callbacks.CBCecMenuStateChanged = &DKCBCecMenuStateChanged;
+	callbacks.CBCecSourceActivated = &DKCBCecSourceActivated;
+	callbacks.CBCecLogMessage = &DKCBCecLogMessage;
 }
 
 +(dispatch_queue_t)cecQueue {
@@ -146,16 +155,6 @@ static dispatch_queue_t cec_global_queue;
 			return nil;
 		}
 
-		ICECCallbacks callbacks;
-		memset(&callbacks, 0, sizeof(ICECCallbacks));
-		
-		callbacks.CBCecKeyPress = CBCecKeyPress;
-		callbacks.CBCecCommand = CBCecCommand;
-		callbacks.CBCecConfigurationChanged = CBCecConfigurationChanged;
-		callbacks.CBCecAlert = CBCecAlert;
-		callbacks.CBCecMenuStateChanged = CBCecMenuStateChanged;
-		callbacks.CBCecSourceActivated = CBCecSourceActivated;
-		
 		retCode = cec_enable_callbacks((__bridge void *)self, &callbacks);
 		if (retCode < 1) {
 			if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"CEC callbacks failed");
