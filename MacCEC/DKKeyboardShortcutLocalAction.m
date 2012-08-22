@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Daniel Kennett. All rights reserved.
 //
 
-#import "DKSingleKeypressLocalAction.h"
+#import "DKKeyboardShortcutLocalAction.h"
 #import "SRKeyCodeTransformer.h"
 #import "Constants.h"
 
@@ -16,7 +16,7 @@ static NSString * const kLocalFlagsKey = @"flags";
 
 static SRKeyCodeTransformer *staticTransformer;
 
-@interface DKSingleKeypressLocalAction ()
+@interface DKKeyboardShortcutLocalAction ()
 
 @property (nonatomic, readwrite) cec_user_control_code deviceKeyCode;
 @property (nonatomic, readwrite, copy) NSString *localKey;
@@ -24,7 +24,7 @@ static SRKeyCodeTransformer *staticTransformer;
 
 @end
 
-@implementation DKSingleKeypressLocalAction
+@implementation DKKeyboardShortcutLocalAction
 
 +(void)initialize {
 	staticTransformer = [SRKeyCodeTransformer new];

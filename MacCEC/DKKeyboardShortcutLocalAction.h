@@ -10,7 +10,7 @@
 #import "DKLocalAction.h"
 #import "cectypes.h"
 
-@interface DKSingleKeypressLocalAction : NSObject <DKLocalAction>
+@interface DKKeyboardShortcutLocalAction : NSObject <DKLocalAction>
 
 -(id)initWithLocalKey:(NSString *)key flags:(NSUInteger)flags forDeviceKeyCode:(cec_user_control_code)deviceCode;
 
