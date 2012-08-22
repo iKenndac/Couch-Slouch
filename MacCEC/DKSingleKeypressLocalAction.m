@@ -63,8 +63,22 @@ static SRKeyCodeTransformer *staticTransformer;
 -(void)performActionWithKeyPress:(cec_keypress)keyPress {
 
 	CGKeyCode theMainKey = (CGKeyCode)[[staticTransformer reverseTransformedValue:self.localKey] integerValue];
+	CGEventFlags flags = 0;
+
+	if (self.flags & NSCommandKeyMask)
+		flags |= kCGEventFlagMaskCommand;
+	
+	if (self.flags & NSShiftKeyMask)
+		flags |= kCGEventFlagMaskShift;
+	
+	if (self.flags & NSControlKeyMask)
+		flags |= kCGEventFlagMaskControl;
+	
+	if (self.flags & NSAlternateKeyMask)
+		flags |= kCGEventFlagMaskAlternate;
 
 	CGEventRef down = CGEventCreateKeyboardEvent(NULL, theMainKey, true);
+	CGEventSetFlags(down, flags);
 	CGEventRef up = CGEventCreateKeyboardEvent(NULL, theMainKey, false);
 
 	CGEventPost(kCGHIDEventTap, down);
@@ -72,7 +86,6 @@ static SRKeyCodeTransformer *staticTransformer;
 
 	CFRelease(down);
 	CFRelease(up);
-	// TODO: Modifiers
 }
 
 -(BOOL)matchesKeyPress:(cec_keypress)keyPress {
