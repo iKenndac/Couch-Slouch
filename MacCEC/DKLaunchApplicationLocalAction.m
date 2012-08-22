@@ -9,7 +9,6 @@
 #import "DKLaunchApplicationLocalAction.h"
 #import "Constants.h"
 
-static NSString * const kDeviceKeyCodeKey = @"deviceCode";
 static NSString * const kBundleIdentifierKey = @"bundleId";
 
 @interface DKLaunchApplicationLocalAction ()

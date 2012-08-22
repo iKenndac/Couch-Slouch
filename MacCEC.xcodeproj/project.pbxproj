@@ -64,6 +64,7 @@
 		5055C7EC15DFB54C00B6B497 /* DKCECKeyMappingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */; };
 		5055C80115DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */; };
 		508FD9BD15E5607700661E0D /* DKLaunchApplicationLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9BC15E5607700661E0D /* DKLaunchApplicationLocalAction.m */; };
+		508FD9C115E5682A00661E0D /* DKDoNothingLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */; };
 		50AE64E515E15967006E7DA9 /* KNStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */; };
 		50AE64E815E1597D006E7DA9 /* KNGradientExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */; };
 		50AE64EB15E15CB2006E7DA9 /* KNEmbossedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */; };
@@ -201,6 +202,8 @@
 		5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKKeyboardShortcutLocalAction.m; sourceTree = "<group>"; };
 		508FD9BB15E5607700661E0D /* DKLaunchApplicationLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLaunchApplicationLocalAction.h; sourceTree = "<group>"; };
 		508FD9BC15E5607700661E0D /* DKLaunchApplicationLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLaunchApplicationLocalAction.m; sourceTree = "<group>"; };
+		508FD9BF15E5682A00661E0D /* DKDoNothingLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKDoNothingLocalAction.h; sourceTree = "<group>"; };
+		508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKDoNothingLocalAction.m; sourceTree = "<group>"; };
 		50AE64E315E1590C006E7DA9 /* KNStatusBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KNStatusBarView.h; path = KNSharedCodeRepository/Views/KNStatusBarView.h; sourceTree = SOURCE_ROOT; };
 		50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KNStatusBarView.m; path = KNSharedCodeRepository/Views/KNStatusBarView.m; sourceTree = SOURCE_ROOT; };
 		50AE64E615E1597D006E7DA9 /* KNGradientExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KNGradientExtensions.h; path = KNSharedCodeRepository/Extensions/KNGradientExtensions.h; sourceTree = SOURCE_ROOT; };
@@ -584,6 +587,8 @@
 				5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */,
 				508FD9BB15E5607700661E0D /* DKLaunchApplicationLocalAction.h */,
 				508FD9BC15E5607700661E0D /* DKLaunchApplicationLocalAction.m */,
+				508FD9BF15E5682A00661E0D /* DKDoNothingLocalAction.h */,
+				508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */,
 			);
 			name = CEC;
 			sourceTree = "<group>";
@@ -706,6 +711,7 @@
 				5017A30615E2D85A00B88FE6 /* SRRecorderControl.m in Sources */,
 				5017A30715E2D85A00B88FE6 /* SRValidator.m in Sources */,
 				508FD9BD15E5607700661E0D /* DKLaunchApplicationLocalAction.m in Sources */,
+				508FD9C115E5682A00661E0D /* DKDoNothingLocalAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

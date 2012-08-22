@@ -10,7 +10,6 @@
 #import "SRKeyCodeTransformer.h"
 #import "Constants.h"
 
-static NSString * const kDeviceKeyCodeKey = @"deviceCode";
 static NSString * const kLocalKeyKey = @"keyboardKey";
 static NSString * const kLocalFlagsKey = @"flags";
 

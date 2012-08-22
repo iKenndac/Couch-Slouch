@@ -9,3 +9,4 @@
 #import <Foundation/Foundation.h>
 
 static NSString * const kLocalActionPlistRepClassKey = @"class";
+static NSString * const kDeviceKeyCodeKey = @"deviceCode";
