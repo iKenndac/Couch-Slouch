@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1080</int>
+		<int key="IBDocument.SystemTarget">1070</int>
 		<string key="IBDocument.SystemVersion">12A269</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
 		<string key="IBDocument.AppKitVersion">1187</string>
@@ -39,7 +39,7 @@
 			<object class="NSWindowTemplate" id="1005">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, 240}, {548, 318}}</string>
+				<string key="NSWindowRect">{{196, 240}, {630, 422}}</string>
 				<int key="NSWTFlags">544735232</int>
 				<string key="NSWindowTitle">MacCEC</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -173,14 +173,14 @@
 							</object>
 						</object>
 					</dictionary>
-					<array class="NSMutableArray" key="NSToolbarIBAllowedItems">
+					<array key="NSToolbarIBAllowedItems">
 						<reference ref="768341089"/>
 						<reference ref="591195121"/>
 						<reference ref="874487684"/>
 						<reference ref="384282508"/>
 						<reference ref="163177778"/>
 					</array>
-					<array class="NSMutableArray" key="NSToolbarIBDefaultItems">
+					<array key="NSToolbarIBDefaultItems">
 						<reference ref="874487684"/>
 						<reference ref="384282508"/>
 						<reference ref="163177778"/>
@@ -193,7 +193,7 @@
 				<object class="NSView" key="NSWindowView" id="1006">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
-					<string key="NSFrameSize">{548, 318}</string>
+					<string key="NSFrameSize">{630, 422}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 				</object>
@@ -399,6 +399,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="behavioursToolbarItem">NSToolbarItem</string>
 						<string key="keybindsToolbarItem">NSToolbarItem</string>
+						<string key="setupToolbarItem">NSToolbarItem</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="behavioursToolbarItem">
@@ -407,6 +408,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="keybindsToolbarItem">
 							<string key="name">keybindsToolbarItem</string>
+							<string key="candidateClassName">NSToolbarItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="setupToolbarItem">
+							<string key="name">setupToolbarItem</string>
 							<string key="candidateClassName">NSToolbarItem</string>
 						</object>
 					</dictionary>
@@ -419,6 +424,10 @@
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
+		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
+			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
+			<real value="1070" key="NS.object.0"/>
+		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
