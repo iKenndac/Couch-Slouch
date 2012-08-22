@@ -8,7 +8,8 @@
 
 #import "DKAppDelegate.h"
 #import "DKCECKeyMappingController.h"
-#import "DKSingleKeypressLocalAction.h"
+#import "DKKeyboardShortcutLocalAction.h"
+#import "DKLaunchApplicationLocalAction.h"
 
 @interface DKAppDelegate ()
 
@@ -40,17 +41,19 @@
 	DKCECKeyMapping *base = [[DKCECKeyMappingController sharedController] baseMapping];
 
 	[base removeActions:base.actions];
-	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"↑" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_UP]];
-	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"↓" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_DOWN]];
-	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"←" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_LEFT]];
-	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"→" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_RIGHT]];
-	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"↩" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_SELECT]];
-	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"⎋" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_EXIT]];
-	[base addAction:[[DKSingleKeypressLocalAction alloc] initWithLocalKey:@"Space" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_PAUSE]];
+	[base addAction:[[DKLaunchApplicationLocalAction alloc] initWithBundleIdentifier:@"com.apple.launchpad.launcher" forDeviceKeyCode:CEC_USER_CONTROL_CODE_UP]];
+	[base addAction:[[DKKeyboardShortcutLocalAction alloc] initWithLocalKey:@"↓" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_DOWN]];
+	[base addAction:[[DKKeyboardShortcutLocalAction alloc] initWithLocalKey:@"←" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_LEFT]];
+	[base addAction:[[DKKeyboardShortcutLocalAction alloc] initWithLocalKey:@"→" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_RIGHT]];
+	[base addAction:[[DKKeyboardShortcutLocalAction alloc] initWithLocalKey:@"↩" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_SELECT]];
+	[base addAction:[[DKKeyboardShortcutLocalAction alloc] initWithLocalKey:@"⎋" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_EXIT]];
+	[base addAction:[[DKKeyboardShortcutLocalAction alloc] initWithLocalKey:@"Space" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_PAUSE]];
 
 	[[DKCECKeyMappingController sharedController] duplicateMapping:base withNewApplicationIdentifier:@"com.plexapp.plex"];
+	// See CEC Table 27 User Control Codes in Spec
 	
 }
+
 
 -(BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {
 	[self.windowController showWindow:nil];

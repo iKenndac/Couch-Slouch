@@ -10,4 +10,9 @@
 
 @interface DKActionConfigurationTableCellView : NSTableCellView
 
+@property (weak) IBOutlet NSPopUpButton *typeMenu;
+@property (weak) IBOutlet NSView *actionConfigContainer;
+
+-(IBAction)typeMenuDidChange:(id)sender;
+
 @end

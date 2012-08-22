@@ -23,8 +23,8 @@ static NSMutableArray *registeredViewControllers;
 	registeredViewControllers = [NSMutableArray new];
 }
 
-+(void)registerViewControllerClassName:(NSString *)controllerClassName description:(NSString *)desc forLocalActionOfClass:(Class)localActionClass {
-	NSDictionary *dict = @{ kActionViewControllerClassNameKey : controllerClassName,
++(void)registerViewControllerClass:(Class)controllerClass description:(NSString *)desc forLocalActionOfClass:(Class)localActionClass {
+	NSDictionary *dict = @{ kActionViewControllerClassKey : controllerClass,
 			kActionViewControllerDescriptionKey : desc,
 			kActionViewControllerActionClassKey : localActionClass };
 	[registeredViewControllers addObject:dict];

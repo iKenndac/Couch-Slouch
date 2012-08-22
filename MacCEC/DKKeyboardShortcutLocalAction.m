@@ -9,6 +9,7 @@
 #import "DKKeyboardShortcutLocalAction.h"
 #import "SRKeyCodeTransformer.h"
 #import "Constants.h"
+#import "DKKeyboardShortcutLocalActionConfigViewController.h"
 
 static NSString * const kLocalKeyKey = @"keyboardKey";
 static NSString * const kLocalFlagsKey = @"flags";
@@ -28,9 +29,9 @@ static SRKeyCodeTransformer *staticTransformer;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		staticTransformer = [SRKeyCodeTransformer new];
-		[DKLocalAction registerViewControllerClassName:@"DKKeyboardShortcutLocalActionConfigViewController"
-										   description:NSLocalizedString(@"DKKeyboardShortcutLocalAction title", @"")
-								 forLocalActionOfClass:self];
+		[DKLocalAction registerViewControllerClass:[DKKeyboardShortcutLocalActionConfigViewController class]
+									   description:NSLocalizedString(@"DKKeyboardShortcutLocalAction title", @"")
+							 forLocalActionOfClass:self];
 	});
 }
 

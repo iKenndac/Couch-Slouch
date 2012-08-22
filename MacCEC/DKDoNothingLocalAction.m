@@ -14,9 +14,9 @@
 +(void)initialize {
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		[DKLocalAction registerViewControllerClassName:@""
-										   description:NSLocalizedString(@"DKDoNothingLocalAction title", @"")
-								 forLocalActionOfClass:self];
+		[DKLocalAction registerViewControllerClass:nil
+									   description:NSLocalizedString(@"DKDoNothingLocalAction title", @"")
+							 forLocalActionOfClass:self];
 	});
 }
 

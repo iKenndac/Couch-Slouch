@@ -8,6 +8,7 @@
 
 #import "DKLaunchApplicationLocalAction.h"
 #import "Constants.h"
+#import "DKLaunchApplicationLocalActionConfigViewController.h"
 
 static NSString * const kBundleIdentifierKey = @"bundleId";
 
@@ -22,7 +23,7 @@ static NSString * const kBundleIdentifierKey = @"bundleId";
 +(void)initialize {
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		[DKLocalAction registerViewControllerClassName:@"DKLaunchApplicationLocalActionConfigViewController"
+		[DKLocalAction registerViewControllerClass:[DKLaunchApplicationLocalActionConfigViewController class]
 										   description:NSLocalizedString(@"DKLaunchApplicationLocalAction title", @"")
 								 forLocalActionOfClass:self];
 	});
