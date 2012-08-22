@@ -20,3 +20,10 @@
 -(BOOL)matchesKeyPress:(cec_keypress)keyPress;
 
 @end
+
+@interface DKLocalAction : NSObject <DKLocalAction>
+
+-(id)initWithDeviceKeyCode:(cec_user_control_code)deviceCode;
+-(NSString *)deviceKeyCodeDisplayName;
+
+@end

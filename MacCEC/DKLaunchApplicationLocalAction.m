@@ -13,7 +13,6 @@ static NSString * const kBundleIdentifierKey = @"bundleId";
 
 @interface DKLaunchApplicationLocalAction ()
 
-@property (nonatomic, readwrite) cec_user_control_code deviceKeyCode;
 @property (nonatomic, readwrite, copy) NSString *bundleIdentifier;
 
 @end
@@ -21,20 +20,18 @@ static NSString * const kBundleIdentifierKey = @"bundleId";
 @implementation DKLaunchApplicationLocalAction
 
 -(id)initWithPropertyListRepresentation:(id)plist {
-	self = [super init];
+	self = [super initWithPropertyListRepresentation:plist];
 
 	if (self) {
-		self.deviceKeyCode = [[plist valueForKey:kDeviceKeyCodeKey] integerValue];
 		self.bundleIdentifier = [plist valueForKey:kBundleIdentifierKey];
 	}
 	return self;
 }
 
 -(id)initWithBundleIdentifier:(NSString *)identifier forDeviceKeyCode:(cec_user_control_code)deviceCode {
-	self = [super init];
+	self = [super initWithDeviceKeyCode:deviceCode];
 
 	if (self) {
-		self.deviceKeyCode = deviceCode;
 		self.bundleIdentifier = identifier;
 	}
 	return self;
@@ -52,10 +49,6 @@ static NSString * const kBundleIdentifierKey = @"bundleId";
 														 options:NSWorkspaceLaunchDefault
 								  additionalEventParamDescriptor:nil
 												launchIdentifier:nil];
-}
-
--(BOOL)matchesKeyPress:(cec_keypress)keyPress {
-	return keyPress.keycode == self.deviceKeyCode;
 }
 
 @end

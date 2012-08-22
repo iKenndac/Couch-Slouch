@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "DKLocalAction.h"
 
-@interface DKDoNothingLocalAction : NSObject <DKLocalAction>
-
--(id)initWithDeviceKeyCode:(cec_user_control_code)deviceCode;
+@interface DKDoNothingLocalAction : DKLocalAction <DKLocalAction>
 
 @end

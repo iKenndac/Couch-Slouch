@@ -9,28 +9,12 @@
 #import "DKDoNothingLocalAction.h"
 #import "Constants.h"
 
-@interface DKDoNothingLocalAction ()
-
-@property (nonatomic, readwrite) cec_user_control_code deviceKeyCode;
-
-@end
-
 @implementation DKDoNothingLocalAction
 
 -(id)initWithPropertyListRepresentation:(id)plist {
-	self = [super init];
+	self = [super initWithPropertyListRepresentation:plist];
 
 	if (self) {
-		self.deviceKeyCode = [[plist valueForKey:kDeviceKeyCodeKey] integerValue];
-	}
-	return self;
-}
-
--(id)initWithDeviceKeyCode:(cec_user_control_code)deviceCode {
-	self = [super init];
-
-	if (self) {
-		self.deviceKeyCode = deviceCode;
 	}
 	return self;
 }

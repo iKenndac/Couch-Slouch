@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DKLocalAction.h"
 
-@interface DKLaunchApplicationLocalAction : NSObject <DKLocalAction>
+@interface DKLaunchApplicationLocalAction : DKLocalAction <DKLocalAction>
 
 -(id)initWithBundleIdentifier:(NSString *)identifier forDeviceKeyCode:(cec_user_control_code)deviceCode;
 

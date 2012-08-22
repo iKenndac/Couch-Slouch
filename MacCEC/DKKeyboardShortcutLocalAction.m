@@ -17,7 +17,6 @@ static SRKeyCodeTransformer *staticTransformer;
 
 @interface DKKeyboardShortcutLocalAction ()
 
-@property (nonatomic, readwrite) cec_user_control_code deviceKeyCode;
 @property (nonatomic, readwrite, copy) NSString *localKey;
 @property (nonatomic, readwrite) NSUInteger flags;
 
@@ -30,10 +29,9 @@ static SRKeyCodeTransformer *staticTransformer;
 }
 
 -(id)initWithPropertyListRepresentation:(id)plist {
-	self = [super init];
+	self = [super initWithPropertyListRepresentation:plist];
 
 	if (self) {
-		self.deviceKeyCode = [[plist valueForKey:kDeviceKeyCodeKey] integerValue];
 		self.localKey = [plist valueForKey:kLocalKeyKey];
 		self.flags = [[plist valueForKey:kLocalFlagsKey] unsignedIntegerValue];
 	}
@@ -41,10 +39,9 @@ static SRKeyCodeTransformer *staticTransformer;
 }
 
 -(id)initWithLocalKey:(NSString *)key flags:(NSUInteger)flags forDeviceKeyCode:(cec_user_control_code)deviceCode {
-	self = [super init];
+	self = [super initWithDeviceKeyCode:deviceCode];
 
 	if (self) {
-		self.deviceKeyCode = deviceCode;
 		self.localKey = key;
 		self.flags = flags;
 	}
@@ -87,8 +84,5 @@ static SRKeyCodeTransformer *staticTransformer;
 	CFRelease(up);
 }
 
--(BOOL)matchesKeyPress:(cec_keypress)keyPress {
-	return keyPress.keycode == self.deviceKeyCode;
-}
 
 @end
