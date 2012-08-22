@@ -13,6 +13,4 @@
 
 -(id)initWithDeviceKeyCode:(cec_user_control_code)deviceCode;
 
-@property (nonatomic, readonly) cec_user_control_code deviceKeyCode;
-
 @end

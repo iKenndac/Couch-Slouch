@@ -14,7 +14,6 @@
 
 -(id)initWithLocalKey:(NSString *)key flags:(NSUInteger)flags forDeviceKeyCode:(cec_user_control_code)deviceCode;
 
-@property (nonatomic, readonly) cec_user_control_code deviceKeyCode;
 @property (nonatomic, readonly, copy) NSString *localKey;
 @property (nonatomic, readonly) NSUInteger flags;
 

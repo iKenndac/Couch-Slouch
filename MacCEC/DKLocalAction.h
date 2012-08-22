@@ -14,6 +14,8 @@
 -(id)initWithPropertyListRepresentation:(id)plist;
 -(id)propertyListRepresentation;
 
+@property (nonatomic, readonly) cec_user_control_code deviceKeyCode;
+
 -(void)performActionWithKeyPress:(cec_keypress)keyPress;
 -(BOOL)matchesKeyPress:(cec_keypress)keyPress;
 
