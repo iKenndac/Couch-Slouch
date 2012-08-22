@@ -17,6 +17,23 @@
 
 @implementation DKLocalAction
 
+static NSMutableArray *registeredViewControllers;
+
++(void)initialize {
+	registeredViewControllers = [NSMutableArray new];
+}
+
++(void)registerViewControllerClassName:(NSString *)controllerClassName description:(NSString *)desc forLocalActionOfClass:(Class)localActionClass {
+	NSDictionary *dict = @{ kActionViewControllerClassNameKey : controllerClassName,
+			kActionViewControllerDescriptionKey : desc,
+			kActionViewControllerActionClassKey : localActionClass };
+	[registeredViewControllers addObject:dict];
+}
+
++(NSArray *)registeredConfigViewControllers {
+	return [NSArray arrayWithArray:registeredViewControllers];
+}
+
 -(id)initWithDeviceKeyCode:(cec_user_control_code)deviceCode {
 	self = [super init];
 

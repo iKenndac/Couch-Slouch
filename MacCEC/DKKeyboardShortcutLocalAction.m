@@ -25,7 +25,13 @@ static SRKeyCodeTransformer *staticTransformer;
 @implementation DKKeyboardShortcutLocalAction
 
 +(void)initialize {
-	staticTransformer = [SRKeyCodeTransformer new];
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		staticTransformer = [SRKeyCodeTransformer new];
+		[DKLocalAction registerViewControllerClassName:@"DKKeyboardShortcutLocalActionConfigViewController"
+										   description:NSLocalizedString(@"DKKeyboardShortcutLocalAction title", @"")
+								 forLocalActionOfClass:self];
+	});
 }
 
 -(id)initWithPropertyListRepresentation:(id)plist {

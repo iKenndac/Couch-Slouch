@@ -19,6 +19,15 @@ static NSString * const kBundleIdentifierKey = @"bundleId";
 
 @implementation DKLaunchApplicationLocalAction
 
++(void)initialize {
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		[DKLocalAction registerViewControllerClassName:@"DKLaunchApplicationLocalActionConfigViewController"
+										   description:NSLocalizedString(@"DKLaunchApplicationLocalAction title", @"")
+								 forLocalActionOfClass:self];
+	});
+}
+
 -(id)initWithPropertyListRepresentation:(id)plist {
 	self = [super initWithPropertyListRepresentation:plist];
 

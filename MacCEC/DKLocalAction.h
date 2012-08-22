@@ -23,6 +23,9 @@
 
 @interface DKLocalAction : NSObject <DKLocalAction>
 
++(void)registerViewControllerClassName:(NSString *)controllerClassName description:(NSString *)desc forLocalActionOfClass:(Class)localActionClass;
++(NSArray *)registeredConfigViewControllers;
+
 -(id)initWithDeviceKeyCode:(cec_user_control_code)deviceCode;
 -(NSString *)deviceKeyCodeDisplayName;
 

@@ -15,6 +15,10 @@
 "invalid application chosen title" = "Invalid application";
 "invalid application chosen description" = "The item chosen doesn't appear to be a valid application. Please choose another.";
 
+"DKKeyboardShortcutLocalAction title" = "Keyboard Shortcut";
+"DKLaunchApplicationLocalAction title" = "Launch App";
+"DKDoNothingLocalAction title" = "Do Nothing";
+
 "CEC_USER_CONTROL_CODE_SELECT" = "Select";
 "CEC_USER_CONTROL_CODE_UP" = "Up";
 "CEC_USER_CONTROL_CODE_DOWN" = "Down";

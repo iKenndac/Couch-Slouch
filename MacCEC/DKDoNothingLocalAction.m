@@ -11,6 +11,15 @@
 
 @implementation DKDoNothingLocalAction
 
++(void)initialize {
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		[DKLocalAction registerViewControllerClassName:@""
+										   description:NSLocalizedString(@"DKDoNothingLocalAction title", @"")
+								 forLocalActionOfClass:self];
+	});
+}
+
 -(id)initWithPropertyListRepresentation:(id)plist {
 	self = [super initWithPropertyListRepresentation:plist];
 
