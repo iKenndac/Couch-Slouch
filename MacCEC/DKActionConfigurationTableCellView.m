@@ -91,9 +91,19 @@ static void * kObjectChangedContext = @"kObjectChangedContext";
 		self.currentViewController = [viewControllerClass new];
 	}
 
+	
+		
+
 	if (self.currentViewController) {
 		[self.actionConfigContainer addSubview:self.currentViewController.view];
-		self.currentViewController.representedObject = self.objectValue;
+
+		// See if the given class matches our representedObject.
+		Class actionClass = [actionInfo valueForKey:kActionViewControllerActionClassKey];
+		if ([self.objectValue isKindOfClass:actionClass])
+			self.currentViewController.representedObject = self.objectValue;
+		else
+			// Create a new one.
+			NSLog(@"Need to make a new thing.");
 
 		[self.actionConfigContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[view]-0-|"
 																						   options:NSLayoutAttributeBaseline | NSLayoutFormatDirectionLeadingToTrailing

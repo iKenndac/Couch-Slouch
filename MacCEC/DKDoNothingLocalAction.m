@@ -28,6 +28,8 @@
 	return self;
 }
 
+@synthesize parentMapping;
+
 -(id)propertyListRepresentation {
 	return @{ kLocalActionPlistRepClassKey : NSStringFromClass(self.class)};
 }

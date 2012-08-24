@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "cectypes.h"
+#import "DKCECKeyMappingController.h"
+
+@class DKCECKeyMapping;
 
 @protocol DKLocalAction <NSObject>
 
@@ -15,6 +18,7 @@
 -(id)propertyListRepresentation;
 
 @property (nonatomic, readonly) cec_user_control_code deviceKeyCode;
+@property (nonatomic, readwrite, weak) DKCECKeyMapping *parentMapping;
 
 -(void)performActionWithKeyPress:(cec_keypress)keyPress;
 -(BOOL)matchesKeyPress:(cec_keypress)keyPress;
@@ -28,5 +32,7 @@
 
 -(id)initWithDeviceKeyCode:(cec_user_control_code)deviceCode;
 -(NSString *)deviceKeyCodeDisplayName;
+
+@property (nonatomic, readonly) cec_user_control_code deviceKeyCode;
 
 @end

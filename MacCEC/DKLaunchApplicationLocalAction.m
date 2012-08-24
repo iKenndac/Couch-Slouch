@@ -47,6 +47,8 @@ static NSString * const kBundleIdentifierKey = @"bundleId";
 	return self;
 }
 
+@synthesize parentMapping;
+
 -(id)propertyListRepresentation {
 	return @{ kDeviceKeyCodeKey : @(self.deviceKeyCode),
 	kBundleIdentifierKey : self.bundleIdentifier,

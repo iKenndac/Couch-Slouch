@@ -11,6 +11,7 @@
 #import "DKLocalAction.h" 
 
 @class DKCECKeyMapping;
+@protocol DKLocalAction;
 
 @interface DKCECKeyMappingController : NSObject
 
@@ -21,6 +22,8 @@
 
 -(DKCECKeyMapping *)keyMappingForApplicationWithIdentifier:(NSString *)appIdentifier;
 -(DKCECKeyMapping *)duplicateMapping:(DKCECKeyMapping *)mapping withNewApplicationIdentifier:(NSString *)appIdentifier;
+
+-(void)saveMappings;
 
 @end
 

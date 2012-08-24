@@ -84,7 +84,6 @@ static DKCECKeyMappingController *sharedController;
 	}
 
 	[defaults setValue:mappings forKey:kAppMappingsUserDefaultsKey];
-	[defaults synchronize];
 }
 
 -(NSArray *)applicationMappings {
@@ -136,9 +135,10 @@ static NSString * const kKeyMappingActionsKey = @"actions";
 
 			if (actionClass != nil) {
 
-				id action = [actionClass alloc];
+				id <DKLocalAction> action = [actionClass alloc];
 				if ([action conformsToProtocol:@protocol(DKLocalAction)]) {
-					action = [(id <DKLocalAction>)action initWithPropertyListRepresentation:dict];
+					action = [action initWithPropertyListRepresentation:dict];
+					action.parentMapping = self;
 					if (action)
 						[mutableActions addObject:action];
 				}
@@ -208,12 +208,14 @@ static NSString * const kKeyMappingActionsKey = @"actions";
 }
 
 -(void)addActions:(NSArray *)actions {
+	[actions makeObjectsPerformSelector:@selector(setParentMapping:) withObject:self];
 	self.actions = [self.actions arrayByAddingObjectsFromArray:actions];
 }
 
 -(void)removeActions:(NSArray *)actions {
 	NSMutableArray *mutableActions = [self.actions mutableCopy];
 	[mutableActions removeObjectsInArray:actions];
+	[actions makeObjectsPerformSelector:@selector(setParentMapping:) withObject:nil];
 	self.actions = [NSArray arrayWithArray:mutableActions];
 }
 

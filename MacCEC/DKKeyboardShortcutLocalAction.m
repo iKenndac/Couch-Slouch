@@ -16,13 +16,6 @@ static NSString * const kLocalFlagsKey = @"flags";
 
 static SRKeyCodeTransformer *staticTransformer;
 
-@interface DKKeyboardShortcutLocalAction ()
-
-@property (nonatomic, readwrite, copy) NSString *localKey;
-@property (nonatomic, readwrite) NSUInteger flags;
-
-@end
-
 @implementation DKKeyboardShortcutLocalAction
 
 +(void)initialize {
@@ -53,7 +46,21 @@ static SRKeyCodeTransformer *staticTransformer;
 		self.flags = flags;
 	}
 	return self;
+}
 
+@synthesize parentMapping;
+
+-(void)setLocalKeyFromKeyCode:(CGKeyCode)code {
+	NSString *keyString = [staticTransformer transformedValue:@(code)];
+	self.localKey = keyString;
+}
+
++(NSSet *)keyPathsForValuesAffectingLocalTranslatedKeyCode {
+	return [NSSet setWithObject:@"localKey"];
+}
+
+-(CGKeyCode)localTranslatedKeyCode {
+	return (CGKeyCode)[[staticTransformer reverseTransformedValue:self.localKey] integerValue];
 }
 
 -(id)propertyListRepresentation {
@@ -65,7 +72,7 @@ static SRKeyCodeTransformer *staticTransformer;
 
 -(void)performActionWithKeyPress:(cec_keypress)keyPress {
 
-	CGKeyCode theMainKey = (CGKeyCode)[[staticTransformer reverseTransformedValue:self.localKey] integerValue];
+	CGKeyCode theMainKey = self.localTranslatedKeyCode;
 	CGEventFlags flags = 0;
 
 	if (self.flags & NSCommandKeyMask)

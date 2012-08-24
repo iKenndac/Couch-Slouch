@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SRRecorderControl.h"
 
 @interface DKKeyboardShortcutLocalActionConfigViewController : NSViewController
+
+@property (weak) IBOutlet SRRecorderControl *recorder;
 
 @end
