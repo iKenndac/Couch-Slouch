@@ -10,6 +10,7 @@
 #import "DKCECKeyMappingController.h"
 #import "DKKeyboardShortcutLocalAction.h"
 #import "DKLaunchApplicationLocalAction.h"
+#import "DKDoNothingLocalAction.h"
 
 @interface DKAppDelegate ()
 
@@ -23,6 +24,10 @@
 {
 	self.cecController = [DKCECDeviceController new];
 	self.cecController.delegate = self;
+
+	[DKKeyboardShortcutLocalAction class];
+	[DKLaunchApplicationLocalAction class];
+	[DKDoNothingLocalAction class];
 
 	self.windowController = [DKCECWindowController new];
 	

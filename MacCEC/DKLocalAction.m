@@ -24,9 +24,11 @@ static NSMutableArray *registeredViewControllers;
 }
 
 +(void)registerViewControllerClass:(Class)controllerClass description:(NSString *)desc forLocalActionOfClass:(Class)localActionClass {
-	NSDictionary *dict = @{ kActionViewControllerClassKey : controllerClass,
-			kActionViewControllerDescriptionKey : desc,
-			kActionViewControllerActionClassKey : localActionClass };
+
+	NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:3];
+	[dict setValue:controllerClass forKey:kActionViewControllerClassKey];
+	[dict setValue:desc forKey:kActionViewControllerDescriptionKey];
+	[dict setValue:localActionClass forKey:kActionViewControllerActionClassKey];
 	[registeredViewControllers addObject:dict];
 }
 
@@ -51,6 +53,8 @@ static NSMutableArray *registeredViewControllers;
 	}
 	return self;
 }
+
+@synthesize parentMapping;
 
 -(id)propertyListRepresentation { return [NSDictionary dictionary]; }
 -(void)performActionWithKeyPress:(cec_keypress)keyPress {}

@@ -79,6 +79,7 @@ static void * kObjectChangedContext = @"kObjectChangedContext";
 }
 
 -(IBAction)typeMenuDidChange:(id)sender {
+	
 	if (self.currentViewController) {
 		self.currentViewController.representedObject = nil;
 		[self.currentViewController.view removeFromSuperview];
@@ -87,12 +88,10 @@ static void * kObjectChangedContext = @"kObjectChangedContext";
 	NSDictionary *actionInfo = self.typeMenu.selectedItem.representedObject;
 
 	Class viewControllerClass = [actionInfo valueForKey:kActionViewControllerClassKey];
-	if (viewControllerClass) {
+	if (viewControllerClass)
 		self.currentViewController = [viewControllerClass new];
-	}
-
-	
-		
+	else
+		self.currentViewController = nil;
 
 	if (self.currentViewController) {
 		[self.actionConfigContainer addSubview:self.currentViewController.view];
