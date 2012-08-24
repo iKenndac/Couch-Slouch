@@ -51,7 +51,7 @@ static NSString * const kBundleIdentifierKey = @"bundleId";
 
 -(id)propertyListRepresentation {
 	return @{ kDeviceKeyCodeKey : @(self.deviceKeyCode),
-	kBundleIdentifierKey : self.bundleIdentifier,
+	kBundleIdentifierKey : self.bundleIdentifier == nil ? @"" : self.bundleIdentifier,
 	kLocalActionPlistRepClassKey : NSStringFromClass(self.class)};
 }
 

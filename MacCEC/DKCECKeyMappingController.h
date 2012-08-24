@@ -39,6 +39,8 @@
 -(void)addActions:(NSArray *)actions;
 -(void)removeActions:(NSArray *)actions;
 
+-(void)replaceAction:(id <DKLocalAction>)action withAction:(id <DKLocalAction>)newAction;
+
 @property (nonatomic, readwrite, copy) NSString *applicationIdentifier;
 @property (nonatomic, readonly, copy) NSString *lastKnownName;
 @property (nonatomic, readonly, copy) NSArray *actions;

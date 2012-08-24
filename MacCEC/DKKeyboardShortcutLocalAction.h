@@ -15,7 +15,7 @@
 -(id)initWithLocalKey:(NSString *)key flags:(NSUInteger)flags forDeviceKeyCode:(cec_user_control_code)deviceCode;
 
 @property (nonatomic, readwrite, copy) NSString *localKey;
-@property (nonatomic, readonly) CGKeyCode localTranslatedKeyCode;
+@property (nonatomic, readonly) NSInteger localTranslatedKeyCode;
 @property (nonatomic, readwrite) NSUInteger flags;
 
 -(void)setLocalKeyFromKeyCode:(CGKeyCode)code;

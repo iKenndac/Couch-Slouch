@@ -99,11 +99,16 @@ static void * kObjectChangedContext = @"kObjectChangedContext";
 
 		// See if the given class matches our representedObject.
 		Class actionClass = [actionInfo valueForKey:kActionViewControllerActionClassKey];
-		if ([self.objectValue isKindOfClass:actionClass])
+		if ([self.objectValue isKindOfClass:actionClass]) {
 			self.currentViewController.representedObject = self.objectValue;
-		else
-			// Create a new one.
-			NSLog(@"Need to make a new thing.");
+		} else {
+			DKCECKeyMapping *mapping = [self.objectValue parentMapping];
+			id <DKLocalAction> newAction = [[actionClass alloc] initWithDeviceKeyCode:[self.objectValue deviceKeyCode]];
+			[mapping replaceAction:self.objectValue withAction:newAction];
+			return;
+		}
+
+			
 
 		[self.actionConfigContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[view]-0-|"
 																						   options:NSLayoutAttributeBaseline | NSLayoutFormatDirectionLeadingToTrailing

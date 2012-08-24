@@ -14,6 +14,7 @@
 
 @protocol DKLocalAction <NSObject>
 
+-(id)initWithDeviceKeyCode:(cec_user_control_code)deviceCode;
 -(id)initWithPropertyListRepresentation:(id)plist;
 -(id)propertyListRepresentation;
 
@@ -30,7 +31,6 @@
 +(void)registerViewControllerClass:(Class)controllerClass description:(NSString *)desc forLocalActionOfClass:(Class)localActionClass;
 +(NSArray *)registeredConfigViewControllers;
 
--(id)initWithDeviceKeyCode:(cec_user_control_code)deviceCode;
 -(NSString *)deviceKeyCodeDisplayName;
 
 @property (nonatomic, readonly) cec_user_control_code deviceKeyCode;

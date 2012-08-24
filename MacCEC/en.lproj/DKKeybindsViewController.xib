@@ -2,7 +2,7 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1070</int>
-		<string key="IBDocument.SystemVersion">12A269</string>
+		<string key="IBDocument.SystemVersion">12B19</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
 		<string key="IBDocument.AppKitVersion">1187</string>
 		<string key="IBDocument.HIToolboxVersion">624.00</string>
@@ -187,7 +187,7 @@
 										<string key="NSFrameSize">{313, 298}</string>
 										<reference key="NSSuperview" ref="804021425"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="344741658"/>
+										<reference key="NSNextKeyView" ref="785300561"/>
 										<string key="NSReuseIdentifierKey">_NS:13</string>
 										<bool key="NSEnabled">YES</bool>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -362,7 +362,7 @@
 						<string key="NSFrame">{{206, 28}, {313, 315}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="785300561"/>
+						<reference key="NSNextKeyView" ref="804021425"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<int key="NSsFlags">133648</int>
 						<reference key="NSVScroller" ref="513582284"/>
@@ -389,7 +389,7 @@
 										<string key="NSFrameSize">{206, 314}</string>
 										<reference key="NSSuperview" ref="992140584"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="183207294"/>
+										<reference key="NSNextKeyView" ref="904017286"/>
 										<string key="NSReuseIdentifierKey">_NS:13</string>
 										<bool key="NSEnabled">YES</bool>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -502,7 +502,7 @@
 						<string key="NSFrame">{{0, 28}, {206, 314}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="904017286"/>
+						<reference key="NSNextKeyView" ref="992140584"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<int key="NSsFlags">133648</int>
 						<reference key="NSVScroller" ref="44553312"/>

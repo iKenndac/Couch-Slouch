@@ -59,13 +59,14 @@ static SRKeyCodeTransformer *staticTransformer;
 	return [NSSet setWithObject:@"localKey"];
 }
 
--(CGKeyCode)localTranslatedKeyCode {
-	return (CGKeyCode)[[staticTransformer reverseTransformedValue:self.localKey] integerValue];
+-(NSInteger)localTranslatedKeyCode {
+	if (self.localKey.length == 0) return -1;
+	return (NSInteger)[[staticTransformer reverseTransformedValue:self.localKey] integerValue];
 }
 
 -(id)propertyListRepresentation {
 	return @{ kDeviceKeyCodeKey : @(self.deviceKeyCode),
-	kLocalKeyKey : self.localKey,
+	kLocalKeyKey : self.localKey == nil ? @"" : self.localKey,
 	kLocalFlagsKey : @(self.flags),
 	kLocalActionPlistRepClassKey : NSStringFromClass(self.class)};
 }

@@ -219,6 +219,20 @@ static NSString * const kKeyMappingActionsKey = @"actions";
 	self.actions = [NSArray arrayWithArray:mutableActions];
 }
 
+-(void)replaceAction:(id <DKLocalAction>)action withAction:(id <DKLocalAction>)newAction {
+
+	if (action == nil || newAction == nil) return;
+	NSInteger index = [self.actions indexOfObject:action];
+	if (index == NSNotFound) return;
+
+	NSMutableArray *mutableActions = [self.actions mutableCopy];
+	[mutableActions removeObjectAtIndex:index];
+	[mutableActions insertObject:newAction atIndex:index];
+	newAction.parentMapping = self;
+	action.parentMapping = nil;
+	self.actions = [NSArray arrayWithArray:mutableActions];
+}
+
 +(NSSet *)keyPathsForValuesAffectingDisplayName {
 	return [NSSet setWithObjects:@"applicationIdentifier", @"lastKnownName", nil];
 }
