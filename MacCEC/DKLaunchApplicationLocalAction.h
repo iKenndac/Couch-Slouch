@@ -13,6 +13,6 @@
 
 -(id)initWithBundleIdentifier:(NSString *)identifier forDeviceKeyCode:(cec_user_control_code)deviceCode;
 
-@property (nonatomic, readonly, copy) NSString *bundleIdentifier;
+@property (nonatomic, readwrite, copy) NSString *bundleIdentifier;
 
 @end

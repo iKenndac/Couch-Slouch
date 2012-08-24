@@ -14,6 +14,7 @@
 @end
 
 @implementation DKKeyboardShortcutLocalActionConfigViewController
+
 @synthesize recorder;
 
 -(id)init {

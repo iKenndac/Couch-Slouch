@@ -14,8 +14,6 @@ static NSString * const kBundleIdentifierKey = @"bundleId";
 
 @interface DKLaunchApplicationLocalAction ()
 
-@property (nonatomic, readwrite, copy) NSString *bundleIdentifier;
-
 @end
 
 @implementation DKLaunchApplicationLocalAction
