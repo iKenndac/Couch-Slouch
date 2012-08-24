@@ -89,7 +89,7 @@
 }
 
 -(void)cecController:(DKCECDeviceController *)controller didLogMessage:(NSString *)message ofSeverity:(cec_log_level)logLevel {
-	NSLog(@"%@", message);
+	if (logLevel <= CEC_LOG_WARNING) NSLog(@"%@", message);
 }
 
 -(void)cecController:(DKCECDeviceController *)controller didReceiveCommand:(cec_command)command {}
