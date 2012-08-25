@@ -67,6 +67,7 @@
 		508FD9C115E5682A00661E0D /* DKDoNothingLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */; };
 		508FD9C315E56AD400661E0D /* DKLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C215E56AD300661E0D /* DKLocalAction.m */; };
 		508FD9C715E576AD00661E0D /* DKActionConfigurationTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */; };
+		50966FAF15E8D98A008A4064 /* DKBackgroundStyleForwarderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */; };
 		509E10DF15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */; };
 		509E10E115E588BC001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509E10E315E588BC001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.xib */; };
 		509E10E815E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10E615E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m */; };
@@ -213,6 +214,8 @@
 		508FD9C215E56AD300661E0D /* DKLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLocalAction.m; sourceTree = "<group>"; };
 		508FD9C515E576AD00661E0D /* DKActionConfigurationTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKActionConfigurationTableCellView.h; sourceTree = "<group>"; };
 		508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKActionConfigurationTableCellView.m; sourceTree = "<group>"; };
+		50966FAD15E8D989008A4064 /* DKBackgroundStyleForwarderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBackgroundStyleForwarderView.h; sourceTree = "<group>"; };
+		50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBackgroundStyleForwarderView.m; sourceTree = "<group>"; };
 		509E10DC15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLaunchApplicationLocalActionConfigViewController.h; sourceTree = "<group>"; };
 		509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLaunchApplicationLocalActionConfigViewController.m; sourceTree = "<group>"; };
 		509E10E215E588BC001D0F4B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKLaunchApplicationLocalActionConfigViewController.xib; sourceTree = "<group>"; };
@@ -317,6 +320,8 @@
 				50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */,
 				50AE64E915E15CB2006E7DA9 /* KNEmbossedTextField.h */,
 				50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */,
+				50966FAD15E8D989008A4064 /* DKBackgroundStyleForwarderView.h */,
+				50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */,
 				503F565315DD8179007F2F3E /* Supporting Files */,
 			);
 			path = MacCEC;
@@ -766,6 +771,7 @@
 				508FD9C715E576AD00661E0D /* DKActionConfigurationTableCellView.m in Sources */,
 				509E10DF15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m in Sources */,
 				509E10E815E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m in Sources */,
+				50966FAF15E8D98A008A4064 /* DKBackgroundStyleForwarderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
