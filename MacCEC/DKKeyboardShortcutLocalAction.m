@@ -10,6 +10,7 @@
 #import "SRKeyCodeTransformer.h"
 #import "Constants.h"
 #import "DKKeyboardShortcutLocalActionConfigViewController.h"
+#import "DKCECDeviceController+KeyCodeTranslation.h"
 
 static NSString * const kLocalKeyKey = @"keyboardKey";
 static NSString * const kLocalFlagsKey = @"flags";
@@ -65,7 +66,8 @@ static SRKeyCodeTransformer *staticTransformer;
 }
 
 -(id)propertyListRepresentation {
-	return @{ kDeviceKeyCodeKey : @(self.deviceKeyCode),
+	NSString *keyStr = [DKCECDeviceController stringForKeyCode:self.deviceKeyCode];
+	return @{ kDeviceKeyCodeKey : keyStr,
 	kLocalKeyKey : self.localKey == nil ? @"" : self.localKey,
 	kLocalFlagsKey : @(self.flags),
 	kLocalActionPlistRepClassKey : NSStringFromClass(self.class)};

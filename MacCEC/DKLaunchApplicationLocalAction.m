@@ -9,6 +9,7 @@
 #import "DKLaunchApplicationLocalAction.h"
 #import "Constants.h"
 #import "DKLaunchApplicationLocalActionConfigViewController.h"
+#import "DKCECDeviceController+KeyCodeTranslation.h"
 
 static NSString * const kBundleIdentifierKey = @"bundleId";
 
@@ -48,7 +49,8 @@ static NSString * const kBundleIdentifierKey = @"bundleId";
 @synthesize parentMapping;
 
 -(id)propertyListRepresentation {
-	return @{ kDeviceKeyCodeKey : @(self.deviceKeyCode),
+	NSString *keyStr = [DKCECDeviceController stringForKeyCode:self.deviceKeyCode];
+	return @{ kDeviceKeyCodeKey : keyStr,
 	kBundleIdentifierKey : self.bundleIdentifier == nil ? @"" : self.bundleIdentifier,
 	kLocalActionPlistRepClassKey : NSStringFromClass(self.class)};
 }

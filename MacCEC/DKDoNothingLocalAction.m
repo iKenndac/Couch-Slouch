@@ -8,6 +8,7 @@
 
 #import "DKDoNothingLocalAction.h"
 #import "Constants.h"
+#import "DKCECDeviceController+KeyCodeTranslation.h"
 
 @implementation DKDoNothingLocalAction
 
@@ -31,7 +32,9 @@
 @synthesize parentMapping;
 
 -(id)propertyListRepresentation {
-	return @{ kLocalActionPlistRepClassKey : NSStringFromClass(self.class)};
+	NSString *keyStr = [DKCECDeviceController stringForKeyCode:self.deviceKeyCode];
+	return @{ kDeviceKeyCodeKey : keyStr,
+	kLocalActionPlistRepClassKey : NSStringFromClass(self.class)};
 }
 
 -(void)performActionWithKeyPress:(cec_keypress)keyPress {}
