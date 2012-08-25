@@ -22,7 +22,7 @@
 "NavigationGroupTitle" = "Navigation";
 "NumbersGroupTitle" = "Numbers";
 "MediaControlGroupTitle" = "Media Control";
-
+"FunctionKeysGroupTitle" = "Function Keys";
 
 "CEC_USER_CONTROL_CODE_SELECT" = "Select";
 "CEC_USER_CONTROL_CODE_UP" = "Up";

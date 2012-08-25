@@ -10,15 +10,40 @@
 			<key>Buttons</key>
 			<array>
 				<string>SELECT</string>
+				<string>EXIT</string>
 				<string>UP</string>
 				<string>DOWN</string>
 				<string>LEFT</string>
 				<string>RIGHT</string>
-				<string>RIGHT_UP</string>
-				<string>RIGHT_DOWN</string>
 				<string>LEFT_UP</string>
+				<string>RIGHT_UP</string>
 				<string>LEFT_DOWN</string>
-				<string>EXIT</string>
+				<string>RIGHT_DOWN</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>MediaControlGroupTitle</string>
+			<key>Buttons</key>
+			<array>
+				<string>PLAY</string>
+				<string>PAUSE</string>
+				<string>STOP</string>
+				<string>RECORD</string>
+				<string>EJECT</string>
+				<string>REWIND</string>
+				<string>FAST_FORWARD</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>FunctionKeysGroupTitle</string>
+			<key>Buttons</key>
+			<array>
+				<string>F2_RED</string>
+				<string>F3_GREEN</string>
+				<string>F4_YELLOW</string>
+				<string>F1_BLUE</string>
 			</array>
 		</dict>
 		<dict>
@@ -36,20 +61,6 @@
 				<string>NUMBER7</string>
 				<string>NUMBER8</string>
 				<string>NUMBER9</string>
-			</array>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>MediaControlGroupTitle</string>
-			<key>Buttons</key>
-			<array>
-				<string>PLAY</string>
-				<string>STOP</string>
-				<string>PAUSE</string>
-				<string>RECORD</string>
-				<string>REWIND</string>
-				<string>FAST_FORWARD</string>
-				<string>EJECT</string>
 			</array>
 		</dict>
 	</array>
