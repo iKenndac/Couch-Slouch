@@ -93,21 +93,19 @@ static void * kObjectChangedContext = @"kObjectChangedContext";
 	else
 		self.currentViewController = nil;
 
+	// See if the given class matches our representedObject.
+	Class actionClass = [actionInfo valueForKey:kActionViewControllerActionClassKey];
+	if ([self.objectValue isKindOfClass:actionClass]) {
+		self.currentViewController.representedObject = self.objectValue;
+	} else {
+		DKCECKeyMapping *mapping = [self.objectValue parentMapping];
+		id <DKLocalAction> newAction = [[actionClass alloc] initWithDeviceKeyCode:[self.objectValue deviceKeyCode]];
+		[mapping replaceAction:self.objectValue withAction:newAction];
+		return;
+	}
+
 	if (self.currentViewController) {
 		[self.actionConfigContainer addSubview:self.currentViewController.view];
-
-		// See if the given class matches our representedObject.
-		Class actionClass = [actionInfo valueForKey:kActionViewControllerActionClassKey];
-		if ([self.objectValue isKindOfClass:actionClass]) {
-			self.currentViewController.representedObject = self.objectValue;
-		} else {
-			DKCECKeyMapping *mapping = [self.objectValue parentMapping];
-			id <DKLocalAction> newAction = [[actionClass alloc] initWithDeviceKeyCode:[self.objectValue deviceKeyCode]];
-			[mapping replaceAction:self.objectValue withAction:newAction];
-			return;
-		}
-
-			
 
 		[self.actionConfigContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[view]-0-|"
 																						   options:NSLayoutAttributeBaseline | NSLayoutFormatDirectionLeadingToTrailing
