@@ -34,9 +34,16 @@ static DKCECKeyMappingController *sharedController;
 	if (self) {
 
 		self.mappingStorage = [NSMutableDictionary new];
-
-		// TODO: Default mappings
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+		NSURL *keysFile = [[NSBundle mainBundle] URLForResource:@"DefaultKeybinds" withExtension:@"plist"];
+		NSDictionary *dict = [NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfURL:keysFile]
+																	   options:0
+																		format:nil
+																		 error:nil];
+
+		[defaults registerDefaults:dict];
+
 		NSDictionary *base = [defaults valueForKey:kBaseMappingUserDefaultsKey];
 		self.baseMapping = [[DKCECKeyMapping alloc] initWithPropertyListRepresentation:base];
 

@@ -19,6 +19,11 @@
 "DKLaunchApplicationLocalAction title" = "Launch App";
 "DKDoNothingLocalAction title" = "Do Nothing";
 
+"NavigationGroupTitle" = "Navigation";
+"NumbersGroupTitle" = "Numbers";
+"MediaControlGroupTitle" = "Media Control";
+
+
 "CEC_USER_CONTROL_CODE_SELECT" = "Select";
 "CEC_USER_CONTROL_CODE_UP" = "Up";
 "CEC_USER_CONTROL_CODE_DOWN" = "Down";

@@ -68,6 +68,7 @@
 		508FD9C315E56AD400661E0D /* DKLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C215E56AD300661E0D /* DKLocalAction.m */; };
 		508FD9C715E576AD00661E0D /* DKActionConfigurationTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */; };
 		50966FAF15E8D98A008A4064 /* DKBackgroundStyleForwarderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */; };
+		50966FB215E8EE5B008A4064 /* ButtonGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50966FB115E8EE5B008A4064 /* ButtonGroups.plist */; };
 		50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */; };
 		509E10DF15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */; };
 		509E10E115E588BC001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509E10E315E588BC001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.xib */; };
@@ -76,6 +77,7 @@
 		50AE64E515E15967006E7DA9 /* KNStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */; };
 		50AE64E815E1597D006E7DA9 /* KNGradientExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */; };
 		50AE64EB15E15CB2006E7DA9 /* KNEmbossedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */; };
+		50B9215F15E91448002218A7 /* DefaultKeybinds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50B9215E15E91448002218A7 /* DefaultKeybinds.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -217,6 +219,7 @@
 		508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKActionConfigurationTableCellView.m; sourceTree = "<group>"; };
 		50966FAD15E8D989008A4064 /* DKBackgroundStyleForwarderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBackgroundStyleForwarderView.h; sourceTree = "<group>"; };
 		50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBackgroundStyleForwarderView.m; sourceTree = "<group>"; };
+		50966FB115E8EE5B008A4064 /* ButtonGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ButtonGroups.plist; sourceTree = "<group>"; };
 		50966FB315E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+KeyCodeTranslation.h"; sourceTree = "<group>"; };
 		50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+KeyCodeTranslation.m"; sourceTree = "<group>"; };
 		509E10DC15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLaunchApplicationLocalActionConfigViewController.h; sourceTree = "<group>"; };
@@ -231,6 +234,7 @@
 		50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KNGradientExtensions.m; path = KNSharedCodeRepository/Extensions/KNGradientExtensions.m; sourceTree = SOURCE_ROOT; };
 		50AE64E915E15CB2006E7DA9 /* KNEmbossedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KNEmbossedTextField.h; path = KNSharedCodeRepository/Controls/KNEmbossedTextField.h; sourceTree = SOURCE_ROOT; };
 		50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KNEmbossedTextField.m; path = KNSharedCodeRepository/Controls/KNEmbossedTextField.m; sourceTree = SOURCE_ROOT; };
+		50B9215E15E91448002218A7 /* DefaultKeybinds.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = DefaultKeybinds.plist; sourceTree = "<group>"; };
 		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -339,6 +343,8 @@
 				503F565815DD8179007F2F3E /* main.m */,
 				503F565A15DD8179007F2F3E /* MacCEC-Prefix.pch */,
 				503F565B15DD8179007F2F3E /* Credits.rtf */,
+				50966FB115E8EE5B008A4064 /* ButtonGroups.plist */,
+				50B9215E15E91448002218A7 /* DefaultKeybinds.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -713,6 +719,8 @@
 				5017A2F015E2CBEF00B88FE6 /* Localizable.strings in Resources */,
 				509E10E115E588BC001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.xib in Resources */,
 				509E10EA15E589E6001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.xib in Resources */,
+				50966FB215E8EE5B008A4064 /* ButtonGroups.plist in Resources */,
+				50B9215F15E91448002218A7 /* DefaultKeybinds.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

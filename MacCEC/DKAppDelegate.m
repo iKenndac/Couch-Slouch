@@ -42,21 +42,6 @@
 														   selector:@selector(applicationDidActivate:)
 															   name:NSWorkspaceDidActivateApplicationNotification
 															 object:nil];
-
-	DKCECKeyMapping *base = [[DKCECKeyMappingController sharedController] baseMapping];
-
-	[base removeActions:base.actions];
-	[base addAction:[[DKLaunchApplicationLocalAction alloc] initWithBundleIdentifier:@"com.apple.launchpad.launcher" forDeviceKeyCode:CEC_USER_CONTROL_CODE_UP]];
-	[base addAction:[[DKKeyboardShortcutLocalAction alloc] initWithLocalKey:@"↓" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_DOWN]];
-	[base addAction:[[DKKeyboardShortcutLocalAction alloc] initWithLocalKey:@"←" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_LEFT]];
-	[base addAction:[[DKKeyboardShortcutLocalAction alloc] initWithLocalKey:@"→" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_RIGHT]];
-	[base addAction:[[DKKeyboardShortcutLocalAction alloc] initWithLocalKey:@"↩" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_SELECT]];
-	[base addAction:[[DKKeyboardShortcutLocalAction alloc] initWithLocalKey:@"⎋" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_EXIT]];
-	[base addAction:[[DKKeyboardShortcutLocalAction alloc] initWithLocalKey:@"Space" flags:0 forDeviceKeyCode:CEC_USER_CONTROL_CODE_PAUSE]];
-
-	[[DKCECKeyMappingController sharedController] duplicateMapping:base withNewApplicationIdentifier:@"com.plexapp.plex"];
-	// See CEC Table 27 User Control Codes in Spec
-	
 }
 
 

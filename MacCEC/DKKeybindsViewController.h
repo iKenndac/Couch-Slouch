@@ -19,6 +19,7 @@
 
 @property (weak) IBOutlet NSTableView *sourceList;
 @property (strong) IBOutlet NSView *openPanelView;
+@property (weak) IBOutlet NSTableView *actionsList;
 
 
 -(IBAction)addApplication:(id)sender;
