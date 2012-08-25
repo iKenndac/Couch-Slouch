@@ -24,4 +24,6 @@
 
 -(IBAction)addApplication:(id)sender;
 
+-(void)handleKeypress:(cec_keypress)press;
+
 @end

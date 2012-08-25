@@ -44,7 +44,6 @@
 															 object:nil];
 }
 
-
 -(BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {
 	[self.windowController showWindow:nil];
     return YES;
@@ -62,6 +61,11 @@
 	NSLog(@"Got keypress with duration: %@", @(keyPress.duration));
 	if (keyPress.duration > 0)
 		return;
+
+	if ([self.windowController shouldConsumeKeypresses]) {
+		[self.windowController handleKeypress:keyPress];
+		return;
+	}
 
 	DKCECKeyMappingController *keyMapper = [DKCECKeyMappingController sharedController];
 	DKCECKeyMapping *appMapping = [keyMapper keyMappingForApplicationWithIdentifier:self.targetApplicationIdentifier];

@@ -144,6 +144,28 @@ static NSString * const kGroupsFileGroupButtonsKey = @"Buttons";
 	}
 }
 
+-(void)handleKeypress:(cec_keypress)press {
+
+	NSString *keyString = [DKCECDeviceController stringForKeyCode:press.keycode];
+	NSInteger whereWereAt = 0;
+
+	for (NSDictionary *group in self.groups) {
+		whereWereAt++; // Take into account the header row itself.
+
+		for (NSString *button in [group valueForKey:kGroupsFileGroupButtonsKey]) {
+			if ([button caseInsensitiveCompare:keyString] == NSOrderedSame) {
+				[self.actionsList selectRowIndexes:[NSIndexSet indexSetWithIndex:whereWereAt] byExtendingSelection:NO];
+				[self.actionsList scrollRowToVisible:whereWereAt];
+				[self.view.window makeFirstResponder:self.actionsList];
+				return;
+			}
+			whereWereAt++;
+		}
+	}
+
+	NSLog(@"[%@ %@]: Got unlisted key: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), keyString);
+}
+
 #pragma mark - TableView (Source List)
 
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {

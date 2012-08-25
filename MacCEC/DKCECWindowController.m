@@ -13,9 +13,9 @@
 
 @interface DKCECWindowController ()
 
-@property (nonatomic, strong, readwrite) NSViewController *keybindsViewController;
-@property (nonatomic, strong, readwrite) NSViewController *behaviourViewController;
-@property (nonatomic, strong, readwrite) NSViewController *setupViewController;
+@property (nonatomic, strong, readwrite) DKKeybindsViewController *keybindsViewController;
+@property (nonatomic, strong, readwrite) DKBehavioursViewController *behaviourViewController;
+@property (nonatomic, strong, readwrite) DKSetupViewController *setupViewController;
 
 @end
 
@@ -35,6 +35,18 @@
 -(void)awakeFromNib {
 	[self.window setMovableByWindowBackground:YES];
 	[self switchToKeybindsView:nil];
+}
+
+-(BOOL)shouldConsumeKeypresses {
+	return (self.currentViewController == self.keybindsViewController &&
+			self.window.isMainWindow &&
+			self.window.isKeyWindow &&
+			self.window.isVisible &&
+			[[NSApplication sharedApplication] isActive]);
+}
+
+-(void)handleKeypress:(cec_keypress)press {
+	[self.keybindsViewController handleKeypress:press];
 }
 
 -(void)setCurrentViewController:(NSViewController *)aViewController {

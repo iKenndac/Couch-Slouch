@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "cectypes.h"
 
 @interface DKCECWindowController : NSWindowController
 
@@ -20,5 +21,7 @@
 - (IBAction)switchToBehavioursView:(id)sender;
 - (IBAction)switchToSetupView:(id)sender;
 
+-(BOOL)shouldConsumeKeypresses;
+-(void)handleKeypress:(cec_keypress)press;
 
 @end
