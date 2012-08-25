@@ -8,6 +8,7 @@
 
 #import "DKCECDeviceController.h"
 #import "cecc.h"
+#import <SystemConfiguration/SystemConfiguration.h>
 
 static NSTimeInterval const kDevicePollInterval = 2.0;
 static NSTimeInterval const kDevicePingInterval = 10.0;
@@ -139,7 +140,7 @@ static dispatch_queue_t cec_global_queue;
 	if (self) {
 
 		if (name.length == 0)
-			name = [[NSProcessInfo processInfo] hostName];
+			name = (__bridge_transfer NSString *)SCDynamicStoreCopyComputerName(NULL, NULL);
 
 		cec_device_type_list list;
 		memset(&list, 0, sizeof(cec_device_type_list));

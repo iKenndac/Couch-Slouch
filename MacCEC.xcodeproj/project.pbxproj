@@ -78,6 +78,7 @@
 		50AE64E815E1597D006E7DA9 /* KNGradientExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */; };
 		50AE64EB15E15CB2006E7DA9 /* KNEmbossedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */; };
 		50B9215F15E91448002218A7 /* DefaultKeybinds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50B9215E15E91448002218A7 /* DefaultKeybinds.plist */; };
+		50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B9216115E922DA002218A7 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -235,6 +236,7 @@
 		50AE64E915E15CB2006E7DA9 /* KNEmbossedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KNEmbossedTextField.h; path = KNSharedCodeRepository/Controls/KNEmbossedTextField.h; sourceTree = SOURCE_ROOT; };
 		50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KNEmbossedTextField.m; path = KNSharedCodeRepository/Controls/KNEmbossedTextField.m; sourceTree = SOURCE_ROOT; };
 		50B9215E15E91448002218A7 /* DefaultKeybinds.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = DefaultKeybinds.plist; sourceTree = "<group>"; };
+		50B9216115E922DA002218A7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,6 +245,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */,
 				5017A30B15E2D93400B88FE6 /* Carbon.framework in Frameworks */,
 				503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */,
 				503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */,
@@ -291,6 +294,7 @@
 		503F564B15DD8179007F2F3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50B9216115E922DA002218A7 /* SystemConfiguration.framework */,
 				5017A30A15E2D93400B88FE6 /* Carbon.framework */,
 				503F575515DD848E007F2F3E /* QuartzCore.framework */,
 				503F575315DD845B007F2F3E /* IOKit.framework */,
