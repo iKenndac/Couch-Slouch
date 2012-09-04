@@ -388,6 +388,22 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: delegate.cecController.humanReadableStatus</string>
+						<reference key="source" ref="180251221"/>
+						<reference key="destination" ref="1004"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="180251221"/>
+							<reference key="NSDestination" ref="1004"/>
+							<string key="NSLabel">value: delegate.cecController.humanReadableStatus</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">delegate.cecController.humanReadableStatus</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">122</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.LogLibCEC</string>
 						<reference key="source" ref="1036628257"/>
 						<reference key="destination" ref="167889232"/>
@@ -1356,7 +1372,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">121</int>
+			<int key="maxID">122</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

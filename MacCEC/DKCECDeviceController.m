@@ -22,6 +22,7 @@ static NSTimeInterval const kDevicePingInterval = 10.0;
 @property (nonatomic, readwrite) BOOL hasConnection;
 @property (nonatomic, readwrite) NSTimer *pollTimer;
 @property (nonatomic, readwrite) NSTimer *pingTimer;
+@property (nonatomic, readwrite) BOOL isActiveSource;
 
 @end
 
@@ -94,8 +95,12 @@ static int DKCBCecMenuStateChanged(void *param, const cec_menu_state menuState) 
 
 static void DKCBCecSourceActivated(void *param, const cec_logical_address logicalAddress, const uint8_t isActivated) {
 
+	BOOL isActive = cec_is_libcec_active_source();
+
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
+		controller.isActiveSource = isActive;
+
 		if ([controller.delegate respondsToSelector:@selector(cecController:activationDidChangeForLogicalDevice:toState:)])
 			[controller.delegate cecController:controller
 		   activationDidChangeForLogicalDevice:logicalAddress
@@ -170,6 +175,20 @@ static dispatch_queue_t cec_global_queue;
 	}
 	
 	return self;
+}
+
++(NSSet *)keyPathsForValuesAffectingHumanReadableStatus {
+	return [NSSet setWithObjects:@"hasConnection", @"isActiveSource", nil];
+}
+
+-(NSString *)humanReadableStatus {
+
+	if (!self.hasConnection)
+		return NSLocalizedString(@"no connection title", @"");
+	else if (!self.isActiveSource)
+		return NSLocalizedString(@"connected but not active source title", @"");
+	else
+		return NSLocalizedString(@"active source title", @"");
 }
 
 -(void)dealloc {

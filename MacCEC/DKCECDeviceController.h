@@ -30,6 +30,8 @@
 @property (nonatomic, readonly) libcec_configuration configuration;
 @property (nonatomic, readwrite, weak) id <DKCECDeviceControllerDelegate> delegate;
 @property (nonatomic, readonly) BOOL hasConnection;
+@property (nonatomic, readonly, copy) NSString *humanReadableStatus;
+@property (nonatomic, readonly) BOOL isActiveSource;
 
 // ----
 
