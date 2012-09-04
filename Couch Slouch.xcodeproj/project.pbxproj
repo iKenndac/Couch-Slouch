@@ -1,0 +1,1002 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5017A30315E2D85A00B88FE6 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FA15E2D85A00B88FE6 /* SRCommon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5017A30415E2D85A00B88FE6 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FC15E2D85A00B88FE6 /* SRKeyCodeTransformer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5017A30515E2D85A00B88FE6 /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FE15E2D85A00B88FE6 /* SRRecorderCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5017A30615E2D85A00B88FE6 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A30015E2D85A00B88FE6 /* SRRecorderControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5017A30715E2D85A00B88FE6 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A30215E2D85A00B88FE6 /* SRValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5017A30B15E2D93400B88FE6 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5017A30A15E2D93400B88FE6 /* Carbon.framework */; };
+		503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F564C15DD8179007F2F3E /* Cocoa.framework */; };
+		503F565915DD8179007F2F3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565815DD8179007F2F3E /* main.m */; };
+		503F566015DD8179007F2F3E /* DKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565F15DD8179007F2F3E /* DKAppDelegate.m */; };
+		503F572A15DD8221007F2F3E /* AdapterFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F569C15DD8221007F2F3E /* AdapterFactory.cpp */; };
+		503F572B15DD8221007F2F3E /* USBCECAdapterCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F569F15DD8221007F2F3E /* USBCECAdapterCommands.cpp */; };
+		503F572C15DD8221007F2F3E /* USBCECAdapterCommunication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A115DD8221007F2F3E /* USBCECAdapterCommunication.cpp */; };
+		503F572D15DD8221007F2F3E /* USBCECAdapterDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A315DD8221007F2F3E /* USBCECAdapterDetection.cpp */; };
+		503F572E15DD8221007F2F3E /* USBCECAdapterMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A515DD8221007F2F3E /* USBCECAdapterMessage.cpp */; };
+		503F572F15DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A715DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp */; };
+		503F573015DD8221007F2F3E /* RPiCECAdapterCommunication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56AA15DD8221007F2F3E /* RPiCECAdapterCommunication.cpp */; };
+		503F573115DD8221007F2F3E /* RPiCECAdapterDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56AC15DD8221007F2F3E /* RPiCECAdapterDetection.cpp */; };
+		503F573215DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56AE15DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp */; };
+		503F573315DD8221007F2F3E /* CECClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B015DD8221007F2F3E /* CECClient.cpp */; };
+		503F573415DD8221007F2F3E /* CECProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B315DD8221007F2F3E /* CECProcessor.cpp */; };
+		503F573515DD8221007F2F3E /* CECAudioSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B715DD8221007F2F3E /* CECAudioSystem.cpp */; };
+		503F573615DD8221007F2F3E /* CECBusDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B915DD8221007F2F3E /* CECBusDevice.cpp */; };
+		503F573715DD8221007F2F3E /* CECDeviceMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56BB15DD8221007F2F3E /* CECDeviceMap.cpp */; };
+		503F573815DD8221007F2F3E /* CECPlaybackDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56BD15DD8221007F2F3E /* CECPlaybackDevice.cpp */; };
+		503F573915DD8221007F2F3E /* CECRecordingDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56BF15DD8221007F2F3E /* CECRecordingDevice.cpp */; };
+		503F573A15DD8221007F2F3E /* CECTuner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C115DD8221007F2F3E /* CECTuner.cpp */; };
+		503F573B15DD8221007F2F3E /* CECTV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C315DD8221007F2F3E /* CECTV.cpp */; };
+		503F573C15DD8221007F2F3E /* ANCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C615DD8221007F2F3E /* ANCommandHandler.cpp */; };
+		503F573D15DD8221007F2F3E /* CECCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C815DD8221007F2F3E /* CECCommandHandler.cpp */; };
+		503F573E15DD8221007F2F3E /* RLCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56CA15DD8221007F2F3E /* RLCommandHandler.cpp */; };
+		503F573F15DD8221007F2F3E /* SLCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56CC15DD8221007F2F3E /* SLCommandHandler.cpp */; };
+		503F574015DD8221007F2F3E /* VLCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56CE15DD8221007F2F3E /* VLCommandHandler.cpp */; };
+		503F574115DD8221007F2F3E /* LibCEC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56D015DD8221007F2F3E /* LibCEC.cpp */; };
+		503F574315DD8221007F2F3E /* LibCECC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56D315DD8221007F2F3E /* LibCECC.cpp */; };
+		503F574615DD8221007F2F3E /* adl-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56D815DD8221007F2F3E /* adl-edid.cpp */; };
+		503F574715DD8221007F2F3E /* nv-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56DE15DD8221007F2F3E /* nv-edid.cpp */; };
+		503F574815DD8221007F2F3E /* os-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E215DD8221007F2F3E /* os-edid.cpp */; };
+		503F574915DD8221007F2F3E /* serialport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E615DD8221007F2F3E /* serialport.cpp */; };
+		503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E715DD8221007F2F3E /* serversocket.cpp */; };
+		503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575315DD845B007F2F3E /* IOKit.framework */; };
+		503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575515DD848E007F2F3E /* QuartzCore.framework */; };
+		503F575D15DD9148007F2F3E /* DKCECDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F575C15DD9148007F2F3E /* DKCECDeviceController.m */; };
+		5047671815F6B13300BF2DA7 /* ButtonGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5047670115F6B13300BF2DA7 /* ButtonGroups.plist */; };
+		5047671915F6B13300BF2DA7 /* Couch Slouch-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5047670215F6B13300BF2DA7 /* Couch Slouch-Info.plist */; };
+		5047671A15F6B13300BF2DA7 /* DefaultKeybinds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5047670315F6B13300BF2DA7 /* DefaultKeybinds.plist */; };
+		5047671B15F6B13300BF2DA7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5047670415F6B13300BF2DA7 /* Credits.rtf */; };
+		5047671C15F6B13300BF2DA7 /* DKBehavioursViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5047670615F6B13300BF2DA7 /* DKBehavioursViewController.xib */; };
+		5047671D15F6B13300BF2DA7 /* DKCECWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5047670815F6B13300BF2DA7 /* DKCECWindowController.xib */; };
+		5047671E15F6B13300BF2DA7 /* DKKeybindsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5047670A15F6B13300BF2DA7 /* DKKeybindsViewController.xib */; };
+		5047671F15F6B13300BF2DA7 /* DKKeyboardShortcutLocalActionConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5047670C15F6B13300BF2DA7 /* DKKeyboardShortcutLocalActionConfigViewController.xib */; };
+		5047672015F6B13300BF2DA7 /* DKLaunchApplicationLocalActionConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5047670E15F6B13300BF2DA7 /* DKLaunchApplicationLocalActionConfigViewController.xib */; };
+		5047672115F6B13300BF2DA7 /* DKSetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5047671015F6B13300BF2DA7 /* DKSetupViewController.xib */; };
+		5047672215F6B13300BF2DA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5047671215F6B13300BF2DA7 /* InfoPlist.strings */; };
+		5047672315F6B13300BF2DA7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5047671415F6B13300BF2DA7 /* Localizable.strings */; };
+		5047672415F6B13300BF2DA7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5047671615F6B13300BF2DA7 /* MainMenu.xib */; };
+		5055C7C715DF9EE800B6B497 /* DKCECWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7C515DF9EE800B6B497 /* DKCECWindowController.m */; };
+		5055C7D415DFA5EB00B6B497 /* DKKeybindsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7D215DFA5EB00B6B497 /* DKKeybindsViewController.m */; };
+		5055C7D915DFA5FA00B6B497 /* DKBehavioursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7D715DFA5FA00B6B497 /* DKBehavioursViewController.m */; };
+		5055C7DE15DFA60600B6B497 /* DKSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7DC15DFA60600B6B497 /* DKSetupViewController.m */; };
+		5055C7EC15DFB54C00B6B497 /* DKCECKeyMappingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */; };
+		5055C80115DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */; };
+		508FD9BD15E5607700661E0D /* DKLaunchApplicationLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9BC15E5607700661E0D /* DKLaunchApplicationLocalAction.m */; };
+		508FD9C115E5682A00661E0D /* DKDoNothingLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */; };
+		508FD9C315E56AD400661E0D /* DKLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C215E56AD300661E0D /* DKLocalAction.m */; };
+		508FD9C715E576AD00661E0D /* DKActionConfigurationTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */; };
+		50966FAF15E8D98A008A4064 /* DKBackgroundStyleForwarderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */; };
+		50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */; };
+		509E10DF15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */; };
+		509E10E815E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10E615E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m */; };
+		50AE64E515E15967006E7DA9 /* KNStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */; };
+		50AE64E815E1597D006E7DA9 /* KNGradientExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */; };
+		50AE64EB15E15CB2006E7DA9 /* KNEmbossedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */; };
+		50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B9216115E922DA002218A7 /* SystemConfiguration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5017A2F915E2D85A00B88FE6 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
+		5017A2FA15E2D85A00B88FE6 /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = "<group>"; };
+		5017A2FB15E2D85A00B88FE6 /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = "<group>"; };
+		5017A2FC15E2D85A00B88FE6 /* SRKeyCodeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRKeyCodeTransformer.m; sourceTree = "<group>"; };
+		5017A2FD15E2D85A00B88FE6 /* SRRecorderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderCell.h; sourceTree = "<group>"; };
+		5017A2FE15E2D85A00B88FE6 /* SRRecorderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderCell.m; sourceTree = "<group>"; };
+		5017A2FF15E2D85A00B88FE6 /* SRRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderControl.h; sourceTree = "<group>"; };
+		5017A30015E2D85A00B88FE6 /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = "<group>"; };
+		5017A30115E2D85A00B88FE6 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
+		5017A30215E2D85A00B88FE6 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
+		5017A30A15E2D93400B88FE6 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		503F564815DD8179007F2F3E /* Couch Slouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Couch Slouch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		503F564C15DD8179007F2F3E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		503F564F15DD8179007F2F3E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		503F565015DD8179007F2F3E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		503F565115DD8179007F2F3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		503F565815DD8179007F2F3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		503F565A15DD8179007F2F3E /* Couch Slouch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Couch Slouch-Prefix.pch"; sourceTree = "<group>"; };
+		503F565E15DD8179007F2F3E /* DKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKAppDelegate.h; sourceTree = "<group>"; };
+		503F565F15DD8179007F2F3E /* DKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKAppDelegate.m; sourceTree = "<group>"; };
+		503F566B15DD81D2007F2F3E /* cec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cec.h; sourceTree = "<group>"; };
+		503F566C15DD81D2007F2F3E /* cecc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecc.h; sourceTree = "<group>"; };
+		503F566D15DD81D2007F2F3E /* cecloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecloader.h; sourceTree = "<group>"; };
+		503F566E15DD81D2007F2F3E /* cectypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cectypes.h; sourceTree = "<group>"; };
+		503F569815DD8221007F2F3E /* env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = env.h; sourceTree = "<group>"; };
+		503F569B15DD8221007F2F3E /* AdapterCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdapterCommunication.h; sourceTree = "<group>"; };
+		503F569C15DD8221007F2F3E /* AdapterFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdapterFactory.cpp; sourceTree = "<group>"; };
+		503F569D15DD8221007F2F3E /* AdapterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdapterFactory.h; sourceTree = "<group>"; };
+		503F569F15DD8221007F2F3E /* USBCECAdapterCommands.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = USBCECAdapterCommands.cpp; sourceTree = "<group>"; };
+		503F56A015DD8221007F2F3E /* USBCECAdapterCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBCECAdapterCommands.h; sourceTree = "<group>"; };
+		503F56A115DD8221007F2F3E /* USBCECAdapterCommunication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = USBCECAdapterCommunication.cpp; sourceTree = "<group>"; };
+		503F56A215DD8221007F2F3E /* USBCECAdapterCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBCECAdapterCommunication.h; sourceTree = "<group>"; };
+		503F56A315DD8221007F2F3E /* USBCECAdapterDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = USBCECAdapterDetection.cpp; sourceTree = "<group>"; };
+		503F56A415DD8221007F2F3E /* USBCECAdapterDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBCECAdapterDetection.h; sourceTree = "<group>"; };
+		503F56A515DD8221007F2F3E /* USBCECAdapterMessage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = USBCECAdapterMessage.cpp; sourceTree = "<group>"; };
+		503F56A615DD8221007F2F3E /* USBCECAdapterMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBCECAdapterMessage.h; sourceTree = "<group>"; };
+		503F56A715DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = USBCECAdapterMessageQueue.cpp; sourceTree = "<group>"; };
+		503F56A815DD8221007F2F3E /* USBCECAdapterMessageQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBCECAdapterMessageQueue.h; sourceTree = "<group>"; };
+		503F56AA15DD8221007F2F3E /* RPiCECAdapterCommunication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RPiCECAdapterCommunication.cpp; sourceTree = "<group>"; };
+		503F56AB15DD8221007F2F3E /* RPiCECAdapterCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPiCECAdapterCommunication.h; sourceTree = "<group>"; };
+		503F56AC15DD8221007F2F3E /* RPiCECAdapterDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RPiCECAdapterDetection.cpp; sourceTree = "<group>"; };
+		503F56AD15DD8221007F2F3E /* RPiCECAdapterDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPiCECAdapterDetection.h; sourceTree = "<group>"; };
+		503F56AE15DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RPiCECAdapterMessageQueue.cpp; sourceTree = "<group>"; };
+		503F56AF15DD8221007F2F3E /* RPiCECAdapterMessageQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPiCECAdapterMessageQueue.h; sourceTree = "<group>"; };
+		503F56B015DD8221007F2F3E /* CECClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECClient.cpp; sourceTree = "<group>"; };
+		503F56B115DD8221007F2F3E /* CECClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECClient.h; sourceTree = "<group>"; };
+		503F56B215DD8221007F2F3E /* CECInputBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECInputBuffer.h; sourceTree = "<group>"; };
+		503F56B315DD8221007F2F3E /* CECProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECProcessor.cpp; sourceTree = "<group>"; };
+		503F56B415DD8221007F2F3E /* CECProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECProcessor.h; sourceTree = "<group>"; };
+		503F56B515DD8221007F2F3E /* CECTypeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECTypeUtils.h; sourceTree = "<group>"; };
+		503F56B715DD8221007F2F3E /* CECAudioSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECAudioSystem.cpp; sourceTree = "<group>"; };
+		503F56B815DD8221007F2F3E /* CECAudioSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECAudioSystem.h; sourceTree = "<group>"; };
+		503F56B915DD8221007F2F3E /* CECBusDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECBusDevice.cpp; sourceTree = "<group>"; };
+		503F56BA15DD8221007F2F3E /* CECBusDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECBusDevice.h; sourceTree = "<group>"; };
+		503F56BB15DD8221007F2F3E /* CECDeviceMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECDeviceMap.cpp; sourceTree = "<group>"; };
+		503F56BC15DD8221007F2F3E /* CECDeviceMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECDeviceMap.h; sourceTree = "<group>"; };
+		503F56BD15DD8221007F2F3E /* CECPlaybackDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECPlaybackDevice.cpp; sourceTree = "<group>"; };
+		503F56BE15DD8221007F2F3E /* CECPlaybackDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECPlaybackDevice.h; sourceTree = "<group>"; };
+		503F56BF15DD8221007F2F3E /* CECRecordingDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECRecordingDevice.cpp; sourceTree = "<group>"; };
+		503F56C015DD8221007F2F3E /* CECRecordingDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECRecordingDevice.h; sourceTree = "<group>"; };
+		503F56C115DD8221007F2F3E /* CECTuner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECTuner.cpp; sourceTree = "<group>"; };
+		503F56C215DD8221007F2F3E /* CECTuner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECTuner.h; sourceTree = "<group>"; };
+		503F56C315DD8221007F2F3E /* CECTV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECTV.cpp; sourceTree = "<group>"; };
+		503F56C415DD8221007F2F3E /* CECTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECTV.h; sourceTree = "<group>"; };
+		503F56C615DD8221007F2F3E /* ANCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ANCommandHandler.cpp; sourceTree = "<group>"; };
+		503F56C715DD8221007F2F3E /* ANCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCommandHandler.h; sourceTree = "<group>"; };
+		503F56C815DD8221007F2F3E /* CECCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CECCommandHandler.cpp; sourceTree = "<group>"; };
+		503F56C915DD8221007F2F3E /* CECCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECCommandHandler.h; sourceTree = "<group>"; };
+		503F56CA15DD8221007F2F3E /* RLCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RLCommandHandler.cpp; sourceTree = "<group>"; };
+		503F56CB15DD8221007F2F3E /* RLCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLCommandHandler.h; sourceTree = "<group>"; };
+		503F56CC15DD8221007F2F3E /* SLCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SLCommandHandler.cpp; sourceTree = "<group>"; };
+		503F56CD15DD8221007F2F3E /* SLCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCommandHandler.h; sourceTree = "<group>"; };
+		503F56CE15DD8221007F2F3E /* VLCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VLCommandHandler.cpp; sourceTree = "<group>"; };
+		503F56CF15DD8221007F2F3E /* VLCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLCommandHandler.h; sourceTree = "<group>"; };
+		503F56D015DD8221007F2F3E /* LibCEC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LibCEC.cpp; sourceTree = "<group>"; };
+		503F56D115DD8221007F2F3E /* LibCEC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibCEC.h; sourceTree = "<group>"; };
+		503F56D315DD8221007F2F3E /* LibCECC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LibCECC.cpp; sourceTree = "<group>"; };
+		503F56D815DD8221007F2F3E /* adl-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "adl-edid.cpp"; sourceTree = "<group>"; };
+		503F56D915DD8221007F2F3E /* adl-edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "adl-edid.h"; sourceTree = "<group>"; };
+		503F56DA15DD8221007F2F3E /* adl_defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adl_defines.h; sourceTree = "<group>"; };
+		503F56DB15DD8221007F2F3E /* adl_sdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adl_sdk.h; sourceTree = "<group>"; };
+		503F56DC15DD8221007F2F3E /* adl_structures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adl_structures.h; sourceTree = "<group>"; };
+		503F56DE15DD8221007F2F3E /* nv-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "nv-edid.cpp"; sourceTree = "<group>"; };
+		503F56DF15DD8221007F2F3E /* nv-edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "nv-edid.h"; sourceTree = "<group>"; };
+		503F56E015DD8221007F2F3E /* os.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = os.h; sourceTree = "<group>"; };
+		503F56E215DD8221007F2F3E /* os-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "os-edid.cpp"; sourceTree = "<group>"; };
+		503F56E315DD8221007F2F3E /* os-socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "os-socket.h"; sourceTree = "<group>"; };
+		503F56E415DD8221007F2F3E /* os-threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "os-threads.h"; sourceTree = "<group>"; };
+		503F56E515DD8221007F2F3E /* os-types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "os-types.h"; sourceTree = "<group>"; };
+		503F56E615DD8221007F2F3E /* serialport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = serialport.cpp; sourceTree = "<group>"; };
+		503F56E715DD8221007F2F3E /* serversocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = serversocket.cpp; sourceTree = "<group>"; };
+		503F56E915DD8221007F2F3E /* serialport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serialport.h; sourceTree = "<group>"; };
+		503F56EA15DD8221007F2F3E /* serversocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serversocket.h; sourceTree = "<group>"; };
+		503F56EB15DD8221007F2F3E /* socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = socket.h; sourceTree = "<group>"; };
+		503F56EC15DD8221007F2F3E /* tcp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tcp.h; sourceTree = "<group>"; };
+		503F56EE15DD8221007F2F3E /* mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mutex.h; sourceTree = "<group>"; };
+		503F56EF15DD8221007F2F3E /* threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threads.h; sourceTree = "<group>"; };
+		503F56F115DD8221007F2F3E /* baudrate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baudrate.h; sourceTree = "<group>"; };
+		503F56F215DD8221007F2F3E /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		503F56F315DD8221007F2F3E /* edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = edid.h; sourceTree = "<group>"; };
+		503F56F415DD8221007F2F3E /* StdString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StdString.h; sourceTree = "<group>"; };
+		503F56F515DD8221007F2F3E /* timeutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeutils.h; sourceTree = "<group>"; };
+		503F56F615DD8221007F2F3E /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		503F575315DD845B007F2F3E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		503F575515DD848E007F2F3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		503F575B15DD9148007F2F3E /* DKCECDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECDeviceController.h; sourceTree = "<group>"; };
+		503F575C15DD9148007F2F3E /* DKCECDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECDeviceController.m; sourceTree = "<group>"; };
+		5047670115F6B13300BF2DA7 /* ButtonGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ButtonGroups.plist; sourceTree = "<group>"; };
+		5047670215F6B13300BF2DA7 /* Couch Slouch-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Couch Slouch-Info.plist"; sourceTree = "<group>"; };
+		5047670315F6B13300BF2DA7 /* DefaultKeybinds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultKeybinds.plist; sourceTree = "<group>"; };
+		5047670515F6B13300BF2DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		5047670715F6B13300BF2DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKBehavioursViewController.xib; sourceTree = "<group>"; };
+		5047670915F6B13300BF2DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKCECWindowController.xib; sourceTree = "<group>"; };
+		5047670B15F6B13300BF2DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKKeybindsViewController.xib; sourceTree = "<group>"; };
+		5047670D15F6B13300BF2DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKKeyboardShortcutLocalActionConfigViewController.xib; sourceTree = "<group>"; };
+		5047670F15F6B13300BF2DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKLaunchApplicationLocalActionConfigViewController.xib; sourceTree = "<group>"; };
+		5047671115F6B13300BF2DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKSetupViewController.xib; sourceTree = "<group>"; };
+		5047671315F6B13300BF2DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5047671515F6B13300BF2DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5047671715F6B13300BF2DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5055C7C415DF9EE800B6B497 /* DKCECWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECWindowController.h; sourceTree = "<group>"; };
+		5055C7C515DF9EE800B6B497 /* DKCECWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECWindowController.m; sourceTree = "<group>"; };
+		5055C7D115DFA5EB00B6B497 /* DKKeybindsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKKeybindsViewController.h; sourceTree = "<group>"; };
+		5055C7D215DFA5EB00B6B497 /* DKKeybindsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKKeybindsViewController.m; sourceTree = "<group>"; };
+		5055C7D615DFA5FA00B6B497 /* DKBehavioursViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBehavioursViewController.h; sourceTree = "<group>"; };
+		5055C7D715DFA5FA00B6B497 /* DKBehavioursViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBehavioursViewController.m; sourceTree = "<group>"; };
+		5055C7DB15DFA60600B6B497 /* DKSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKSetupViewController.h; sourceTree = "<group>"; };
+		5055C7DC15DFA60600B6B497 /* DKSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKSetupViewController.m; sourceTree = "<group>"; };
+		5055C7EA15DFB54C00B6B497 /* DKCECKeyMappingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECKeyMappingController.h; sourceTree = "<group>"; };
+		5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECKeyMappingController.m; sourceTree = "<group>"; };
+		5055C7ED15DFB60F00B6B497 /* DKLocalAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKLocalAction.h; sourceTree = "<group>"; };
+		5055C7FF15DFF18800B6B497 /* DKKeyboardShortcutLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKKeyboardShortcutLocalAction.h; sourceTree = "<group>"; };
+		5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKKeyboardShortcutLocalAction.m; sourceTree = "<group>"; };
+		508FD9BB15E5607700661E0D /* DKLaunchApplicationLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLaunchApplicationLocalAction.h; sourceTree = "<group>"; };
+		508FD9BC15E5607700661E0D /* DKLaunchApplicationLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLaunchApplicationLocalAction.m; sourceTree = "<group>"; };
+		508FD9BF15E5682A00661E0D /* DKDoNothingLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKDoNothingLocalAction.h; sourceTree = "<group>"; };
+		508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKDoNothingLocalAction.m; sourceTree = "<group>"; };
+		508FD9C215E56AD300661E0D /* DKLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLocalAction.m; sourceTree = "<group>"; };
+		508FD9C515E576AD00661E0D /* DKActionConfigurationTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKActionConfigurationTableCellView.h; sourceTree = "<group>"; };
+		508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKActionConfigurationTableCellView.m; sourceTree = "<group>"; };
+		50966FAD15E8D989008A4064 /* DKBackgroundStyleForwarderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBackgroundStyleForwarderView.h; sourceTree = "<group>"; };
+		50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBackgroundStyleForwarderView.m; sourceTree = "<group>"; };
+		50966FB315E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+KeyCodeTranslation.h"; sourceTree = "<group>"; };
+		50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+KeyCodeTranslation.m"; sourceTree = "<group>"; };
+		509E10DC15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLaunchApplicationLocalActionConfigViewController.h; sourceTree = "<group>"; };
+		509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLaunchApplicationLocalActionConfigViewController.m; sourceTree = "<group>"; };
+		509E10E515E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKKeyboardShortcutLocalActionConfigViewController.h; sourceTree = "<group>"; };
+		509E10E615E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKKeyboardShortcutLocalActionConfigViewController.m; sourceTree = "<group>"; };
+		50AE64E315E1590C006E7DA9 /* KNStatusBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KNStatusBarView.h; path = KNSharedCodeRepository/Views/KNStatusBarView.h; sourceTree = SOURCE_ROOT; };
+		50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KNStatusBarView.m; path = KNSharedCodeRepository/Views/KNStatusBarView.m; sourceTree = SOURCE_ROOT; };
+		50AE64E615E1597D006E7DA9 /* KNGradientExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KNGradientExtensions.h; path = KNSharedCodeRepository/Extensions/KNGradientExtensions.h; sourceTree = SOURCE_ROOT; };
+		50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KNGradientExtensions.m; path = KNSharedCodeRepository/Extensions/KNGradientExtensions.m; sourceTree = SOURCE_ROOT; };
+		50AE64E915E15CB2006E7DA9 /* KNEmbossedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KNEmbossedTextField.h; path = KNSharedCodeRepository/Controls/KNEmbossedTextField.h; sourceTree = SOURCE_ROOT; };
+		50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KNEmbossedTextField.m; path = KNSharedCodeRepository/Controls/KNEmbossedTextField.m; sourceTree = SOURCE_ROOT; };
+		50B9216115E922DA002218A7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		503F564515DD8179007F2F3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */,
+				5017A30B15E2D93400B88FE6 /* Carbon.framework in Frameworks */,
+				503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */,
+				503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */,
+				503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5017A2F815E2D85A00B88FE6 /* ShortcutRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				5017A2F915E2D85A00B88FE6 /* SRCommon.h */,
+				5017A2FA15E2D85A00B88FE6 /* SRCommon.m */,
+				5017A2FB15E2D85A00B88FE6 /* SRKeyCodeTransformer.h */,
+				5017A2FC15E2D85A00B88FE6 /* SRKeyCodeTransformer.m */,
+				5017A2FD15E2D85A00B88FE6 /* SRRecorderCell.h */,
+				5017A2FE15E2D85A00B88FE6 /* SRRecorderCell.m */,
+				5017A2FF15E2D85A00B88FE6 /* SRRecorderControl.h */,
+				5017A30015E2D85A00B88FE6 /* SRRecorderControl.m */,
+				5017A30115E2D85A00B88FE6 /* SRValidator.h */,
+				5017A30215E2D85A00B88FE6 /* SRValidator.m */,
+			);
+			name = ShortcutRecorder;
+			path = ShortcutRecorder/Framework/Source;
+			sourceTree = SOURCE_ROOT;
+		};
+		503F563D15DD8179007F2F3E = {
+			isa = PBXGroup;
+			children = (
+				503F565215DD8179007F2F3E /* Couch Slouch */,
+				503F564B15DD8179007F2F3E /* Frameworks */,
+				503F564915DD8179007F2F3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		503F564915DD8179007F2F3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				503F564815DD8179007F2F3E /* Couch Slouch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		503F564B15DD8179007F2F3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50B9216115E922DA002218A7 /* SystemConfiguration.framework */,
+				5017A30A15E2D93400B88FE6 /* Carbon.framework */,
+				503F575515DD848E007F2F3E /* QuartzCore.framework */,
+				503F575315DD845B007F2F3E /* IOKit.framework */,
+				503F564C15DD8179007F2F3E /* Cocoa.framework */,
+				503F564E15DD8179007F2F3E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		503F564E15DD8179007F2F3E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				503F564F15DD8179007F2F3E /* AppKit.framework */,
+				503F565015DD8179007F2F3E /* CoreData.framework */,
+				503F565115DD8179007F2F3E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		503F565215DD8179007F2F3E /* Couch Slouch */ = {
+			isa = PBXGroup;
+			children = (
+				50ED687015E2EA2E0078261D /* Constants.h */,
+				503F565E15DD8179007F2F3E /* DKAppDelegate.h */,
+				503F565F15DD8179007F2F3E /* DKAppDelegate.m */,
+				5055C7CD15DFA08900B6B497 /* UI */,
+				5055C7E915DFB4F000B6B497 /* CEC */,
+				503F566915DD819B007F2F3E /* libCEC */,
+				5017A2F815E2D85A00B88FE6 /* ShortcutRecorder */,
+				50AE64E615E1597D006E7DA9 /* KNGradientExtensions.h */,
+				50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */,
+				50AE64E315E1590C006E7DA9 /* KNStatusBarView.h */,
+				50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */,
+				50AE64E915E15CB2006E7DA9 /* KNEmbossedTextField.h */,
+				50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */,
+				50966FAD15E8D989008A4064 /* DKBackgroundStyleForwarderView.h */,
+				50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */,
+				503F565315DD8179007F2F3E /* Supporting Files */,
+			);
+			name = "Couch Slouch";
+			path = src;
+			sourceTree = "<group>";
+		};
+		503F565315DD8179007F2F3E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5047670015F6B13300BF2DA7 /* Resources */,
+				503F565815DD8179007F2F3E /* main.m */,
+				503F565A15DD8179007F2F3E /* Couch Slouch-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		503F566915DD819B007F2F3E /* libCEC */ = {
+			isa = PBXGroup;
+			children = (
+				503F566F15DD8221007F2F3E /* src */,
+				503F566A15DD81D2007F2F3E /* include */,
+			);
+			name = libCEC;
+			sourceTree = "<group>";
+		};
+		503F566A15DD81D2007F2F3E /* include */ = {
+			isa = PBXGroup;
+			children = (
+				503F566B15DD81D2007F2F3E /* cec.h */,
+				503F566C15DD81D2007F2F3E /* cecc.h */,
+				503F566D15DD81D2007F2F3E /* cecloader.h */,
+				503F566E15DD81D2007F2F3E /* cectypes.h */,
+			);
+			name = include;
+			path = libcec/include;
+			sourceTree = SOURCE_ROOT;
+		};
+		503F566F15DD8221007F2F3E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				503F569815DD8221007F2F3E /* env.h */,
+				503F569915DD8221007F2F3E /* lib */,
+			);
+			name = src;
+			path = libcec/src;
+			sourceTree = SOURCE_ROOT;
+		};
+		503F569915DD8221007F2F3E /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				503F569A15DD8221007F2F3E /* adapter */,
+				503F56B015DD8221007F2F3E /* CECClient.cpp */,
+				503F56B115DD8221007F2F3E /* CECClient.h */,
+				503F56B215DD8221007F2F3E /* CECInputBuffer.h */,
+				503F56B315DD8221007F2F3E /* CECProcessor.cpp */,
+				503F56B415DD8221007F2F3E /* CECProcessor.h */,
+				503F56B515DD8221007F2F3E /* CECTypeUtils.h */,
+				503F56B615DD8221007F2F3E /* devices */,
+				503F56C515DD8221007F2F3E /* implementations */,
+				503F56D015DD8221007F2F3E /* LibCEC.cpp */,
+				503F56D115DD8221007F2F3E /* LibCEC.h */,
+				503F56D315DD8221007F2F3E /* LibCECC.cpp */,
+				503F56D615DD8221007F2F3E /* platform */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		503F569A15DD8221007F2F3E /* adapter */ = {
+			isa = PBXGroup;
+			children = (
+				503F569B15DD8221007F2F3E /* AdapterCommunication.h */,
+				503F569C15DD8221007F2F3E /* AdapterFactory.cpp */,
+				503F569D15DD8221007F2F3E /* AdapterFactory.h */,
+				503F569E15DD8221007F2F3E /* Pulse-Eight */,
+				503F56A915DD8221007F2F3E /* RPi */,
+			);
+			path = adapter;
+			sourceTree = "<group>";
+		};
+		503F569E15DD8221007F2F3E /* Pulse-Eight */ = {
+			isa = PBXGroup;
+			children = (
+				503F569F15DD8221007F2F3E /* USBCECAdapterCommands.cpp */,
+				503F56A015DD8221007F2F3E /* USBCECAdapterCommands.h */,
+				503F56A115DD8221007F2F3E /* USBCECAdapterCommunication.cpp */,
+				503F56A215DD8221007F2F3E /* USBCECAdapterCommunication.h */,
+				503F56A315DD8221007F2F3E /* USBCECAdapterDetection.cpp */,
+				503F56A415DD8221007F2F3E /* USBCECAdapterDetection.h */,
+				503F56A515DD8221007F2F3E /* USBCECAdapterMessage.cpp */,
+				503F56A615DD8221007F2F3E /* USBCECAdapterMessage.h */,
+				503F56A715DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp */,
+				503F56A815DD8221007F2F3E /* USBCECAdapterMessageQueue.h */,
+			);
+			path = "Pulse-Eight";
+			sourceTree = "<group>";
+		};
+		503F56A915DD8221007F2F3E /* RPi */ = {
+			isa = PBXGroup;
+			children = (
+				503F56AA15DD8221007F2F3E /* RPiCECAdapterCommunication.cpp */,
+				503F56AB15DD8221007F2F3E /* RPiCECAdapterCommunication.h */,
+				503F56AC15DD8221007F2F3E /* RPiCECAdapterDetection.cpp */,
+				503F56AD15DD8221007F2F3E /* RPiCECAdapterDetection.h */,
+				503F56AE15DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp */,
+				503F56AF15DD8221007F2F3E /* RPiCECAdapterMessageQueue.h */,
+			);
+			path = RPi;
+			sourceTree = "<group>";
+		};
+		503F56B615DD8221007F2F3E /* devices */ = {
+			isa = PBXGroup;
+			children = (
+				503F56B715DD8221007F2F3E /* CECAudioSystem.cpp */,
+				503F56B815DD8221007F2F3E /* CECAudioSystem.h */,
+				503F56B915DD8221007F2F3E /* CECBusDevice.cpp */,
+				503F56BA15DD8221007F2F3E /* CECBusDevice.h */,
+				503F56BB15DD8221007F2F3E /* CECDeviceMap.cpp */,
+				503F56BC15DD8221007F2F3E /* CECDeviceMap.h */,
+				503F56BD15DD8221007F2F3E /* CECPlaybackDevice.cpp */,
+				503F56BE15DD8221007F2F3E /* CECPlaybackDevice.h */,
+				503F56BF15DD8221007F2F3E /* CECRecordingDevice.cpp */,
+				503F56C015DD8221007F2F3E /* CECRecordingDevice.h */,
+				503F56C115DD8221007F2F3E /* CECTuner.cpp */,
+				503F56C215DD8221007F2F3E /* CECTuner.h */,
+				503F56C315DD8221007F2F3E /* CECTV.cpp */,
+				503F56C415DD8221007F2F3E /* CECTV.h */,
+			);
+			path = devices;
+			sourceTree = "<group>";
+		};
+		503F56C515DD8221007F2F3E /* implementations */ = {
+			isa = PBXGroup;
+			children = (
+				503F56C615DD8221007F2F3E /* ANCommandHandler.cpp */,
+				503F56C715DD8221007F2F3E /* ANCommandHandler.h */,
+				503F56C815DD8221007F2F3E /* CECCommandHandler.cpp */,
+				503F56C915DD8221007F2F3E /* CECCommandHandler.h */,
+				503F56CA15DD8221007F2F3E /* RLCommandHandler.cpp */,
+				503F56CB15DD8221007F2F3E /* RLCommandHandler.h */,
+				503F56CC15DD8221007F2F3E /* SLCommandHandler.cpp */,
+				503F56CD15DD8221007F2F3E /* SLCommandHandler.h */,
+				503F56CE15DD8221007F2F3E /* VLCommandHandler.cpp */,
+				503F56CF15DD8221007F2F3E /* VLCommandHandler.h */,
+			);
+			path = implementations;
+			sourceTree = "<group>";
+		};
+		503F56D615DD8221007F2F3E /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				503F56D715DD8221007F2F3E /* adl */,
+				503F56DD15DD8221007F2F3E /* nvidia */,
+				503F56E015DD8221007F2F3E /* os.h */,
+				503F56E115DD8221007F2F3E /* posix */,
+				503F56E815DD8221007F2F3E /* sockets */,
+				503F56ED15DD8221007F2F3E /* threads */,
+				503F56F015DD8221007F2F3E /* util */,
+			);
+			path = platform;
+			sourceTree = "<group>";
+		};
+		503F56D715DD8221007F2F3E /* adl */ = {
+			isa = PBXGroup;
+			children = (
+				503F56D815DD8221007F2F3E /* adl-edid.cpp */,
+				503F56D915DD8221007F2F3E /* adl-edid.h */,
+				503F56DA15DD8221007F2F3E /* adl_defines.h */,
+				503F56DB15DD8221007F2F3E /* adl_sdk.h */,
+				503F56DC15DD8221007F2F3E /* adl_structures.h */,
+			);
+			path = adl;
+			sourceTree = "<group>";
+		};
+		503F56DD15DD8221007F2F3E /* nvidia */ = {
+			isa = PBXGroup;
+			children = (
+				503F56DE15DD8221007F2F3E /* nv-edid.cpp */,
+				503F56DF15DD8221007F2F3E /* nv-edid.h */,
+			);
+			path = nvidia;
+			sourceTree = "<group>";
+		};
+		503F56E115DD8221007F2F3E /* posix */ = {
+			isa = PBXGroup;
+			children = (
+				503F56E215DD8221007F2F3E /* os-edid.cpp */,
+				503F56E315DD8221007F2F3E /* os-socket.h */,
+				503F56E415DD8221007F2F3E /* os-threads.h */,
+				503F56E515DD8221007F2F3E /* os-types.h */,
+				503F56E615DD8221007F2F3E /* serialport.cpp */,
+				503F56E715DD8221007F2F3E /* serversocket.cpp */,
+			);
+			path = posix;
+			sourceTree = "<group>";
+		};
+		503F56E815DD8221007F2F3E /* sockets */ = {
+			isa = PBXGroup;
+			children = (
+				503F56E915DD8221007F2F3E /* serialport.h */,
+				503F56EA15DD8221007F2F3E /* serversocket.h */,
+				503F56EB15DD8221007F2F3E /* socket.h */,
+				503F56EC15DD8221007F2F3E /* tcp.h */,
+			);
+			path = sockets;
+			sourceTree = "<group>";
+		};
+		503F56ED15DD8221007F2F3E /* threads */ = {
+			isa = PBXGroup;
+			children = (
+				503F56EE15DD8221007F2F3E /* mutex.h */,
+				503F56EF15DD8221007F2F3E /* threads.h */,
+			);
+			path = threads;
+			sourceTree = "<group>";
+		};
+		503F56F015DD8221007F2F3E /* util */ = {
+			isa = PBXGroup;
+			children = (
+				503F56F115DD8221007F2F3E /* baudrate.h */,
+				503F56F215DD8221007F2F3E /* buffer.h */,
+				503F56F315DD8221007F2F3E /* edid.h */,
+				503F56F415DD8221007F2F3E /* StdString.h */,
+				503F56F515DD8221007F2F3E /* timeutils.h */,
+				503F56F615DD8221007F2F3E /* util.h */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		5047670015F6B13300BF2DA7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5047670115F6B13300BF2DA7 /* ButtonGroups.plist */,
+				5047670215F6B13300BF2DA7 /* Couch Slouch-Info.plist */,
+				5047670315F6B13300BF2DA7 /* DefaultKeybinds.plist */,
+				5047670415F6B13300BF2DA7 /* Credits.rtf */,
+				5047671215F6B13300BF2DA7 /* InfoPlist.strings */,
+				5047671415F6B13300BF2DA7 /* Localizable.strings */,
+				5047671615F6B13300BF2DA7 /* MainMenu.xib */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		5055C7CD15DFA08900B6B497 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5055C7C415DF9EE800B6B497 /* DKCECWindowController.h */,
+				5055C7C515DF9EE800B6B497 /* DKCECWindowController.m */,
+				5047670815F6B13300BF2DA7 /* DKCECWindowController.xib */,
+				5055C7CE15DFA5AC00B6B497 /* Keybinds */,
+				5055C7CF15DFA5B800B6B497 /* Behaviours */,
+				5055C7D015DFA5BE00B6B497 /* Setup */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		5055C7CE15DFA5AC00B6B497 /* Keybinds */ = {
+			isa = PBXGroup;
+			children = (
+				5055C7D115DFA5EB00B6B497 /* DKKeybindsViewController.h */,
+				5055C7D215DFA5EB00B6B497 /* DKKeybindsViewController.m */,
+				5047670A15F6B13300BF2DA7 /* DKKeybindsViewController.xib */,
+				508FD9C415E5768C00661E0D /* Action Config Views */,
+			);
+			name = Keybinds;
+			sourceTree = "<group>";
+		};
+		5055C7CF15DFA5B800B6B497 /* Behaviours */ = {
+			isa = PBXGroup;
+			children = (
+				5055C7D615DFA5FA00B6B497 /* DKBehavioursViewController.h */,
+				5055C7D715DFA5FA00B6B497 /* DKBehavioursViewController.m */,
+				5047670615F6B13300BF2DA7 /* DKBehavioursViewController.xib */,
+			);
+			name = Behaviours;
+			sourceTree = "<group>";
+		};
+		5055C7D015DFA5BE00B6B497 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				5055C7DB15DFA60600B6B497 /* DKSetupViewController.h */,
+				5055C7DC15DFA60600B6B497 /* DKSetupViewController.m */,
+				5047671015F6B13300BF2DA7 /* DKSetupViewController.xib */,
+			);
+			name = Setup;
+			sourceTree = "<group>";
+		};
+		5055C7E915DFB4F000B6B497 /* CEC */ = {
+			isa = PBXGroup;
+			children = (
+				503F575B15DD9148007F2F3E /* DKCECDeviceController.h */,
+				503F575C15DD9148007F2F3E /* DKCECDeviceController.m */,
+				50966FB315E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.h */,
+				50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */,
+				5055C7EA15DFB54C00B6B497 /* DKCECKeyMappingController.h */,
+				5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */,
+				5055C7ED15DFB60F00B6B497 /* DKLocalAction.h */,
+				508FD9C215E56AD300661E0D /* DKLocalAction.m */,
+				5055C7FF15DFF18800B6B497 /* DKKeyboardShortcutLocalAction.h */,
+				5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */,
+				508FD9BB15E5607700661E0D /* DKLaunchApplicationLocalAction.h */,
+				508FD9BC15E5607700661E0D /* DKLaunchApplicationLocalAction.m */,
+				508FD9BF15E5682A00661E0D /* DKDoNothingLocalAction.h */,
+				508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */,
+			);
+			name = CEC;
+			sourceTree = "<group>";
+		};
+		508FD9C415E5768C00661E0D /* Action Config Views */ = {
+			isa = PBXGroup;
+			children = (
+				508FD9C515E576AD00661E0D /* DKActionConfigurationTableCellView.h */,
+				508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */,
+				509E10DA15E58866001D0F4B /* Launch App Action */,
+				509E10E415E589CC001D0F4B /* Keyboard Shortcut Action */,
+			);
+			name = "Action Config Views";
+			sourceTree = "<group>";
+		};
+		509E10DA15E58866001D0F4B /* Launch App Action */ = {
+			isa = PBXGroup;
+			children = (
+				509E10DC15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.h */,
+				509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */,
+				5047670E15F6B13300BF2DA7 /* DKLaunchApplicationLocalActionConfigViewController.xib */,
+			);
+			name = "Launch App Action";
+			sourceTree = "<group>";
+		};
+		509E10E415E589CC001D0F4B /* Keyboard Shortcut Action */ = {
+			isa = PBXGroup;
+			children = (
+				509E10E515E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.h */,
+				509E10E615E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m */,
+				5047670C15F6B13300BF2DA7 /* DKKeyboardShortcutLocalActionConfigViewController.xib */,
+			);
+			name = "Keyboard Shortcut Action";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		503F564715DD8179007F2F3E /* Couch Slouch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 503F566615DD8179007F2F3E /* Build configuration list for PBXNativeTarget "Couch Slouch" */;
+			buildPhases = (
+				503F564415DD8179007F2F3E /* Sources */,
+				503F564515DD8179007F2F3E /* Frameworks */,
+				503F564615DD8179007F2F3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Couch Slouch";
+			productName = "Couch Slouch";
+			productReference = 503F564815DD8179007F2F3E /* Couch Slouch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		503F563F15DD8179007F2F3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DK;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Daniel Kennett";
+			};
+			buildConfigurationList = 503F564215DD8179007F2F3E /* Build configuration list for PBXProject "Couch Slouch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 503F563D15DD8179007F2F3E;
+			productRefGroup = 503F564915DD8179007F2F3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				503F564715DD8179007F2F3E /* Couch Slouch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		503F564615DD8179007F2F3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5047671815F6B13300BF2DA7 /* ButtonGroups.plist in Resources */,
+				5047671915F6B13300BF2DA7 /* Couch Slouch-Info.plist in Resources */,
+				5047671A15F6B13300BF2DA7 /* DefaultKeybinds.plist in Resources */,
+				5047671B15F6B13300BF2DA7 /* Credits.rtf in Resources */,
+				5047671C15F6B13300BF2DA7 /* DKBehavioursViewController.xib in Resources */,
+				5047671D15F6B13300BF2DA7 /* DKCECWindowController.xib in Resources */,
+				5047671E15F6B13300BF2DA7 /* DKKeybindsViewController.xib in Resources */,
+				5047671F15F6B13300BF2DA7 /* DKKeyboardShortcutLocalActionConfigViewController.xib in Resources */,
+				5047672015F6B13300BF2DA7 /* DKLaunchApplicationLocalActionConfigViewController.xib in Resources */,
+				5047672115F6B13300BF2DA7 /* DKSetupViewController.xib in Resources */,
+				5047672215F6B13300BF2DA7 /* InfoPlist.strings in Resources */,
+				5047672315F6B13300BF2DA7 /* Localizable.strings in Resources */,
+				5047672415F6B13300BF2DA7 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		503F564415DD8179007F2F3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				503F565915DD8179007F2F3E /* main.m in Sources */,
+				503F566015DD8179007F2F3E /* DKAppDelegate.m in Sources */,
+				503F572A15DD8221007F2F3E /* AdapterFactory.cpp in Sources */,
+				503F572B15DD8221007F2F3E /* USBCECAdapterCommands.cpp in Sources */,
+				503F572C15DD8221007F2F3E /* USBCECAdapterCommunication.cpp in Sources */,
+				503F572D15DD8221007F2F3E /* USBCECAdapterDetection.cpp in Sources */,
+				503F572E15DD8221007F2F3E /* USBCECAdapterMessage.cpp in Sources */,
+				503F572F15DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp in Sources */,
+				503F573015DD8221007F2F3E /* RPiCECAdapterCommunication.cpp in Sources */,
+				503F573115DD8221007F2F3E /* RPiCECAdapterDetection.cpp in Sources */,
+				503F573215DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp in Sources */,
+				503F573315DD8221007F2F3E /* CECClient.cpp in Sources */,
+				503F573415DD8221007F2F3E /* CECProcessor.cpp in Sources */,
+				503F573515DD8221007F2F3E /* CECAudioSystem.cpp in Sources */,
+				503F573615DD8221007F2F3E /* CECBusDevice.cpp in Sources */,
+				503F573715DD8221007F2F3E /* CECDeviceMap.cpp in Sources */,
+				503F573815DD8221007F2F3E /* CECPlaybackDevice.cpp in Sources */,
+				503F573915DD8221007F2F3E /* CECRecordingDevice.cpp in Sources */,
+				503F573A15DD8221007F2F3E /* CECTuner.cpp in Sources */,
+				503F573B15DD8221007F2F3E /* CECTV.cpp in Sources */,
+				503F573C15DD8221007F2F3E /* ANCommandHandler.cpp in Sources */,
+				503F573D15DD8221007F2F3E /* CECCommandHandler.cpp in Sources */,
+				503F573E15DD8221007F2F3E /* RLCommandHandler.cpp in Sources */,
+				503F573F15DD8221007F2F3E /* SLCommandHandler.cpp in Sources */,
+				503F574015DD8221007F2F3E /* VLCommandHandler.cpp in Sources */,
+				503F574115DD8221007F2F3E /* LibCEC.cpp in Sources */,
+				503F574315DD8221007F2F3E /* LibCECC.cpp in Sources */,
+				503F574615DD8221007F2F3E /* adl-edid.cpp in Sources */,
+				503F574715DD8221007F2F3E /* nv-edid.cpp in Sources */,
+				503F574815DD8221007F2F3E /* os-edid.cpp in Sources */,
+				503F574915DD8221007F2F3E /* serialport.cpp in Sources */,
+				503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */,
+				503F575D15DD9148007F2F3E /* DKCECDeviceController.m in Sources */,
+				5055C7C715DF9EE800B6B497 /* DKCECWindowController.m in Sources */,
+				5055C7D415DFA5EB00B6B497 /* DKKeybindsViewController.m in Sources */,
+				5055C7D915DFA5FA00B6B497 /* DKBehavioursViewController.m in Sources */,
+				5055C7DE15DFA60600B6B497 /* DKSetupViewController.m in Sources */,
+				5055C7EC15DFB54C00B6B497 /* DKCECKeyMappingController.m in Sources */,
+				5055C80115DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m in Sources */,
+				50AE64E515E15967006E7DA9 /* KNStatusBarView.m in Sources */,
+				50AE64E815E1597D006E7DA9 /* KNGradientExtensions.m in Sources */,
+				50AE64EB15E15CB2006E7DA9 /* KNEmbossedTextField.m in Sources */,
+				5017A30315E2D85A00B88FE6 /* SRCommon.m in Sources */,
+				5017A30415E2D85A00B88FE6 /* SRKeyCodeTransformer.m in Sources */,
+				5017A30515E2D85A00B88FE6 /* SRRecorderCell.m in Sources */,
+				5017A30615E2D85A00B88FE6 /* SRRecorderControl.m in Sources */,
+				5017A30715E2D85A00B88FE6 /* SRValidator.m in Sources */,
+				508FD9BD15E5607700661E0D /* DKLaunchApplicationLocalAction.m in Sources */,
+				508FD9C115E5682A00661E0D /* DKDoNothingLocalAction.m in Sources */,
+				508FD9C315E56AD400661E0D /* DKLocalAction.m in Sources */,
+				508FD9C715E576AD00661E0D /* DKActionConfigurationTableCellView.m in Sources */,
+				509E10DF15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m in Sources */,
+				509E10E815E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m in Sources */,
+				50966FAF15E8D98A008A4064 /* DKBackgroundStyleForwarderView.m in Sources */,
+				50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5047670415F6B13300BF2DA7 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5047670515F6B13300BF2DA7 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		5047670615F6B13300BF2DA7 /* DKBehavioursViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5047670715F6B13300BF2DA7 /* en */,
+			);
+			name = DKBehavioursViewController.xib;
+			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		5047670815F6B13300BF2DA7 /* DKCECWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5047670915F6B13300BF2DA7 /* en */,
+			);
+			name = DKCECWindowController.xib;
+			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		5047670A15F6B13300BF2DA7 /* DKKeybindsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5047670B15F6B13300BF2DA7 /* en */,
+			);
+			name = DKKeybindsViewController.xib;
+			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		5047670C15F6B13300BF2DA7 /* DKKeyboardShortcutLocalActionConfigViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5047670D15F6B13300BF2DA7 /* en */,
+			);
+			name = DKKeyboardShortcutLocalActionConfigViewController.xib;
+			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		5047670E15F6B13300BF2DA7 /* DKLaunchApplicationLocalActionConfigViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5047670F15F6B13300BF2DA7 /* en */,
+			);
+			name = DKLaunchApplicationLocalActionConfigViewController.xib;
+			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		5047671015F6B13300BF2DA7 /* DKSetupViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5047671115F6B13300BF2DA7 /* en */,
+			);
+			name = DKSetupViewController.xib;
+			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		5047671215F6B13300BF2DA7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5047671315F6B13300BF2DA7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5047671415F6B13300BF2DA7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5047671515F6B13300BF2DA7 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5047671615F6B13300BF2DA7 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5047671715F6B13300BF2DA7 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		503F566415DD8179007F2F3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.7;
+			};
+			name = Debug;
+		};
+		503F566515DD8179007F2F3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx10.7;
+			};
+			name = Release;
+		};
+		503F566715DD8179007F2F3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/Couch Slouch-Prefix.pch";
+				HEADER_SEARCH_PATHS = libcec/src;
+				INFOPLIST_FILE = "Resources/Couch Slouch-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "-DHAVE_P8_USB=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		503F566815DD8179007F2F3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/Couch Slouch-Prefix.pch";
+				HEADER_SEARCH_PATHS = libcec/src;
+				INFOPLIST_FILE = "Resources/Couch Slouch-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "-DHAVE_P8_USB=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		503F564215DD8179007F2F3E /* Build configuration list for PBXProject "Couch Slouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				503F566415DD8179007F2F3E /* Debug */,
+				503F566515DD8179007F2F3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		503F566615DD8179007F2F3E /* Build configuration list for PBXNativeTarget "Couch Slouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				503F566715DD8179007F2F3E /* Debug */,
+				503F566815DD8179007F2F3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 503F563F15DD8179007F2F3E /* Project object */;
+}
