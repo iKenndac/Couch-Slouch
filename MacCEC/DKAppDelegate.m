@@ -7,6 +7,7 @@
 //
 
 #import "DKAppDelegate.h"
+#import "Constants.h"
 #import "DKCECKeyMappingController.h"
 #import "DKKeyboardShortcutLocalAction.h"
 #import "DKLaunchApplicationLocalAction.h"
@@ -15,6 +16,7 @@
 @interface DKAppDelegate ()
 
 @property (readwrite, nonatomic, copy) NSString *targetApplicationIdentifier;
+@property (readwrite, nonatomic, copy) NSArray *waitingLogs;
 
 @end
 
@@ -77,8 +79,52 @@
 		[[[keyMapper baseMapping] actionForKeyPress:keyPress] performActionWithKeyPress:keyPress];
 }
 
+#pragma mark -
+
 -(void)cecController:(DKCECDeviceController *)controller didLogMessage:(NSString *)message ofSeverity:(cec_log_level)logLevel {
 	if (logLevel <= CEC_LOG_WARNING) NSLog(@"%@", message);
+
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:kLogLibCECUserDefaultsKey]) {
+		[self logMessageToDisk:message ofSeverity:logLevel];
+	}
+}
+
+-(void)logMessageToDisk:(NSString *)msg ofSeverity:(cec_log_level)logLevel {
+
+	NSString *fullMessage = [NSString stringWithFormat:@"%@: log_level: %@ : %@",
+							 [NSDate date],
+							 @(logLevel),
+							 msg];
+
+	if (self.waitingLogs == nil) self.waitingLogs = [NSArray array];
+	self.waitingLogs = [self.waitingLogs arrayByAddingObject:fullMessage];
+
+	[self performSelector:@selector(flushLog) withObject:nil afterDelay:5.0];
+}
+
+-(void)flushLog {
+
+	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:_cmd object:nil];
+
+	if (self.waitingLogs.count == 0)
+		return;
+
+	NSMutableData *dataToWrite = [NSMutableData data];
+	NSArray *logsToWrite = self.waitingLogs;
+	self.waitingLogs = [NSArray array];
+	
+	for (NSString *str in logsToWrite)
+		[dataToWrite appendData:[[NSString stringWithFormat:@"%@\n", str] dataUsingEncoding:NSUTF8StringEncoding]];
+
+	NSString *logFilePath = [@"~/Library/Logs/MacCEC.log" stringByExpandingTildeInPath];
+	if (![[NSFileManager defaultManager] fileExistsAtPath:logFilePath])
+		[[NSFileManager defaultManager] createFileAtPath:logFilePath contents:nil attributes:nil];
+	
+	NSFileHandle *output = [NSFileHandle fileHandleForWritingAtPath:logFilePath];
+	[output seekToEndOfFile];
+	[output writeData:dataToWrite];
+	[output closeFile];
+
 }
 
 -(void)cecController:(DKCECDeviceController *)controller didReceiveCommand:(cec_command)command {}

@@ -14,3 +14,5 @@ static NSString * const kDeviceKeyCodeKey = @"deviceCode";
 static NSString * const kActionViewControllerClassKey = @"kActionViewControllerClassKey";
 static NSString * const kActionViewControllerDescriptionKey = @"kActionViewControllerDescriptionKey";
 static NSString * const kActionViewControllerActionClassKey = @"kActionViewControllerActionClassKey";
+
+static NSString * const kLogLibCECUserDefaultsKey = @"LogLibCEC";
