@@ -34,7 +34,7 @@
 
 -(void)awakeFromNib {
 	[self.window setMovableByWindowBackground:YES];
-	[self switchToKeybindsView:nil];
+	[self switchToSetupView:nil];
 }
 
 -(BOOL)shouldConsumeKeypresses {

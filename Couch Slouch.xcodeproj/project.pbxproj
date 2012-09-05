@@ -88,6 +88,10 @@
 		50BA39F715F7DFA60075E7DB /* lamp-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39F415F7DFA60075E7DB /* lamp-green.png */; };
 		50BA39F815F7DFA60075E7DB /* lamp-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39F515F7DFA60075E7DB /* lamp-red.png */; };
 		50BA39F915F7DFA60075E7DB /* lamp-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39F615F7DFA60075E7DB /* lamp-yellow.png */; };
+		50BA39FD15F7EA3D0075E7DB /* button-centre.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FA15F7EA3D0075E7DB /* button-centre.png */; };
+		50BA39FE15F7EA3D0075E7DB /* button-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FB15F7EA3D0075E7DB /* button-left.png */; };
+		50BA39FF15F7EA3D0075E7DB /* button-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FC15F7EA3D0075E7DB /* button-right.png */; };
+		50BA3A0215F7EB050075E7DB /* DKButtonDecoratedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BA3A0115F7EB050075E7DB /* DKButtonDecoratedTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -231,8 +235,8 @@
 		508FD9C215E56AD300661E0D /* DKLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLocalAction.m; sourceTree = "<group>"; };
 		508FD9C515E576AD00661E0D /* DKActionConfigurationTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKActionConfigurationTableCellView.h; sourceTree = "<group>"; };
 		508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKActionConfigurationTableCellView.m; sourceTree = "<group>"; };
-		50966FAD15E8D989008A4064 /* DKBackgroundStyleForwarderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBackgroundStyleForwarderView.h; sourceTree = "<group>"; };
-		50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBackgroundStyleForwarderView.m; sourceTree = "<group>"; };
+		50966FAD15E8D989008A4064 /* DKBackgroundStyleForwarderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKBackgroundStyleForwarderView.h; path = ../../../src/DKBackgroundStyleForwarderView.h; sourceTree = "<group>"; };
+		50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKBackgroundStyleForwarderView.m; path = ../../../src/DKBackgroundStyleForwarderView.m; sourceTree = "<group>"; };
 		50966FB315E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+KeyCodeTranslation.h"; sourceTree = "<group>"; };
 		50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+KeyCodeTranslation.m"; sourceTree = "<group>"; };
 		509E10DC15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLaunchApplicationLocalActionConfigViewController.h; sourceTree = "<group>"; };
@@ -251,11 +255,16 @@
 		50BA39E815F7CE650075E7DB /* toolbar-general.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-general.png"; sourceTree = "<group>"; };
 		50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-keybinds.png"; sourceTree = "<group>"; };
 		50BA39EA15F7CE650075E7DB /* tv-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-large.png"; sourceTree = "<group>"; };
-		50BA39F115F7DB490075E7DB /* DKFancyDividerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKFancyDividerView.h; sourceTree = "<group>"; };
-		50BA39F215F7DB490075E7DB /* DKFancyDividerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKFancyDividerView.m; sourceTree = "<group>"; };
+		50BA39F115F7DB490075E7DB /* DKFancyDividerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKFancyDividerView.h; path = ../../../src/DKFancyDividerView.h; sourceTree = "<group>"; };
+		50BA39F215F7DB490075E7DB /* DKFancyDividerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKFancyDividerView.m; path = ../../../src/DKFancyDividerView.m; sourceTree = "<group>"; };
 		50BA39F415F7DFA60075E7DB /* lamp-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lamp-green.png"; sourceTree = "<group>"; };
 		50BA39F515F7DFA60075E7DB /* lamp-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lamp-red.png"; sourceTree = "<group>"; };
 		50BA39F615F7DFA60075E7DB /* lamp-yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lamp-yellow.png"; sourceTree = "<group>"; };
+		50BA39FA15F7EA3D0075E7DB /* button-centre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-centre.png"; sourceTree = "<group>"; };
+		50BA39FB15F7EA3D0075E7DB /* button-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-left.png"; sourceTree = "<group>"; };
+		50BA39FC15F7EA3D0075E7DB /* button-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-right.png"; sourceTree = "<group>"; };
+		50BA3A0015F7EB050075E7DB /* DKButtonDecoratedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKButtonDecoratedTextField.h; path = ../../../src/DKButtonDecoratedTextField.h; sourceTree = "<group>"; };
+		50BA3A0115F7EB050075E7DB /* DKButtonDecoratedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKButtonDecoratedTextField.m; path = ../../../src/DKButtonDecoratedTextField.m; sourceTree = "<group>"; };
 		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -343,16 +352,7 @@
 				5055C7E915DFB4F000B6B497 /* CEC */,
 				503F566915DD819B007F2F3E /* libCEC */,
 				5017A2F815E2D85A00B88FE6 /* ShortcutRecorder */,
-				50AE64E615E1597D006E7DA9 /* KNGradientExtensions.h */,
-				50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */,
-				50AE64E315E1590C006E7DA9 /* KNStatusBarView.h */,
-				50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */,
-				50AE64E915E15CB2006E7DA9 /* KNEmbossedTextField.h */,
-				50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */,
-				50966FAD15E8D989008A4064 /* DKBackgroundStyleForwarderView.h */,
-				50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */,
-				50BA39F115F7DB490075E7DB /* DKFancyDividerView.h */,
-				50BA39F215F7DB490075E7DB /* DKFancyDividerView.m */,
+				50BA3A0315F7EB0B0075E7DB /* Custom UI */,
 				503F565315DD8179007F2F3E /* Supporting Files */,
 			);
 			name = "Couch Slouch";
@@ -695,6 +695,9 @@
 		50BA39E515F7CE650075E7DB /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				50BA39FA15F7EA3D0075E7DB /* button-centre.png */,
+				50BA39FB15F7EA3D0075E7DB /* button-left.png */,
+				50BA39FC15F7EA3D0075E7DB /* button-right.png */,
 				50BA39E615F7CE650075E7DB /* computers-large.png */,
 				50BA39F415F7DFA60075E7DB /* lamp-green.png */,
 				50BA39F515F7DFA60075E7DB /* lamp-red.png */,
@@ -705,6 +708,26 @@
 				50BA39EA15F7CE650075E7DB /* tv-large.png */,
 			);
 			path = Graphics;
+			sourceTree = "<group>";
+		};
+		50BA3A0315F7EB0B0075E7DB /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				50AE64E615E1597D006E7DA9 /* KNGradientExtensions.h */,
+				50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */,
+				50AE64E315E1590C006E7DA9 /* KNStatusBarView.h */,
+				50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */,
+				50AE64E915E15CB2006E7DA9 /* KNEmbossedTextField.h */,
+				50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */,
+				50966FAD15E8D989008A4064 /* DKBackgroundStyleForwarderView.h */,
+				50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */,
+				50BA39F115F7DB490075E7DB /* DKFancyDividerView.h */,
+				50BA39F215F7DB490075E7DB /* DKFancyDividerView.m */,
+				50BA3A0015F7EB050075E7DB /* DKButtonDecoratedTextField.h */,
+				50BA3A0115F7EB050075E7DB /* DKButtonDecoratedTextField.m */,
+			);
+			name = "Custom UI";
+			path = ../ShortcutRecorder/Framework/Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -779,6 +802,9 @@
 				50BA39F715F7DFA60075E7DB /* lamp-green.png in Resources */,
 				50BA39F815F7DFA60075E7DB /* lamp-red.png in Resources */,
 				50BA39F915F7DFA60075E7DB /* lamp-yellow.png in Resources */,
+				50BA39FD15F7EA3D0075E7DB /* button-centre.png in Resources */,
+				50BA39FE15F7EA3D0075E7DB /* button-left.png in Resources */,
+				50BA39FF15F7EA3D0075E7DB /* button-right.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +871,7 @@
 				50966FAF15E8D98A008A4064 /* DKBackgroundStyleForwarderView.m in Sources */,
 				50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */,
 				50BA39F315F7DB490075E7DB /* DKFancyDividerView.m in Sources */,
+				50BA3A0215F7EB050075E7DB /* DKButtonDecoratedTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
