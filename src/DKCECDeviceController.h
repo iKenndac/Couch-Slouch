@@ -31,6 +31,7 @@
 @property (nonatomic, readwrite, weak) id <DKCECDeviceControllerDelegate> delegate;
 @property (nonatomic, readonly) BOOL hasConnection;
 @property (nonatomic, readonly, copy) NSString *humanReadableStatus;
+@property (nonatomic, readonly) NSImage *statusImage;
 @property (nonatomic, readonly) BOOL isActiveSource;
 
 // ----

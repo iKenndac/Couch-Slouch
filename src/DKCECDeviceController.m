@@ -191,6 +191,20 @@ static dispatch_queue_t cec_global_queue;
 		return NSLocalizedString(@"active source title", @"");
 }
 
++(NSSet *)keyPathsForValuesAffectingStatusImage {
+	return [NSSet setWithObjects:@"hasConnection", @"isActiveSource", nil];
+}
+
+-(NSImage *)statusImage {
+	
+	if (!self.hasConnection)
+		return [NSImage imageNamed:@"lamp-red"];
+	else if (!self.isActiveSource)
+		return [NSImage imageNamed:@"lamp-yellow"];
+	else
+		return [NSImage imageNamed:@"lamp-green"];
+}
+
 -(void)dealloc {
 	[self stopDevicePolling];
 	[self stopDevicePinging];

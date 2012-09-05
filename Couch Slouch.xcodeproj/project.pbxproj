@@ -85,6 +85,9 @@
 		50BA39EE15F7CE650075E7DB /* toolbar-keybinds.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */; };
 		50BA39EF15F7CE650075E7DB /* tv-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39EA15F7CE650075E7DB /* tv-large.png */; };
 		50BA39F315F7DB490075E7DB /* DKFancyDividerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BA39F215F7DB490075E7DB /* DKFancyDividerView.m */; };
+		50BA39F715F7DFA60075E7DB /* lamp-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39F415F7DFA60075E7DB /* lamp-green.png */; };
+		50BA39F815F7DFA60075E7DB /* lamp-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39F515F7DFA60075E7DB /* lamp-red.png */; };
+		50BA39F915F7DFA60075E7DB /* lamp-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39F615F7DFA60075E7DB /* lamp-yellow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -250,6 +253,9 @@
 		50BA39EA15F7CE650075E7DB /* tv-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-large.png"; sourceTree = "<group>"; };
 		50BA39F115F7DB490075E7DB /* DKFancyDividerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKFancyDividerView.h; sourceTree = "<group>"; };
 		50BA39F215F7DB490075E7DB /* DKFancyDividerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKFancyDividerView.m; sourceTree = "<group>"; };
+		50BA39F415F7DFA60075E7DB /* lamp-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lamp-green.png"; sourceTree = "<group>"; };
+		50BA39F515F7DFA60075E7DB /* lamp-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lamp-red.png"; sourceTree = "<group>"; };
+		50BA39F615F7DFA60075E7DB /* lamp-yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lamp-yellow.png"; sourceTree = "<group>"; };
 		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -690,6 +696,9 @@
 			isa = PBXGroup;
 			children = (
 				50BA39E615F7CE650075E7DB /* computers-large.png */,
+				50BA39F415F7DFA60075E7DB /* lamp-green.png */,
+				50BA39F515F7DFA60075E7DB /* lamp-red.png */,
+				50BA39F615F7DFA60075E7DB /* lamp-yellow.png */,
 				50BA39E715F7CE650075E7DB /* toolbar-behaviours.png */,
 				50BA39E815F7CE650075E7DB /* toolbar-general.png */,
 				50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */,
@@ -767,6 +776,9 @@
 				50BA39ED15F7CE650075E7DB /* toolbar-general.png in Resources */,
 				50BA39EE15F7CE650075E7DB /* toolbar-keybinds.png in Resources */,
 				50BA39EF15F7CE650075E7DB /* tv-large.png in Resources */,
+				50BA39F715F7DFA60075E7DB /* lamp-green.png in Resources */,
+				50BA39F815F7DFA60075E7DB /* lamp-red.png in Resources */,
+				50BA39F915F7DFA60075E7DB /* lamp-yellow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
