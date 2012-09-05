@@ -84,6 +84,7 @@
 		50BA39ED15F7CE650075E7DB /* toolbar-general.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E815F7CE650075E7DB /* toolbar-general.png */; };
 		50BA39EE15F7CE650075E7DB /* toolbar-keybinds.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */; };
 		50BA39EF15F7CE650075E7DB /* tv-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39EA15F7CE650075E7DB /* tv-large.png */; };
+		50BA39F315F7DB490075E7DB /* DKFancyDividerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BA39F215F7DB490075E7DB /* DKFancyDividerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -247,6 +248,8 @@
 		50BA39E815F7CE650075E7DB /* toolbar-general.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-general.png"; sourceTree = "<group>"; };
 		50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-keybinds.png"; sourceTree = "<group>"; };
 		50BA39EA15F7CE650075E7DB /* tv-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-large.png"; sourceTree = "<group>"; };
+		50BA39F115F7DB490075E7DB /* DKFancyDividerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKFancyDividerView.h; sourceTree = "<group>"; };
+		50BA39F215F7DB490075E7DB /* DKFancyDividerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKFancyDividerView.m; sourceTree = "<group>"; };
 		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -342,6 +345,8 @@
 				50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */,
 				50966FAD15E8D989008A4064 /* DKBackgroundStyleForwarderView.h */,
 				50966FAE15E8D989008A4064 /* DKBackgroundStyleForwarderView.m */,
+				50BA39F115F7DB490075E7DB /* DKFancyDividerView.h */,
+				50BA39F215F7DB490075E7DB /* DKFancyDividerView.m */,
 				503F565315DD8179007F2F3E /* Supporting Files */,
 			);
 			name = "Couch Slouch";
@@ -827,6 +832,7 @@
 				509E10E815E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m in Sources */,
 				50966FAF15E8D98A008A4064 /* DKBackgroundStyleForwarderView.m in Sources */,
 				50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */,
+				50BA39F315F7DB490075E7DB /* DKFancyDividerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
