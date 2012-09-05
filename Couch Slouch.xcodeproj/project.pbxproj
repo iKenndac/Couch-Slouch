@@ -80,6 +80,11 @@
 		50AE64E815E1597D006E7DA9 /* KNGradientExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */; };
 		50AE64EB15E15CB2006E7DA9 /* KNEmbossedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */; };
 		50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B9216115E922DA002218A7 /* SystemConfiguration.framework */; };
+		50BA39EB15F7CE650075E7DB /* computers-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E615F7CE650075E7DB /* computers-large.png */; };
+		50BA39EC15F7CE650075E7DB /* toolbar-behaviours.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E715F7CE650075E7DB /* toolbar-behaviours.png */; };
+		50BA39ED15F7CE650075E7DB /* toolbar-general.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E815F7CE650075E7DB /* toolbar-general.png */; };
+		50BA39EE15F7CE650075E7DB /* toolbar-keybinds.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */; };
+		50BA39EF15F7CE650075E7DB /* tv-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39EA15F7CE650075E7DB /* tv-large.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -238,6 +243,11 @@
 		50AE64E915E15CB2006E7DA9 /* KNEmbossedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KNEmbossedTextField.h; path = KNSharedCodeRepository/Controls/KNEmbossedTextField.h; sourceTree = SOURCE_ROOT; };
 		50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KNEmbossedTextField.m; path = KNSharedCodeRepository/Controls/KNEmbossedTextField.m; sourceTree = SOURCE_ROOT; };
 		50B9216115E922DA002218A7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		50BA39E615F7CE650075E7DB /* computers-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "computers-large.png"; sourceTree = "<group>"; };
+		50BA39E715F7CE650075E7DB /* toolbar-behaviours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-behaviours.png"; sourceTree = "<group>"; };
+		50BA39E815F7CE650075E7DB /* toolbar-general.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-general.png"; sourceTree = "<group>"; };
+		50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-keybinds.png"; sourceTree = "<group>"; };
+		50BA39EA15F7CE650075E7DB /* tv-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-large.png"; sourceTree = "<group>"; };
 		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -564,6 +574,7 @@
 		5047670015F6B13300BF2DA7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				50BA39E515F7CE650075E7DB /* Graphics */,
 				5047670115F6B13300BF2DA7 /* ButtonGroups.plist */,
 				5047670215F6B13300BF2DA7 /* Couch Slouch-Info.plist */,
 				5047670315F6B13300BF2DA7 /* DefaultKeybinds.plist */,
@@ -671,6 +682,18 @@
 			name = "Keyboard Shortcut Action";
 			sourceTree = "<group>";
 		};
+		50BA39E515F7CE650075E7DB /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				50BA39E615F7CE650075E7DB /* computers-large.png */,
+				50BA39E715F7CE650075E7DB /* toolbar-behaviours.png */,
+				50BA39E815F7CE650075E7DB /* toolbar-general.png */,
+				50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */,
+				50BA39EA15F7CE650075E7DB /* tv-large.png */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -736,6 +759,11 @@
 				5047672215F6B13300BF2DA7 /* InfoPlist.strings in Resources */,
 				5047672315F6B13300BF2DA7 /* Localizable.strings in Resources */,
 				5047672415F6B13300BF2DA7 /* MainMenu.xib in Resources */,
+				50BA39EB15F7CE650075E7DB /* computers-large.png in Resources */,
+				50BA39EC15F7CE650075E7DB /* toolbar-behaviours.png in Resources */,
+				50BA39ED15F7CE650075E7DB /* toolbar-general.png in Resources */,
+				50BA39EE15F7CE650075E7DB /* toolbar-keybinds.png in Resources */,
+				50BA39EF15F7CE650075E7DB /* tv-large.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
