@@ -50,7 +50,6 @@
 		503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575515DD848E007F2F3E /* QuartzCore.framework */; };
 		503F575D15DD9148007F2F3E /* DKCECDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F575C15DD9148007F2F3E /* DKCECDeviceController.m */; };
 		5047671815F6B13300BF2DA7 /* ButtonGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5047670115F6B13300BF2DA7 /* ButtonGroups.plist */; };
-		5047671915F6B13300BF2DA7 /* Couch Slouch-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5047670215F6B13300BF2DA7 /* Couch Slouch-Info.plist */; };
 		5047671A15F6B13300BF2DA7 /* DefaultKeybinds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5047670315F6B13300BF2DA7 /* DefaultKeybinds.plist */; };
 		5047671B15F6B13300BF2DA7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5047670415F6B13300BF2DA7 /* Credits.rtf */; };
 		5047671C15F6B13300BF2DA7 /* DKBehavioursViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5047670615F6B13300BF2DA7 /* DKBehavioursViewController.xib */; };
@@ -747,7 +746,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5047671815F6B13300BF2DA7 /* ButtonGroups.plist in Resources */,
-				5047671915F6B13300BF2DA7 /* Couch Slouch-Info.plist in Resources */,
 				5047671A15F6B13300BF2DA7 /* DefaultKeybinds.plist in Resources */,
 				5047671B15F6B13300BF2DA7 /* Credits.rtf in Resources */,
 				5047671C15F6B13300BF2DA7 /* DKBehavioursViewController.xib in Resources */,
