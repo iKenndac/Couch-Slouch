@@ -49,7 +49,28 @@ typedef enum {
 	return YES;
 }
 
++(NSSet *)keyPathsForValuesAffectingNextButtonTitle {
+	return [NSSet setWithObject:@"currentView"];
+}
+
+-(NSString *)nextButtonTitle {
+	if (self.currentView == self.wizardViewStep3)
+		return NSLocalizedString(@"done title", @"");
+	else
+		return NSLocalizedString(@"next title", @"");
+}
+
 #pragma mark -
+
+-(void)doCompletion {
+
+	NSUInteger secondAddressLevel = 0;
+	if (self.connectionTypeIndex == kConnectionTypeIndexAVReceiver)
+		secondAddressLevel = self.avReceiverHDMIPortIndex + 1;
+
+	NSString *numberString = [NSString stringWithFormat:@"%@%@00", @(self.tvHDMIPortIndex + 1), @(secondAddressLevel)];
+	[self.delegate hdmiAddressSetup:self shouldCloseWithNewAddress:@([numberString intValue])];
+}
 
 -(void)reset {
 	self.avReceiverHDMIPortIndex = 0;
@@ -83,7 +104,7 @@ typedef enum {
 }
 
 - (IBAction)pushCancel:(id)sender {
-	[self.delegate hdmiAddressSetupShouldClose:self];
+	[self.delegate hdmiAddressSetup:self shouldCloseWithNewAddress:nil];
 }
 
 - (IBAction)pushPrevious:(id)sender {
@@ -114,9 +135,12 @@ typedef enum {
 	} else if (self.currentView == self.wizardViewStep2aAV) {
 		[self switchToView:self.wizardViewStep2bAV animated:YES forwards:YES];
 		
-	} else if (self.currentView == self.wizardViewStep2bAV || self.currentView == self.wizardViewStep2Direct)
+	} else if (self.currentView == self.wizardViewStep2bAV || self.currentView == self.wizardViewStep2Direct) {
 		[self switchToView:self.wizardViewStep3 animated:YES forwards:YES];
 
+	} else {
+		[self doCompletion];
+	}
 }
 
 @end

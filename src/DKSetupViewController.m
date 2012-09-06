@@ -38,9 +38,12 @@
 	[NSApp beginSheet:self.addressSetupController.window modalForWindow:self.view.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 
--(void)hdmiAddressSetupShouldClose:(DKHDMIAddressSetupWindowController *)controller {
+-(void)hdmiAddressSetup:(DKHDMIAddressSetupWindowController *)controller shouldCloseWithNewAddress:(NSNumber *)address {
 	[NSApp endSheet:self.addressSetupController.window returnCode:0];
 	[self.addressSetupController.window orderOut:self];
+
+	if (address != nil)
+		NSLog(@"[%@ %@]: WARNING: Failed to apply address %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), address);
 }
 
 @end

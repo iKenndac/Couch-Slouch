@@ -12,7 +12,7 @@
 
 @protocol DKHDMIAddressSetupWindowControllerDelegate <NSObject>
 
--(void)hdmiAddressSetupShouldClose:(DKHDMIAddressSetupWindowController *)controller;
+-(void)hdmiAddressSetup:(DKHDMIAddressSetupWindowController *)controller shouldCloseWithNewAddress:(NSNumber *)address;
 
 @end
 
@@ -24,6 +24,7 @@
 @property (nonatomic, readwrite) NSInteger avReceiverHDMIPortIndex;
 @property (nonatomic, readwrite) NSInteger connectionTypeIndex;
 @property (strong, readwrite, nonatomic) NSView *currentView;
+@property (readonly, nonatomic) NSString *nextButtonTitle;
 
 @property (strong) IBOutlet NSView *wizardViewStep1;
 @property (strong) IBOutlet NSView *wizardViewStep2Direct;

@@ -28,6 +28,9 @@
 "connected but not active source title" = "This Mac is not the active TV source.";
 "active source title" = "This Mac is the active TV source.";
 
+"next title" = "Next";
+"done title" = "Done";
+
 "CEC_USER_CONTROL_CODE_SELECT" = "Select";
 "CEC_USER_CONTROL_CODE_UP" = "↑";
 "CEC_USER_CONTROL_CODE_DOWN" = "↓";
