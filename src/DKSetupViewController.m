@@ -7,8 +7,11 @@
 //
 
 #import "DKSetupViewController.h"
+#import "DKHDMIAddressSetupWindowController.h"
 
 @interface DKSetupViewController ()
+
+@property (nonatomic, readwrite, strong) DKHDMIAddressSetupWindowController *addressSetupController;
 
 @end
 
@@ -26,6 +29,18 @@
     }
     
     return self;
+}
+
+- (IBAction)showHDMIConfigSheet:(id)sender {
+	if (self.addressSetupController == nil) self.addressSetupController = [DKHDMIAddressSetupWindowController new];
+	self.addressSetupController.delegate = self;
+	[self.addressSetupController reset];
+	[NSApp beginSheet:self.addressSetupController.window modalForWindow:self.view.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+}
+
+-(void)hdmiAddressSetupShouldClose:(DKHDMIAddressSetupWindowController *)controller {
+	[NSApp endSheet:self.addressSetupController.window returnCode:0];
+	[self.addressSetupController.window orderOut:self];
 }
 
 @end

@@ -75,6 +75,8 @@
 		50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */; };
 		509E10DF15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */; };
 		509E10E815E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10E615E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m */; };
+		50A9953915F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9953715F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m */; };
+		50A9953B15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A9953D15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib */; };
 		50AE64E515E15967006E7DA9 /* KNStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */; };
 		50AE64E815E1597D006E7DA9 /* KNGradientExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64E715E1597D006E7DA9 /* KNGradientExtensions.m */; };
 		50AE64EB15E15CB2006E7DA9 /* KNEmbossedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AE64EA15E15CB2006E7DA9 /* KNEmbossedTextField.m */; };
@@ -243,6 +245,9 @@
 		509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLaunchApplicationLocalActionConfigViewController.m; sourceTree = "<group>"; };
 		509E10E515E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKKeyboardShortcutLocalActionConfigViewController.h; sourceTree = "<group>"; };
 		509E10E615E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKKeyboardShortcutLocalActionConfigViewController.m; sourceTree = "<group>"; };
+		50A9953615F928A100CDBB9B /* DKHDMIAddressSetupWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKHDMIAddressSetupWindowController.h; sourceTree = "<group>"; };
+		50A9953715F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKHDMIAddressSetupWindowController.m; sourceTree = "<group>"; };
+		50A9953C15F928AA00CDBB9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKHDMIAddressSetupWindowController.xib; sourceTree = "<group>"; };
 		50AE64E315E1590C006E7DA9 /* KNStatusBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KNStatusBarView.h; path = KNSharedCodeRepository/Views/KNStatusBarView.h; sourceTree = SOURCE_ROOT; };
 		50AE64E415E1590C006E7DA9 /* KNStatusBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KNStatusBarView.m; path = KNSharedCodeRepository/Views/KNStatusBarView.m; sourceTree = SOURCE_ROOT; };
 		50AE64E615E1597D006E7DA9 /* KNGradientExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KNGradientExtensions.h; path = KNSharedCodeRepository/Extensions/KNGradientExtensions.h; sourceTree = SOURCE_ROOT; };
@@ -602,9 +607,8 @@
 				5055C7C415DF9EE800B6B497 /* DKCECWindowController.h */,
 				5055C7C515DF9EE800B6B497 /* DKCECWindowController.m */,
 				5047670815F6B13300BF2DA7 /* DKCECWindowController.xib */,
-				5055C7CE15DFA5AC00B6B497 /* Keybinds */,
-				5055C7CF15DFA5B800B6B497 /* Behaviours */,
-				5055C7D015DFA5BE00B6B497 /* Setup */,
+				50A9953415F927A200CDBB9B /* View Controllers */,
+				50A9953515F927B400CDBB9B /* Setup Wizard */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -630,14 +634,14 @@
 			name = Behaviours;
 			sourceTree = "<group>";
 		};
-		5055C7D015DFA5BE00B6B497 /* Setup */ = {
+		5055C7D015DFA5BE00B6B497 /* General */ = {
 			isa = PBXGroup;
 			children = (
 				5055C7DB15DFA60600B6B497 /* DKSetupViewController.h */,
 				5055C7DC15DFA60600B6B497 /* DKSetupViewController.m */,
 				5047671015F6B13300BF2DA7 /* DKSetupViewController.xib */,
 			);
-			name = Setup;
+			name = General;
 			sourceTree = "<group>";
 		};
 		5055C7E915DFB4F000B6B497 /* CEC */ = {
@@ -690,6 +694,26 @@
 				5047670C15F6B13300BF2DA7 /* DKKeyboardShortcutLocalActionConfigViewController.xib */,
 			);
 			name = "Keyboard Shortcut Action";
+			sourceTree = "<group>";
+		};
+		50A9953415F927A200CDBB9B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5055C7CE15DFA5AC00B6B497 /* Keybinds */,
+				5055C7CF15DFA5B800B6B497 /* Behaviours */,
+				5055C7D015DFA5BE00B6B497 /* General */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		50A9953515F927B400CDBB9B /* Setup Wizard */ = {
+			isa = PBXGroup;
+			children = (
+				50A9953615F928A100CDBB9B /* DKHDMIAddressSetupWindowController.h */,
+				50A9953715F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m */,
+				50A9953D15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib */,
+			);
+			name = "Setup Wizard";
 			sourceTree = "<group>";
 		};
 		50BA39E515F7CE650075E7DB /* Graphics */ = {
@@ -805,6 +829,7 @@
 				50BA39FD15F7EA3D0075E7DB /* button-centre.png in Resources */,
 				50BA39FE15F7EA3D0075E7DB /* button-left.png in Resources */,
 				50BA39FF15F7EA3D0075E7DB /* button-right.png in Resources */,
+				50A9953B15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -872,6 +897,7 @@
 				50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */,
 				50BA39F315F7DB490075E7DB /* DKFancyDividerView.m in Sources */,
 				50BA3A0215F7EB050075E7DB /* DKButtonDecoratedTextField.m in Sources */,
+				50A9953915F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,6 +988,14 @@
 				5047671715F6B13300BF2DA7 /* en */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		50A9953D15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50A9953C15F928AA00CDBB9B /* en */,
+			);
+			name = DKHDMIAddressSetupWindowController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
