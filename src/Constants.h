@@ -16,3 +16,4 @@ static NSString * const kActionViewControllerDescriptionKey = @"kActionViewContr
 static NSString * const kActionViewControllerActionClassKey = @"kActionViewControllerActionClassKey";
 
 static NSString * const kLogLibCECUserDefaultsKey = @"LogLibCEC";
+static NSString * const kPhysicalAddressUserDefaultsKey = @"PhysicalAddress";

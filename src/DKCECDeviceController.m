@@ -9,20 +9,22 @@
 #import "DKCECDeviceController.h"
 #import "cecc.h"
 #import <SystemConfiguration/SystemConfiguration.h>
+#import "Constants.h"
 
 static NSTimeInterval const kDevicePollInterval = 2.0;
-static NSTimeInterval const kDevicePingInterval = 10.0;
+static NSTimeInterval const kDevicePingInterval = 30.0;
 
 #define DK_WITH_DEBUG_LOGGING YES
 
 @interface DKCECDeviceController ()
 
 @property (nonatomic, readwrite) cec_menu_state menuState;
-@property (nonatomic, readwrite) libcec_configuration configuration;
 @property (nonatomic, readwrite) BOOL hasConnection;
 @property (nonatomic, readwrite) NSTimer *pollTimer;
 @property (nonatomic, readwrite) NSTimer *pingTimer;
 @property (nonatomic, readwrite) BOOL isActiveSource;
+
+-(void)_didReceiveNewConfiguration:(const libcec_configuration)config;
 
 @end
 
@@ -67,7 +69,7 @@ static int DKCBCecConfigurationChanged(void *param, const libcec_configuration c
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
-		controller.configuration = config;
+		[controller _didReceiveNewConfiguration:config];
 	});
 	return 1;
 }
@@ -110,7 +112,9 @@ static void DKCBCecSourceActivated(void *param, const cec_logical_address logica
 
 static ICECCallbacks callbacks;
 
-@implementation DKCECDeviceController
+@implementation DKCECDeviceController {
+	libcec_configuration *cec_configuration;
+}
 
 static dispatch_queue_t cec_global_queue;
 
@@ -144,6 +148,8 @@ static dispatch_queue_t cec_global_queue;
 	
 	if (self) {
 
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
 		if (name.length == 0)
 			name = (__bridge_transfer NSString *)SCDynamicStoreCopyComputerName(NULL, NULL);
 
@@ -155,7 +161,17 @@ static dispatch_queue_t cec_global_queue;
 		list.types[3] = CEC_DEVICE_TYPE_RESERVED;
 		list.types[4] = CEC_DEVICE_TYPE_RESERVED;
 
-		int retCode = cec_init_typed([name UTF8String], list);
+		cec_configuration = malloc(sizeof(libcec_configuration));
+		memset(cec_configuration, 0, sizeof(libcec_configuration));
+		snprintf(cec_configuration->strDeviceName, 13, "%s", [name UTF8String]);
+		cec_configuration->deviceTypes = list;
+
+		if ([defaults valueForKey:kPhysicalAddressUserDefaultsKey] != nil)
+			cec_configuration->iPhysicalAddress = (uint16_t)[[defaults valueForKey:kPhysicalAddressUserDefaultsKey] unsignedIntValue];
+		else
+			cec_configuration->iPhysicalAddress = CEC_INVALID_PHYSICAL_ADDRESS;
+
+		int retCode = cec_initialise(cec_configuration);
 		if (retCode < 1) {
 			if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"CEC init failed");
 			return nil;
@@ -209,10 +225,18 @@ static dispatch_queue_t cec_global_queue;
 	[self stopDevicePolling];
 	[self stopDevicePinging];
 
+	free(cec_configuration);
+	cec_configuration = NULL;
+
 	dispatch_async([DKCECDeviceController cecQueue], ^{
 		cec_close();
 		cec_destroy();
 	});
+}
+
+-(void)_didReceiveNewConfiguration:(const libcec_configuration)config {
+	if (cec_configuration != NULL)
+		memcpy(cec_configuration, &config, sizeof(libcec_configuration));
 }
 
 #pragma mark - Device Detection
@@ -424,6 +448,18 @@ static dispatch_queue_t cec_global_queue;
 	dispatch_async([DKCECDeviceController cecQueue], ^{
 		if (success) success = (BOOL)cec_is_libcec_active_source();
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(success); });
+	});
+}
+
+-(void)updatePhysicalAddress:(uint16_t)address completion:(void (^)(BOOL success))block {
+
+	[[NSUserDefaults standardUserDefaults] setInteger:address forKey:kPhysicalAddressUserDefaultsKey];
+
+	dispatch_async([DKCECDeviceController cecQueue], ^{
+		BOOL success = (cec_set_physical_address(address) == 1);
+		dispatch_async(dispatch_get_main_queue(), ^{
+			if (block) block(success);
+		});
 	});
 }
 

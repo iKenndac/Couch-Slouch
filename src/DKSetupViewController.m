@@ -8,6 +8,7 @@
 
 #import "DKSetupViewController.h"
 #import "DKHDMIAddressSetupWindowController.h"
+#import "DKAppDelegate.h"
 
 @interface DKSetupViewController ()
 
@@ -43,7 +44,7 @@
 	[self.addressSetupController.window orderOut:self];
 
 	if (address != nil)
-		NSLog(@"[%@ %@]: WARNING: Failed to apply address %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), address);
+		[((DKAppDelegate *)[NSApp delegate]).cecController updatePhysicalAddress:[address unsignedIntValue] completion:^(BOOL success) {}];
 }
 
 @end

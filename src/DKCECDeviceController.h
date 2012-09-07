@@ -69,4 +69,7 @@
 // Returns YES if the local connected device is being presented on the TV.
 -(void)requestIfLocalIsSource:(void (^)(BOOL isSource))block;
 
+// Updates the physical address of the adapter.
+-(void)updatePhysicalAddress:(uint16_t)address completion:(void (^)(BOOL success))block;
+
 @end
