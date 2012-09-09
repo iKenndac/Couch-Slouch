@@ -26,6 +26,7 @@
 @property (strong, readwrite, nonatomic) NSView *currentView;
 @property (readonly, nonatomic) NSString *nextButtonTitle;
 
+@property (strong) IBOutlet NSView *wizardViewStep0;
 @property (strong) IBOutlet NSView *wizardViewStep1;
 @property (strong) IBOutlet NSView *wizardViewStep2Direct;
 @property (strong) IBOutlet NSView *wizardViewStep2aAV;

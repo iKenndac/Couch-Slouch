@@ -28,7 +28,7 @@ typedef enum {
 {
     [super windowDidLoad];
 
-	[self switchToView:self.wizardViewStep1 animated:NO forwards:YES];
+	[self switchToView:self.wizardViewStep0 animated:NO forwards:YES];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
@@ -38,7 +38,7 @@ typedef enum {
 }
 
 -(BOOL)backEnabled {
-	return self.currentView != self.wizardViewStep1;
+	return self.currentView != self.wizardViewStep0;
 }
 
 +(NSSet *)keyPathsForValuesAffectingNextEnabled {
@@ -87,7 +87,7 @@ typedef enum {
 	self.avReceiverHDMIPortIndex = 0;
 	self.tvHDMIPortIndex = 0;
 	self.connectionTypeIndex = 0;
-	[self switchToView:self.wizardViewStep1 animated:NO forwards:NO];
+	[self switchToView:self.wizardViewStep0 animated:NO forwards:NO];
 }
 
 -(void)switchToView:(NSView *)newView animated:(BOOL)animated forwards:(BOOL)forwards {
@@ -129,15 +129,21 @@ typedef enum {
 	} else if (self.currentView == self.wizardViewStep2bAV) {
 		[self switchToView:self.wizardViewStep2aAV animated:YES forwards:NO];
 
-	} else if (self.currentView == self.wizardViewStep2aAV || self.currentView == self.wizardViewStep2Direct)
+	} else if (self.currentView == self.wizardViewStep2aAV || self.currentView == self.wizardViewStep2Direct) {
 		[self switchToView:self.wizardViewStep1 animated:YES forwards:NO];
 
+	} else if (self.currentView == self.wizardViewStep1) {
+		[self switchToView:self.wizardViewStep0 animated:YES forwards:NO];
+	}
 
 }
 
 - (IBAction)pushNext:(id)sender {
 
-	if (self.currentView == self.wizardViewStep1) {
+	if (self.currentView == self.wizardViewStep0) {
+		[self switchToView:self.wizardViewStep1 animated:YES forwards:YES];
+
+	} else if (self.currentView == self.wizardViewStep1) {
 		if (self.connectionTypeIndex == kConnectionTypeIndexDirect)
 			[self switchToView:self.wizardViewStep2Direct animated:YES forwards:YES];
 		else
