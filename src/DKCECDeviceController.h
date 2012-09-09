@@ -27,12 +27,13 @@
 -(id)initWithDeviceName:(NSString *)name;
 
 @property (nonatomic, readonly) cec_menu_state menuState;
-@property (nonatomic, readonly) libcec_configuration configuration;
+@property (nonatomic, readonly) libcec_configuration *configuration;
 @property (nonatomic, readwrite, weak) id <DKCECDeviceControllerDelegate> delegate;
 @property (nonatomic, readonly) BOOL hasConnection;
 @property (nonatomic, readonly, copy) NSString *humanReadableStatus;
 @property (nonatomic, readonly) NSImage *statusImage;
 @property (nonatomic, readonly) BOOL isActiveSource;
+@property (nonatomic, readonly) NSString *physicalAddressDisplayString;
 
 // ----
 

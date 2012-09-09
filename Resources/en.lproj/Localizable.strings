@@ -31,6 +31,10 @@
 "next title" = "Next";
 "done title" = "Done";
 
+"direct connect status formatter" = "This computer is connected directly to HDMI port %@ of your TV.";
+"av connect status formatter" = "This computer is connected to HDMI port %@ of your AV receiver, which is connected to HDMI port %@ of your TV.";
+"unknown connect status" = "Unknown.";
+
 "CEC_USER_CONTROL_CODE_SELECT" = "Select";
 "CEC_USER_CONTROL_CODE_UP" = "↑";
 "CEC_USER_CONTROL_CODE_DOWN" = "↓";

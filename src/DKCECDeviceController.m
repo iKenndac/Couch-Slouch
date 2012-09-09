@@ -193,6 +193,10 @@ static dispatch_queue_t cec_global_queue;
 	return self;
 }
 
+-(libcec_configuration *)configuration {
+	return cec_configuration;
+}
+
 +(NSSet *)keyPathsForValuesAffectingHumanReadableStatus {
 	return [NSSet setWithObjects:@"hasConnection", @"isActiveSource", nil];
 }
@@ -221,6 +225,24 @@ static dispatch_queue_t cec_global_queue;
 		return [NSImage imageNamed:@"lamp-green"];
 }
 
++(NSSet *)keyPathsForValuesAffectingPhysicalAddressDisplayString {
+	return [NSSet setWithObject:@"configuration"];
+}
+
+-(NSString *)physicalAddressDisplayString {
+
+	uint16_t address = [[NSUserDefaults standardUserDefaults] integerForKey:kPhysicalAddressUserDefaultsKey];
+	uint16_t topPort = (address % 10000) / 1000;
+	uint16_t secondPort = (address % 1000) / 100;
+
+	if (secondPort == 0 && topPort > 0)
+		return [NSString stringWithFormat:NSLocalizedString(@"direct connect status formatter", @""), @(topPort)];
+	else if (secondPort != 0)
+		return [NSString stringWithFormat:NSLocalizedString(@"av connect status formatter", @""), @(secondPort), @(topPort)];
+	else
+		return NSLocalizedString(@"unknown connect status", @"");
+}
+
 -(void)dealloc {
 	[self stopDevicePolling];
 	[self stopDevicePinging];
@@ -235,8 +257,10 @@ static dispatch_queue_t cec_global_queue;
 }
 
 -(void)_didReceiveNewConfiguration:(const libcec_configuration)config {
+	[self willChangeValueForKey:@"configuration"];
 	if (cec_configuration != NULL)
 		memcpy(cec_configuration, &config, sizeof(libcec_configuration));
+	[self didChangeValueForKey:@"configuration"];
 }
 
 #pragma mark - Device Detection
@@ -453,7 +477,9 @@ static dispatch_queue_t cec_global_queue;
 
 -(void)updatePhysicalAddress:(uint16_t)address completion:(void (^)(BOOL success))block {
 
+	[self willChangeValueForKey:@"physicalAddressDisplayString"];
 	[[NSUserDefaults standardUserDefaults] setInteger:address forKey:kPhysicalAddressUserDefaultsKey];
+	[self didChangeValueForKey:@"physicalAddressDisplayString"];
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
 		BOOL success = (cec_set_physical_address(address) == 1);
