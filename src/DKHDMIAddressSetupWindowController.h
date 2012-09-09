@@ -42,4 +42,6 @@
 
 -(void)reset;
 
+@property (nonatomic, readonly) NSImage *connectionTypeImage;
+
 @end

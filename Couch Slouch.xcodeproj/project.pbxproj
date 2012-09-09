@@ -94,6 +94,11 @@
 		50BA39FE15F7EA3D0075E7DB /* button-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FB15F7EA3D0075E7DB /* button-left.png */; };
 		50BA39FF15F7EA3D0075E7DB /* button-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FC15F7EA3D0075E7DB /* button-right.png */; };
 		50BA3A0215F7EB050075E7DB /* DKButtonDecoratedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BA3A0115F7EB050075E7DB /* DKButtonDecoratedTextField.m */; };
+		50E58DFC15FCC4FB00AB8441 /* tv-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */; };
+		50E58DFD15FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */; };
+		50E58DFE15FCC4FB00AB8441 /* tv-computer-highlighted-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */; };
+		50E58DFF15FCC4FB00AB8441 /* tv-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */; };
+		50E58E0015FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,6 +275,11 @@
 		50BA39FC15F7EA3D0075E7DB /* button-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-right.png"; sourceTree = "<group>"; };
 		50BA3A0015F7EB050075E7DB /* DKButtonDecoratedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKButtonDecoratedTextField.h; path = ../../../src/DKButtonDecoratedTextField.h; sourceTree = "<group>"; };
 		50BA3A0115F7EB050075E7DB /* DKButtonDecoratedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKButtonDecoratedTextField.m; path = ../../../src/DKButtonDecoratedTextField.m; sourceTree = "<group>"; };
+		50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-av-computer-large.png"; sourceTree = "<group>"; };
+		50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-av-highlighted-computer-large.png"; sourceTree = "<group>"; };
+		50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-computer-highlighted-large.png"; sourceTree = "<group>"; };
+		50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-computer-large.png"; sourceTree = "<group>"; };
+		50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-highlighted-av-computer-large.png"; sourceTree = "<group>"; };
 		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -719,6 +729,11 @@
 		50BA39E515F7CE650075E7DB /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */,
+				50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */,
+				50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */,
+				50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */,
+				50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */,
 				50BA39FA15F7EA3D0075E7DB /* button-centre.png */,
 				50BA39FB15F7EA3D0075E7DB /* button-left.png */,
 				50BA39FC15F7EA3D0075E7DB /* button-right.png */,
@@ -830,6 +845,11 @@
 				50BA39FE15F7EA3D0075E7DB /* button-left.png in Resources */,
 				50BA39FF15F7EA3D0075E7DB /* button-right.png in Resources */,
 				50A9953B15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib in Resources */,
+				50E58DFC15FCC4FB00AB8441 /* tv-av-computer-large.png in Resources */,
+				50E58DFD15FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png in Resources */,
+				50E58DFE15FCC4FB00AB8441 /* tv-computer-highlighted-large.png in Resources */,
+				50E58DFF15FCC4FB00AB8441 /* tv-computer-large.png in Resources */,
+				50E58E0015FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

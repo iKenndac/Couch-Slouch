@@ -60,6 +60,17 @@ typedef enum {
 		return NSLocalizedString(@"next title", @"");
 }
 
++(NSSet *)keyPathsForValuesAffectingConnectionTypeImage {
+	return [NSSet setWithObject:@"connectionTypeIndex"];
+}
+
+-(NSImage *)connectionTypeImage {
+	if (self.connectionTypeIndex == kConnectionTypeIndexDirect)
+		return [NSImage imageNamed:@"tv-computer-large"];
+	else
+		return [NSImage imageNamed:@"tv-av-computer-large"];
+}
+
 #pragma mark -
 
 -(void)doCompletion {
