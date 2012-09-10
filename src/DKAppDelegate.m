@@ -83,8 +83,7 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 		alert.showsSuppressionButton = YES;
 		alert.suppressionButton.title = NSLocalizedString(@"quit alert suppress title", @"");
 
-		NSInteger retValue = [alert runModal];
-		if (retValue == NSAlertSecondButtonReturn)
+		if ([alert runModal] == NSAlertSecondButtonReturn)
 			return;
 
 		[[NSUserDefaults standardUserDefaults] setBool:(alert.suppressionButton.state == NSOnState)
