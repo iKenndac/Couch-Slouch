@@ -211,6 +211,19 @@ static dispatch_queue_t cec_global_queue;
 		return NSLocalizedString(@"active source title", @"");
 }
 
++(NSSet *)keyPathsForValuesAffectingShortHumanReadableStatus {
+	return [NSSet setWithObject:@"humanReadableStatus"];
+}
+
+-(NSString *)shortHumanReadableStatus {
+	if (!self.hasConnection)
+		return NSLocalizedString(@"short no connection title", @"");
+	else if (!self.isActiveSource)
+		return NSLocalizedString(@"short connected but not active source title", @"");
+	else
+		return NSLocalizedString(@"short active source title", @"");
+}
+
 +(NSSet *)keyPathsForValuesAffectingStatusImage {
 	return [NSSet setWithObjects:@"hasConnection", @"isActiveSource", nil];
 }

@@ -30,6 +30,10 @@
 "connected but not active source title" = "This Mac is not the active TV source.";
 "active source title" = "This Mac is the active TV source.";
 
+"short no connection title" = "Status: No device found.";
+"short connected but not active source title" = "Status: Not active TV source.";
+"short active source title" = "Status: Active TV source.";
+
 "next title" = "Next";
 "done title" = "Done";
 
