@@ -10,12 +10,15 @@
 #import "DKKeybindsViewController.h"
 #import "DKSetupViewController.h"
 #import "DKBehavioursViewController.h"
+#import "DKAppDelegate.h"
+#import "Constants.h"
 
 @interface DKCECWindowController ()
 
 @property (nonatomic, strong, readwrite) DKKeybindsViewController *keybindsViewController;
 @property (nonatomic, strong, readwrite) DKBehavioursViewController *behaviourViewController;
 @property (nonatomic, strong, readwrite) DKSetupViewController *setupViewController;
+@property (nonatomic, strong, readwrite) DKHDMIAddressSetupWindowController *addressSetupController;
 
 @end
 
@@ -27,6 +30,7 @@
 		self.keybindsViewController = [DKKeybindsViewController new];
 		self.behaviourViewController = [DKBehavioursViewController new];
 		self.setupViewController = [DKSetupViewController new];
+		self.setupViewController.windowController = self;
 		[self.window center];
 	}
 	return self;
@@ -35,6 +39,17 @@
 -(void)awakeFromNib {
 	[self.window setMovableByWindowBackground:YES];
 	[self switchToSetupView:nil];
+
+	if (![[NSUserDefaults standardUserDefaults] boolForKey:kHasDoneFirstLaunchUserDefaultsKey]) {
+		double delayInSeconds = 0.5;
+		dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+		dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+			// Make sure we're frontmost when starting auto-setup
+			[self.window setIsVisible:YES];
+			[self.window orderFrontRegardless];
+			[self showHDMIConfigSheet:NO];
+		});
+	}
 }
 
 -(BOOL)shouldConsumeKeypresses {
@@ -87,6 +102,23 @@
 - (IBAction)switchToSetupView:(id)sender {
 	self.currentViewController = self.setupViewController;
 	self.window.toolbar.selectedItemIdentifier = self.setupToolbarItem.itemIdentifier;
+}
+
+-(void)showHDMIConfigSheet:(BOOL)canCancel {
+	if (self.addressSetupController == nil) self.addressSetupController = [DKHDMIAddressSetupWindowController new];
+	self.addressSetupController.cancelEnabled = canCancel;
+	self.addressSetupController.delegate = self;
+	[self.addressSetupController reset];
+	[NSApp beginSheet:self.addressSetupController.window modalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+}
+
+-(void)hdmiAddressSetup:(DKHDMIAddressSetupWindowController *)controller shouldCloseWithNewAddress:(NSNumber *)address {
+	[NSApp endSheet:self.addressSetupController.window returnCode:0];
+	[self.addressSetupController.window orderOut:self];
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHasDoneFirstLaunchUserDefaultsKey];
+	
+	if (address != nil)
+		[((DKAppDelegate *)[NSApp delegate]).cecController updatePhysicalAddress:[address unsignedIntValue] completion:^(BOOL success) {}];
 }
 
 @end

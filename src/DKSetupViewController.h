@@ -7,10 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "DKHDMIAddressSetupWindowController.h"
+#import "DKCECWindowController.h"
 
-@interface DKSetupViewController : NSViewController <DKHDMIAddressSetupWindowControllerDelegate>
+@interface DKSetupViewController : NSViewController
 
-- (IBAction)showHDMIConfigSheet:(id)sender;
+@property (readwrite, weak) DKCECWindowController *windowController;
 
 @end

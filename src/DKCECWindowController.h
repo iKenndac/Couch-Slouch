@@ -8,8 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 #import "cectypes.h"
+#import "DKHDMIAddressSetupWindowController.h"
 
-@interface DKCECWindowController : NSWindowController
+@interface DKCECWindowController : NSWindowController <DKHDMIAddressSetupWindowControllerDelegate>
 
 @property (nonatomic, strong, readwrite) NSViewController *currentViewController;
 
@@ -23,5 +24,7 @@
 
 -(BOOL)shouldConsumeKeypresses;
 -(void)handleKeypress:(cec_keypress)press;
+
+-(void)showHDMIConfigSheet:(BOOL)canCancel;
 
 @end

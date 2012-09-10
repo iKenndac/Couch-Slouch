@@ -36,6 +36,7 @@
 
 @property (nonatomic, readonly) BOOL backEnabled;
 @property (nonatomic, readonly) BOOL nextEnabled;
+@property (nonatomic, readwrite) BOOL cancelEnabled;
 
 - (IBAction)pushCancel:(id)sender;
 - (IBAction)pushPrevious:(id)sender;
