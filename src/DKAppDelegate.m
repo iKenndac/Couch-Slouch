@@ -13,17 +13,20 @@
 #import "DKLaunchApplicationLocalAction.h"
 #import "DKDoNothingLocalAction.h"
 
+static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
+
 @interface DKAppDelegate ()
 
 @property (readwrite, nonatomic, copy) NSString *targetApplicationIdentifier;
 @property (readwrite, nonatomic, copy) NSArray *waitingLogs;
+@property (readwrite, nonatomic, strong) NSStatusItem *statusBarItem;
 
 @end
 
 @implementation DKAppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
+-(void)applicationWillFinishLaunching:(NSNotification *)notification {
+	
 	self.cecController = [DKCECDeviceController new];
 	self.cecController.delegate = self;
 
@@ -32,7 +35,11 @@
 	[DKDoNothingLocalAction class];
 
 	self.windowController = [DKCECWindowController new];
-	
+
+}
+
+-(void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+
 	for (NSRunningApplication *app in [[NSWorkspace sharedWorkspace] runningApplications]) {
 		if (app.active) {
 			self.targetApplicationIdentifier = app.bundleIdentifier;
@@ -44,11 +51,62 @@
 														   selector:@selector(applicationDidActivate:)
 															   name:NSWorkspaceDidActivateApplicationNotification
 															 object:nil];
+
+	self.statusBarItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+	self.statusBarItem.highlightMode = YES;
+	self.statusBarItem.menu = self.statusBarMenu;
+	
+	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:0 context:kUpdateMenuBarItemContext];
+	[self addObserver:self forKeyPath:@"cecController.isActiveSource" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
+
 }
 
 -(BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {
 	[self.windowController showWindow:nil];
     return YES;
+}
+
+- (IBAction)showMainWindow:(id)sender {
+	[NSApp activateIgnoringOtherApps:YES];
+    [self.windowController.window setIsVisible:YES];
+    [self.windowController.window orderFrontRegardless];
+}
+
+- (IBAction)quitFromMenu:(id)sender {
+
+	if (![[NSUserDefaults standardUserDefaults] boolForKey:kSkipQuitAlertUserDefaultsKey]) {
+		NSAlert *alert = [NSAlert new];
+		alert.messageText = NSLocalizedString(@"quit alert title", @"");
+		alert.informativeText = NSLocalizedString(@"quit alert description", @"");
+		[alert addButtonWithTitle:NSLocalizedString(@"quit button title", @"")];
+		[alert addButtonWithTitle:NSLocalizedString(@"cancel button title", @"")];
+		alert.showsSuppressionButton = YES;
+		alert.suppressionButton.title = NSLocalizedString(@"quit alert suppress title", @"");
+
+		NSInteger retValue = [alert runModal];
+		if (retValue == NSAlertSecondButtonReturn)
+			return;
+
+		[[NSUserDefaults standardUserDefaults] setBool:(alert.suppressionButton.state == NSOnState)
+												forKey:kSkipQuitAlertUserDefaultsKey];
+	}
+
+	[[NSApplication sharedApplication] terminate:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+	
+    if (context == kUpdateMenuBarItemContext) {
+		if (!self.cecController.hasConnection)
+			self.statusBarItem.image = [NSImage imageNamed:@"menubar-noconnection"];
+		else if (!self.cecController.isActiveSource)
+			self.statusBarItem.image = [NSImage imageNamed:@"menubar-off"];
+		else
+			self.statusBarItem.image = [NSImage imageNamed:@"menubar-on"];
+
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 #pragma mark - Key Mapping
@@ -130,6 +188,5 @@
 -(void)cecController:(DKCECDeviceController *)controller didReceiveCommand:(cec_command)command {}
 -(void)cecController:(DKCECDeviceController *)controller didReceiveAlert:(libcec_alert)alert forParamter:(libcec_parameter)parameter {}
 -(void)cecController:(DKCECDeviceController *)controller activationDidChangeForLogicalDevice:(cec_logical_address)device toState:(BOOL)activated {}
-
 
 @end

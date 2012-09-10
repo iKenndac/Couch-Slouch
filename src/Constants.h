@@ -17,3 +17,4 @@ static NSString * const kActionViewControllerActionClassKey = @"kActionViewContr
 
 static NSString * const kLogLibCECUserDefaultsKey = @"LogLibCEC";
 static NSString * const kPhysicalAddressUserDefaultsKey = @"PhysicalAddress";
+static NSString * const kSkipQuitAlertUserDefaultsKey = @"SkipQuitPrompt";

@@ -14,5 +14,10 @@
 
 @property (nonatomic, strong, readwrite) DKCECDeviceController *cecController;
 @property (nonatomic, strong, readwrite) DKCECWindowController *windowController;
+@property (weak) IBOutlet NSMenu *statusBarMenu;
+
+- (IBAction)showMainWindow:(id)sender;
+- (IBAction)quitFromMenu:(id)sender;
+
 
 @end

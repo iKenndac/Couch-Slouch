@@ -7,6 +7,8 @@
 */
 
 "ok button title" = "OK";
+"cancel button title" = "Cancel";
+"quit button title" = "Quit";
 
 "all applications title" = "All Applications";
 "all other applications title" = "Other Applications";
@@ -34,6 +36,10 @@
 "direct connect status formatter" = "This computer is connected directly to HDMI port %@ of your TV.";
 "av connect status formatter" = "This computer is connected to HDMI port %@ of your AV receiver, which is connected to HDMI port %@ of your TV.";
 "unknown connect status" = "Unknown.";
+
+"quit alert title" = "Are you sure you want to quit Couch Slouch?";
+"quit alert description" = "Your Mac will no longer control or respond to other HDMI devices, including your TV's remote control.";
+"quit alert suppress title" = "Don't show again";
 
 "CEC_USER_CONTROL_CODE_SELECT" = "Select";
 "CEC_USER_CONTROL_CODE_UP" = "↑";
