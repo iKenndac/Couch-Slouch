@@ -245,8 +245,8 @@ static dispatch_queue_t cec_global_queue;
 -(NSString *)physicalAddressDisplayString {
 
 	uint16_t address = [[NSUserDefaults standardUserDefaults] integerForKey:kPhysicalAddressUserDefaultsKey];
-	uint16_t topPort = (address % 10000) / 1000;
-	uint16_t secondPort = (address % 1000) / 100;
+	uint16_t topPort = (address >> 12) & 0xF;
+	uint16_t secondPort = (address >> 8) & 0xF;
 
 	if (secondPort == 0 && topPort > 0)
 		return [NSString stringWithFormat:NSLocalizedString(@"direct connect status formatter", @""), @(topPort)];

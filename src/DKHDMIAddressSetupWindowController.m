@@ -75,12 +75,17 @@ typedef enum {
 
 -(void)doCompletion {
 
-	NSUInteger secondAddressLevel = 0;
+	int topAddressLevel = (self.tvHDMIPortIndex + 1) & 0xF;
+	int secondAddressLevel = 0;
 	if (self.connectionTypeIndex == kConnectionTypeIndexAVReceiver)
-		secondAddressLevel = self.avReceiverHDMIPortIndex + 1;
+		secondAddressLevel = (self.avReceiverHDMIPortIndex + 1) & 0xF;
 
-	NSString *numberString = [NSString stringWithFormat:@"%@%@00", @(self.tvHDMIPortIndex + 1), @(secondAddressLevel)];
-	[self.delegate hdmiAddressSetup:self shouldCloseWithNewAddress:@([numberString intValue])];
+	uint16_t newAddress = 0;
+
+	newAddress |= (topAddressLevel << 12);
+	newAddress |= (secondAddressLevel << 8);
+
+	[self.delegate hdmiAddressSetup:self shouldCloseWithNewAddress:@(newAddress)];
 }
 
 -(void)reset {
