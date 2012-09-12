@@ -3,7 +3,7 @@
 //  Couch Slouch
 //
 //  Created by Daniel Kennett on 18/08/2012.
-//  Copyright (c) 2012 Daniel Kennett. All rights reserved.
+//  For license information, see LICENSE.markdown
 //
 
 #import "DKBehavioursViewController.h"
