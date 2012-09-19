@@ -23,6 +23,7 @@ static NSTimeInterval const kDevicePingInterval = 30.0;
 @property (nonatomic, readwrite) NSTimer *pollTimer;
 @property (nonatomic, readwrite) NSTimer *pingTimer;
 @property (nonatomic, readwrite) BOOL isActiveSource;
+@property (nonatomic, readwrite) BOOL isTVOn;
 
 -(void)_didReceiveNewConfiguration:(const libcec_configuration)config;
 
@@ -56,8 +57,57 @@ static int DKCBCecKeyPress(void *param, const cec_keypress keyPress) {
 
 static int DKCBCecCommand(void *param, const cec_command command) {
 
-	dispatch_async(dispatch_get_main_queue(), ^{
 	DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
+
+	if (command.initiator == CECDEVICE_TV && command.destination == CECDEVICE_BROADCAST) {
+		// TV is telling us important information!
+		if (command.opcode == CEC_OPCODE_STANDBY) {
+			dispatch_async(dispatch_get_main_queue(), ^{
+				controller.isTVOn = NO;
+				controller.isActiveSource = NO;
+			});
+		}
+
+		if (command.opcode == CEC_OPCODE_ACTIVE_SOURCE) {
+			if (command.parameters.size < 2)
+				return 1;
+			
+			uint16_t iAddress = ((uint16_t)command.parameters.data[0] << 8) | ((uint16_t)command.parameters.data[1]);
+
+			dispatch_async(dispatch_get_main_queue(), ^{
+				controller.isTVOn = YES;
+				controller.isActiveSource = (iAddress == controller.configuration->iPhysicalAddress);
+			});
+		}
+
+		if (command.opcode == CEC_OPCODE_SET_STREAM_PATH) {
+			if (command.parameters.size < 2)
+				return 1;
+			
+			uint16_t iStreamAddress = ((uint16_t)command.parameters.data[0] << 8) | ((uint16_t)command.parameters.data[1]);
+
+			dispatch_async(dispatch_get_main_queue(), ^{
+				controller.isTVOn = YES;
+				controller.isActiveSource = (iStreamAddress == controller.configuration->iPhysicalAddress);
+			});
+		}
+
+		if (command.opcode == CEC_OPCODE_ROUTING_CHANGE) {
+
+			if (command.parameters.size < 4)
+				return 1;
+
+			//uint16_t iOldAddress = ((uint16_t)command.parameters.data[0] << 8) | ((uint16_t)command.parameters.data[1]);
+			uint16_t iNewAddress = ((uint16_t)command.parameters.data[2] << 8) | ((uint16_t)command.parameters.data[3]);
+			
+			dispatch_async(dispatch_get_main_queue(), ^{
+				controller.isTVOn = YES;
+				controller.isActiveSource = (iNewAddress == controller.configuration->iPhysicalAddress);
+			});
+		}
+	}
+
+	dispatch_async(dispatch_get_main_queue(), ^{
 	if ([controller.delegate respondsToSelector:@selector(cecController:didReceiveCommand:)])
 		[controller.delegate cecController:controller
 						 didReceiveCommand:command];
@@ -97,7 +147,9 @@ static int DKCBCecMenuStateChanged(void *param, const cec_menu_state menuState) 
 
 static void DKCBCecSourceActivated(void *param, const cec_logical_address logicalAddress, const uint8_t isActivated) {
 
-	BOOL isActive = cec_is_libcec_active_source();
+	BOOL isActive = (isActivated == 1);
+
+	NSLog(@"Got source active %@ at %@", @(isActivated), @(logicalAddress));
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
@@ -106,7 +158,7 @@ static void DKCBCecSourceActivated(void *param, const cec_logical_address logica
 		if ([controller.delegate respondsToSelector:@selector(cecController:activationDidChangeForLogicalDevice:toState:)])
 			[controller.delegate cecController:controller
 		   activationDidChangeForLogicalDevice:logicalAddress
-									   toState:(BOOL)isActivated];
+									   toState:isActive];
 	});
 }
 
@@ -342,11 +394,8 @@ static dispatch_queue_t cec_global_queue;
 	dispatch_async([DKCECDeviceController cecQueue], ^{
 		
 		int retCode = cec_ping_adapters();
-		if (retCode == 1) {
-			if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"Adapter ping successful.");
-			return;
-		}
-
+		if (retCode == 1) return;
+		
 		if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"Connection lost.");
 		cec_close();
 
