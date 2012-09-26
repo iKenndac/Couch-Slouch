@@ -71,6 +71,9 @@
 		5076B498161374DB00A99AD0 /* M3AppKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5076B48B1613716100A99AD0 /* M3AppKit.framework */; };
 		5076B49A1613751900A99AD0 /* M3Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5076B4991613751900A99AD0 /* M3Foundation.framework */; };
 		5076B49B1613751D00A99AD0 /* M3Foundation.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5076B4991613751900A99AD0 /* M3Foundation.framework */; };
+		5076B4B41613772400A99AD0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5076B4AB1613771300A99AD0 /* Sparkle.framework */; };
+		5076B4B51613774400A99AD0 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5076B4AB1613771300A99AD0 /* Sparkle.framework */; };
+		5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */; };
 		508B2A3B160BBE8D00708A62 /* CouchSlouch.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */; };
 		508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7B15FE78700014BC2A /* menubar-noconnection.png */; };
 		508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7C15FE78700014BC2A /* menubar-off.png */; };
@@ -124,6 +127,41 @@
 			remoteGlobalIDString = 99AFE61115A4D46A00841191;
 			remoteInfo = M3AppKitTests;
 		};
+		5076B4AA1613771300A99AD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = Sparkle;
+		};
+		5076B4AC1613771300A99AD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
+			remoteInfo = "Sparkle Test App";
+		};
+		5076B4AE1613771300A99AD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 612279D90DB5470200AB99EA;
+			remoteInfo = "Sparkle Unit Tests";
+		};
+		5076B4B01613771300A99AD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6;
+			remoteInfo = BinaryDelta;
+		};
+		5076B4B21613771300A99AD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55C14BB7136EEF1500649790;
+			remoteInfo = finish_installation;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,6 +171,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5076B4B51613774400A99AD0 /* Sparkle.framework in Copy Frameworks */,
 				5076B49B1613751D00A99AD0 /* M3Foundation.framework in Copy Frameworks */,
 				5076B498161374DB00A99AD0 /* M3AppKit.framework in Copy Frameworks */,
 			);
@@ -277,6 +316,8 @@
 		5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKKeyboardShortcutLocalAction.m; sourceTree = "<group>"; };
 		5076B4811613716100A99AD0 /* M3AppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = M3AppKit.xcodeproj; path = M3AppKit/M3AppKit.xcodeproj; sourceTree = "<group>"; };
 		5076B4991613751900A99AD0 /* M3Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = M3Foundation.framework; path = M3AppKit/Dependencies/M3Foundation.framework; sourceTree = "<group>"; };
+		5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
+		5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CouchSlouchPublicKey.pem; path = Resources/CouchSlouchPublicKey.pem; sourceTree = SOURCE_ROOT; };
 		508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = CouchSlouch.iconset; sourceTree = "<group>"; };
 		508B7A7B15FE78700014BC2A /* menubar-noconnection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-noconnection.png"; sourceTree = "<group>"; };
 		508B7A7C15FE78700014BC2A /* menubar-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-off.png"; sourceTree = "<group>"; };
@@ -334,6 +375,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5076B4B41613772400A99AD0 /* Sparkle.framework in Frameworks */,
 				5076B48F1613716600A99AD0 /* M3AppKit.framework in Frameworks */,
 				50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */,
 				5017A30B15E2D93400B88FE6 /* Carbon.framework in Frameworks */,
@@ -385,6 +427,7 @@
 		503F564B15DD8179007F2F3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */,
 				5076B4811613716100A99AD0 /* M3AppKit.xcodeproj */,
 				5076B4991613751900A99AD0 /* M3Foundation.framework */,
 				50B9216115E922DA002218A7 /* SystemConfiguration.framework */,
@@ -649,6 +692,7 @@
 		5047670015F6B13300BF2DA7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */,
 				50BA39E515F7CE650075E7DB /* Graphics */,
 				5047670115F6B13300BF2DA7 /* ButtonGroups.plist */,
 				5047670215F6B13300BF2DA7 /* Couch Slouch-Info.plist */,
@@ -730,6 +774,18 @@
 			children = (
 				5076B48B1613716100A99AD0 /* M3AppKit.framework */,
 				5076B48D1613716100A99AD0 /* M3AppKitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5076B49D1613771300A99AD0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5076B4AB1613771300A99AD0 /* Sparkle.framework */,
+				5076B4AD1613771300A99AD0 /* Sparkle Test App.app */,
+				5076B4AF1613771300A99AD0 /* Sparkle Unit Tests.octest */,
+				5076B4B11613771300A99AD0 /* BinaryDelta */,
+				5076B4B31613771300A99AD0 /* finish_installation.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -879,6 +935,10 @@
 					ProductGroup = 5076B4821613716100A99AD0 /* Products */;
 					ProjectRef = 5076B4811613716100A99AD0 /* M3AppKit.xcodeproj */;
 				},
+				{
+					ProductGroup = 5076B49D1613771300A99AD0 /* Products */;
+					ProjectRef = 5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -900,6 +960,41 @@
 			fileType = wrapper.cfbundle;
 			path = M3AppKitTests.octest;
 			remoteRef = 5076B48C1613716100A99AD0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5076B4AB1613771300A99AD0 /* Sparkle.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Sparkle.framework;
+			remoteRef = 5076B4AA1613771300A99AD0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5076B4AD1613771300A99AD0 /* Sparkle Test App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Sparkle Test App.app";
+			remoteRef = 5076B4AC1613771300A99AD0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5076B4AF1613771300A99AD0 /* Sparkle Unit Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Sparkle Unit Tests.octest";
+			remoteRef = 5076B4AE1613771300A99AD0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5076B4B11613771300A99AD0 /* BinaryDelta */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = BinaryDelta;
+			remoteRef = 5076B4B01613771300A99AD0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5076B4B31613771300A99AD0 /* finish_installation.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = finish_installation.app;
+			remoteRef = 5076B4B21613771300A99AD0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -942,6 +1037,7 @@
 				508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */,
 				508B7A8015FE78700014BC2A /* menubar-on.png in Resources */,
 				508B2A3B160BBE8D00708A62 /* CouchSlouch.iconset in Resources */,
+				5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

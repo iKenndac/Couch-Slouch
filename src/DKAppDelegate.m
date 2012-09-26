@@ -13,6 +13,7 @@
 #import "DKLaunchApplicationLocalAction.h"
 #import "DKDoNothingLocalAction.h"
 #import <M3AppKit/M3AppKit.h>
+#import <Sparkle/Sparkle.h>
 
 static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 
@@ -21,6 +22,8 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 @property (readwrite, nonatomic, copy) NSString *targetApplicationIdentifier;
 @property (readwrite, nonatomic, copy) NSArray *waitingLogs;
 @property (readwrite, nonatomic, strong) NSStatusItem *statusBarItem;
+@property (readwrite, nonatomic, strong) SUUpdater *updater;
+@property (readwrite, nonatomic, strong) M3BetaController *betaController;
 
 @end
 
@@ -28,8 +31,8 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 
 -(void)applicationWillFinishLaunching:(NSNotification *)notification {
 
-	M3BetaController *controller = [M3BetaController new];
-	[controller performBetaCheckWithDateString:[NSString stringWithUTF8String:__DATE__]];
+	self.betaController = [M3BetaController new];
+	[self.betaController performBetaCheckWithDateString:[NSString stringWithUTF8String:__DATE__]];
 	
 	self.cecController = [DKCECDeviceController new];
 	self.cecController.delegate = self;
@@ -63,6 +66,7 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:0 context:kUpdateMenuBarItemContext];
 	[self addObserver:self forKeyPath:@"cecController.isActiveSource" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
 
+	self.updater = [SUUpdater sharedUpdater];
 }
 
 -(BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {
