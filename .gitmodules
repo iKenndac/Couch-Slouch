@@ -4,3 +4,6 @@
 [submodule "KNSharedCodeRepository"]
 	path = KNSharedCodeRepository
 	url = git://github.com/iKenndac/KNSharedCodeRepository.git
+[submodule "M3AppKit"]
+	path = M3AppKit
+	url = https://github.com/pilky/M3Appkit

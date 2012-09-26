@@ -12,6 +12,7 @@
 #import "DKKeyboardShortcutLocalAction.h"
 #import "DKLaunchApplicationLocalAction.h"
 #import "DKDoNothingLocalAction.h"
+#import <M3AppKit/M3AppKit.h>
 
 static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 
@@ -26,6 +27,9 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 @implementation DKAppDelegate
 
 -(void)applicationWillFinishLaunching:(NSNotification *)notification {
+
+	M3BetaController *controller = [M3BetaController new];
+	[controller performBetaCheckWithDateString:[NSString stringWithUTF8String:__DATE__]];
 	
 	self.cecController = [DKCECDeviceController new];
 	self.cecController.delegate = self;

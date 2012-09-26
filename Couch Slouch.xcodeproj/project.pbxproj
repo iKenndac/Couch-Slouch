@@ -67,6 +67,11 @@
 		5055C7DE15DFA60600B6B497 /* DKSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7DC15DFA60600B6B497 /* DKSetupViewController.m */; };
 		5055C7EC15DFB54C00B6B497 /* DKCECKeyMappingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */; };
 		5055C80115DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */; };
+		5076B48F1613716600A99AD0 /* M3AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5076B48B1613716100A99AD0 /* M3AppKit.framework */; };
+		5076B498161374DB00A99AD0 /* M3AppKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5076B48B1613716100A99AD0 /* M3AppKit.framework */; };
+		5076B49A1613751900A99AD0 /* M3Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5076B4991613751900A99AD0 /* M3Foundation.framework */; };
+		5076B49B1613751D00A99AD0 /* M3Foundation.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5076B4991613751900A99AD0 /* M3Foundation.framework */; };
+		508B2A3B160BBE8D00708A62 /* CouchSlouch.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */; };
 		508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7B15FE78700014BC2A /* menubar-noconnection.png */; };
 		508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7C15FE78700014BC2A /* menubar-off.png */; };
 		508B7A8015FE78700014BC2A /* menubar-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7D15FE78700014BC2A /* menubar-on.png */; };
@@ -103,6 +108,38 @@
 		50E58DFF15FCC4FB00AB8441 /* tv-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */; };
 		50E58E0015FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5076B48A1613716100A99AD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5076B4811613716100A99AD0 /* M3AppKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 991C4E1C15755D9C00CC43F3;
+			remoteInfo = M3AppKit;
+		};
+		5076B48C1613716100A99AD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5076B4811613716100A99AD0 /* M3AppKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 99AFE61115A4D46A00841191;
+			remoteInfo = M3AppKitTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5076B497161374CE00A99AD0 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5076B49B1613751D00A99AD0 /* M3Foundation.framework in Copy Frameworks */,
+				5076B498161374DB00A99AD0 /* M3AppKit.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5017A2F915E2D85A00B88FE6 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
@@ -238,6 +275,9 @@
 		5055C7ED15DFB60F00B6B497 /* DKLocalAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKLocalAction.h; sourceTree = "<group>"; };
 		5055C7FF15DFF18800B6B497 /* DKKeyboardShortcutLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKKeyboardShortcutLocalAction.h; sourceTree = "<group>"; };
 		5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKKeyboardShortcutLocalAction.m; sourceTree = "<group>"; };
+		5076B4811613716100A99AD0 /* M3AppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = M3AppKit.xcodeproj; path = M3AppKit/M3AppKit.xcodeproj; sourceTree = "<group>"; };
+		5076B4991613751900A99AD0 /* M3Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = M3Foundation.framework; path = M3AppKit/Dependencies/M3Foundation.framework; sourceTree = "<group>"; };
+		508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = CouchSlouch.iconset; sourceTree = "<group>"; };
 		508B7A7B15FE78700014BC2A /* menubar-noconnection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-noconnection.png"; sourceTree = "<group>"; };
 		508B7A7C15FE78700014BC2A /* menubar-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-off.png"; sourceTree = "<group>"; };
 		508B7A7D15FE78700014BC2A /* menubar-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-on.png"; sourceTree = "<group>"; };
@@ -294,11 +334,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5076B48F1613716600A99AD0 /* M3AppKit.framework in Frameworks */,
 				50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */,
 				5017A30B15E2D93400B88FE6 /* Carbon.framework in Frameworks */,
 				503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */,
 				503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */,
 				503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */,
+				5076B49A1613751900A99AD0 /* M3Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +385,8 @@
 		503F564B15DD8179007F2F3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5076B4811613716100A99AD0 /* M3AppKit.xcodeproj */,
+				5076B4991613751900A99AD0 /* M3Foundation.framework */,
 				50B9216115E922DA002218A7 /* SystemConfiguration.framework */,
 				5017A30A15E2D93400B88FE6 /* Carbon.framework */,
 				503F575515DD848E007F2F3E /* QuartzCore.framework */,
@@ -681,6 +725,15 @@
 			name = CEC;
 			sourceTree = "<group>";
 		};
+		5076B4821613716100A99AD0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5076B48B1613716100A99AD0 /* M3AppKit.framework */,
+				5076B48D1613716100A99AD0 /* M3AppKitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		508FD9C415E5768C00661E0D /* Action Config Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -735,6 +788,7 @@
 		50BA39E515F7CE650075E7DB /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */,
 				508B7A7B15FE78700014BC2A /* menubar-noconnection.png */,
 				508B7A7C15FE78700014BC2A /* menubar-off.png */,
 				508B7A7D15FE78700014BC2A /* menubar-on.png */,
@@ -788,6 +842,8 @@
 				503F564415DD8179007F2F3E /* Sources */,
 				503F564515DD8179007F2F3E /* Frameworks */,
 				503F564615DD8179007F2F3E /* Resources */,
+				5076B4951613737600A99AD0 /* Generate CFBundleVersion */,
+				5076B497161374CE00A99AD0 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -818,12 +874,35 @@
 			mainGroup = 503F563D15DD8179007F2F3E;
 			productRefGroup = 503F564915DD8179007F2F3E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5076B4821613716100A99AD0 /* Products */;
+					ProjectRef = 5076B4811613716100A99AD0 /* M3AppKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				503F564715DD8179007F2F3E /* Couch Slouch */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5076B48B1613716100A99AD0 /* M3AppKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = M3AppKit.framework;
+			remoteRef = 5076B48A1613716100A99AD0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5076B48D1613716100A99AD0 /* M3AppKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = M3AppKitTests.octest;
+			remoteRef = 5076B48C1613716100A99AD0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		503F564615DD8179007F2F3E /* Resources */ = {
@@ -862,10 +941,28 @@
 				508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */,
 				508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */,
 				508B7A8015FE78700014BC2A /* menubar-on.png in Resources */,
+				508B2A3B160BBE8D00708A62 /* CouchSlouch.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5076B4951613737600A99AD0 /* Generate CFBundleVersion */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CFBundleVersion";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /usr/bin/perl;
+			shellScript = "#Check if we're versioned under hg\nmy $revno = `git log --pretty=format:'' | wc -l`;\n\nif ($revno && $revno !~ m/fatal/i) {\n\n    #get the revno minus the new line\n    $revno =~ tr/+//d;\n    substr($revno, -1, 1, \"\");\n\t$revno =~ s/^\\s+//;\n\t$revno =~ s/\\s+$//;\n\n\tprint(\"Revision number is \" . $revno);\n\n    #open the info plist\n    open(my $input,  \"<\",  \"$ENV{BUILT_PRODUCTS_DIR}/$ENV{INFOPLIST_PATH}\")  or die \"Can't open Info.plist: $!\";\n    my $outputstring = \"\";\n\n    #loop through each line until we find CFBundleVersion, then substitute the next line\n    while (+<$input>) {\n        $outputstring .= \"$_\";\n        if (/[\\t ]+<key>CFBundleVersion<\\/key>\\n/) {\n            my $line = +<$input>;\n            $line =~ s/([\\t ]+<string>)(.*?)(<\\/string>)/$1.($revno).$3/eg;\n            $outputstring .= $line;\n        }\n    }\n\n    #write back out to Info.plist\n    open(my $output,  \">\",  \"$ENV{BUILT_PRODUCTS_DIR}/$ENV{INFOPLIST_PATH}\")  or die \"Can't open Info.plist: $!\";\n    print $output $outputstring;\n} else {\n    print \"This project is not versioned\";\n}";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		503F564415DD8179007F2F3E /* Sources */ = {
@@ -1055,6 +1152,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx10.8;
@@ -1077,6 +1175,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx10.8;
 			};
@@ -1086,6 +1185,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/M3AppKit/Dependencies\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Couch Slouch-Prefix.pch";
 				HEADER_SEARCH_PATHS = libcec/src;
@@ -1101,6 +1204,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/M3AppKit/Dependencies\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Couch Slouch-Prefix.pch";
 				HEADER_SEARCH_PATHS = libcec/src;
