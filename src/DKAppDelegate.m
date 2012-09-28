@@ -14,6 +14,7 @@
 #import "DKDoNothingLocalAction.h"
 #import <M3AppKit/M3AppKit.h>
 #import <Sparkle/Sparkle.h>
+#import "DKMouseGridWindowController.h"
 
 static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 
@@ -24,6 +25,7 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 @property (readwrite, nonatomic, strong) NSStatusItem *statusBarItem;
 @property (readwrite, nonatomic, strong) SUUpdater *updater;
 @property (readwrite, nonatomic, strong) M3BetaController *betaController;
+@property (readwrite, nonatomic, strong) DKMouseGridWindowController *mouseGridController;
 
 @end
 
@@ -42,7 +44,7 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 	[DKDoNothingLocalAction class];
 
 	self.windowController = [DKCECWindowController new];
-
+	self.mouseGridController = [DKMouseGridWindowController new];
 }
 
 -(void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -137,6 +139,11 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 	NSLog(@"Got keypress with duration: %@", @(keyPress.duration));
 	if (keyPress.duration > 0)
 		return;
+
+	if ([self.mouseGridController shouldConsumeKeypresses]) {
+		[self.mouseGridController handleKeypress:keyPress];
+		return;
+	}
 
 	if ([self.windowController shouldConsumeKeypresses]) {
 		[self.windowController handleKeypress:keyPress];

@@ -13,6 +13,8 @@
 		5017A30615E2D85A00B88FE6 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A30015E2D85A00B88FE6 /* SRRecorderControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5017A30715E2D85A00B88FE6 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A30215E2D85A00B88FE6 /* SRValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5017A30B15E2D93400B88FE6 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5017A30A15E2D93400B88FE6 /* Carbon.framework */; };
+		502CA7A816163734006A9A52 /* DKMouseGridWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CA7A716163734006A9A52 /* DKMouseGridWindowController.m */; };
+		502CA7AB16163B3F006A9A52 /* DKMouseGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CA7AA16163B3F006A9A52 /* DKMouseGridView.m */; };
 		502CA7AE16164BB2006A9A52 /* DKFakeRemoteWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CA7AD16164BB1006A9A52 /* DKFakeRemoteWindowController.m */; };
 		503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F564C15DD8179007F2F3E /* Cocoa.framework */; };
 		503F565915DD8179007F2F3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565815DD8179007F2F3E /* main.m */; };
@@ -193,6 +195,10 @@
 		5017A30115E2D85A00B88FE6 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		5017A30215E2D85A00B88FE6 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		5017A30A15E2D93400B88FE6 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		502CA7A616163734006A9A52 /* DKMouseGridWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKMouseGridWindowController.h; sourceTree = "<group>"; };
+		502CA7A716163734006A9A52 /* DKMouseGridWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKMouseGridWindowController.m; sourceTree = "<group>"; };
+		502CA7A916163B3F006A9A52 /* DKMouseGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKMouseGridView.h; sourceTree = "<group>"; };
+		502CA7AA16163B3F006A9A52 /* DKMouseGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKMouseGridView.m; sourceTree = "<group>"; };
 		502CA7AC16164BB1006A9A52 /* DKFakeRemoteWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKFakeRemoteWindowController.h; sourceTree = "<group>"; };
 		502CA7AD16164BB1006A9A52 /* DKFakeRemoteWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKFakeRemoteWindowController.m; sourceTree = "<group>"; };
 		503F564815DD8179007F2F3E /* Couch Slouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Couch Slouch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -409,6 +415,17 @@
 			name = ShortcutRecorder;
 			path = ShortcutRecorder/Framework/Source;
 			sourceTree = SOURCE_ROOT;
+		};
+		502CA7A516163675006A9A52 /* Mouse Grid */ = {
+			isa = PBXGroup;
+			children = (
+				502CA7A616163734006A9A52 /* DKMouseGridWindowController.h */,
+				502CA7A716163734006A9A52 /* DKMouseGridWindowController.m */,
+				502CA7A916163B3F006A9A52 /* DKMouseGridView.h */,
+				502CA7AA16163B3F006A9A52 /* DKMouseGridView.m */,
+			);
+			name = "Mouse Grid";
+			sourceTree = "<group>";
 		};
 		503F563D15DD8179007F2F3E = {
 			isa = PBXGroup;
@@ -716,6 +733,7 @@
 				5055C7C415DF9EE800B6B497 /* DKCECWindowController.h */,
 				5055C7C515DF9EE800B6B497 /* DKCECWindowController.m */,
 				5047670815F6B13300BF2DA7 /* DKCECWindowController.xib */,
+				502CA7A516163675006A9A52 /* Mouse Grid */,
 				50A9953415F927A200CDBB9B /* View Controllers */,
 				50A9953515F927B400CDBB9B /* Setup Wizard */,
 			);
@@ -1128,6 +1146,8 @@
 				50BA39F315F7DB490075E7DB /* DKFancyDividerView.m in Sources */,
 				50BA3A0215F7EB050075E7DB /* DKButtonDecoratedTextField.m in Sources */,
 				50A9953915F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m in Sources */,
+				502CA7A816163734006A9A52 /* DKMouseGridWindowController.m in Sources */,
+				502CA7AB16163B3F006A9A52 /* DKMouseGridView.m in Sources */,
 				502CA7AE16164BB2006A9A52 /* DKFakeRemoteWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
