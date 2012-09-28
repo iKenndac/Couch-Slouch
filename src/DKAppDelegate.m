@@ -47,6 +47,11 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 
 -(void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
+#if DEBUG
+	self.remoteWindowController.delegate = self;
+	[self.remoteWindowController showWindow:nil];
+#endif
+
 	for (NSRunningApplication *app in [[NSWorkspace sharedWorkspace] runningApplications]) {
 		if (app.active) {
 			self.targetApplicationIdentifier = app.bundleIdentifier;
@@ -121,6 +126,10 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 -(void)applicationDidActivate:(NSNotification *)notification {
 	NSRunningApplication *app = [notification.userInfo valueForKey:NSWorkspaceApplicationKey];
 	self.targetApplicationIdentifier = app.bundleIdentifier;
+}
+
+-(void)handleSimulatedKeyPress:(cec_keypress)press {
+	[self cecController:self.cecController didReceiveKeyPress:press];
 }
 
 -(void)cecController:(DKCECDeviceController *)controller didReceiveKeyPress:(cec_keypress)keyPress {

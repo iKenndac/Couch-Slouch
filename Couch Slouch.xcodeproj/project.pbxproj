@@ -13,6 +13,7 @@
 		5017A30615E2D85A00B88FE6 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A30015E2D85A00B88FE6 /* SRRecorderControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5017A30715E2D85A00B88FE6 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A30215E2D85A00B88FE6 /* SRValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5017A30B15E2D93400B88FE6 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5017A30A15E2D93400B88FE6 /* Carbon.framework */; };
+		502CA7AE16164BB2006A9A52 /* DKFakeRemoteWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CA7AD16164BB1006A9A52 /* DKFakeRemoteWindowController.m */; };
 		503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F564C15DD8179007F2F3E /* Cocoa.framework */; };
 		503F565915DD8179007F2F3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565815DD8179007F2F3E /* main.m */; };
 		503F566015DD8179007F2F3E /* DKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565F15DD8179007F2F3E /* DKAppDelegate.m */; };
@@ -192,6 +193,8 @@
 		5017A30115E2D85A00B88FE6 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		5017A30215E2D85A00B88FE6 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		5017A30A15E2D93400B88FE6 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		502CA7AC16164BB1006A9A52 /* DKFakeRemoteWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKFakeRemoteWindowController.h; sourceTree = "<group>"; };
+		502CA7AD16164BB1006A9A52 /* DKFakeRemoteWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKFakeRemoteWindowController.m; sourceTree = "<group>"; };
 		503F564815DD8179007F2F3E /* Couch Slouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Couch Slouch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		503F564C15DD8179007F2F3E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		503F564F15DD8179007F2F3E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -456,6 +459,8 @@
 				50ED687015E2EA2E0078261D /* Constants.h */,
 				503F565E15DD8179007F2F3E /* DKAppDelegate.h */,
 				503F565F15DD8179007F2F3E /* DKAppDelegate.m */,
+				502CA7AC16164BB1006A9A52 /* DKFakeRemoteWindowController.h */,
+				502CA7AD16164BB1006A9A52 /* DKFakeRemoteWindowController.m */,
 				5055C7CD15DFA08900B6B497 /* UI */,
 				5055C7E915DFB4F000B6B497 /* CEC */,
 				503F566915DD819B007F2F3E /* libCEC */,
@@ -1123,6 +1128,7 @@
 				50BA39F315F7DB490075E7DB /* DKFancyDividerView.m in Sources */,
 				50BA3A0215F7EB050075E7DB /* DKButtonDecoratedTextField.m in Sources */,
 				50A9953915F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m in Sources */,
+				502CA7AE16164BB2006A9A52 /* DKFakeRemoteWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
