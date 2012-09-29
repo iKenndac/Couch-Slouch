@@ -147,7 +147,6 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 
 -(void)cecController:(DKCECDeviceController *)controller didReceiveKeyPress:(cec_keypress)keyPress {
 
-	NSLog(@"Got keypress with duration: %@", @(keyPress.duration));
 	if (keyPress.duration > 0)
 		return;
 
