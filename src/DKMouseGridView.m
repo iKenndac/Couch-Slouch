@@ -38,19 +38,25 @@
 	shadow.shadowOffset = NSZeroSize;
 	[shadow set];
 
-	[NSBezierPath setDefaultLineWidth:3.0];
+	NSBezierPath *path = [NSBezierPath new];
+	path.lineWidth = 3.0;
 
-	[NSBezierPath strokeLineFromPoint:NSMakePoint(CGRectGetMinX(bounds), self.yStep + .5)
-							  toPoint:NSMakePoint(CGRectGetMaxX(bounds), self.yStep + .5)];
+	[path moveToPoint:NSMakePoint(CGRectGetMinX(bounds), self.yStep + .5)];
+	[path lineToPoint:NSMakePoint(CGRectGetMaxX(bounds), self.yStep + .5)];
 
-	[NSBezierPath strokeLineFromPoint:NSMakePoint(CGRectGetMinX(bounds), (self.yStep * 2) + .5)
-							  toPoint:NSMakePoint(CGRectGetMaxX(bounds), (self.yStep * 2) + .5)];
+	[path moveToPoint:NSMakePoint(CGRectGetMinX(bounds), (self.yStep * 2) + .5)];
+	[path lineToPoint:NSMakePoint(CGRectGetMaxX(bounds), (self.yStep * 2) + .5)];
 
-	[NSBezierPath strokeLineFromPoint:NSMakePoint(self.xStep + .5, CGRectGetMinY(bounds))
-							  toPoint:NSMakePoint(self.xStep + .5, CGRectGetMaxY(bounds))];
+	[path moveToPoint:NSMakePoint(self.xStep + .5, CGRectGetMinY(bounds))];
+	[path lineToPoint:NSMakePoint(self.xStep + .5, CGRectGetMaxY(bounds))];
 
-	[NSBezierPath strokeLineFromPoint:NSMakePoint((self.xStep * 2) + .5, CGRectGetMinY(bounds))
-							  toPoint:NSMakePoint((self.xStep * 2) + .5, CGRectGetMaxY(bounds))];
+	[path moveToPoint:NSMakePoint((self.xStep * 2) + .5, CGRectGetMinY(bounds))];
+	[path lineToPoint:NSMakePoint((self.xStep * 2) + .5, CGRectGetMaxY(bounds))];
+
+	if (self.drawBorder)
+		[path appendBezierPathWithRect:NSInsetRect(bounds, 1.5, 1.5)];
+
+	[path stroke];
 
 	CGFloat textSize = 70.0;
 	if (self.yStep < textSize * 2)
@@ -77,9 +83,6 @@
 
 		}
 	}
-
-	if (self.drawBorder)
-		[[NSBezierPath bezierPathWithRect:NSInsetRect(bounds, 1.5, 1.5)] stroke];
 }
 
 -(NSRect)rectForSegment:(NSUInteger)segmentIndex {
