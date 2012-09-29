@@ -113,6 +113,7 @@
 		50E58DFE15FCC4FB00AB8441 /* tv-computer-highlighted-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */; };
 		50E58DFF15FCC4FB00AB8441 /* tv-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */; };
 		50E58E0015FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */; };
+		50FF7DF316177569008324F0 /* DKShowMouseGridLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -377,6 +378,8 @@
 		50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-computer-large.png"; sourceTree = "<group>"; };
 		50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-highlighted-av-computer-large.png"; sourceTree = "<group>"; };
 		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		50FF7DF116177569008324F0 /* DKShowMouseGridLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKShowMouseGridLocalAction.h; sourceTree = "<group>"; };
+		50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKShowMouseGridLocalAction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -780,14 +783,7 @@
 				50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */,
 				5055C7EA15DFB54C00B6B497 /* DKCECKeyMappingController.h */,
 				5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */,
-				5055C7ED15DFB60F00B6B497 /* DKLocalAction.h */,
-				508FD9C215E56AD300661E0D /* DKLocalAction.m */,
-				5055C7FF15DFF18800B6B497 /* DKKeyboardShortcutLocalAction.h */,
-				5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */,
-				508FD9BB15E5607700661E0D /* DKLaunchApplicationLocalAction.h */,
-				508FD9BC15E5607700661E0D /* DKLaunchApplicationLocalAction.m */,
-				508FD9BF15E5682A00661E0D /* DKDoNothingLocalAction.h */,
-				508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */,
+				50FF7DF416177570008324F0 /* Actions */,
 			);
 			name = CEC;
 			sourceTree = "<group>";
@@ -909,6 +905,23 @@
 			);
 			name = "Custom UI";
 			path = ../ShortcutRecorder/Framework/Source;
+			sourceTree = "<group>";
+		};
+		50FF7DF416177570008324F0 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				5055C7ED15DFB60F00B6B497 /* DKLocalAction.h */,
+				508FD9C215E56AD300661E0D /* DKLocalAction.m */,
+				5055C7FF15DFF18800B6B497 /* DKKeyboardShortcutLocalAction.h */,
+				5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */,
+				508FD9BB15E5607700661E0D /* DKLaunchApplicationLocalAction.h */,
+				508FD9BC15E5607700661E0D /* DKLaunchApplicationLocalAction.m */,
+				508FD9BF15E5682A00661E0D /* DKDoNothingLocalAction.h */,
+				508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */,
+				50FF7DF116177569008324F0 /* DKShowMouseGridLocalAction.h */,
+				50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */,
+			);
+			name = Actions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1149,6 +1162,7 @@
 				502CA7A816163734006A9A52 /* DKMouseGridWindowController.m in Sources */,
 				502CA7AB16163B3F006A9A52 /* DKMouseGridView.m in Sources */,
 				502CA7AE16164BB2006A9A52 /* DKFakeRemoteWindowController.m in Sources */,
+				50FF7DF316177569008324F0 /* DKShowMouseGridLocalAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

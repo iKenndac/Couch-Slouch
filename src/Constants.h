@@ -19,3 +19,5 @@ static NSString * const kLogLibCECUserDefaultsKey = @"LogLibCEC";
 static NSString * const kPhysicalAddressUserDefaultsKey = @"PhysicalAddress";
 static NSString * const kSkipQuitAlertUserDefaultsKey = @"SkipQuitPrompt";
 static NSString * const kHasDoneFirstLaunchUserDefaultsKey = @"HasDoneFirstLaunch";
+
+static NSString * const kApplicationShouldShowMouseGridNotificationName = @"MouseGrid!";

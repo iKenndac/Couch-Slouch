@@ -12,6 +12,7 @@
 #import "DKKeyboardShortcutLocalAction.h"
 #import "DKLaunchApplicationLocalAction.h"
 #import "DKDoNothingLocalAction.h"
+#import "DKShowMouseGridLocalAction.h"
 #import <M3AppKit/M3AppKit.h>
 #import <Sparkle/Sparkle.h>
 #import "DKMouseGridWindowController.h"
@@ -42,6 +43,7 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 	[DKKeyboardShortcutLocalAction class];
 	[DKLaunchApplicationLocalAction class];
 	[DKDoNothingLocalAction class];
+	[DKShowMouseGridLocalAction class];
 
 	self.windowController = [DKCECWindowController new];
 	self.mouseGridController = [DKMouseGridWindowController new];
@@ -73,7 +75,16 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:0 context:kUpdateMenuBarItemContext];
 	[self addObserver:self forKeyPath:@"cecController.isActiveSource" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
 
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(showMouseGrid:)
+												 name:kApplicationShouldShowMouseGridNotificationName
+											   object:nil];
+
 	self.updater = [SUUpdater sharedUpdater];
+}
+
+-(void)showMouseGrid:(NSNotification *)notification {
+	[self.mouseGridController showMouseGrid];
 }
 
 -(BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {

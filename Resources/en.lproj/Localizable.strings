@@ -20,6 +20,7 @@
 "DKKeyboardShortcutLocalAction title" = "Keyboard Shortcut";
 "DKLaunchApplicationLocalAction title" = "Launch App";
 "DKDoNothingLocalAction title" = "Do Nothing";
+"DKShowMouseGridLocalAction title" = "Show Mouse Grid";
 
 "NavigationGroupTitle" = "Navigation";
 "NumbersGroupTitle" = "Numbers";
