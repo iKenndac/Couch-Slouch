@@ -111,8 +111,28 @@ static NSTimeInterval kDoubleClickListenerBuffer = 0.5;
 			return YES;
 			break;
 
+		case CEC_USER_CONTROL_CODE_LEFT_UP:
+			[self nudgeMouseBy:NSMakeSize(-kMouseNudgeDistance, -kMouseNudgeDistance)];
+			return YES;
+			break;
+
+		case CEC_USER_CONTROL_CODE_RIGHT_UP:
+			[self nudgeMouseBy:NSMakeSize(kMouseNudgeDistance, -kMouseNudgeDistance)];
+			return YES;
+			break;
+
 		case CEC_USER_CONTROL_CODE_DOWN:
 			[self nudgeMouseBy:NSMakeSize(0.0, kMouseNudgeDistance)];
+			return YES;
+			break;
+
+		case CEC_USER_CONTROL_CODE_LEFT_DOWN:
+			[self nudgeMouseBy:NSMakeSize(-kMouseNudgeDistance, kMouseNudgeDistance)];
+			return YES;
+			break;
+
+		case CEC_USER_CONTROL_CODE_RIGHT_DOWN:
+			[self nudgeMouseBy:NSMakeSize(kMouseNudgeDistance, kMouseNudgeDistance)];
 			return YES;
 			break;
 
