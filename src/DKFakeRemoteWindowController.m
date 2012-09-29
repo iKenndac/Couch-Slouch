@@ -85,4 +85,20 @@
 	[self simulateKeypressWithCode:CEC_USER_CONTROL_CODE_NUMBER9];
 }
 
+-(IBAction)pushRed:(id)sender {
+	[self simulateKeypressWithCode:CEC_USER_CONTROL_CODE_F2_RED];
+}
+
+-(IBAction)pushGreen:(id)sender {
+	[self simulateKeypressWithCode:CEC_USER_CONTROL_CODE_F3_GREEN];
+}
+
+-(IBAction)pushYellow:(id)sender {
+	[self simulateKeypressWithCode:CEC_USER_CONTROL_CODE_F4_YELLOW];
+}
+
+-(IBAction)pushBlue:(id)sender {
+	[self simulateKeypressWithCode:CEC_USER_CONTROL_CODE_F1_BLUE];
+}
+
 @end

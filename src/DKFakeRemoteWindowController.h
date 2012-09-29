@@ -36,5 +36,9 @@
 -(IBAction)push8:(id)sender;
 -(IBAction)push9:(id)sender;
 
+-(IBAction)pushRed:(id)sender;
+-(IBAction)pushGreen:(id)sender;
+-(IBAction)pushYellow:(id)sender;
+-(IBAction)pushBlue:(id)sender;
 
 @end
