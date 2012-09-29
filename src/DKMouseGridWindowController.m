@@ -10,6 +10,7 @@
 #import "DKMouseGridView.h"
 
 static CGFloat const kMouseNudgeDistance = 10.0;
+static CGFloat const kMinimumGridHeight = 16.0 * 3;
 
 @interface DKMouseGridWindowController ()
 
@@ -130,10 +131,14 @@ static CGFloat const kMouseNudgeDistance = 10.0;
 	mousePoint.x += mouseDelta.width;
 	mousePoint.y += mouseDelta.height;
 
+	[self moveMouseToPoint:mousePoint];
+}
+
+-(void)moveMouseToPoint:(CGPoint)mousePoint {
 	CGEventRef mouseMoveEvent = CGEventCreateMouseEvent(NULL, kCGEventMouseMoved, mousePoint, 0);
 	CGEventPost(kCGHIDEventTap, mouseMoveEvent);
 	CFRelease(mouseMoveEvent);
-	mouseMoveEvent = NULL;	
+	mouseMoveEvent = NULL;
 }
 
 -(void)handleNumberPress:(cec_keypress)press {
@@ -141,16 +146,15 @@ static CGFloat const kMouseNudgeDistance = 10.0;
 	NSUInteger segmentIndex = press.keycode - CEC_USER_CONTROL_CODE_NUMBER1;
 	NSRect segmentFrame = [self.gridView rectForSegment:segmentIndex];
 	NSRect newGridFrame = [self.window.contentView convertRect:segmentFrame fromView:self.gridView];
+	NSPoint windowPoint = NSMakePoint(NSMidX(newGridFrame), NSHeight([self.window.contentView bounds]) - NSMidY(newGridFrame));
+	[self moveMouseToPoint:NSPointToCGPoint(windowPoint)];
+
+	if (segmentFrame.size.height < kMinimumGridHeight)
+		// If the grid would be too small, return before resizing it
+		return;
 
 	self.gridView.frame = newGridFrame;
 	self.gridView.drawBorder = YES;
-
-	NSPoint windowPoint = NSMakePoint(NSMidX(newGridFrame), NSHeight([self.window.contentView bounds]) - NSMidY(newGridFrame));
-	
-	CGEventRef mouseMoveEvent = CGEventCreateMouseEvent(NULL, kCGEventMouseMoved, NSPointToCGPoint(windowPoint), 0);
-	CGEventPost(kCGHIDEventTap, mouseMoveEvent);
-	CFRelease(mouseMoveEvent);
-	mouseMoveEvent = NULL;
 }
 
 -(void)resetGrid {
