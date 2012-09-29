@@ -151,7 +151,7 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 	if (keyPress.duration > 0)
 		return;
 
-	if ([self.mouseGridController shouldConsumeKeypresses]) {
+	if ([self.mouseGridController shouldConsumeKeypress:keyPress]) {
 		[self.mouseGridController handleKeypress:keyPress];
 		return;
 	}

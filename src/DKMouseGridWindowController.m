@@ -11,10 +11,12 @@
 
 static CGFloat const kMouseNudgeDistance = 10.0;
 static CGFloat const kMinimumGridHeight = 16.0 * 3;
+static NSTimeInterval kDoubleClickListenerBuffer = 0.5;
 
 @interface DKMouseGridWindowController ()
 
 @property (nonatomic, strong, readwrite) DKMouseGridView *gridView;
+@property (nonatomic, readwrite) BOOL isWithinDoubleClickThreshold;
 
 @end
 
@@ -46,8 +48,11 @@ static CGFloat const kMinimumGridHeight = 16.0 * 3;
 	[self showWindow:nil];
 }
 
--(BOOL)shouldConsumeKeypresses {
-	return self.window.isVisible;
+-(BOOL)shouldConsumeKeypress:(cec_keypress)press {
+	if (self.window.isVisible)
+		return YES;
+	else
+		return press.keycode == CEC_USER_CONTROL_CODE_SELECT && self.isWithinDoubleClickThreshold;
 }
 
 -(BOOL)handleKeypress:(cec_keypress)press {
@@ -73,6 +78,16 @@ static CGFloat const kMinimumGridHeight = 16.0 * 3;
 			
 		case CEC_USER_CONTROL_CODE_SELECT:
 			[self clickMouse];
+			if (!self.isWithinDoubleClickThreshold) {
+				self.isWithinDoubleClickThreshold = YES;
+				[self resetGrid];
+				NSNumber *doubleClickTime = [[[NSUserDefaults standardUserDefaults] persistentDomainForName:NSGlobalDomain] valueForKey:@"com.apple.mouse.doubleClickThreshold"];
+				int64_t delayInSeconds = MAX(doubleClickTime.doubleValue + kDoubleClickListenerBuffer, 1.0);
+				dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+				dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+					self.isWithinDoubleClickThreshold = NO;
+				});
+			}
 			return YES;
 			break;
 

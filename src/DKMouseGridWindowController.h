@@ -12,7 +12,7 @@
 @interface DKMouseGridWindowController : NSWindowController
 
 -(BOOL)handleKeypress:(cec_keypress)press;
--(BOOL)shouldConsumeKeypresses;
+-(BOOL)shouldConsumeKeypress:(cec_keypress)press;
 
 -(void)showMouseGrid;
 
