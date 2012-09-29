@@ -11,6 +11,8 @@
 
 @interface DKMouseGridWindowController : NSWindowController
 
+@property (strong) IBOutlet NSPanel *helpWindow;
+
 -(BOOL)handleKeypress:(cec_keypress)press;
 -(BOOL)shouldConsumeKeypress:(cec_keypress)press;
 

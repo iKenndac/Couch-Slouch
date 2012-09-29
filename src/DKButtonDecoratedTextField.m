@@ -21,6 +21,14 @@ static CGFloat const kButtonVerticalTextAdjustment = -1.0;
 
 @implementation DKButtonDecoratedTextField
 
+-(id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super initWithCoder:aDecoder];
+	if (self) {
+		[self recalculateLayout];
+	}
+	return self;
+}
+
 -(void)setFrame:(NSRect)frameRect {
 	NSRect oldFrame = self.frame;
 	[super setFrame:frameRect];

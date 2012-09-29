@@ -17,21 +17,17 @@ static NSTimeInterval kDoubleClickListenerBuffer = 0.5;
 
 @property (nonatomic, strong, readwrite) DKMouseGridView *gridView;
 @property (nonatomic, readwrite) BOOL isWithinDoubleClickThreshold;
+@property (nonatomic, readwrite) BOOL helpWindowHasBeenHidden;
 
 @end
 
 @implementation DKMouseGridWindowController
 
 -(id)init {
-	self = [super init];
+	self = [super initWithWindowNibName:NSStringFromClass([self class])];
 
 	if (self) {
-		self.window = [[NSWindow alloc] initWithContentRect:[[NSScreen mainScreen] frame]
-												  styleMask:NSBorderlessWindowMask
-													backing:NSBackingStoreBuffered
-													  defer:YES
-													 screen:[NSScreen mainScreen]];
-
+		[self.window setFrame:[[NSScreen mainScreen] frame] display:NO];
 		self.window.backgroundColor = [NSColor clearColor];
 		self.window.hasShadow = NO;
 		self.window.opaque = NO;
@@ -40,12 +36,24 @@ static NSTimeInterval kDoubleClickListenerBuffer = 0.5;
 
 		self.gridView = [[DKMouseGridView alloc] initWithFrame:[self.window.contentView bounds]];
 		[self.window.contentView addSubview:self.gridView];
+
+		self.helpWindow.level = CGShieldingWindowLevel();
+		self.helpWindow.ignoresMouseEvents = YES;
 	}
 	return self;
 }
 
 -(void)showMouseGrid {
 	[self showWindow:nil];
+
+	NSRect centerRect = [self.gridView rectForSegment:4];
+	NSRect helpWindowFrame = self.helpWindow.frame;
+	helpWindowFrame.origin.y = NSMidY(centerRect) - (2 * NSHeight(helpWindowFrame));
+	[self.helpWindow setFrame:helpWindowFrame display:NO];
+	self.helpWindow.alphaValue = 1.0;
+	self.helpWindowHasBeenHidden = NO;
+	[self.helpWindow orderFront:self];
+	
 }
 
 -(BOOL)shouldConsumeKeypress:(cec_keypress)press {
@@ -56,6 +64,13 @@ static NSTimeInterval kDoubleClickListenerBuffer = 0.5;
 }
 
 -(BOOL)handleKeypress:(cec_keypress)press {
+
+	if (!self.helpWindowHasBeenHidden && self.helpWindow.isVisible) {
+		self.helpWindowHasBeenHidden = YES;
+		NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.helpWindow, NSViewAnimationTargetKey, NSViewAnimationFadeOutEffect, NSViewAnimationEffectKey, nil];
+		NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:dict]];
+		[animation startAnimation];
+	}
 
 	switch (press.keycode) {
 		case CEC_USER_CONTROL_CODE_NUMBER1:
@@ -177,6 +192,7 @@ static NSTimeInterval kDoubleClickListenerBuffer = 0.5;
 	self.gridView.drawBorder = NO;
 
 	[self.window close];
+	[self.helpWindow close];
 }
 
 @end
