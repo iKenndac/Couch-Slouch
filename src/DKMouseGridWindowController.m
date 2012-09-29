@@ -9,6 +9,8 @@
 #import "DKMouseGridWindowController.h"
 #import "DKMouseGridView.h"
 
+static CGFloat const kMouseNudgeDistance = 10.0;
+
 @interface DKMouseGridWindowController ()
 
 @property (nonatomic, strong, readwrite) DKMouseGridView *gridView;
@@ -31,6 +33,7 @@
 		self.window.hasShadow = NO;
 		self.window.opaque = NO;
 		self.window.level = CGShieldingWindowLevel();
+		self.window.ignoresMouseEvents = YES;
 
 		self.gridView = [[DKMouseGridView alloc] initWithFrame:[self.window.contentView bounds]];
 		[self.window.contentView addSubview:self.gridView];
@@ -72,6 +75,26 @@
 			return YES;
 			break;
 
+		case CEC_USER_CONTROL_CODE_UP:
+			[self nudgeMouseBy:NSMakeSize(0.0, -kMouseNudgeDistance)];
+			return YES;
+			break;
+
+		case CEC_USER_CONTROL_CODE_DOWN:
+			[self nudgeMouseBy:NSMakeSize(0.0, kMouseNudgeDistance)];
+			return YES;
+			break;
+
+		case CEC_USER_CONTROL_CODE_LEFT:
+			[self nudgeMouseBy:NSMakeSize(-kMouseNudgeDistance, 0.0)];
+			return YES;
+			break;
+
+		case CEC_USER_CONTROL_CODE_RIGHT:
+			[self nudgeMouseBy:NSMakeSize(kMouseNudgeDistance, 0.0)];
+			return YES;
+			break;
+
 		default:
 			break;
 	}
@@ -82,10 +105,10 @@
 
 -(void)clickMouse {
 
-	CGEventRef ourEvent = CGEventCreate(NULL);
-	CGPoint mousePoint = CGEventGetLocation(ourEvent);
-	CFRelease(ourEvent);
-	ourEvent = NULL;
+	CGEventRef getMousePositionEvent = CGEventCreate(NULL);
+	CGPoint mousePoint = CGEventGetLocation(getMousePositionEvent);
+	CFRelease(getMousePositionEvent);
+	getMousePositionEvent = NULL;
 
 	CGEventRef mouseDownEvent = CGEventCreateMouseEvent(NULL, kCGEventLeftMouseDown, mousePoint, 0);
 	CGEventRef mouseUpEvent = CGEventCreateMouseEvent(NULL, kCGEventLeftMouseUp, mousePoint, 0);
@@ -95,6 +118,22 @@
 	CFRelease(mouseUpEvent);
 	mouseDownEvent = NULL;
 	mouseUpEvent = NULL;
+}
+
+-(void)nudgeMouseBy:(NSSize)mouseDelta {
+
+	CGEventRef getMousePositionEvent = CGEventCreate(NULL);
+	CGPoint mousePoint = CGEventGetLocation(getMousePositionEvent);
+	CFRelease(getMousePositionEvent);
+	getMousePositionEvent = NULL;
+
+	mousePoint.x += mouseDelta.width;
+	mousePoint.y += mouseDelta.height;
+
+	CGEventRef mouseMoveEvent = CGEventCreateMouseEvent(NULL, kCGEventMouseMoved, mousePoint, 0);
+	CGEventPost(kCGHIDEventTap, mouseMoveEvent);
+	CFRelease(mouseMoveEvent);
+	mouseMoveEvent = NULL;	
 }
 
 -(void)handleNumberPress:(cec_keypress)press {
