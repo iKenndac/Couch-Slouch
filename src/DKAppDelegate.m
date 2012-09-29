@@ -51,10 +51,7 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 
 -(void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
-#if DEBUG
 	self.remoteWindowController.delegate = self;
-	[self.remoteWindowController showWindow:nil];
-#endif
 
 	for (NSRunningApplication *app in [[NSWorkspace sharedWorkspace] runningApplications]) {
 		if (app.active) {
@@ -80,11 +77,20 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 												 name:kApplicationShouldShowMouseGridNotificationName
 											   object:nil];
 
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(showVirtualRemote:)
+												 name:kApplicationShouldShowVirtualRemoteNotificationName
+											   object:nil];
+
 	self.updater = [SUUpdater sharedUpdater];
 }
 
 -(void)showMouseGrid:(NSNotification *)notification {
 	[self.mouseGridController showMouseGrid];
+}
+
+-(void)showVirtualRemote:(NSNotification *)notification {
+	[self.remoteWindowController showWindow:nil];
 }
 
 -(BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {

@@ -9,6 +9,7 @@
 "ok button title" = "OK";
 "cancel button title" = "Cancel";
 "quit button title" = "Quit";
+"version formatter" = "Version %@ (%@)";
 
 "all applications title" = "All Applications";
 "all other applications title" = "Other Applications";

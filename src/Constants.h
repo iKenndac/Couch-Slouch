@@ -21,3 +21,4 @@ static NSString * const kSkipQuitAlertUserDefaultsKey = @"SkipQuitPrompt";
 static NSString * const kHasDoneFirstLaunchUserDefaultsKey = @"HasDoneFirstLaunch";
 
 static NSString * const kApplicationShouldShowMouseGridNotificationName = @"MouseGrid!";
+static NSString * const kApplicationShouldShowVirtualRemoteNotificationName = @"Remote!";
