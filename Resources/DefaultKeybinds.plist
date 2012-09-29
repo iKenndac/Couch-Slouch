@@ -259,7 +259,7 @@
 				</dict>
 				<dict>
 					<key>class</key>
-					<string>DKDoNothingLocalAction</string>
+					<string>DKShowMouseGridLocalAction</string>
 					<key>deviceCode</key>
 					<string>F1_BLUE</string>
 				</dict>
@@ -544,7 +544,7 @@
 			</dict>
 			<dict>
 				<key>class</key>
-				<string>DKDoNothingLocalAction</string>
+				<string>DKShowMouseGridLocalAction</string>
 				<key>deviceCode</key>
 				<string>F1_BLUE</string>
 			</dict>
