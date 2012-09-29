@@ -145,6 +145,7 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{576, 30}, {101, 32}}</string>
 						<reference key="NSSuperview" ref="1005"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="879390044">
@@ -443,7 +444,7 @@
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="649148660">
-								<int key="NSCellFlags">-1543503872</int>
+								<int key="NSCellFlags">603979776</int>
 								<int key="NSCellFlags2">268435456</int>
 								<string key="NSContents">Launch Couch Slouch at login</string>
 								<reference key="NSSupport" ref="288342194"/>
@@ -559,7 +560,7 @@
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<object class="NSView" key="NSWindowView" id="1040796063">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSImageView" id="42959838">
@@ -627,7 +628,7 @@
 											<int key="NSvFlags">2322</int>
 											<string key="NSFrameSize">{388, 171}</string>
 											<reference key="NSSuperview" ref="410626750"/>
-											<reference key="NSNextKeyView" ref="583042084"/>
+											<reference key="NSNextKeyView" ref="807310416"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<object class="NSTextContainer" key="NSTextContainer" id="1014700473">
 												<object class="NSLayoutManager" key="NSLayoutManager">
@@ -722,7 +723,6 @@
 									<int key="NSvFlags">256</int>
 									<string key="NSFrame">{{373, 1}, {16, 171}}</string>
 									<reference key="NSSuperview" ref="646883322"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:84</string>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<reference key="NSTarget" ref="646883322"/>
@@ -747,7 +747,7 @@
 							</array>
 							<string key="NSFrame">{{-1, 61}, {390, 173}}</string>
 							<reference key="NSSuperview" ref="1040796063"/>
-							<reference key="NSNextKeyView" ref="807310416"/>
+							<reference key="NSNextKeyView" ref="410626750"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">133138</int>
 							<reference key="NSVScroller" ref="583042084"/>
@@ -802,7 +802,6 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{388, 402}</string>
-					<reference key="NSSuperview"/>
 					<reference key="NSNextKeyView" ref="42959838"/>
 					<string key="NSReuseIdentifierKey">_NS:20</string>
 				</object>
@@ -972,22 +971,6 @@
 						<reference key="destination" ref="935265024"/>
 					</object>
 					<int key="connectionID">549</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.LogLibCEC</string>
-						<reference key="source" ref="61532231"/>
-						<reference key="destination" ref="167889232"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="61532231"/>
-							<reference key="NSDestination" ref="167889232"/>
-							<string key="NSLabel">value: values.LogLibCEC</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.LogLibCEC</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">508</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1196,22 +1179,6 @@
 								<float key="scoringTypeFloat">40</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="1056295817">
-								<reference key="firstItem" ref="899700865"/>
-								<int key="firstAttribute">5</int>
-								<int key="relation">0</int>
-								<reference key="secondItem" ref="1005"/>
-								<int key="secondAttribute">5</int>
-								<float key="multiplier">1</float>
-								<object class="IBLayoutConstant" key="constant">
-									<double key="value">30</double>
-								</object>
-								<float key="priority">1000</float>
-								<reference key="containingView" ref="1005"/>
-								<int key="scoringType">9</int>
-								<float key="scoringTypeFloat">40</float>
-								<int key="contentType">3</int>
-							</object>
 							<object class="IBNSLayoutConstraint" id="1063711804">
 								<reference key="firstItem" ref="74339160"/>
 								<int key="firstAttribute">5</int>
@@ -1237,6 +1204,22 @@
 								<float key="multiplier">1</float>
 								<object class="IBNSLayoutSymbolicConstant" key="constant">
 									<double key="value">20</double>
+								</object>
+								<float key="priority">1000</float>
+								<reference key="containingView" ref="1005"/>
+								<int key="scoringType">9</int>
+								<float key="scoringTypeFloat">40</float>
+								<int key="contentType">3</int>
+							</object>
+							<object class="IBNSLayoutConstraint" id="1056295817">
+								<reference key="firstItem" ref="899700865"/>
+								<int key="firstAttribute">5</int>
+								<int key="relation">0</int>
+								<reference key="secondItem" ref="1005"/>
+								<int key="secondAttribute">5</int>
+								<float key="multiplier">1</float>
+								<object class="IBLayoutConstant" key="constant">
+									<double key="value">30</double>
 								</object>
 								<float key="priority">1000</float>
 								<reference key="containingView" ref="1005"/>
