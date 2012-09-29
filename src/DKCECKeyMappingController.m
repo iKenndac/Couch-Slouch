@@ -267,7 +267,7 @@ static NSString * const kKeyMappingActionsKey = @"actions";
 		if (path.length > 0) self.cachedDisplayImage = [workspace iconForFile:path];
 
 		if (self.cachedDisplayImage == nil)
-			self.cachedDisplayImage = [NSImage imageNamed:NSImageNameApplicationIcon];
+			self.cachedDisplayImage = [NSImage imageNamed:@"PlainAppIcon"];
 	}
 	return self.cachedDisplayImage;
 }

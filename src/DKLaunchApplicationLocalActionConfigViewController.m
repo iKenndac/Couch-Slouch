@@ -43,7 +43,7 @@
 
 	DKLaunchApplicationLocalAction *action = self.representedObject;
 	NSString *path = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:action.bundleIdentifier];
-	if (path.length == 0) return [NSImage imageNamed:NSImageNameApplicationIcon];
+	if (path.length == 0) return [NSImage imageNamed:@"PlainAppIcon"];
 	return [[NSWorkspace sharedWorkspace] iconForFile:path];
 }
 

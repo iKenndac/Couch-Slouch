@@ -115,6 +115,7 @@
 		50E58E0015FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */; };
 		50FF7DF316177569008324F0 /* DKShowMouseGridLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */; };
 		50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50FF7DF91617827D008324F0 /* DKMouseGridWindowController.xib */; };
+		50FF7DFB161792E9008324F0 /* PlainAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50FF7DFA161792E9008324F0 /* PlainAppIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -382,6 +383,7 @@
 		50FF7DF116177569008324F0 /* DKShowMouseGridLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKShowMouseGridLocalAction.h; sourceTree = "<group>"; };
 		50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKShowMouseGridLocalAction.m; sourceTree = "<group>"; };
 		50FF7DF81617827D008324F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKMouseGridWindowController.xib; sourceTree = "<group>"; };
+		50FF7DFA161792E9008324F0 /* PlainAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlainAppIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -866,6 +868,7 @@
 		50BA39E515F7CE650075E7DB /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				50FF7DFA161792E9008324F0 /* PlainAppIcon.png */,
 				508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */,
 				508B7A7B15FE78700014BC2A /* menubar-noconnection.png */,
 				508B7A7C15FE78700014BC2A /* menubar-off.png */,
@@ -1078,6 +1081,7 @@
 				508B2A3B160BBE8D00708A62 /* CouchSlouch.iconset in Resources */,
 				5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */,
 				50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */,
+				50FF7DFB161792E9008324F0 /* PlainAppIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
