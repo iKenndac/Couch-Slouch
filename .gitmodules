@@ -7,3 +7,6 @@
 [submodule "M3AppKit"]
 	path = M3AppKit
 	url = https://github.com/pilky/M3Appkit
+[submodule "vendor/StartAtLoginController"]
+	path = vendor/StartAtLoginController
+	url = git://github.com/alexzielenski/StartAtLoginController.git

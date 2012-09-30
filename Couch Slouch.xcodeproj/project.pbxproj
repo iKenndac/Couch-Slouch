@@ -81,6 +81,11 @@
 		508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7B15FE78700014BC2A /* menubar-noconnection.png */; };
 		508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7C15FE78700014BC2A /* menubar-off.png */; };
 		508B7A8015FE78700014BC2A /* menubar-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7D15FE78700014BC2A /* menubar-on.png */; };
+		508DEB811618404F00413CD9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F564C15DD8179007F2F3E /* Cocoa.framework */; };
+		508DEB98161840B000413CD9 /* Couch Slouch Login Helper.app in Copy Login Helper */ = {isa = PBXBuildFile; fileRef = 508DEB7F1618404F00413CD9 /* Couch Slouch Login Helper.app */; };
+		508DEBA41618427C00413CD9 /* LoginHelper-main.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBA31618427C00413CD9 /* LoginHelper-main.m */; };
+		508DEBC71618449900413CD9 /* StartAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBC41618449900413CD9 /* StartAtLoginController.m */; };
+		508DEBC91618455200413CD9 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508DEBC81618455200413CD9 /* ServiceManagement.framework */; };
 		508FD9BD15E5607700661E0D /* DKLaunchApplicationLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9BC15E5607700661E0D /* DKLaunchApplicationLocalAction.m */; };
 		508FD9C115E5682A00661E0D /* DKDoNothingLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */; };
 		508FD9C315E56AD400661E0D /* DKLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C215E56AD300661E0D /* DKLocalAction.m */; };
@@ -168,6 +173,13 @@
 			remoteGlobalIDString = 55C14BB7136EEF1500649790;
 			remoteInfo = finish_installation;
 		};
+		508DEB9E1618421100413CD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503F563F15DD8179007F2F3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 508DEB7E1618404F00413CD9;
+			remoteInfo = "Couch Slouch Login Helper";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -182,6 +194,17 @@
 				5076B498161374DB00A99AD0 /* M3AppKit.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		508DEB971618409C00413CD9 /* Copy Login Helper */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				508DEB98161840B000413CD9 /* Couch Slouch Login Helper.app in Copy Login Helper */,
+			);
+			name = "Copy Login Helper";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -334,6 +357,13 @@
 		508B7A7B15FE78700014BC2A /* menubar-noconnection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-noconnection.png"; sourceTree = "<group>"; };
 		508B7A7C15FE78700014BC2A /* menubar-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-off.png"; sourceTree = "<group>"; };
 		508B7A7D15FE78700014BC2A /* menubar-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-on.png"; sourceTree = "<group>"; };
+		508DEB7F1618404F00413CD9 /* Couch Slouch Login Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Couch Slouch Login Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		508DEBA11618427200413CD9 /* Couch Slouch Login Helper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Couch Slouch Login Helper-Info.plist"; path = "Resources/Couch Slouch Login Helper-Info.plist"; sourceTree = "<group>"; };
+		508DEBA31618427C00413CD9 /* LoginHelper-main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LoginHelper-main.m"; path = "src/LoginHelper-main.m"; sourceTree = "<group>"; };
+		508DEBA51618428400413CD9 /* Couch Slouch Login Helper-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Couch Slouch Login Helper-Prefix.pch"; path = "src/Couch Slouch Login Helper-Prefix.pch"; sourceTree = "<group>"; };
+		508DEBC31618449900413CD9 /* StartAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartAtLoginController.h; sourceTree = "<group>"; };
+		508DEBC41618449900413CD9 /* StartAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartAtLoginController.m; sourceTree = "<group>"; };
+		508DEBC81618455200413CD9 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		508FD9BB15E5607700661E0D /* DKLaunchApplicationLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLaunchApplicationLocalAction.h; sourceTree = "<group>"; };
 		508FD9BC15E5607700661E0D /* DKLaunchApplicationLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLaunchApplicationLocalAction.m; sourceTree = "<group>"; };
 		508FD9BF15E5682A00661E0D /* DKDoNothingLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKDoNothingLocalAction.h; sourceTree = "<group>"; };
@@ -391,6 +421,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508DEBC91618455200413CD9 /* ServiceManagement.framework in Frameworks */,
 				5076B4B41613772400A99AD0 /* Sparkle.framework in Frameworks */,
 				5076B48F1613716600A99AD0 /* M3AppKit.framework in Frameworks */,
 				50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */,
@@ -399,6 +430,14 @@
 				503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */,
 				503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */,
 				5076B49A1613751900A99AD0 /* M3Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		508DEB7C1618404F00413CD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				508DEB811618404F00413CD9 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				503F565215DD8179007F2F3E /* Couch Slouch */,
+				508DEBA01618425F00413CD9 /* Login Helper */,
 				503F564B15DD8179007F2F3E /* Frameworks */,
 				503F564915DD8179007F2F3E /* Products */,
 			);
@@ -448,6 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				503F564815DD8179007F2F3E /* Couch Slouch.app */,
+				508DEB7F1618404F00413CD9 /* Couch Slouch Login Helper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -463,6 +504,7 @@
 				503F575515DD848E007F2F3E /* QuartzCore.framework */,
 				503F575315DD845B007F2F3E /* IOKit.framework */,
 				503F564C15DD8179007F2F3E /* Cocoa.framework */,
+				508DEBC81618455200413CD9 /* ServiceManagement.framework */,
 				503F564E15DD8179007F2F3E /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -489,7 +531,7 @@
 				5055C7CD15DFA08900B6B497 /* UI */,
 				5055C7E915DFB4F000B6B497 /* CEC */,
 				503F566915DD819B007F2F3E /* libCEC */,
-				5017A2F815E2D85A00B88FE6 /* ShortcutRecorder */,
+				508DEBBF1618448100413CD9 /* Vendor */,
 				50BA3A0315F7EB0B0075E7DB /* Custom UI */,
 				503F565315DD8179007F2F3E /* Supporting Files */,
 			);
@@ -814,6 +856,36 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		508DEBA01618425F00413CD9 /* Login Helper */ = {
+			isa = PBXGroup;
+			children = (
+				508DEBA11618427200413CD9 /* Couch Slouch Login Helper-Info.plist */,
+				508DEBA31618427C00413CD9 /* LoginHelper-main.m */,
+				508DEBA51618428400413CD9 /* Couch Slouch Login Helper-Prefix.pch */,
+			);
+			name = "Login Helper";
+			sourceTree = "<group>";
+		};
+		508DEBBF1618448100413CD9 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				508DEBC01618449900413CD9 /* StartAtLoginController */,
+				5017A2F815E2D85A00B88FE6 /* ShortcutRecorder */,
+			);
+			name = Vendor;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		508DEBC01618449900413CD9 /* StartAtLoginController */ = {
+			isa = PBXGroup;
+			children = (
+				508DEBC31618449900413CD9 /* StartAtLoginController.h */,
+				508DEBC41618449900413CD9 /* StartAtLoginController.m */,
+			);
+			name = StartAtLoginController;
+			path = vendor/StartAtLoginController;
+			sourceTree = "<group>";
+		};
 		508FD9C415E5768C00661E0D /* Action Config Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -942,14 +1014,33 @@
 				503F564615DD8179007F2F3E /* Resources */,
 				5076B4951613737600A99AD0 /* Generate CFBundleVersion */,
 				5076B497161374CE00A99AD0 /* Copy Frameworks */,
+				508DEB971618409C00413CD9 /* Copy Login Helper */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				508DEB9F1618421100413CD9 /* PBXTargetDependency */,
+			);
+			name = "Couch Slouch";
+			productName = "Couch Slouch";
+			productReference = 503F564815DD8179007F2F3E /* Couch Slouch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		508DEB7E1618404F00413CD9 /* Couch Slouch Login Helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 508DEB941618404F00413CD9 /* Build configuration list for PBXNativeTarget "Couch Slouch Login Helper" */;
+			buildPhases = (
+				508DEB7B1618404F00413CD9 /* Sources */,
+				508DEB7C1618404F00413CD9 /* Frameworks */,
+				508DEB7D1618404F00413CD9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Couch Slouch";
-			productName = "Couch Slouch";
-			productReference = 503F564815DD8179007F2F3E /* Couch Slouch.app */;
+			name = "Couch Slouch Login Helper";
+			productName = "Couch Slouch Login Helper";
+			productReference = 508DEB7F1618404F00413CD9 /* Couch Slouch Login Helper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -985,6 +1076,7 @@
 			projectRoot = "";
 			targets = (
 				503F564715DD8179007F2F3E /* Couch Slouch */,
+				508DEB7E1618404F00413CD9 /* Couch Slouch Login Helper */,
 			);
 		};
 /* End PBXProject section */
@@ -1085,6 +1177,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		508DEB7D1618404F00413CD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1171,10 +1270,27 @@
 				502CA7AB16163B3F006A9A52 /* DKMouseGridView.m in Sources */,
 				502CA7AE16164BB2006A9A52 /* DKFakeRemoteWindowController.m in Sources */,
 				50FF7DF316177569008324F0 /* DKShowMouseGridLocalAction.m in Sources */,
+				508DEBC71618449900413CD9 /* StartAtLoginController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		508DEB7B1618404F00413CD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				508DEBA41618427C00413CD9 /* LoginHelper-main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		508DEB9F1618421100413CD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 508DEB7E1618404F00413CD9 /* Couch Slouch Login Helper */;
+			targetProxy = 508DEB9E1618421100413CD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5047670415F6B13300BF2DA7 /* Credits.rtf */ = {
@@ -1290,6 +1406,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1307,6 +1424,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx10.8;
 			};
 			name = Debug;
@@ -1319,6 +1437,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1329,6 +1448,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx10.8;
 			};
 			name = Release;
@@ -1371,6 +1491,38 @@
 			};
 			name = Release;
 		};
+		508DEB951618404F00413CD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/Couch Slouch Login Helper-Prefix.pch";
+				INFOPLIST_FILE = "Resources/Couch Slouch Login Helper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		508DEB961618404F00413CD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/Couch Slouch Login Helper-Prefix.pch";
+				INFOPLIST_FILE = "Resources/Couch Slouch Login Helper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1388,6 +1540,15 @@
 			buildConfigurations = (
 				503F566715DD8179007F2F3E /* Debug */,
 				503F566815DD8179007F2F3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		508DEB941618404F00413CD9 /* Build configuration list for PBXNativeTarget "Couch Slouch Login Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				508DEB951618404F00413CD9 /* Debug */,
+				508DEB961618404F00413CD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
