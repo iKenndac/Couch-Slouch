@@ -13,7 +13,6 @@
 #import "DKLaunchApplicationLocalAction.h"
 #import "DKDoNothingLocalAction.h"
 #import "DKShowMouseGridLocalAction.h"
-#import <M3AppKit/M3AppKit.h>
 #import <Sparkle/Sparkle.h>
 #import "DKMouseGridWindowController.h"
 
@@ -25,7 +24,6 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 @property (readwrite, nonatomic, copy) NSArray *waitingLogs;
 @property (readwrite, nonatomic, strong) NSStatusItem *statusBarItem;
 @property (readwrite, nonatomic, strong) SUUpdater *updater;
-@property (readwrite, nonatomic, strong) M3BetaController *betaController;
 @property (readwrite, nonatomic, strong) DKMouseGridWindowController *mouseGridController;
 
 @end
@@ -33,9 +31,6 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 @implementation DKAppDelegate
 
 -(void)applicationWillFinishLaunching:(NSNotification *)notification {
-
-	self.betaController = [M3BetaController new];
-	[self.betaController performBetaCheckWithDateString:[NSString stringWithUTF8String:__DATE__]];
 	
 	self.cecController = [DKCECDeviceController new];
 	self.cecController.delegate = self;

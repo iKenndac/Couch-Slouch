@@ -7,9 +7,6 @@
 [submodule "vendor/KNSharedCodeRepository"]
 	path = vendor/KNSharedCodeRepository
 	url = git://github.com/iKenndac/KNSharedCodeRepository.git
-[submodule "vendor/M3AppKit"]
-	path = vendor/M3AppKit
-	url = https://github.com/pilky/M3Appkit
 [submodule "vendor/Sparkle"]
 	path = vendor/Sparkle
 	url = git://github.com/andymatuschak/Sparkle.git
