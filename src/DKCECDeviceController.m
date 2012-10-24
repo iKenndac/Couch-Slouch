@@ -217,6 +217,7 @@ static dispatch_queue_t cec_global_queue;
 		memset(cec_configuration, 0, sizeof(libcec_configuration));
 		snprintf(cec_configuration->strDeviceName, 13, "%s", [name UTF8String]);
 		cec_configuration->deviceTypes = list;
+		cec_configuration->clientVersion = CEC_CLIENT_VERSION_2_0_2;
 
 		if ([defaults valueForKey:kPhysicalAddressUserDefaultsKey] != nil)
 			cec_configuration->iPhysicalAddress = (uint16_t)[[defaults valueForKey:kPhysicalAddressUserDefaultsKey] unsignedIntValue];
