@@ -37,6 +37,6 @@
 	<key>SUPublicDSAKeyFile</key>
 	<string>CouchSlouchPublicKey.pem</string>
 	<key>SUFeedURL</key>
-	<string>http://ikennd.ac/misc/CouchSlouchUpdates.xml</string>
+	<string>http://www.couch-slouch.com/updates/CouchSlouchUpdates.xml</string>
 </dict>
 </plist>
