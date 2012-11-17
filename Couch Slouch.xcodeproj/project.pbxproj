@@ -80,8 +80,6 @@
 		508DEBA41618427C00413CD9 /* LoginHelper-main.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBA31618427C00413CD9 /* LoginHelper-main.m */; };
 		508DEBC71618449900413CD9 /* StartAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBC41618449900413CD9 /* StartAtLoginController.m */; };
 		508DEBC91618455200413CD9 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508DEBC81618455200413CD9 /* ServiceManagement.framework */; };
-		508DEBF616184D4000413CD9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508DEBE016184C9B00413CD9 /* Sparkle.framework */; };
-		508DEBF716184D6600413CD9 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 508DEBE016184C9B00413CD9 /* Sparkle.framework */; };
 		508DEBFF16184EA800413CD9 /* DKBackgroundStyleForwarderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBFA16184EA800413CD9 /* DKBackgroundStyleForwarderView.m */; };
 		508DEC0016184EA800413CD9 /* DKButtonDecoratedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBFC16184EA800413CD9 /* DKButtonDecoratedTextField.m */; };
 		508DEC0116184EA800413CD9 /* DKFancyDividerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBFE16184EA800413CD9 /* DKFancyDividerView.m */; };
@@ -110,6 +108,8 @@
 		50BA39FE15F7EA3D0075E7DB /* button-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FB15F7EA3D0075E7DB /* button-left.png */; };
 		50BA39FF15F7EA3D0075E7DB /* button-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FC15F7EA3D0075E7DB /* button-right.png */; };
 		50C101B716543BA9002DD42D /* PHCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50C101B516543BA9002DD42D /* PHCommandHandler.cpp */; };
+		50CB484116581FE200F690EF /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; };
+		50CB484216581FF200F690EF /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; };
 		50E58DFC15FCC4FB00AB8441 /* tv-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */; };
 		50E58DFD15FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */; };
 		50E58DFE15FCC4FB00AB8441 /* tv-computer-highlighted-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */; };
@@ -128,41 +128,6 @@
 			remoteGlobalIDString = 508DEB7E1618404F00413CD9;
 			remoteInfo = "Couch Slouch Login Helper";
 		};
-		508DEBDF16184C9B00413CD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = Sparkle;
-		};
-		508DEBE116184C9B00413CD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
-			remoteInfo = "Sparkle Test App";
-		};
-		508DEBE316184C9B00413CD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 612279D90DB5470200AB99EA;
-			remoteInfo = "Sparkle Unit Tests";
-		};
-		508DEBE516184C9B00413CD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6;
-			remoteInfo = BinaryDelta;
-		};
-		508DEBE716184C9B00413CD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 55C14BB7136EEF1500649790;
-			remoteInfo = finish_installation;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -172,7 +137,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				508DEBF716184D6600413CD9 /* Sparkle.framework in Copy Frameworks */,
+				50CB484216581FF200F690EF /* Sparkle.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,7 +295,6 @@
 		5055C7ED15DFB60F00B6B497 /* DKLocalAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKLocalAction.h; sourceTree = "<group>"; };
 		5055C7FF15DFF18800B6B497 /* DKKeyboardShortcutLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKKeyboardShortcutLocalAction.h; sourceTree = "<group>"; };
 		5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKKeyboardShortcutLocalAction.m; sourceTree = "<group>"; };
-		5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = vendor/Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CouchSlouchPublicKey.pem; path = Resources/CouchSlouchPublicKey.pem; sourceTree = SOURCE_ROOT; };
 		508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = CouchSlouch.iconset; sourceTree = "<group>"; };
 		508B7A7B15FE78700014BC2A /* menubar-noconnection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-noconnection.png"; sourceTree = "<group>"; };
@@ -385,6 +349,7 @@
 		50BA39FC15F7EA3D0075E7DB /* button-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-right.png"; sourceTree = "<group>"; };
 		50C101B516543BA9002DD42D /* PHCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PHCommandHandler.cpp; sourceTree = "<group>"; };
 		50C101B616543BA9002DD42D /* PHCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCommandHandler.h; sourceTree = "<group>"; };
+		50CB484016581FE200F690EF /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = vendor/Sparkle.framework; sourceTree = "<group>"; };
 		50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-av-computer-large.png"; sourceTree = "<group>"; };
 		50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-av-highlighted-computer-large.png"; sourceTree = "<group>"; };
 		50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-computer-highlighted-large.png"; sourceTree = "<group>"; };
@@ -402,13 +367,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				508DEBF616184D4000413CD9 /* Sparkle.framework in Frameworks */,
 				508DEBC91618455200413CD9 /* ServiceManagement.framework in Frameworks */,
 				50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */,
 				5017A30B15E2D93400B88FE6 /* Carbon.framework in Frameworks */,
 				503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */,
 				503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */,
 				503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */,
+				50CB484116581FE200F690EF /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +440,7 @@
 		503F564B15DD8179007F2F3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */,
+				50CB484016581FE200F690EF /* Sparkle.framework */,
 				50B9216115E922DA002218A7 /* SystemConfiguration.framework */,
 				5017A30A15E2D93400B88FE6 /* Carbon.framework */,
 				503F575515DD848E007F2F3E /* QuartzCore.framework */,
@@ -845,18 +810,6 @@
 			path = vendor/StartAtLoginController;
 			sourceTree = "<group>";
 		};
-		508DEBD816184C9B00413CD9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				508DEBE016184C9B00413CD9 /* Sparkle.framework */,
-				508DEBE216184C9B00413CD9 /* Sparkle Test App.app */,
-				508DEBE416184C9B00413CD9 /* Sparkle Unit Tests.octest */,
-				508DEBE616184C9B00413CD9 /* BinaryDelta */,
-				508DEBE816184C9B00413CD9 /* finish_installation.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		508FD9C415E5768C00661E0D /* Action Config Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1034,12 +987,6 @@
 			mainGroup = 503F563D15DD8179007F2F3E;
 			productRefGroup = 503F564915DD8179007F2F3E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 508DEBD816184C9B00413CD9 /* Products */;
-					ProjectRef = 5076B49C1613771300A99AD0 /* Sparkle.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				503F564715DD8179007F2F3E /* Couch Slouch */,
@@ -1047,44 +994,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		508DEBE016184C9B00413CD9 /* Sparkle.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Sparkle.framework;
-			remoteRef = 508DEBDF16184C9B00413CD9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		508DEBE216184C9B00413CD9 /* Sparkle Test App.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "Sparkle Test App.app";
-			remoteRef = 508DEBE116184C9B00413CD9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		508DEBE416184C9B00413CD9 /* Sparkle Unit Tests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Sparkle Unit Tests.octest";
-			remoteRef = 508DEBE316184C9B00413CD9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		508DEBE616184C9B00413CD9 /* BinaryDelta */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = BinaryDelta;
-			remoteRef = 508DEBE516184C9B00413CD9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		508DEBE816184C9B00413CD9 /* finish_installation.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = finish_installation.app;
-			remoteRef = 508DEBE716184C9B00413CD9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		503F564615DD8179007F2F3E /* Resources */ = {
@@ -1413,7 +1322,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/vendor/M3AppKit/Dependencies\"",
+					"\"$(SRCROOT)/vendor\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Couch Slouch-Prefix.pch";
@@ -1432,7 +1341,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/vendor/M3AppKit/Dependencies\"",
+					"\"$(SRCROOT)/vendor\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Couch Slouch-Prefix.pch";
