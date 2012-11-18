@@ -149,8 +149,6 @@ static void DKCBCecSourceActivated(void *param, const cec_logical_address logica
 
 	BOOL isActive = (isActivated == 1);
 
-	NSLog(@"Got source active %@ at %@", @(isActivated), @(logicalAddress));
-
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
 		controller.isActiveSource = isActive;
