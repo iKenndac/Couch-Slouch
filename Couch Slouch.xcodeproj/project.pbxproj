@@ -71,6 +71,7 @@
 		5055C7EC15DFB54C00B6B497 /* DKCECKeyMappingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */; };
 		5055C80115DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */; };
 		506B6F3617F3570B00325DD6 /* DKCECBehaviourController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506B6F3517F3570B00325DD6 /* DKCECBehaviourController.m */; };
+		506B6F3917F37B6C00325DD6 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506B6F3817F37B6C00325DD6 /* ScriptingBridge.framework */; };
 		5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */; };
 		508B2A3B160BBE8D00708A62 /* CouchSlouch.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */; };
 		508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7B15FE78700014BC2A /* menubar-noconnection.png */; };
@@ -298,6 +299,8 @@
 		5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKKeyboardShortcutLocalAction.m; sourceTree = "<group>"; };
 		506B6F3417F3570B00325DD6 /* DKCECBehaviourController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECBehaviourController.h; sourceTree = "<group>"; };
 		506B6F3517F3570B00325DD6 /* DKCECBehaviourController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECBehaviourController.m; sourceTree = "<group>"; };
+		506B6F3717F37A5400325DD6 /* SystemEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemEvents.h; sourceTree = "<group>"; };
+		506B6F3817F37B6C00325DD6 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CouchSlouchPublicKey.pem; path = Resources/CouchSlouchPublicKey.pem; sourceTree = SOURCE_ROOT; };
 		508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = CouchSlouch.iconset; sourceTree = "<group>"; };
 		508B7A7B15FE78700014BC2A /* menubar-noconnection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-noconnection.png"; sourceTree = "<group>"; };
@@ -370,6 +373,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506B6F3917F37B6C00325DD6 /* ScriptingBridge.framework in Frameworks */,
 				508DEBC91618455200413CD9 /* ServiceManagement.framework in Frameworks */,
 				50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */,
 				5017A30B15E2D93400B88FE6 /* Carbon.framework in Frameworks */,
@@ -443,6 +447,7 @@
 		503F564B15DD8179007F2F3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				506B6F3817F37B6C00325DD6 /* ScriptingBridge.framework */,
 				50CB484016581FE200F690EF /* Sparkle.framework */,
 				50B9216115E922DA002218A7 /* SystemConfiguration.framework */,
 				5017A30A15E2D93400B88FE6 /* Carbon.framework */,
@@ -488,6 +493,7 @@
 			children = (
 				5047670015F6B13300BF2DA7 /* Resources */,
 				503F565815DD8179007F2F3E /* main.m */,
+				506B6F3717F37A5400325DD6 /* SystemEvents.h */,
 				503F565A15DD8179007F2F3E /* Couch Slouch-Prefix.pch */,
 			);
 			name = "Supporting Files";

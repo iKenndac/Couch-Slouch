@@ -10,6 +10,8 @@
 
 @interface DKCECBehaviourController : NSObject
 
++(DKCECBehaviourController *)sharedInstance;
+
 -(void)handleBecameActiveSource;
 -(void)handleLostActiveSource;
 

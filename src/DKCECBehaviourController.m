@@ -8,9 +8,17 @@
 
 #import "DKCECBehaviourController.h"
 #import "Constants.h"
+#import "SystemEvents.h"
 
 @implementation DKCECBehaviourController
 
+static DKCECBehaviourController *sharedInstance;
+
++(DKCECBehaviourController *)sharedInstance {
+	if (sharedInstance == nil)
+		sharedInstance = [DKCECBehaviourController new];
+	return sharedInstance;
+}
 
 -(void)handleBecameActiveSource {
 	[self handleActionWithUserDefaultsKey:kOnTVBecameActiveUserDefaultsKey
@@ -48,9 +56,15 @@
 
 }
 
--(void)sleepComputer {}
+-(void)sleepComputer {
+	SystemEventsApplication *systemEvents = [SBApplication applicationWithBundleIdentifier:@"com.apple.systemevents"];
+	[systemEvents sleep];
+}
 
--(void)shutdownComputer {}
+-(void)shutdownComputer {
+	SystemEventsApplication *systemEvents = [SBApplication applicationWithBundleIdentifier:@"com.apple.systemevents"];
+	[systemEvents shutDown];
+}
 
 -(void)runScriptWithFunction:(NSString *)function {
 
