@@ -40,6 +40,24 @@ static DKCECBehaviourController *sharedInstance;
 						   scriptFunction:kAppleScriptTVOffFunctionName];
 }
 
+-(void)setScriptURL:(NSURL *)url {
+
+	NSError *error = nil;
+
+	NSData *bookmark = [url bookmarkDataWithOptions:0
+					 includingResourceValuesForKeys:nil
+									  relativeToURL:nil
+											  error:&error];
+
+	if (bookmark == nil || error) {
+		NSLog(@"Got error when creating bookmark: %@", error);
+		return;
+	}
+
+	[[NSUserDefaults standardUserDefaults] setObject:bookmark forKey:kOnTVActionScriptURL];
+
+}
+
 #pragma mark - Helpers
 
 -(void)handleActionWithUserDefaultsKey:(NSString *)userDefaultsKey scriptFunction:(NSString *)function {
@@ -66,13 +84,68 @@ static DKCECBehaviourController *sharedInstance;
 	[systemEvents shutDown];
 }
 
+-(void)handleNotHandledError {
+	//TODO: Handle properly.
+	NSLog(@"Function in script not handled!");
+}
+
+-(void)handleNoScriptError {
+	//TODO: Handle properly.
+	NSLog(@"Couldn't find script!");
+}
+
+-(void)handleScriptThrownError:(NSDictionary *)dict {
+	//TODO: Handle properly.
+	NSString *message = dict[NSAppleScriptErrorBriefMessage];
+	if (message.length == 0)
+		message = dict[NSAppleScriptErrorMessage];
+
+	NSLog(@"Script failed with error code %@ and message: %@", dict[NSAppleScriptErrorNumber], message);
+
+}
+
 -(void)runScriptWithFunction:(NSString *)function {
 
 	NSDictionary *errorDict = nil;
 	NSURL *scriptURL = nil;
 
+	NSData *bookmark = [[NSUserDefaults standardUserDefaults] dataForKey:kOnTVActionScriptURL];
+	if (bookmark) {
+
+		BOOL isStale = NO;
+		NSError *error = nil;
+
+		scriptURL = [NSURL URLByResolvingBookmarkData:bookmark
+											  options:NSURLBookmarkResolutionWithoutUI | NSURLBookmarkResolutionWithoutMounting
+										relativeToURL:nil
+								  bookmarkDataIsStale:&isStale
+												error:&error];
+
+		if (error) {
+			scriptURL = nil;
+			NSLog(@"Saved bookmark got error: %@", error);
+		}
+
+		if (isStale && scriptURL)
+			[self setScriptURL:scriptURL];
+	}
+
+	if (scriptURL == nil || ![scriptURL checkResourceIsReachableAndReturnError:nil]) {
+		[self handleNoScriptError];
+		return;
+	}
+
 	if (![self executeScriptAtURL:scriptURL functionName:function error:&errorDict]) {
-		NSLog(@"Script got error! %@", errorDict);
+
+
+		NSInteger errorCode = [errorDict[NSAppleScriptErrorNumber] integerValue];
+		if (errorCode == errAEEventNotHandled) {
+			[self handleNotHandledError];
+			return;
+		}
+
+		[self handleScriptThrownError:errorDict];
+
 	}
 }
 
@@ -111,6 +184,5 @@ static DKCECBehaviourController *sharedInstance;
 
 	return YES;
 }
-
 
 @end

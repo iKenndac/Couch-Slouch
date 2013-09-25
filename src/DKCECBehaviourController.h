@@ -18,4 +18,6 @@
 -(void)handleTVSwitchedOn;
 -(void)handleTVSwitchedOff;
 
+-(void)setScriptURL:(NSURL *)url;
+
 @end
