@@ -1330,6 +1330,7 @@
 				INFOPLIST_FILE = "Resources/Couch Slouch-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "-DHAVE_P8_USB=1";
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1349,6 +1350,7 @@
 				INFOPLIST_FILE = "Resources/Couch Slouch-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "-DHAVE_P8_USB=1";
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
