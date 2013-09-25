@@ -23,6 +23,7 @@ static NSString * const kOnTVOffUserDefaultsKey = @"OnTVOff";
 static NSString * const kOnTVOnUserDefaultsKey = @"OnTVOn";
 static NSString * const kOnTVBecameActiveUserDefaultsKey = @"OnTVBecameActive";
 static NSString * const kOnTVLostActiveUserDefaultsKey = @"OnTVLostActive";
+static NSString * const kOnTVActionScriptURL = @"TVActionScript";
 
 static NSString * const kApplicationShouldShowMouseGridNotificationName = @"MouseGrid!";
 static NSString * const kApplicationShouldShowVirtualRemoteNotificationName = @"Remote!";

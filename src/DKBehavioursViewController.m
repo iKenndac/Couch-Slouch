@@ -7,9 +7,9 @@
 //
 
 #import "DKBehavioursViewController.h"
+#import "DKCECBehaviourController.h"
 
 @interface DKBehavioursViewController ()
-
 @end
 
 @implementation DKBehavioursViewController
@@ -18,14 +18,19 @@
 	return [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
+- (IBAction)chooseScript:(id)sender {
+
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+	openPanel.allowedFileTypes = @[@"scpt"];
+
+	[openPanel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
+		if (result == NSFileHandlingPanelCancelButton)
+			return;
+
+		NSURL *url = openPanel.URL;
+		[[DKCECBehaviourController sharedInstance] setScriptURL:url];
+	}];
+
 }
 
 @end

@@ -213,6 +213,17 @@
                         <binding destination="9DX-Ny-XDT" name="selectedTag" keyPath="values.OnTVLostActive" id="Zle-vC-a52"/>
                     </connections>
                 </popUpButton>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fOC-bl-GRw">
+                    <rect key="frame" x="44" y="202" width="140" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Choose Script…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5eT-gM-Kgm">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="chooseScript:" target="-2" id="Fk0-rj-GnN"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="30" firstAttribute="top" secondItem="34" secondAttribute="top" id="70"/>
