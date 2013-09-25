@@ -16,6 +16,7 @@
 @property (strong) IBOutlet NSWindow *aboutWindow;
 @property (unsafe_unretained) IBOutlet NSTextView *aboutCreditsView;
 @property (weak) IBOutlet NSTextField *aboutVersionView;
+@property (weak) IBOutlet NSTextField *aboutLibCECVersionView;
 
 - (IBAction)showRemote:(id)sender;
 - (IBAction)closePreferencesWindow:(id)sender;

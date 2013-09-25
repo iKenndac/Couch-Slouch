@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="DKSetupViewController">
             <connections>
                 <outlet property="aboutCreditsView" destination="443" id="474"/>
+                <outlet property="aboutLibCECVersionView" destination="n1H-0n-YEz" id="FS1-CP-bI6"/>
                 <outlet property="aboutVersionView" destination="434" id="475"/>
                 <outlet property="aboutWindow" destination="432" id="471"/>
                 <outlet property="preferencesWindow" destination="380" id="405"/>
@@ -336,7 +337,7 @@ Gw
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
             <view key="contentView" id="433">
                 <rect key="frame" x="0.0" y="0.0" width="388" height="402"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <imageView translatesAutoresizingMaskIntoConstraints="NO" id="436">
                         <rect key="frame" x="20" y="254" width="128" height="128"/>
@@ -348,7 +349,7 @@ Gw
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="CouchSlouch" id="446"/>
                     </imageView>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="435">
-                        <rect key="frame" x="154" y="314" width="216" height="17"/>
+                        <rect key="frame" x="154" y="321" width="216" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Couch Slouch" id="447">
                             <font key="font" metaFont="systemBold"/>
@@ -361,7 +362,7 @@ Gw
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="KYj-DS-iHN">
                             <rect key="frame" x="1" y="1" width="388" height="171"/>
-                            <autoresizingMask key="autoresizingMask"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="443">
                                     <rect key="frame" x="0.0" y="0.0" width="373" height="171"/>
@@ -400,9 +401,18 @@ Gw
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="434">
-                        <rect key="frame" x="154" y="296" width="216" height="14"/>
+                        <rect key="frame" x="154" y="303" width="216" height="14"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Version 0.0 (0)" id="448">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n1H-0n-YEz">
+                        <rect key="frame" x="154" y="284" width="216" height="14"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="libCEC Version 0" id="gDH-bc-4wg">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -422,8 +432,11 @@ Gw
                     <constraint firstItem="436" firstAttribute="leading" secondItem="433" secondAttribute="leading" constant="20" symbolic="YES" id="469"/>
                     <constraint firstAttribute="bottom" secondItem="439" secondAttribute="bottom" constant="20" symbolic="YES" id="605"/>
                     <constraint firstItem="439" firstAttribute="top" secondItem="440" secondAttribute="bottom" constant="20" symbolic="YES" id="606"/>
-                    <constraint firstItem="435" firstAttribute="top" secondItem="433" secondAttribute="top" constant="71" id="607"/>
-                    <constraint firstItem="434" firstAttribute="top" secondItem="433" secondAttribute="top" constant="92" id="608"/>
+                    <constraint firstItem="435" firstAttribute="top" secondItem="433" secondAttribute="top" constant="64" id="607"/>
+                    <constraint firstItem="434" firstAttribute="top" secondItem="435" secondAttribute="bottom" constant="4" id="Ndj-AD-dQL"/>
+                    <constraint firstItem="n1H-0n-YEz" firstAttribute="top" secondItem="434" secondAttribute="bottom" constant="5" id="OhW-W8-xOe"/>
+                    <constraint firstItem="434" firstAttribute="leading" secondItem="n1H-0n-YEz" secondAttribute="leading" id="PeM-2o-ySe"/>
+                    <constraint firstItem="434" firstAttribute="width" secondItem="n1H-0n-YEz" secondAttribute="width" id="dYX-v7-5CQ"/>
                 </constraints>
             </view>
         </window>

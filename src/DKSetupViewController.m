@@ -28,6 +28,9 @@
 										 [myBundle.infoDictionary valueForKey:@"CFBundleShortVersionString"],
 										 [myBundle.infoDictionary valueForKey:@"CFBundleVersion"]];
 
+	self.aboutLibCECVersionView.stringValue = [NSString stringWithFormat:NSLocalizedString(@"cec version formatter", @""),
+											   [NSString stringWithFormat:@"%x", CEC_CLIENT_VERSION_CURRENT]];
+
 }
 
 - (IBAction)showHDMIConfigSheet:(id)sender {
