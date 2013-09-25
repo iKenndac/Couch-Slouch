@@ -12,6 +12,7 @@
 @protocol DKFakeRemoteDelegate <NSObject>
 
 -(void)handleSimulatedKeyPress:(cec_keypress)press;
+-(void)handleSimulatedOpCode:(cec_opcode)opcode;
 
 @end
 
@@ -40,5 +41,9 @@
 -(IBAction)pushGreen:(id)sender;
 -(IBAction)pushYellow:(id)sender;
 -(IBAction)pushBlue:(id)sender;
+-(IBAction)pushOn:(id)sender;
+-(IBAction)pushOff:(id)sender;
+-(IBAction)pushActive:(id)sender;
+-(IBAction)pushInactive:(id)sender;
 
 @end

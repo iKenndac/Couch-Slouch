@@ -101,4 +101,20 @@
 	[self simulateKeypressWithCode:CEC_USER_CONTROL_CODE_F1_BLUE];
 }
 
+-(IBAction)pushOn:(id)sender {
+	[self.delegate handleSimulatedOpCode:CEC_OPCODE_IMAGE_VIEW_ON];
+}
+
+-(IBAction)pushOff:(id)sender {
+	[self.delegate handleSimulatedOpCode:CEC_OPCODE_STANDBY];
+}
+
+-(IBAction)pushActive:(id)sender {
+	[self.delegate handleSimulatedOpCode:CEC_OPCODE_ACTIVE_SOURCE];
+}
+
+-(IBAction)pushInactive:(id)sender {
+	[self.delegate handleSimulatedOpCode:CEC_OPCODE_INACTIVE_SOURCE];
+}
+
 @end

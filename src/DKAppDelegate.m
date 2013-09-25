@@ -9,6 +9,7 @@
 #import "DKAppDelegate.h"
 #import "Constants.h"
 #import "DKCECKeyMappingController.h"
+#import "DKCECBehaviourController.h"
 #import "DKKeyboardShortcutLocalAction.h"
 #import "DKLaunchApplicationLocalAction.h"
 #import "DKDoNothingLocalAction.h"
@@ -133,6 +134,24 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
+}
+
+#pragma mark - Behaviours
+
+-(void)handleSimulatedOpCode:(cec_opcode)opcode {
+
+	if (opcode == CEC_OPCODE_IMAGE_VIEW_ON)
+		[[DKCECBehaviourController sharedInstance] handleTVSwitchedOn];
+
+	if (opcode == CEC_OPCODE_STANDBY)
+		[[DKCECBehaviourController sharedInstance] handleTVSwitchedOff];
+
+	if (opcode == CEC_OPCODE_ACTIVE_SOURCE)
+		[[DKCECBehaviourController sharedInstance] handleBecameActiveSource];
+
+	if (opcode == CEC_OPCODE_INACTIVE_SOURCE)
+		[[DKCECBehaviourController sharedInstance] handleLostActiveSource];
+
 }
 
 #pragma mark - Key Mapping
