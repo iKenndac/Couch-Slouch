@@ -71,9 +71,9 @@ static void * const kTriggerStartupBehaviourOnConnectionContext = @"kTriggerStar
 	self.statusBarItem.highlightMode = YES;
 	self.statusBarItem.menu = self.statusBarMenu;
 	
-	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:0 context:kUpdateMenuBarItemContext];
+	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
 	[self addObserver:self forKeyPath:@"cecController.isActiveSource" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
-	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:0 context:kTriggerStartupBehaviourOnConnectionContext];
+	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:NSKeyValueObservingOptionInitial context:kTriggerStartupBehaviourOnConnectionContext];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(showMouseGrid:)
