@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	[[NSWorkspace sharedWorkspace] launchApplicationAtURL:[NSURL fileURLWithPath:binaryPath]
 												  options:NSWorkspaceLaunchWithoutActivation
-											configuration:@{ NSWorkspaceLaunchConfigurationArguments : @[kApplicationLaunchedAtStartupParameter] }
+											configuration:@{ NSWorkspaceLaunchConfigurationArguments : @[kApplicationLaunchedAtStartupParameter, @"YES"] }
 													error:nil];
 	return 0;
 }
