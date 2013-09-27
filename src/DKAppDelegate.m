@@ -18,6 +18,7 @@
 #import "DKMouseGridWindowController.h"
 
 static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
+static void * const kTriggerStartupBehaviourOnConnectionContext = @"kTriggerStartupBehaviourOnConnectionContext";
 
 @interface DKAppDelegate ()
 
@@ -26,15 +27,20 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 @property (readwrite, nonatomic, strong) NSStatusItem *statusBarItem;
 @property (readwrite, nonatomic, strong) SUUpdater *updater;
 @property (readwrite, nonatomic, strong) DKMouseGridWindowController *mouseGridController;
+@property (readwrite) BOOL isWaitingForStartupAction;
 
 @end
 
 @implementation DKAppDelegate
 
 -(void)applicationWillFinishLaunching:(NSNotification *)notification {
+
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:kApplicationLaunchedAtStartupParameter])
+		self.isWaitingForStartupAction = YES;
 	
 	self.cecController = [DKCECDeviceController new];
 	self.cecController.delegate = self;
+	[DKCECBehaviourController sharedInstance].device = self.cecController;
 
 	[DKKeyboardShortcutLocalAction class];
 	[DKLaunchApplicationLocalAction class];
@@ -67,6 +73,7 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 	
 	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:0 context:kUpdateMenuBarItemContext];
 	[self addObserver:self forKeyPath:@"cecController.isActiveSource" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
+	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:0 context:kTriggerStartupBehaviourOnConnectionContext];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(showMouseGrid:)
@@ -77,6 +84,22 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 											 selector:@selector(showVirtualRemote:)
 												 name:kApplicationShouldShowVirtualRemoteNotificationName
 											   object:nil];
+
+	NSNotificationCenter *workspaceCenter = [[NSWorkspace sharedWorkspace] notificationCenter];
+	[workspaceCenter addObserver:self
+						selector:@selector(workSpaceDidWake:)
+							name:NSWorkspaceDidWakeNotification
+						  object:nil];
+
+	[workspaceCenter addObserver:self
+						selector:@selector(workSpaceDidSleep:)
+							name:NSWorkspaceWillSleepNotification
+						  object:nil];
+
+	[workspaceCenter addObserver:self
+						selector:@selector(workspaceDidShutdown:)
+							name:NSWorkspaceWillPowerOffNotification
+						  object:nil];
 
 	self.updater = [SUUpdater sharedUpdater];
 }
@@ -131,6 +154,13 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 		else
 			self.statusBarItem.image = [NSImage imageNamed:@"menubar-on"];
 
+	} else if (context == kTriggerStartupBehaviourOnConnectionContext) {
+
+		if (self.cecController.hasConnection && self.isWaitingForStartupAction) {
+			self.isWaitingForStartupAction = NO;
+			[self workspaceDidStartup];
+		}
+
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
@@ -152,6 +182,22 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 	if (opcode == CEC_OPCODE_INACTIVE_SOURCE)
 		[[DKCECBehaviourController sharedInstance] handleLostActiveSource];
 
+}
+
+-(void)workSpaceDidWake:(NSNotification *)notification {
+	[[DKCECBehaviourController sharedInstance] handleMacAwake];
+}
+
+-(void)workSpaceDidSleep:(NSNotification *)notification {
+	[[DKCECBehaviourController sharedInstance] handleMacSleep];
+}
+
+-(void)workSpaceDidShutdown:(NSNotification *)notification {
+	[[DKCECBehaviourController sharedInstance] handleMacShutdown];
+}
+
+-(void)workspaceDidStartup {
+	[[DKCECBehaviourController sharedInstance] handleMacStartup];
 }
 
 #pragma mark - Key Mapping

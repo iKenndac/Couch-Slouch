@@ -77,32 +77,36 @@
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="76">
                     <rect key="frame" x="518" y="102" width="168" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="88" id="84">
+                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="88" id="84">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                         <menu key="menu" title="OtherViews" id="85">
                             <items>
                                 <menuItem title="Do Nothing" state="on" id="88"/>
-                                <menuItem title="Switch Off TV" id="274"/>
-                                <menuItem title="Switch Off All" id="87"/>
+                                <menuItem title="Switch Off TV" tag="2" id="274"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="9DX-Ny-XDT" name="selectedTag" keyPath="values.OnMacSlept" id="330-ua-Erq"/>
+                    </connections>
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="77">
                     <rect key="frame" x="518" y="71" width="168" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="83" id="80">
+                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="83" id="80">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                         <menu key="menu" title="OtherViews" id="81">
                             <items>
                                 <menuItem title="Do Nothing" state="on" id="83"/>
-                                <menuItem title="Switch On TV" id="275"/>
-                                <menuItem title="Switch On All" id="82"/>
+                                <menuItem title="Switch On TV" tag="1" id="275"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="9DX-Ny-XDT" name="selectedTag" keyPath="values.OnMacAwoke" id="1py-If-Vkw"/>
+                    </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="78">
                     <rect key="frame" x="378" y="77" width="136" height="17"/>
