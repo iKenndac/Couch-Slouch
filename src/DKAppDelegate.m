@@ -19,6 +19,7 @@
 
 static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 static void * const kTriggerStartupBehaviourOnConnectionContext = @"kTriggerStartupBehaviourOnConnectionContext";
+static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVEventContext";
 
 @interface DKAppDelegate ()
 
@@ -74,6 +75,16 @@ static void * const kTriggerStartupBehaviourOnConnectionContext = @"kTriggerStar
 	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
 	[self addObserver:self forKeyPath:@"cecController.isActiveSource" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
 	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:NSKeyValueObservingOptionInitial context:kTriggerStartupBehaviourOnConnectionContext];
+
+	[self addObserver:self
+		   forKeyPath:@"cecController.isActiveSource"
+			  options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+			   context:kTriggerBehaviourOnTVEventContext];
+
+	[self addObserver:self
+		   forKeyPath:@"cecController.isTVOn"
+			  options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+			  context:kTriggerBehaviourOnTVEventContext];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(showMouseGrid:)
@@ -159,6 +170,32 @@ static void * const kTriggerStartupBehaviourOnConnectionContext = @"kTriggerStar
 		if (self.cecController.hasConnection && self.isWaitingForStartupAction) {
 			self.isWaitingForStartupAction = NO;
 			[self workspaceDidStartup];
+		}
+
+	} else if (context == kTriggerBehaviourOnTVEventContext) {
+
+		id oldValue = change[NSKeyValueChangeOldKey];
+		id newValue = change[NSKeyValueChangeNewKey];
+
+		if (oldValue == [NSNull null] || newValue == [NSNull null])
+			return;
+
+		BOOL valueChanged = [oldValue boolValue] != [newValue boolValue];
+		BOOL value = [newValue boolValue];
+
+		if (!valueChanged) return;
+
+		if ([keyPath isEqualToString:@"cecController.isActiveSource"]) {
+			if (value)
+				[[DKCECBehaviourController sharedInstance] handleBecameActiveSource];
+			else
+				[[DKCECBehaviourController sharedInstance] handleLostActiveSource];
+
+		} else if ([keyPath isEqualToString:@"cecController.isTVOn"]) {
+			if (value)
+				[[DKCECBehaviourController sharedInstance] handleTVSwitchedOn];
+			else
+				[[DKCECBehaviourController sharedInstance] handleTVSwitchedOff];
 		}
 
     } else {

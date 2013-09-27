@@ -33,6 +33,7 @@
 @property (nonatomic, readonly, copy) NSString *humanReadableStatus;
 @property (nonatomic, readonly, copy) NSString *shortHumanReadableStatus;
 @property (nonatomic, readonly) NSImage *statusImage;
+@property (nonatomic, readonly) BOOL isTVOn;
 @property (nonatomic, readonly) BOOL isActiveSource;
 @property (nonatomic, readonly) NSString *physicalAddressDisplayString;
 
