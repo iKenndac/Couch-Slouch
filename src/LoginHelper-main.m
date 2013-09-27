@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Constants.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,7 +17,7 @@ int main(int argc, char *argv[])
 
 	[[NSWorkspace sharedWorkspace] launchApplicationAtURL:[NSURL fileURLWithPath:binaryPath]
 												  options:NSWorkspaceLaunchWithoutActivation
-											configuration:@{ NSWorkspaceLaunchConfigurationArguments : @[@"launchedAtLogin"] }
+											configuration:@{ NSWorkspaceLaunchConfigurationArguments : @[kApplicationLaunchedAtStartupParameter] }
 													error:nil];
 	return 0;
 }
