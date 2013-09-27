@@ -7,16 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DKCECDeviceController.h"
 
 @interface DKCECBehaviourController : NSObject
 
 +(DKCECBehaviourController *)sharedInstance;
+
+@property (nonatomic, readwrite) DKCECDeviceController *device;
 
 -(void)handleBecameActiveSource;
 -(void)handleLostActiveSource;
 
 -(void)handleTVSwitchedOn;
 -(void)handleTVSwitchedOff;
+
+-(void)handleMacStartup;
+-(void)handleMacAwake;
+-(void)handleMacSleep;
+-(void)handleMacShutdown;
 
 -(void)setScriptURL:(NSURL *)url;
 

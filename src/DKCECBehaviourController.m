@@ -20,24 +20,44 @@ static DKCECBehaviourController *sharedInstance;
 	return sharedInstance;
 }
 
+#pragma mark - TV Events
+
 -(void)handleBecameActiveSource {
-	[self handleActionWithUserDefaultsKey:kOnTVBecameActiveUserDefaultsKey
-						   scriptFunction:kAppleScriptBecameActiveFunctionName];
+	[self handleTVEventWithUserDefaultsKey:kOnTVBecameActiveUserDefaultsKey
+							scriptFunction:kAppleScriptBecameActiveFunctionName];
 }
 
 -(void)handleLostActiveSource {
-	[self handleActionWithUserDefaultsKey:kOnTVLostActiveUserDefaultsKey
-						   scriptFunction:kAppleScriptLostActiveFunctionName];
+	[self handleTVEventWithUserDefaultsKey:kOnTVLostActiveUserDefaultsKey
+							scriptFunction:kAppleScriptLostActiveFunctionName];
 }
 
 -(void)handleTVSwitchedOn {
-	[self handleActionWithUserDefaultsKey:kOnTVOnUserDefaultsKey
-						   scriptFunction:kAppleScriptTVOnFunctionName];
+	[self handleTVEventWithUserDefaultsKey:kOnTVOnUserDefaultsKey
+							scriptFunction:kAppleScriptTVOnFunctionName];
 }
 
 -(void)handleTVSwitchedOff {
-	[self handleActionWithUserDefaultsKey:kOnTVOffUserDefaultsKey
-						   scriptFunction:kAppleScriptTVOffFunctionName];
+	[self handleTVEventWithUserDefaultsKey:kOnTVOffUserDefaultsKey
+							scriptFunction:kAppleScriptTVOffFunctionName];
+}
+
+#pragma mark - Mac Events
+
+-(void)handleMacStartup {
+	[self handleMacEventWithUserDefaultsKey:kOnMacAwokeUserDefaultsKey];
+}
+
+-(void)handleMacAwake {
+	[self handleMacEventWithUserDefaultsKey:kOnMacAwokeUserDefaultsKey];
+}
+
+-(void)handleMacSleep {
+	[self handleMacEventWithUserDefaultsKey:kOnMacSleptUserDefaultsKey];
+}
+
+-(void)handleMacShutdown {
+	[self handleMacEventWithUserDefaultsKey:kOnMacSleptUserDefaultsKey];
 }
 
 -(void)setScriptURL:(NSURL *)url {
@@ -54,15 +74,15 @@ static DKCECBehaviourController *sharedInstance;
 		return;
 	}
 
-	[[NSUserDefaults standardUserDefaults] setObject:bookmark forKey:kOnTVActionScriptURL];
+	[[NSUserDefaults standardUserDefaults] setObject:bookmark forKey:kOnTVActionScriptURLUserDefaultsKey];
 
 }
 
 #pragma mark - Helpers
 
--(void)handleActionWithUserDefaultsKey:(NSString *)userDefaultsKey scriptFunction:(NSString *)function {
+-(void)handleTVEventWithUserDefaultsKey:(NSString *)userDefaultsKey scriptFunction:(NSString *)function {
 
-	DKCECBehaviourAction action = [[NSUserDefaults standardUserDefaults] integerForKey:userDefaultsKey];
+	DKCECMacBehaviourAction action = [[NSUserDefaults standardUserDefaults] integerForKey:userDefaultsKey];
 
 	if (action == DKCECBehaviourActionShutdownComputer) {
 		[self shutdownComputer];
@@ -71,7 +91,17 @@ static DKCECBehaviourController *sharedInstance;
 	} else if (action == DKCECBehaviourActionTriggerScript) {
 		[self runScriptWithFunction:function];
 	}
+}
 
+-(void)handleMacEventWithUserDefaultsKey:(NSString *)userDefaultsKey {
+
+	DKCECTVBehaviourAction action = [[NSUserDefaults standardUserDefaults] integerForKey:userDefaultsKey];
+
+	if (action == DKCECTVBehaviourActionPowerOffTV) {
+		[self turnOffTV];
+	} else if (action == DKCECTVBehaviourActionPowerOnTV) {
+		[self turnOnTV];
+	}
 }
 
 -(void)sleepComputer {
@@ -82,6 +112,18 @@ static DKCECBehaviourController *sharedInstance;
 -(void)shutdownComputer {
 	SystemEventsApplication *systemEvents = [SBApplication applicationWithBundleIdentifier:@"com.apple.systemevents"];
 	[systemEvents shutDown];
+}
+
+-(void)turnOnTV {
+	[self.device sendPowerOnToDevice:CECDEVICE_TV completion:^(BOOL success) {
+		if (!success) NSLog(@"Power on not successful!");
+	}];
+}
+
+-(void)turnOffTV {
+	[self.device sendPowerOffToDevice:CECDEVICE_TV completion:^(BOOL success) {
+		if (!success) NSLog(@"Power off not successful!");
+	}];
 }
 
 -(void)handleNotHandledError {
@@ -109,7 +151,7 @@ static DKCECBehaviourController *sharedInstance;
 	NSDictionary *errorDict = nil;
 	NSURL *scriptURL = nil;
 
-	NSData *bookmark = [[NSUserDefaults standardUserDefaults] dataForKey:kOnTVActionScriptURL];
+	NSData *bookmark = [[NSUserDefaults standardUserDefaults] dataForKey:kOnTVActionScriptURLUserDefaultsKey];
 	if (bookmark) {
 
 		BOOL isStale = NO;
