@@ -45,19 +45,19 @@ static DKCECBehaviourController *sharedInstance;
 #pragma mark - Mac Events
 
 -(void)handleMacStartup {
-	[self handleMacEventWithUserDefaultsKey:kOnMacAwokeUserDefaultsKey];
+	[self handleMacEventWithUserDefaultsKey:kOnMacAwokeUserDefaultsKey scriptFunction:kAppleScriptMacAwokeFunctionName];
 }
 
 -(void)handleMacAwake {
-	[self handleMacEventWithUserDefaultsKey:kOnMacAwokeUserDefaultsKey];
+	[self handleMacEventWithUserDefaultsKey:kOnMacAwokeUserDefaultsKey scriptFunction:kAppleScriptMacAwokeFunctionName];
 }
 
 -(void)handleMacSleep {
-	[self handleMacEventWithUserDefaultsKey:kOnMacSleptUserDefaultsKey];
+	[self handleMacEventWithUserDefaultsKey:kOnMacSleptUserDefaultsKey scriptFunction:kAppleScriptMacSleptFunctionName];
 }
 
 -(void)handleMacShutdown {
-	[self handleMacEventWithUserDefaultsKey:kOnMacSleptUserDefaultsKey];
+	[self handleMacEventWithUserDefaultsKey:kOnMacSleptUserDefaultsKey scriptFunction:kAppleScriptMacSleptFunctionName];
 }
 
 -(void)setScriptURL:(NSURL *)url {
@@ -93,7 +93,7 @@ static DKCECBehaviourController *sharedInstance;
 	}
 }
 
--(void)handleMacEventWithUserDefaultsKey:(NSString *)userDefaultsKey {
+-(void)handleMacEventWithUserDefaultsKey:(NSString *)userDefaultsKey scriptFunction:(NSString *)function {
 
 	DKCECTVBehaviourAction action = [[NSUserDefaults standardUserDefaults] integerForKey:userDefaultsKey];
 
@@ -101,6 +101,8 @@ static DKCECBehaviourController *sharedInstance;
 		[self turnOffTV];
 	} else if (action == DKCECTVBehaviourActionPowerOnTV) {
 		[self turnOnTV];
+	} else if (action == DKCECTVBehaviourActionTriggerScript) {
+		[self runScriptWithFunction:function];
 	}
 }
 

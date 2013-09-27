@@ -35,6 +35,8 @@ static NSString * const kAppleScriptTVOnFunctionName = @"CouchSlouch_TVOn";
 static NSString * const kAppleScriptTVOffFunctionName = @"CouchSlouch_TVOff";
 static NSString * const kAppleScriptBecameActiveFunctionName = @"CouchSlouch_BecameActiveTVSource";
 static NSString * const kAppleScriptLostActiveFunctionName = @"CouchSlouch_LostActiveTVSource";
+static NSString * const kAppleScriptMacAwokeFunctionName = @"CouchSlouch_MacAwoke";
+static NSString * const kAppleScriptMacSleptFunctionName = @"CouchSlouch_MacSlept";
 
 typedef NS_ENUM(NSUInteger, DKCECMacBehaviourAction) {
 	DKCECBehaviourActionNothing = 0,
@@ -47,7 +49,8 @@ typedef NS_ENUM(NSUInteger, DKCECMacBehaviourAction) {
 typedef NS_ENUM(NSUInteger, DKCECTVBehaviourAction) {
 	DKCECTVBehaviourActionNothing = 0,
 	DKCECTVBehaviourActionPowerOnTV = 1,
-	DKCECTVBehaviourActionPowerOffTV = 2
+	DKCECTVBehaviourActionPowerOffTV = 2,
+	DKCECTVBehaviourActionTriggerScript = 3
 };
 
 

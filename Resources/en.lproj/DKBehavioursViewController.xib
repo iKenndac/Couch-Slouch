@@ -84,6 +84,7 @@
                             <items>
                                 <menuItem title="Do Nothing" state="on" id="88"/>
                                 <menuItem title="Switch Off TV" tag="2" id="274"/>
+                                <menuItem title="Run Script" tag="3" id="RT5-oy-qvV"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -101,6 +102,7 @@
                             <items>
                                 <menuItem title="Do Nothing" state="on" id="83"/>
                                 <menuItem title="Switch On TV" tag="1" id="275"/>
+                                <menuItem title="Run Script" tag="3" id="rLc-Ly-yK5"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
