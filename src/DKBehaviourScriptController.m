@@ -57,7 +57,26 @@
 }
 
 -(NSArray *)scriptsInDirectory:(NSURL *)directory {
-	return nil;
+
+	if (![directory checkResourceIsReachableAndReturnError:nil])
+		return nil;
+
+	NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtURL:[directory URLByResolvingSymlinksInPath]
+										 includingPropertiesForKeys:@[NSURLIsDirectoryKey]
+															options:0
+													   errorHandler:^BOOL(NSURL *url, NSError *error) {
+														   return YES;
+													   }];
+
+	NSMutableArray *scripts = [NSMutableArray new];
+
+	for (NSURL *url in enumerator) {
+		if ([[url pathExtension] caseInsensitiveCompare:@"scpt"] == NSOrderedSame)
+			[scripts addObject:url];
+	}
+
+	return [NSArray arrayWithArray:scripts];
+
 }
 
 -(NSURL *)userScriptsDirectory {
