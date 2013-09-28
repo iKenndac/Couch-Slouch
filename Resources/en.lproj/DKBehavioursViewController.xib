@@ -7,6 +7,12 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DKBehavioursViewController">
             <connections>
+                <outlet property="becameActivePopup" destination="DOz-HR-K7E" id="LXR-wH-KIB"/>
+                <outlet property="lostActivePopup" destination="8bY-9h-hi9" id="x4x-Ia-emB"/>
+                <outlet property="macAwokePopup" destination="77" id="Y9Y-U3-1kB"/>
+                <outlet property="macSleptPopup" destination="76" id="ck2-FO-1Jh"/>
+                <outlet property="tvSwitchedOffPopup" destination="34" id="BBb-Tu-R44"/>
+                <outlet property="tvSwitchedOnPopup" destination="GIC-Yf-HLu" id="LEo-QY-Dae"/>
                 <outlet property="view" destination="1" id="2"/>
             </connections>
         </customObject>
@@ -40,20 +46,17 @@
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="X64-ps-82W"/>
                     </constraints>
-                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="37" id="35">
+                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" autoenablesItems="NO" selectedItem="37" id="35">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                        <menu key="menu" title="OtherViews" id="36">
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" autoenablesItems="NO" id="36">
                             <items>
                                 <menuItem title="Do Nothing" state="on" id="37"/>
-                                <menuItem title="Sleep" tag="1" id="38"/>
-                                <menuItem title="Shut Down" tag="2" id="39"/>
-                                <menuItem title="Run Script" tag="3" id="DMM-ak-r1l"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
                     <connections>
-                        <binding destination="9DX-Ny-XDT" name="selectedTag" keyPath="values.OnTVOff" id="Ic9-8J-x1g"/>
+                        <action selector="popupChanged:" target="-2" id="tRw-Ol-BMT"/>
                     </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="74">
@@ -77,37 +80,33 @@
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="76">
                     <rect key="frame" x="518" y="281" width="168" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="88" id="84">
+                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" autoenablesItems="NO" selectedItem="88" id="84">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                        <menu key="menu" title="OtherViews" id="85">
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" autoenablesItems="NO" id="85">
                             <items>
                                 <menuItem title="Do Nothing" state="on" id="88"/>
-                                <menuItem title="Switch Off TV" tag="2" id="274"/>
-                                <menuItem title="Run Script" tag="3" id="RT5-oy-qvV"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
                     <connections>
-                        <binding destination="9DX-Ny-XDT" name="selectedTag" keyPath="values.OnMacSlept" id="330-ua-Erq"/>
+                        <action selector="popupChanged:" target="-2" id="7P5-yW-dN9"/>
                     </connections>
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="77">
                     <rect key="frame" x="518" y="250" width="168" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="83" id="80">
+                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" autoenablesItems="NO" selectedItem="83" id="80">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                        <menu key="menu" title="OtherViews" id="81">
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" autoenablesItems="NO" id="81">
                             <items>
                                 <menuItem title="Do Nothing" state="on" id="83"/>
-                                <menuItem title="Switch On TV" tag="1" id="275"/>
-                                <menuItem title="Run Script" tag="3" id="rLc-Ly-yK5"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
                     <connections>
-                        <binding destination="9DX-Ny-XDT" name="selectedTag" keyPath="values.OnMacAwoke" id="1py-If-Vkw"/>
+                        <action selector="popupChanged:" target="-2" id="1oX-Mu-q90"/>
                     </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="78">
@@ -159,18 +158,17 @@
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GIC-Yf-HLu">
                     <rect key="frame" x="518" y="457" width="168" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Ffw-mX-KPq" id="Br6-re-xbT">
+                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" autoenablesItems="NO" selectedItem="Ffw-mX-KPq" id="Br6-re-xbT">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                        <menu key="menu" title="OtherViews" id="yOU-xc-Ae8">
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" autoenablesItems="NO" id="yOU-xc-Ae8">
                             <items>
                                 <menuItem title="Do Nothing" state="on" id="Ffw-mX-KPq"/>
-                                <menuItem title="Run Script" tag="3" id="Dux-eL-hdG"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
                     <connections>
-                        <binding destination="9DX-Ny-XDT" name="selectedTag" keyPath="values.OnTVOn" id="EWp-7x-iRj"/>
+                        <action selector="popupChanged:" target="-2" id="AF3-wa-irz"/>
                     </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jv5-Om-R8V">
@@ -185,18 +183,17 @@
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DOz-HR-K7E">
                     <rect key="frame" x="518" y="426" width="168" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="nBy-q2-FeV" id="Fo3-j5-crF">
+                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" autoenablesItems="NO" selectedItem="nBy-q2-FeV" id="Fo3-j5-crF">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                        <menu key="menu" title="OtherViews" id="7M6-nc-kjU">
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" autoenablesItems="NO" id="7M6-nc-kjU">
                             <items>
                                 <menuItem title="Do Nothing" state="on" id="nBy-q2-FeV"/>
-                                <menuItem title="Run Script" tag="3" id="jS0-GP-uCW"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
                     <connections>
-                        <binding destination="9DX-Ny-XDT" name="selectedTag" keyPath="values.OnTVBecameActive" id="dIT-GU-fHn"/>
+                        <action selector="popupChanged:" target="-2" id="xic-sG-dNS"/>
                     </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eIa-tI-Tj2">
@@ -211,20 +208,17 @@
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8bY-9h-hi9">
                     <rect key="frame" x="518" y="395" width="168" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="QK8-y1-7TT" id="65H-p4-qwp">
+                    <popUpButtonCell key="cell" type="push" title="Do Nothing" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" autoenablesItems="NO" selectedItem="QK8-y1-7TT" id="65H-p4-qwp">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                        <menu key="menu" title="OtherViews" id="U06-aq-kD7">
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" autoenablesItems="NO" id="U06-aq-kD7">
                             <items>
                                 <menuItem title="Do Nothing" state="on" id="QK8-y1-7TT"/>
-                                <menuItem title="Sleep" tag="1" id="qQt-fO-iP8"/>
-                                <menuItem title="Shut Down" tag="2" id="A1U-OU-Ubk"/>
-                                <menuItem title="Run Script" tag="3" id="HhF-WL-2Ul"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
                     <connections>
-                        <binding destination="9DX-Ny-XDT" name="selectedTag" keyPath="values.OnTVLostActive" id="Zle-vC-a52"/>
+                        <action selector="popupChanged:" target="-2" id="0tk-zi-rjk"/>
                     </connections>
                 </popUpButton>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fK0-a2-AXB">

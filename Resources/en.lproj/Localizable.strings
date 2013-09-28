@@ -48,6 +48,14 @@
 "quit alert description" = "Your Mac will no longer control or respond to other HDMI devices, including your TV's remote control.";
 "quit alert suppress title" = "Don't show again";
 
+"do nothing menu title" = "Do Nothing";
+"sleep computer menu title" = "Sleep Computer";
+"shutdown computer menu title" = "Shutdown Computer";
+"wake computer menu title" = "Wake Computer";
+"switch off TV menu title" = "Switch Off TV";
+"switch on TV menu title" = "Switch On TV";
+"no scripts menu title" = "No Scripts";
+
 "CEC_USER_CONTROL_CODE_SELECT" = "Select";
 "CEC_USER_CONTROL_CODE_UP" = "↑";
 "CEC_USER_CONTROL_CODE_DOWN" = "↓";
