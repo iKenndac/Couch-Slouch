@@ -8,14 +8,21 @@
 
 #import "DKBehavioursViewController.h"
 #import "DKCECBehaviourController.h"
+#import "DKBehaviourScriptController.h"
+#import "Constants.h"
 
 @interface DKBehavioursViewController ()
+@property (nonatomic, readwrite) DKBehaviourScriptController *scriptController;
 @end
 
 @implementation DKBehavioursViewController
 
 -(id)init {
-	return [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
+	self = [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
+	if (self) {
+		self.scriptController = [DKBehaviourScriptController new];
+	}
+	return self;
 }
 
 - (IBAction)chooseScript:(id)sender {
@@ -31,6 +38,14 @@
 		[[DKCECBehaviourController sharedInstance] setScriptURL:url];
 	}];
 
+}
+
+- (IBAction)openScriptsFolder:(id)sender {
+	[self.scriptController openUserScriptsFolder];
+}
+
+- (IBAction)openWebsite:(id)sender {
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kCouchSlouchWebsiteURL]];
 }
 
 @end

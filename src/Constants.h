@@ -38,6 +38,10 @@ static NSString * const kAppleScriptLostActiveFunctionName = @"CouchSlouch_LostA
 static NSString * const kAppleScriptMacAwokeFunctionName = @"CouchSlouch_MacAwoke";
 static NSString * const kAppleScriptMacSleptFunctionName = @"CouchSlouch_MacSlept";
 
+static NSString * const kCouchSlouchWebsiteURL = @"http://www.couch-slouch.com/";
+static NSString * const kApplicationSupportFolderName = @"Couch Slouch";
+static NSString * const kScriptsFolderName = @"Scripts";
+
 typedef NS_ENUM(NSUInteger, DKCECMacBehaviourAction) {
 	DKCECBehaviourActionNothing = 0,
 	DKCECBehaviourActionSleepComputer = 1,

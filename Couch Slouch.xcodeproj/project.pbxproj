@@ -72,6 +72,7 @@
 		5055C80115DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5055C80015DFF18800B6B497 /* DKKeyboardShortcutLocalAction.m */; };
 		506B6F3617F3570B00325DD6 /* DKCECBehaviourController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506B6F3517F3570B00325DD6 /* DKCECBehaviourController.m */; };
 		506B6F3917F37B6C00325DD6 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506B6F3817F37B6C00325DD6 /* ScriptingBridge.framework */; };
+		506B6F3C17F70EC000325DD6 /* DKBehaviourScriptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506B6F3B17F70EC000325DD6 /* DKBehaviourScriptController.m */; };
 		5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */; };
 		508B2A3B160BBE8D00708A62 /* CouchSlouch.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */; };
 		508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7B15FE78700014BC2A /* menubar-noconnection.png */; };
@@ -301,6 +302,8 @@
 		506B6F3517F3570B00325DD6 /* DKCECBehaviourController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECBehaviourController.m; sourceTree = "<group>"; };
 		506B6F3717F37A5400325DD6 /* SystemEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemEvents.h; sourceTree = "<group>"; };
 		506B6F3817F37B6C00325DD6 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		506B6F3A17F70EC000325DD6 /* DKBehaviourScriptController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBehaviourScriptController.h; sourceTree = "<group>"; };
+		506B6F3B17F70EC000325DD6 /* DKBehaviourScriptController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBehaviourScriptController.m; sourceTree = "<group>"; };
 		5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CouchSlouchPublicKey.pem; path = Resources/CouchSlouchPublicKey.pem; sourceTree = SOURCE_ROOT; };
 		508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = CouchSlouch.iconset; sourceTree = "<group>"; };
 		508B7A7B15FE78700014BC2A /* menubar-noconnection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-noconnection.png"; sourceTree = "<group>"; };
@@ -760,6 +763,8 @@
 				5055C7D615DFA5FA00B6B497 /* DKBehavioursViewController.h */,
 				5055C7D715DFA5FA00B6B497 /* DKBehavioursViewController.m */,
 				5047670615F6B13300BF2DA7 /* DKBehavioursViewController.xib */,
+				506B6F3A17F70EC000325DD6 /* DKBehaviourScriptController.h */,
+				506B6F3B17F70EC000325DD6 /* DKBehaviourScriptController.m */,
 			);
 			name = Behaviours;
 			sourceTree = "<group>";
@@ -1140,6 +1145,7 @@
 				50FF7DF316177569008324F0 /* DKShowMouseGridLocalAction.m in Sources */,
 				508DEBC71618449900413CD9 /* StartAtLoginController.m in Sources */,
 				508DEBFF16184EA800413CD9 /* DKBackgroundStyleForwarderView.m in Sources */,
+				506B6F3C17F70EC000325DD6 /* DKBehaviourScriptController.m in Sources */,
 				508DEC0016184EA800413CD9 /* DKButtonDecoratedTextField.m in Sources */,
 				508DEC0116184EA800413CD9 /* DKFancyDividerView.m in Sources */,
 				508DEC0416184EC000413CD9 /* KNGradientExtensions.m in Sources */,
