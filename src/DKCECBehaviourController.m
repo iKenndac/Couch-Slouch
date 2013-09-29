@@ -60,24 +60,6 @@ static DKCECBehaviourController *sharedInstance;
 	[self handleMacEventWithUserDefaultsKey:kOnMacSleptUserDefaultsKey scriptFunction:kAppleScriptMacSleptFunctionName];
 }
 
--(void)setScriptURL:(NSURL *)url {
-
-	NSError *error = nil;
-
-	NSData *bookmark = [url bookmarkDataWithOptions:0
-					 includingResourceValuesForKeys:nil
-									  relativeToURL:nil
-											  error:&error];
-
-	if (bookmark == nil || error) {
-		NSLog(@"Got error when creating bookmark: %@", error);
-		return;
-	}
-
-	[[NSUserDefaults standardUserDefaults] setObject:bookmark forKey:kOnTVActionScriptURLUserDefaultsKey];
-
-}
-
 #pragma mark - Helpers
 
 -(void)handleTVEventWithUserDefaultsKey:(NSString *)userDefaultsKey scriptFunction:(NSString *)function {
@@ -89,7 +71,7 @@ static DKCECBehaviourController *sharedInstance;
 	} else if (action == DKCECBehaviourActionSleepComputer) {
 		[self sleepComputer];
 	} else if (action == DKCECBehaviourActionTriggerScript) {
-		[self runScriptWithFunction:function];
+		[self runScriptWithFunction:function scriptUserDefaultsKey:[userDefaultsKey stringByAppendingString:kOnActionScriptUserDefaultsKeySuffix]];
 	}
 }
 
@@ -102,7 +84,7 @@ static DKCECBehaviourController *sharedInstance;
 	} else if (action == DKCECTVBehaviourActionPowerOnTV) {
 		[self turnOnTV];
 	} else if (action == DKCECTVBehaviourActionTriggerScript) {
-		[self runScriptWithFunction:function];
+		[self runScriptWithFunction:function scriptUserDefaultsKey:[userDefaultsKey stringByAppendingString:kOnActionScriptUserDefaultsKeySuffix]];
 	}
 }
 
@@ -148,31 +130,14 @@ static DKCECBehaviourController *sharedInstance;
 
 }
 
--(void)runScriptWithFunction:(NSString *)function {
+-(void)runScriptWithFunction:(NSString *)function scriptUserDefaultsKey:(NSString *)userDefaultsKey  {
 
 	NSDictionary *errorDict = nil;
 	NSURL *scriptURL = nil;
 
-	NSData *bookmark = [[NSUserDefaults standardUserDefaults] dataForKey:kOnTVActionScriptURLUserDefaultsKey];
-	if (bookmark) {
-
-		BOOL isStale = NO;
-		NSError *error = nil;
-
-		scriptURL = [NSURL URLByResolvingBookmarkData:bookmark
-											  options:NSURLBookmarkResolutionWithoutUI | NSURLBookmarkResolutionWithoutMounting
-										relativeToURL:nil
-								  bookmarkDataIsStale:&isStale
-												error:&error];
-
-		if (error) {
-			scriptURL = nil;
-			NSLog(@"Saved bookmark got error: %@", error);
-		}
-
-		if (isStale && scriptURL)
-			[self setScriptURL:scriptURL];
-	}
+	NSString *storedScriptPath = [[NSUserDefaults standardUserDefaults] stringForKey:userDefaultsKey];
+	if (storedScriptPath.length > 0)
+		scriptURL = [NSURL URLWithString:storedScriptPath];
 
 	if (scriptURL == nil || ![scriptURL checkResourceIsReachableAndReturnError:nil]) {
 		[self handleNoScriptError];

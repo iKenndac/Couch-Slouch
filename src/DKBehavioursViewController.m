@@ -55,10 +55,17 @@ static void * const kRebuildPopupsKVOContext = @"kRebuildPopupsKVOContext";
 }
 
 -(IBAction)popupChanged:(id)sender {
-	NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), sender);
+
+	NSPopUpButton *popup = sender;
+
+	NSInteger tag = popup.selectedTag;
+	NSURL *scriptURL = popup.selectedItem.representedObject;
+	NSString *key = [self userDefaultsKeyForPopup:popup];
+
+	[[NSUserDefaults standardUserDefaults] setInteger:tag forKey:key];
+	[[NSUserDefaults standardUserDefaults] setValue:[scriptURL absoluteString] forKey:[key stringByAppendingString:kOnActionScriptUserDefaultsKeySuffix]];
+
 }
-
-
 
 #pragma mark - Menu Building
 
@@ -81,8 +88,8 @@ static void * const kRebuildPopupsKVOContext = @"kRebuildPopupsKVOContext";
 	for (NSNumber *action in actions)
 		[items addObject:[self menuItemForTVAction:[action integerValue]]];
 
-	[self rebuildPopup:popup withActionItems:items];
-	
+	[self rebuildPopup:popup withActionItems:items userDefaultsKey:[self userDefaultsKeyForPopup:popup]];
+
 }
 
 -(void)rebuildPopup:(NSPopUpButton *)popup withMacActions:(NSArray *)actions {
@@ -92,11 +99,14 @@ static void * const kRebuildPopupsKVOContext = @"kRebuildPopupsKVOContext";
 	for (NSNumber *action in actions)
 		[items addObject:[self menuItemForMacAction:[action integerValue]]];
 
-	[self rebuildPopup:popup withActionItems:items];
-
+	[self rebuildPopup:popup withActionItems:items userDefaultsKey:[self userDefaultsKeyForPopup:popup]];
 }
 
--(void)rebuildPopup:(NSPopUpButton *)popup withActionItems:(NSArray *)actionMenuItems {
+-(void)rebuildPopup:(NSPopUpButton *)popup withActionItems:(NSArray *)actionMenuItems userDefaultsKey:(NSString *)userDefaultsKey {
+
+	NSInteger action = [[NSUserDefaults standardUserDefaults] integerForKey:userDefaultsKey];
+	NSString *scriptString = [[NSUserDefaults standardUserDefaults] stringForKey:[userDefaultsKey stringByAppendingString:kOnActionScriptUserDefaultsKeySuffix]];
+	NSURL *savedScriptURL = scriptString.length > 0 ? [NSURL URLWithString:scriptString] : nil;
 
 	[popup removeAllItems];
 
@@ -105,8 +115,12 @@ static void * const kRebuildPopupsKVOContext = @"kRebuildPopupsKVOContext";
 	if (actionMenuItems.count > 0)
 		[popup.menu addItem:[NSMenuItem separatorItem]];
 
-	for (NSMenuItem *item in actionMenuItems)
+	for (NSMenuItem *item in actionMenuItems) {
 		[popup.menu addItem:item];
+		if (item.tag == action) {
+			[popup selectItem:item];
+		}
+	}
 
 	[popup.menu addItem:[NSMenuItem separatorItem]];
 
@@ -115,7 +129,11 @@ static void * const kRebuildPopupsKVOContext = @"kRebuildPopupsKVOContext";
 	} else {
 
 		for (NSURL *scriptURL in self.scriptController.scripts) {
-			[popup.menu addItem:[self menuItemForScript:scriptURL]];
+			NSMenuItem *scriptItem = [self menuItemForScript:scriptURL];
+			[popup.menu addItem:scriptItem];
+			if (action == DKCECCommonBehaviourActionTriggerScript && [scriptURL isEqual:savedScriptURL]) {
+				[popup selectItem:scriptItem];
+			}
 		}
 	}
 
@@ -127,10 +145,13 @@ static void * const kRebuildPopupsKVOContext = @"kRebuildPopupsKVOContext";
 	NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:[scriptURL path]];
 	icon.size = NSMakeSize(16.0, 16.0);
 
-	return [self menuItemWithTag:DKCECBehaviourActionTriggerScript
-						   title:name
-							icon:icon];
+	NSMenuItem *scriptItem = [self menuItemWithTag:DKCECBehaviourActionTriggerScript
+											 title:name
+											  icon:icon];
 
+	scriptItem.representedObject = scriptURL;
+
+	return scriptItem;
 }
 
 -(NSMenuItem *)noScriptsMenuItem {
@@ -221,6 +242,29 @@ static void * const kRebuildPopupsKVOContext = @"kRebuildPopupsKVOContext";
 	item.image = icon;
 
 	return item;
+}
+
+-(NSString *)userDefaultsKeyForPopup:(NSPopUpButton *)popup {
+
+	if (popup == self.macAwokePopup)
+		return kOnMacAwokeUserDefaultsKey;
+
+	if (popup == self.macSleptPopup)
+		return kOnMacSleptUserDefaultsKey;
+
+	if (popup == self.tvSwitchedOffPopup)
+		return kOnTVOffUserDefaultsKey;
+
+	if (popup == self.tvSwitchedOnPopup)
+		return kOnTVOnUserDefaultsKey;
+
+	if (popup == self.lostActivePopup)
+		return kOnTVLostActiveUserDefaultsKey;
+
+	if (popup == self.becameActivePopup)
+		return kOnTVBecameActiveUserDefaultsKey;
+
+	return nil;
 }
 
 @end

@@ -26,6 +26,4 @@
 -(void)handleMacSleep;
 -(void)handleMacShutdown;
 
--(void)setScriptURL:(NSURL *)url;
-
 @end

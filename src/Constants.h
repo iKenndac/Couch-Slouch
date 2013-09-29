@@ -24,9 +24,10 @@ static NSString * const kOnTVOffUserDefaultsKey = @"OnTVOff";
 static NSString * const kOnTVOnUserDefaultsKey = @"OnTVOn";
 static NSString * const kOnTVBecameActiveUserDefaultsKey = @"OnTVBecameActive";
 static NSString * const kOnTVLostActiveUserDefaultsKey = @"OnTVLostActive";
-static NSString * const kOnTVActionScriptURLUserDefaultsKey = @"TVActionScript";
 static NSString * const kOnMacAwokeUserDefaultsKey = @"OnMacAwoke";
 static NSString * const kOnMacSleptUserDefaultsKey = @"OnMacSlept";
+
+static NSString * const kOnActionScriptUserDefaultsKeySuffix = @"Script";
 
 static NSString * const kApplicationShouldShowMouseGridNotificationName = @"MouseGrid!";
 static NSString * const kApplicationShouldShowVirtualRemoteNotificationName = @"Remote!";
@@ -42,19 +43,24 @@ static NSString * const kCouchSlouchWebsiteURL = @"http://www.couch-slouch.com/"
 static NSString * const kApplicationSupportFolderName = @"Couch Slouch";
 static NSString * const kScriptsFolderName = @"Scripts";
 
+typedef NS_ENUM(NSUInteger, DKCECCommonBehaviourAction) {
+	DKCECCommonBehaviourActionNothing = 0,
+	DKCECCommonBehaviourActionTriggerScript = 1,
+};
+
 typedef NS_ENUM(NSUInteger, DKCECMacBehaviourAction) {
 	DKCECBehaviourActionNothing = 0,
-	DKCECBehaviourActionSleepComputer = 1,
-	DKCECBehaviourActionShutdownComputer = 2,
-	DKCECBehaviourActionTriggerScript = 3,
-	DKCECBehaviourActionWakeUpComputer = 4
+	DKCECBehaviourActionTriggerScript = 1,
+	DKCECBehaviourActionSleepComputer = 100,
+	DKCECBehaviourActionShutdownComputer = 101,
+	DKCECBehaviourActionWakeUpComputer = 102
 };
 
 typedef NS_ENUM(NSUInteger, DKCECTVBehaviourAction) {
 	DKCECTVBehaviourActionNothing = 0,
-	DKCECTVBehaviourActionPowerOnTV = 1,
-	DKCECTVBehaviourActionPowerOffTV = 2,
-	DKCECTVBehaviourActionTriggerScript = 3
+	DKCECTVBehaviourActionTriggerScript = 1,
+	DKCECTVBehaviourActionPowerOnTV = 100,
+	DKCECTVBehaviourActionPowerOffTV = 101,
 };
 
 
