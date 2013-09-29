@@ -44,6 +44,7 @@ static NSString * const kCouchSlouchWebsiteURL = @"http://www.couch-slouch.com/"
 static NSString * const kApplicationSupportFolderName = @"Couch Slouch";
 static NSString * const kScriptsFolderName = @"Scripts";
 static NSString * const kExampleScriptName = @"Couch Slouch Example Script.scpt";
+static NSString * const kScriptRunnerXPCServiceName = @"org.danielkennett.CouchSlouchScriptRunner";
 
 typedef NS_ENUM(NSUInteger, DKCECCommonBehaviourAction) {
 	DKCECCommonBehaviourActionNothing = 0,

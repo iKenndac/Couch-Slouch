@@ -9,6 +9,12 @@
 #import "DKCECBehaviourController.h"
 #import "Constants.h"
 #import "SystemEvents.h"
+#import "DKScriptRunnerXPCController.h"
+
+@interface DKCECBehaviourController ()
+@property (nonatomic, readwrite) NSXPCConnection *xpcConnection;
+@property (nonatomic, readwrite) id <DKCouchSlouchRunScript> scriptProxy;
+@end
 
 @implementation DKCECBehaviourController
 
@@ -110,9 +116,9 @@ static DKCECBehaviourController *sharedInstance;
 	}];
 }
 
--(void)handleNotHandledError {
+-(void)handleNotHandledError:(NSString *)function {
 	//TODO: Handle properly.
-	NSLog(@"Function in script not handled!");
+	NSLog(@"Function %@ () in script not handled!", function);
 }
 
 -(void)handleNoScriptError {
@@ -143,58 +149,29 @@ static DKCECBehaviourController *sharedInstance;
 		return;
 	}
 
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+	[self executeScriptOverXPCAtURL:scriptURL functionName:function];
 
-		NSDictionary *errorDict = nil;
-
-		if (![self executeScriptAtURL:scriptURL functionName:function error:&errorDict]) {
-
-			NSInteger errorCode = [errorDict[NSAppleScriptErrorNumber] integerValue];
-			if (errorCode == errAEEventNotHandled) {
-				dispatch_async(dispatch_get_main_queue(), ^{ [self handleNotHandledError]; });
-				return;
-			}
-
-			dispatch_async(dispatch_get_main_queue(), ^{ [self handleScriptThrownError:errorDict]; });
-		}
-	});
+	return;
 
 }
 
--(BOOL)executeScriptAtURL:(NSURL *)scriptURL functionName:(NSString *)functionName error:(NSDictionary **)errorDict {
+-(void)executeScriptOverXPCAtURL:(NSURL *)scriptURL functionName:(NSString *)functionName {
 
-	NSAppleScript *appleScript = [[NSAppleScript alloc] initWithContentsOfURL:scriptURL error:errorDict];
+	if (self.xpcConnection == nil) {
+		self.xpcConnection = [[NSXPCConnection alloc] initWithServiceName:kScriptRunnerXPCServiceName];
+		self.xpcConnection.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(DKCouchSlouchRunScript)];
+		[self.xpcConnection resume];
 
-	if (appleScript == nil)
-		return NO;
+		self.scriptProxy = [self.xpcConnection remoteObjectProxyWithErrorHandler:^(NSError *error) {
+			NSLog(@"Got error %@", error);
+		}];
+	}
 
-	//Get a descriptor for ourself
-	int pid = [[NSProcessInfo processInfo] processIdentifier];
-	NSAppleEventDescriptor *thisApplication = [NSAppleEventDescriptor descriptorWithDescriptorType:typeKernelProcessID
-																							 bytes:&pid
-																							length:sizeof(pid)];
+	[self.scriptProxy runFunction:functionName inScriptAtURL:scriptURL callback:^(NSURL *scriptURL, NSDictionary *errorDictionary) {
+		NSLog(@"Reply from run script is: %@", errorDictionary);
+	}];
 
-	//Create the container event
-	//We need these constants from the Carbon OpenScripting framework, but we don't actually need Carbon.framework...
-	#define kASAppleScriptSuite 'ascr'
-	#define kASSubroutineEvent  'psbr'
-	#define keyASSubroutineName 'snam'
-	NSAppleEventDescriptor *containerEvent = [NSAppleEventDescriptor appleEventWithEventClass:kASAppleScriptSuite
-																					  eventID:kASSubroutineEvent
-																			 targetDescriptor:thisApplication
-																					 returnID:kAutoGenerateReturnID
-																				transactionID:kAnyTransactionID];
-
-	//Set the target function
-	[containerEvent setParamDescriptor:[NSAppleEventDescriptor descriptorWithString:functionName]
-							forKeyword:keyASSubroutineName];
-
-	//Execute the event
-	NSAppleEventDescriptor *result = [appleScript executeAppleEvent:containerEvent error:errorDict];
-	if (result == nil)
-		return NO;
-
-	return YES;
 }
+
 
 @end

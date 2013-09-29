@@ -52,6 +52,7 @@
 		503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575315DD845B007F2F3E /* IOKit.framework */; };
 		503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575515DD848E007F2F3E /* QuartzCore.framework */; };
 		503F575D15DD9148007F2F3E /* DKCECDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F575C15DD9148007F2F3E /* DKCECDeviceController.m */; };
+		5042B38017F8A11700E4BC48 /* ScriptRunner-main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5042B37E17F8A11700E4BC48 /* ScriptRunner-main.m */; };
 		5047671815F6B13300BF2DA7 /* ButtonGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5047670115F6B13300BF2DA7 /* ButtonGroups.plist */; };
 		5047671A15F6B13300BF2DA7 /* DefaultKeybinds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5047670315F6B13300BF2DA7 /* DefaultKeybinds.plist */; };
 		5047671B15F6B13300BF2DA7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5047670415F6B13300BF2DA7 /* Credits.rtf */; };
@@ -73,6 +74,7 @@
 		506B6F3617F3570B00325DD6 /* DKCECBehaviourController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506B6F3517F3570B00325DD6 /* DKCECBehaviourController.m */; };
 		506B6F3917F37B6C00325DD6 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506B6F3817F37B6C00325DD6 /* ScriptingBridge.framework */; };
 		506B6F3C17F70EC000325DD6 /* DKBehaviourScriptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506B6F3B17F70EC000325DD6 /* DKBehaviourScriptController.m */; };
+		5070857717F8A3B000F0CB4E /* org.danielkennett.CouchSlouchScriptRunner.xpc in Copy Script Runner */ = {isa = PBXBuildFile; fileRef = 50A8C00417F88DE50021E825 /* org.danielkennett.CouchSlouchScriptRunner.xpc */; };
 		5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */; };
 		508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7B15FE78700014BC2A /* menubar-noconnection.png */; };
 		508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7C15FE78700014BC2A /* menubar-off.png */; };
@@ -97,6 +99,8 @@
 		509E10DF15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */; };
 		509E10E815E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10E615E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m */; };
 		50A8BFFF17F872670021E825 /* Couch Slouch Example Script.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 50A8BFFE17F872510021E825 /* Couch Slouch Example Script.scpt */; };
+		50A8C00617F88DE50021E825 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A8C00517F88DE50021E825 /* Foundation.framework */; };
+		50A8C01917F88EAA0021E825 /* DKScriptRunnerXPCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A8C01817F88EAA0021E825 /* DKScriptRunnerXPCController.m */; };
 		50A9953915F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9953715F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m */; };
 		50A9953B15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A9953D15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib */; };
 		50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B9216115E922DA002218A7 /* SystemConfiguration.framework */; };
@@ -132,6 +136,13 @@
 			remoteGlobalIDString = 508DEB7E1618404F00413CD9;
 			remoteInfo = "Couch Slouch Login Helper";
 		};
+		50A8C01517F88E4B0021E825 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 503F563F15DD8179007F2F3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50A8C00317F88DE50021E825;
+			remoteInfo = "Couch Slouch Script Runner";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -155,6 +166,17 @@
 				508DEB98161840B000413CD9 /* Couch Slouch Login Helper.app in Copy Login Helper */,
 			);
 			name = "Copy Login Helper";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50A8C01317F88E230021E825 /* Copy Script Runner */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				5070857717F8A3B000F0CB4E /* org.danielkennett.CouchSlouchScriptRunner.xpc in Copy Script Runner */,
+			);
+			name = "Copy Script Runner";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -273,6 +295,9 @@
 		503F575515DD848E007F2F3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		503F575B15DD9148007F2F3E /* DKCECDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECDeviceController.h; sourceTree = "<group>"; };
 		503F575C15DD9148007F2F3E /* DKCECDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCECDeviceController.m; sourceTree = "<group>"; };
+		5042B37E17F8A11700E4BC48 /* ScriptRunner-main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ScriptRunner-main.m"; path = "src/ScriptRunner-main.m"; sourceTree = SOURCE_ROOT; };
+		5042B37F17F8A11700E4BC48 /* ScriptRunner-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ScriptRunner-Prefix.pch"; path = "src/ScriptRunner-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		5042B38117F8A12200E4BC48 /* ScriptRunner-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ScriptRunner-Info.plist"; path = "Resources/ScriptRunner-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5047670115F6B13300BF2DA7 /* ButtonGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ButtonGroups.plist; sourceTree = "<group>"; };
 		5047670215F6B13300BF2DA7 /* Couch Slouch-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Couch Slouch-Info.plist"; sourceTree = "<group>"; };
 		5047670315F6B13300BF2DA7 /* DefaultKeybinds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DefaultKeybinds.plist; sourceTree = "<group>"; };
@@ -343,6 +368,10 @@
 		509E10E515E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKKeyboardShortcutLocalActionConfigViewController.h; sourceTree = "<group>"; };
 		509E10E615E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKKeyboardShortcutLocalActionConfigViewController.m; sourceTree = "<group>"; };
 		50A8BFFE17F872510021E825 /* Couch Slouch Example Script.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Couch Slouch Example Script.scpt"; sourceTree = "<group>"; };
+		50A8C00417F88DE50021E825 /* org.danielkennett.CouchSlouchScriptRunner.xpc */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = org.danielkennett.CouchSlouchScriptRunner.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		50A8C00517F88DE50021E825 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		50A8C01717F88EAA0021E825 /* DKScriptRunnerXPCController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKScriptRunnerXPCController.h; path = src/DKScriptRunnerXPCController.h; sourceTree = SOURCE_ROOT; };
+		50A8C01817F88EAA0021E825 /* DKScriptRunnerXPCController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKScriptRunnerXPCController.m; path = src/DKScriptRunnerXPCController.m; sourceTree = SOURCE_ROOT; };
 		50A9953615F928A100CDBB9B /* DKHDMIAddressSetupWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKHDMIAddressSetupWindowController.h; sourceTree = "<group>"; };
 		50A9953715F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKHDMIAddressSetupWindowController.m; sourceTree = "<group>"; };
 		50A9953C15F928AA00CDBB9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKHDMIAddressSetupWindowController.xib; sourceTree = "<group>"; };
@@ -397,6 +426,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50A8C00117F88DE50021E825 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50A8C00617F88DE50021E825 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -435,6 +472,7 @@
 			children = (
 				503F565215DD8179007F2F3E /* Couch Slouch */,
 				508DEBA01618425F00413CD9 /* Login Helper */,
+				50A8C00717F88DE50021E825 /* Script Runner */,
 				503F564B15DD8179007F2F3E /* Frameworks */,
 				503F564915DD8179007F2F3E /* Products */,
 			);
@@ -445,6 +483,7 @@
 			children = (
 				503F564815DD8179007F2F3E /* Couch Slouch.app */,
 				508DEB7F1618404F00413CD9 /* Couch Slouch Login Helper.app */,
+				50A8C00417F88DE50021E825 /* org.danielkennett.CouchSlouchScriptRunner.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -460,6 +499,7 @@
 				503F575315DD845B007F2F3E /* IOKit.framework */,
 				503F564C15DD8179007F2F3E /* Cocoa.framework */,
 				508DEBC81618455200413CD9 /* ServiceManagement.framework */,
+				50A8C00517F88DE50021E825 /* Foundation.framework */,
 				503F564E15DD8179007F2F3E /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -860,6 +900,19 @@
 			name = "Keyboard Shortcut Action";
 			sourceTree = "<group>";
 		};
+		50A8C00717F88DE50021E825 /* Script Runner */ = {
+			isa = PBXGroup;
+			children = (
+				50A8C01717F88EAA0021E825 /* DKScriptRunnerXPCController.h */,
+				50A8C01817F88EAA0021E825 /* DKScriptRunnerXPCController.m */,
+				5042B37E17F8A11700E4BC48 /* ScriptRunner-main.m */,
+				5042B37F17F8A11700E4BC48 /* ScriptRunner-Prefix.pch */,
+				5042B38117F8A12200E4BC48 /* ScriptRunner-Info.plist */,
+			);
+			name = "Script Runner";
+			path = "Couch Slouch Script Runner";
+			sourceTree = "<group>";
+		};
 		50A9953415F927A200CDBB9B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -958,10 +1011,12 @@
 				5076B4951613737600A99AD0 /* Generate CFBundleVersion */,
 				5076B497161374CE00A99AD0 /* Copy Frameworks */,
 				508DEB971618409C00413CD9 /* Copy Login Helper */,
+				50A8C01317F88E230021E825 /* Copy Script Runner */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				50A8C01617F88E4B0021E825 /* PBXTargetDependency */,
 				508DEB9F1618421100413CD9 /* PBXTargetDependency */,
 			);
 			name = "Couch Slouch";
@@ -985,6 +1040,23 @@
 			productName = "Couch Slouch Login Helper";
 			productReference = 508DEB7F1618404F00413CD9 /* Couch Slouch Login Helper.app */;
 			productType = "com.apple.product-type.application";
+		};
+		50A8C00317F88DE50021E825 /* CouchSlouchScriptRunner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50A8C01017F88DE50021E825 /* Build configuration list for PBXNativeTarget "CouchSlouchScriptRunner" */;
+			buildPhases = (
+				50A8C00017F88DE50021E825 /* Sources */,
+				50A8C00117F88DE50021E825 /* Frameworks */,
+				50A8C00217F88DE50021E825 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CouchSlouchScriptRunner;
+			productName = "Couch Slouch Script Runner";
+			productReference = 50A8C00417F88DE50021E825 /* org.danielkennett.CouchSlouchScriptRunner.xpc */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -1010,6 +1082,7 @@
 			targets = (
 				503F564715DD8179007F2F3E /* Couch Slouch */,
 				508DEB7E1618404F00413CD9 /* Couch Slouch Login Helper */,
+				50A8C00317F88DE50021E825 /* CouchSlouchScriptRunner */,
 			);
 		};
 /* End PBXProject section */
@@ -1060,6 +1133,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		508DEB7D1618404F00413CD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50A8C00217F88DE50021E825 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1167,6 +1247,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50A8C00017F88DE50021E825 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50A8C01917F88EAA0021E825 /* DKScriptRunnerXPCController.m in Sources */,
+				5042B38017F8A11700E4BC48 /* ScriptRunner-main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1174,6 +1263,11 @@
 			isa = PBXTargetDependency;
 			target = 508DEB7E1618404F00413CD9 /* Couch Slouch Login Helper */;
 			targetProxy = 508DEB9E1618421100413CD9 /* PBXContainerItemProxy */;
+		};
+		50A8C01617F88E4B0021E825 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50A8C00317F88DE50021E825 /* CouchSlouchScriptRunner */;
+			targetProxy = 50A8C01517F88E4B0021E825 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1410,6 +1504,63 @@
 			};
 			name = Release;
 		};
+		50A8C01117F88DE50021E825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/ScriptRunner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Resources/ScriptRunner-Info.plist";
+				MACH_O_TYPE = mh_execute;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "org.danielkennett.$(TARGET_NAME:rfc1034identifier)";
+				WRAPPER_EXTENSION = xpc;
+			};
+			name = Debug;
+		};
+		50A8C01217F88DE50021E825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/ScriptRunner-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Resources/ScriptRunner-Info.plist";
+				MACH_O_TYPE = mh_execute;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "org.danielkennett.$(TARGET_NAME:rfc1034identifier)";
+				WRAPPER_EXTENSION = xpc;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1436,6 +1587,15 @@
 			buildConfigurations = (
 				508DEB951618404F00413CD9 /* Debug */,
 				508DEB961618404F00413CD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50A8C01017F88DE50021E825 /* Build configuration list for PBXNativeTarget "CouchSlouchScriptRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50A8C01117F88DE50021E825 /* Debug */,
+				50A8C01217F88DE50021E825 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
