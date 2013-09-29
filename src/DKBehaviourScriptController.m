@@ -93,6 +93,22 @@
 
 	if (![userPath checkResourceIsReachableAndReturnError:nil])
 		[[NSFileManager defaultManager] createDirectoryAtURL:userPath withIntermediateDirectories:YES attributes:nil error:nil];
+
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:kHasInstalledSampleScriptUserDefaultsKey])
+		return;
+
+	NSURL *source = [[NSBundle mainBundle] URLForResource:kExampleScriptName withExtension:@""];
+	if (source == nil) return;
+
+	NSURL *destination = [userPath URLByAppendingPathComponent:kExampleScriptName];
+
+	if (![destination checkResourceIsReachableAndReturnError:nil]) {
+		if ([[NSFileManager defaultManager] copyItemAtURL:source toURL:destination error:nil]) {
+			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHasInstalledSampleScriptUserDefaultsKey];
+			[self rebuildScripts];
+		}
+	}
+
 }
 
 #pragma mark - FSEvents
@@ -114,12 +130,8 @@ static void FSEventCallback(ConstFSEventStreamRef streamRef,
 
 -(void)addFSEvents {
 
-	if (![[self userScriptsDirectory] checkResourceIsReachableAndReturnError:nil])
-		[self createUserSciptsDirectory];
-
+	[self createUserSciptsDirectory];
 	NSArray *pathsToWatch = @[ [self userScriptsDirectory].path ];
-
-	NSLog(@"[%@ %@]: Starting observer on %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), pathsToWatch);
 
 	if (eventStream != NULL)
 		[self removeFSEvents];

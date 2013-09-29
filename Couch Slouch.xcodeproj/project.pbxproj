@@ -96,6 +96,7 @@
 		50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */; };
 		509E10DF15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */; };
 		509E10E815E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10E615E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m */; };
+		50A8BFFF17F872670021E825 /* Couch Slouch Example Script.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 50A8BFFE17F872510021E825 /* Couch Slouch Example Script.scpt */; };
 		50A9953915F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9953715F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m */; };
 		50A9953B15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A9953D15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib */; };
 		50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B9216115E922DA002218A7 /* SystemConfiguration.framework */; };
@@ -341,6 +342,7 @@
 		509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLaunchApplicationLocalActionConfigViewController.m; sourceTree = "<group>"; };
 		509E10E515E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKKeyboardShortcutLocalActionConfigViewController.h; sourceTree = "<group>"; };
 		509E10E615E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKKeyboardShortcutLocalActionConfigViewController.m; sourceTree = "<group>"; };
+		50A8BFFE17F872510021E825 /* Couch Slouch Example Script.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Couch Slouch Example Script.scpt"; sourceTree = "<group>"; };
 		50A9953615F928A100CDBB9B /* DKHDMIAddressSetupWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKHDMIAddressSetupWindowController.h; sourceTree = "<group>"; };
 		50A9953715F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKHDMIAddressSetupWindowController.m; sourceTree = "<group>"; };
 		50A9953C15F928AA00CDBB9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKHDMIAddressSetupWindowController.xib; sourceTree = "<group>"; };
@@ -720,6 +722,7 @@
 		5047670015F6B13300BF2DA7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				50A8BFFE17F872510021E825 /* Couch Slouch Example Script.scpt */,
 				5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */,
 				50BA39E515F7CE650075E7DB /* Graphics */,
 				5047670115F6B13300BF2DA7 /* ButtonGroups.plist */,
@@ -1052,6 +1055,7 @@
 				5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */,
 				50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */,
 				50FF7DFB161792E9008324F0 /* PlainAppIcon.png in Resources */,
+				50A8BFFF17F872670021E825 /* Couch Slouch Example Script.scpt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

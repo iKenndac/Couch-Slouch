@@ -346,7 +346,7 @@ Gw
                             <constraint firstAttribute="width" constant="128" id="470"/>
                             <constraint firstAttribute="height" constant="128" id="479"/>
                         </constraints>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="CouchSlouch" id="446"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="446"/>
                     </imageView>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="435">
                         <rect key="frame" x="154" y="321" width="216" height="17"/>
@@ -368,10 +368,10 @@ Gw
                                     <rect key="frame" x="0.0" y="0.0" width="373" height="171"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="373" height="171"/>
+                                    <size key="minSize" width="388" height="171"/>
                                     <size key="maxSize" width="463" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="373" height="171"/>
+                                    <size key="minSize" width="388" height="171"/>
                                     <size key="maxSize" width="463" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -442,7 +442,7 @@ Gw
         </window>
     </objects>
     <resources>
-        <image name="CouchSlouch" width="512" height="512"/>
+        <image name="NSApplicationIcon" width="128" height="128"/>
         <image name="lamp-red" width="215" height="215"/>
     </resources>
 </document>

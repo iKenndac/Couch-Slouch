@@ -26,6 +26,7 @@ static NSString * const kOnTVBecameActiveUserDefaultsKey = @"OnTVBecameActive";
 static NSString * const kOnTVLostActiveUserDefaultsKey = @"OnTVLostActive";
 static NSString * const kOnMacAwokeUserDefaultsKey = @"OnMacAwoke";
 static NSString * const kOnMacSleptUserDefaultsKey = @"OnMacSlept";
+static NSString * const kHasInstalledSampleScriptUserDefaultsKey = @"InstalledSampleScript";
 
 static NSString * const kOnActionScriptUserDefaultsKeySuffix = @"Script";
 
@@ -42,6 +43,7 @@ static NSString * const kAppleScriptMacSleptFunctionName = @"CouchSlouch_MacSlep
 static NSString * const kCouchSlouchWebsiteURL = @"http://www.couch-slouch.com/";
 static NSString * const kApplicationSupportFolderName = @"Couch Slouch";
 static NSString * const kScriptsFolderName = @"Scripts";
+static NSString * const kExampleScriptName = @"Couch Slouch Example Script.scpt";
 
 typedef NS_ENUM(NSUInteger, DKCECCommonBehaviourAction) {
 	DKCECCommonBehaviourActionNothing = 0,
