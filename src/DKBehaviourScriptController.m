@@ -38,8 +38,6 @@
 
 -(void)rebuildScripts {
 
-	NSLog(@"Rebuilding scripts");
-
 	NSMutableArray *newScripts = [NSMutableArray new];
 
 	NSArray *paths = [[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory
