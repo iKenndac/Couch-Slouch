@@ -132,7 +132,6 @@ static DKCECBehaviourController *sharedInstance;
 
 -(void)runScriptWithFunction:(NSString *)function scriptUserDefaultsKey:(NSString *)userDefaultsKey  {
 
-	NSDictionary *errorDict = nil;
 	NSURL *scriptURL = nil;
 
 	NSString *storedScriptPath = [[NSUserDefaults standardUserDefaults] stringForKey:userDefaultsKey];
@@ -144,18 +143,22 @@ static DKCECBehaviourController *sharedInstance;
 		return;
 	}
 
-	if (![self executeScriptAtURL:scriptURL functionName:function error:&errorDict]) {
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
+		NSDictionary *errorDict = nil;
 
-		NSInteger errorCode = [errorDict[NSAppleScriptErrorNumber] integerValue];
-		if (errorCode == errAEEventNotHandled) {
-			[self handleNotHandledError];
-			return;
+		if (![self executeScriptAtURL:scriptURL functionName:function error:&errorDict]) {
+
+			NSInteger errorCode = [errorDict[NSAppleScriptErrorNumber] integerValue];
+			if (errorCode == errAEEventNotHandled) {
+				dispatch_async(dispatch_get_main_queue(), ^{ [self handleNotHandledError]; });
+				return;
+			}
+
+			dispatch_async(dispatch_get_main_queue(), ^{ [self handleScriptThrownError:errorDict]; });
 		}
+	});
 
-		[self handleScriptThrownError:errorDict];
-
-	}
 }
 
 -(BOOL)executeScriptAtURL:(NSURL *)scriptURL functionName:(NSString *)functionName error:(NSDictionary **)errorDict {
