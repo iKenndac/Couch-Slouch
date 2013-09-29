@@ -155,7 +155,6 @@
                 <constraint firstItem="222" firstAttribute="centerY" secondItem="50" secondAttribute="centerY" id="373"/>
                 <constraint firstItem="222" firstAttribute="leading" secondItem="50" secondAttribute="trailing" constant="20" id="374"/>
                 <constraint firstItem="50" firstAttribute="top" secondItem="332" secondAttribute="bottom" constant="-20" id="379"/>
-                <constraint firstItem="7" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="130" id="612"/>
                 <constraint firstAttribute="centerX" secondItem="146" secondAttribute="centerX" id="613"/>
                 <constraint firstAttribute="centerX" secondItem="614" secondAttribute="centerX" id="623"/>
                 <constraint firstItem="7" firstAttribute="top" secondItem="1" secondAttribute="top" constant="35" id="633"/>
@@ -165,6 +164,7 @@
                 <constraint firstItem="190" firstAttribute="top" secondItem="614" secondAttribute="bottom" constant="10" id="659"/>
                 <constraint firstItem="12" firstAttribute="top" secondItem="1" secondAttribute="top" constant="35" id="662"/>
                 <constraint firstAttribute="bottom" secondItem="50" secondAttribute="bottom" constant="30" id="665"/>
+                <constraint firstAttribute="centerX" secondItem="12" secondAttribute="centerX" id="9vX-1j-cOZ"/>
             </constraints>
         </customView>
         <userDefaultsController id="120"/>
