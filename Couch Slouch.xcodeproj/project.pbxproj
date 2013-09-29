@@ -74,7 +74,6 @@
 		506B6F3917F37B6C00325DD6 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506B6F3817F37B6C00325DD6 /* ScriptingBridge.framework */; };
 		506B6F3C17F70EC000325DD6 /* DKBehaviourScriptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506B6F3B17F70EC000325DD6 /* DKBehaviourScriptController.m */; };
 		5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */; };
-		508B2A3B160BBE8D00708A62 /* CouchSlouch.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */; };
 		508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7B15FE78700014BC2A /* menubar-noconnection.png */; };
 		508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7C15FE78700014BC2A /* menubar-off.png */; };
 		508B7A8015FE78700014BC2A /* menubar-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7D15FE78700014BC2A /* menubar-on.png */; };
@@ -93,6 +92,7 @@
 		508FD9C115E5682A00661E0D /* DKDoNothingLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */; };
 		508FD9C315E56AD400661E0D /* DKLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C215E56AD300661E0D /* DKLocalAction.m */; };
 		508FD9C715E576AD00661E0D /* DKActionConfigurationTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */; };
+		5093453D17F8319300A1725E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093453C17F8319300A1725E /* Images.xcassets */; };
 		50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */; };
 		509E10DF15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */; };
 		509E10E815E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10E615E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m */; };
@@ -305,7 +305,6 @@
 		506B6F3A17F70EC000325DD6 /* DKBehaviourScriptController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBehaviourScriptController.h; sourceTree = "<group>"; };
 		506B6F3B17F70EC000325DD6 /* DKBehaviourScriptController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBehaviourScriptController.m; sourceTree = "<group>"; };
 		5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CouchSlouchPublicKey.pem; path = Resources/CouchSlouchPublicKey.pem; sourceTree = SOURCE_ROOT; };
-		508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = CouchSlouch.iconset; sourceTree = "<group>"; };
 		508B7A7B15FE78700014BC2A /* menubar-noconnection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-noconnection.png"; sourceTree = "<group>"; };
 		508B7A7C15FE78700014BC2A /* menubar-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-off.png"; sourceTree = "<group>"; };
 		508B7A7D15FE78700014BC2A /* menubar-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-on.png"; sourceTree = "<group>"; };
@@ -335,6 +334,7 @@
 		508FD9C215E56AD300661E0D /* DKLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLocalAction.m; sourceTree = "<group>"; };
 		508FD9C515E576AD00661E0D /* DKActionConfigurationTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKActionConfigurationTableCellView.h; sourceTree = "<group>"; };
 		508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKActionConfigurationTableCellView.m; sourceTree = "<group>"; };
+		5093453C17F8319300A1725E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Couch Slouch/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		50966FB315E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+KeyCodeTranslation.h"; sourceTree = "<group>"; };
 		50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+KeyCodeTranslation.m"; sourceTree = "<group>"; };
 		509E10DC15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLaunchApplicationLocalActionConfigViewController.h; sourceTree = "<group>"; };
@@ -881,7 +881,7 @@
 			isa = PBXGroup;
 			children = (
 				50FF7DFA161792E9008324F0 /* PlainAppIcon.png */,
-				508B2A3A160BBE8D00708A62 /* CouchSlouch.iconset */,
+				5093453C17F8319300A1725E /* Images.xcassets */,
 				508B7A7B15FE78700014BC2A /* menubar-noconnection.png */,
 				508B7A7C15FE78700014BC2A /* menubar-off.png */,
 				508B7A7D15FE78700014BC2A /* menubar-on.png */,
@@ -990,7 +990,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DK;
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Daniel Kennett";
 			};
 			buildConfigurationList = 503F564215DD8179007F2F3E /* Build configuration list for PBXProject "Couch Slouch" */;
@@ -1023,6 +1023,7 @@
 				5047671D15F6B13300BF2DA7 /* DKCECWindowController.xib in Resources */,
 				5047671E15F6B13300BF2DA7 /* DKKeybindsViewController.xib in Resources */,
 				5047671F15F6B13300BF2DA7 /* DKKeyboardShortcutLocalActionConfigViewController.xib in Resources */,
+				5093453D17F8319300A1725E /* Images.xcassets in Resources */,
 				5047672015F6B13300BF2DA7 /* DKLaunchApplicationLocalActionConfigViewController.xib in Resources */,
 				5047672115F6B13300BF2DA7 /* DKSetupViewController.xib in Resources */,
 				5047672215F6B13300BF2DA7 /* InfoPlist.strings in Resources */,
@@ -1048,7 +1049,6 @@
 				508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */,
 				508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */,
 				508B7A8015FE78700014BC2A /* menubar-on.png in Resources */,
-				508B2A3B160BBE8D00708A62 /* CouchSlouch.iconset in Resources */,
 				5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */,
 				50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */,
 				50FF7DFB161792E9008324F0 /* PlainAppIcon.png in Resources */,
@@ -1283,7 +1283,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1306,7 +1305,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1314,7 +1313,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1330,13 +1328,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		503F566715DD8179007F2F3E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1357,6 +1356,7 @@
 		503F566815DD8179007F2F3E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
