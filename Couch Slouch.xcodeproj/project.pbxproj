@@ -360,7 +360,7 @@
 		508FD9C215E56AD300661E0D /* DKLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLocalAction.m; sourceTree = "<group>"; };
 		508FD9C515E576AD00661E0D /* DKActionConfigurationTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKActionConfigurationTableCellView.h; sourceTree = "<group>"; };
 		508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKActionConfigurationTableCellView.m; sourceTree = "<group>"; };
-		5093453C17F8319300A1725E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Couch Slouch/Images.xcassets"; sourceTree = SOURCE_ROOT; };
+		5093453C17F8319300A1725E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		50966FB315E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+KeyCodeTranslation.h"; sourceTree = "<group>"; };
 		50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+KeyCodeTranslation.m"; sourceTree = "<group>"; };
 		509E10DC15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLaunchApplicationLocalActionConfigViewController.h; sourceTree = "<group>"; };
@@ -764,6 +764,7 @@
 			children = (
 				50A8BFFE17F872510021E825 /* Couch Slouch Example Script.scpt */,
 				5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */,
+				5093453C17F8319300A1725E /* Images.xcassets */,
 				50BA39E515F7CE650075E7DB /* Graphics */,
 				5047670115F6B13300BF2DA7 /* ButtonGroups.plist */,
 				5047670215F6B13300BF2DA7 /* Couch Slouch-Info.plist */,
@@ -937,7 +938,6 @@
 			isa = PBXGroup;
 			children = (
 				50FF7DFA161792E9008324F0 /* PlainAppIcon.png */,
-				5093453C17F8319300A1725E /* Images.xcassets */,
 				508B7A7B15FE78700014BC2A /* menubar-noconnection.png */,
 				508B7A7C15FE78700014BC2A /* menubar-off.png */,
 				508B7A7D15FE78700014BC2A /* menubar-on.png */,
