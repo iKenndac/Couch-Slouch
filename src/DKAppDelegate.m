@@ -245,13 +245,10 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 }
 
 -(void)handleSimulatedKeyPress:(cec_keypress)press {
-	[self cecController:self.cecController didReceiveKeyPress:press];
+	[self cecController:self.cecController didReceiveKeyDown:press];
 }
 
--(void)cecController:(DKCECDeviceController *)controller didReceiveKeyPress:(cec_keypress)keyPress {
-
-	if (keyPress.duration > 0)
-		return;
+-(void)cecController:(DKCECDeviceController *)controller didReceiveKeyDown:(cec_keypress)keyPress {
 
 	if ([self.mouseGridController shouldConsumeKeypress:keyPress]) {
 		[self.mouseGridController handleKeypress:keyPress];
@@ -272,6 +269,8 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 	else
 		[[[keyMapper baseMapping] actionForKeyPress:keyPress] performActionWithKeyPress:keyPress];
 }
+
+-(void)cecController:(DKCECDeviceController *)controller didReceiveKeyUp:(cec_keypress)keyPress {}
 
 #pragma mark -
 

@@ -15,10 +15,11 @@
 @optional
 
 -(void)cecController:(DKCECDeviceController *)controller didLogMessage:(NSString *)message ofSeverity:(cec_log_level)logLevel;
--(void)cecController:(DKCECDeviceController *)controller didReceiveKeyPress:(cec_keypress)keyPress;
 -(void)cecController:(DKCECDeviceController *)controller didReceiveCommand:(cec_command)command;
 -(void)cecController:(DKCECDeviceController *)controller didReceiveAlert:(libcec_alert)alert forParamter:(libcec_parameter)parameter;
 -(void)cecController:(DKCECDeviceController *)controller activationDidChangeForLogicalDevice:(cec_logical_address)device toState:(BOOL)activated;
+-(void)cecController:(DKCECDeviceController *)controller didReceiveKeyDown:(cec_keypress)keyPress;
+-(void)cecController:(DKCECDeviceController *)controller didReceiveKeyUp:(cec_keypress)keyPress;
 
 @end
 

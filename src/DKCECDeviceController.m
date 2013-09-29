@@ -24,8 +24,10 @@ static NSTimeInterval const kDevicePingInterval = 30.0;
 @property (nonatomic, readwrite) NSTimer *pingTimer;
 @property (nonatomic, readwrite) BOOL isActiveSource;
 @property (nonatomic, readwrite) BOOL isTVOn;
+@property (nonatomic, readwrite) NSMutableDictionary *keyPressStorage;
 
 -(void)_didReceiveNewConfiguration:(const libcec_configuration)config;
+-(void)handleKeyPress:(cec_keypress)press;
 
 @end
 
@@ -46,10 +48,8 @@ static int DKCBCecLogMessage(void *param, const cec_log_message message) {
 static int DKCBCecKeyPress(void *param, const cec_keypress keyPress) {
 
 	dispatch_async(dispatch_get_main_queue(), ^{
-	DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
-	if ([controller.delegate respondsToSelector:@selector(cecController:didReceiveKeyPress:)])
-		[controller.delegate cecController:controller
-						didReceiveKeyPress:keyPress];
+		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
+		[controller handleKeyPress:keyPress];
 	});
 	return 1;
 }
@@ -198,6 +198,7 @@ static dispatch_queue_t cec_global_queue;
 	
 	if (self) {
 
+		self.keyPressStorage = [NSMutableDictionary new];
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
 		if (name.length == 0)
@@ -325,6 +326,37 @@ static dispatch_queue_t cec_global_queue;
 	if (cec_configuration != NULL)
 		memcpy(cec_configuration, &config, sizeof(libcec_configuration));
 	[self didChangeValueForKey:@"configuration"];
+}
+
+-(void)handleKeyPress:(cec_keypress)press {
+
+	BOOL isUp = (press.duration > 0);
+	BOOL needsFakeDown = isUp && self.keyPressStorage[@(press.keycode)] == nil;
+
+	if (!isUp || needsFakeDown) {
+
+		cec_keypress downPress;
+		memset(&downPress, 0, sizeof(cec_keypress));
+
+		if (needsFakeDown) {
+			downPress.keycode = press.keycode;
+			downPress.duration = 0;
+		} else {
+			downPress = press;
+		}
+
+		if ([self.delegate respondsToSelector:@selector(cecController:didReceiveKeyDown:)])
+			[self.delegate cecController:self didReceiveKeyDown:downPress];
+
+		self.keyPressStorage[@(press.keycode)] = @(press.keycode);
+	}
+
+	if (isUp) {
+		if ([self.delegate respondsToSelector:@selector(cecController:didReceiveKeyUp:)])
+			[self.delegate cecController:self didReceiveKeyUp:press];
+
+		[self.keyPressStorage removeObjectForKey:@(press.keycode)];
+	}
 }
 
 #pragma mark - Device Detection
