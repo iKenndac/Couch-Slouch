@@ -40,6 +40,9 @@
 
 // ----
 
+// Switch to me!
+-(void)activateSource:(void (^)(BOOL success))block;
+
 // Transmit a raw command the the local connected device.
 -(void)sendRawCommand:(cec_command)command completion:(void (^)(BOOL success))block;
 

@@ -105,7 +105,7 @@ static DKCECBehaviourController *sharedInstance;
 }
 
 -(void)turnOnTV {
-	[self.device sendPowerOnToDevice:CECDEVICE_TV completion:^(BOOL success) {
+	[self.device activateSource:^(BOOL success) {
 		if (!success) NSLog(@"Power on not successful!");
 	}];
 }
@@ -117,6 +117,7 @@ static DKCECBehaviourController *sharedInstance;
 }
 
 -(void)handleNotHandledError:(NSString *)function {
+#warning Handle scripting errors properly.
 	//TODO: Handle properly.
 	NSLog(@"Function %@ () in script not handled!", function);
 }

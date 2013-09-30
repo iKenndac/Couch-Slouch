@@ -440,6 +440,16 @@ static dispatch_queue_t cec_global_queue;
 
 #pragma mark - Device Control
 
+-(void)activateSource:(void (^)(BOOL success))block {
+
+	__block BOOL success = self.hasConnection;
+
+	dispatch_async([DKCECDeviceController cecQueue], ^{
+		if (success) success = (BOOL)cec_activate_source(0);
+		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(success); });
+	});
+}
+
 -(void)sendRawCommand:(cec_command)command completion:(void (^)(BOOL success))block {
 
 	__block BOOL success = self.hasConnection;
