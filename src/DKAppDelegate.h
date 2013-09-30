@@ -11,7 +11,7 @@
 #import "DKCECWindowController.h"
 #import "DKFakeRemoteWindowController.h"
 
-@interface DKAppDelegate : NSObject <NSApplicationDelegate, DKCECDeviceControllerDelegate, DKFakeRemoteDelegate>
+@interface DKAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate, DKCECDeviceControllerDelegate, DKFakeRemoteDelegate>
 
 @property (nonatomic, strong, readwrite) DKCECDeviceController *cecController;
 @property (nonatomic, strong, readwrite) DKCECWindowController *windowController;

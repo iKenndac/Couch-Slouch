@@ -79,7 +79,7 @@
 
 -(NSURL *)userScriptsDirectory {
 	NSURL *userPath = [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory
-															  inDomains:NSUserDomainMask] objectAtIndex:0];
+															  inDomains:NSUserDomainMask] firstObject];
 
 	userPath = [userPath URLByAppendingPathComponent:kApplicationSupportFolderName isDirectory:YES];
 	userPath = [userPath URLByAppendingPathComponent:kScriptsFolderName isDirectory:YES];

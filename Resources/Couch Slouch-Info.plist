@@ -32,6 +32,8 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSUserNotificationAlertStyle</key>
+	<string>banner</string>
 	<key>SUFeedURL</key>
 	<string>http://www.couch-slouch.com/updates/CouchSlouchUpdates.xml</string>
 	<key>SUPublicDSAKeyFile</key>

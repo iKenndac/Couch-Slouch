@@ -38,6 +38,8 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:kApplicationLaunchedAtStartupParameter])
 		self.isWaitingForStartupAction = YES;
+
+	[[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 	
 	self.cecController = [DKCECDeviceController new];
 	self.cecController.delegate = self;
@@ -202,6 +204,22 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
+
+-(BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
+	return YES;
+}
+
+-(void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification {
+
+	NSURL *userPath = [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory
+															  inDomains:NSUserDomainMask] firstObject];
+
+	userPath = [userPath URLByAppendingPathComponent:kApplicationSupportFolderName isDirectory:YES];
+	userPath = [userPath URLByAppendingPathComponent:kScriptLogFileName isDirectory:NO];
+	[[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[userPath]];
+
+}
+
 
 #pragma mark - Behaviours
 

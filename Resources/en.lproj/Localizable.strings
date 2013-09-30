@@ -56,6 +56,23 @@
 "switch on TV menu title" = "Switch On TV";
 "no scripts menu title" = "No Scripts";
 
+"script error notification title" = "Problem Running Script";
+"script error notification button title" = "Show Log";
+
+"missing script notification description" = "The specified script was not found.";
+"function not handled notification description" = "The script did not handle the triggered function %@.";
+"script threw error notification description" = "The script generated the following error: %@ (%@).";
+
+"script error log date line" = "Date/Time: %@";
+"script error log location line" = "Script location: %@";
+"script error log reason line" = "Problem summary: %@";
+"script error log more info line" = "Further information: %@";
+"script error log none title" = "None.";
+"script error log script threw error title" = "Script generated error %@: %@";
+"script error log script missing title" = "Script not found.";
+"script error log script didnt handle function title" = "Script didn't handle the triggered function: %@";
+
+
 "CEC_USER_CONTROL_CODE_SELECT" = "Select";
 "CEC_USER_CONTROL_CODE_UP" = "↑";
 "CEC_USER_CONTROL_CODE_DOWN" = "↓";
