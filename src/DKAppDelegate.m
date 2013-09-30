@@ -221,6 +221,14 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 
 }
 
+-(void)handleSimulatedSleep {
+	[self workSpaceDidSleep:nil];
+}
+
+-(void)handleSimulatedWake {
+	[self workSpaceDidWake:nil];
+}
+
 -(void)workSpaceDidWake:(NSNotification *)notification {
 	[[DKCECBehaviourController sharedInstance] handleMacAwake];
 }

@@ -13,6 +13,8 @@
 
 -(void)handleSimulatedKeyPress:(cec_keypress)press;
 -(void)handleSimulatedOpCode:(cec_opcode)opcode;
+-(void)handleSimulatedSleep;
+-(void)handleSimulatedWake;
 
 @end
 

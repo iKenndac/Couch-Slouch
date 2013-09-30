@@ -117,4 +117,12 @@
 	[self.delegate handleSimulatedOpCode:CEC_OPCODE_INACTIVE_SOURCE];
 }
 
+-(IBAction)pushWake:(id)sender {
+	[self.delegate handleSimulatedWake];
+}
+
+-(IBAction)pushSleep:(id)sender {
+	[self.delegate handleSimulatedSleep];
+}
+
 @end
