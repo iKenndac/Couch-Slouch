@@ -55,7 +55,18 @@
 		//Execute the event
 		NSAppleEventDescriptor *result = [appleScript executeAppleEvent:containerEvent error:&errorDict];
 		if (result == nil) {
-			if (block) block(scriptURL, errorDict);
+
+			NSMutableDictionary *xpcSafeDictionary = [NSMutableDictionary new];
+			for (NSString *key in errorDict) {
+				id value = errorDict[key];
+				if (![self objectIsXPCSafe:value]) {
+					xpcSafeDictionary[key] = [NSString stringWithFormat:@"%@", value];
+				} else {
+					xpcSafeDictionary[key] = value;
+				}
+			}
+
+			if (block) block(scriptURL, xpcSafeDictionary);
 			return;
 		}
 
@@ -63,7 +74,21 @@
 
 	});
 
+}
 
+static NSArray *xpcSafeClasses;
+
+-(BOOL)objectIsXPCSafe:(id)obj {
+
+	if (xpcSafeClasses == nil)
+		xpcSafeClasses = @[[NSNumber class], [NSArray class], [NSDictionary class], [NSString class], [NSDate class], [NSData class]];
+
+	for (Class class in xpcSafeClasses) {
+		if ([obj isKindOfClass:class])
+			return YES;
+	}
+
+	return NO;
 }
 
 @end
