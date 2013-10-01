@@ -29,6 +29,7 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 @property (readwrite, nonatomic, strong) SUUpdater *updater;
 @property (readwrite, nonatomic, strong) DKMouseGridWindowController *mouseGridController;
 @property (readwrite) BOOL isWaitingForStartupAction;
+@property (readwrite) BOOL isWaitingForWakeAction;
 
 @end
 
@@ -173,6 +174,11 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 			self.isWaitingForStartupAction = NO;
 			[self workspaceDidStartup];
 		}
+        
+        if (self.cecController.hasConnection && self.isWaitingForWakeAction) {
+            self.isWaitingForWakeAction = NO;
+            [[DKCECBehaviourController sharedInstance] handleMacAwake];
+        }
 
 	} else if (context == kTriggerBehaviourOnTVEventContext) {
 
@@ -248,9 +254,15 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 }
 
 -(void)workSpaceDidWake:(NSNotification *)notification {
-	[[DKCECBehaviourController sharedInstance] handleMacAwake];
     [self.cecController open:^(BOOL success) {
         NSLog(@"Reconnecting to CEC device after awake from sleep…");
+        
+        if (self.cecController.hasConnection) {
+            [[DKCECBehaviourController sharedInstance] handleMacAwake];
+        } else {
+            self.isWaitingForWakeAction = YES;
+        }
+        
     }];
 }
 
