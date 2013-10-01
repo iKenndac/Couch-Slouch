@@ -134,7 +134,7 @@ static DKCECBehaviourController *sharedInstance;
 	NSData *dataToWrite = [logToWrite dataUsingEncoding:NSUTF8StringEncoding];
 
 	NSURL *userPath = [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory
-															  inDomains:NSUserDomainMask] firstObject];
+															  inDomains:NSUserDomainMask] objectAtIndex:0];
 
 	userPath = [userPath URLByAppendingPathComponent:kApplicationSupportFolderName isDirectory:YES];
 

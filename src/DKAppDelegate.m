@@ -212,7 +212,7 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 -(void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification {
 
 	NSURL *userPath = [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory
-															  inDomains:NSUserDomainMask] firstObject];
+															  inDomains:NSUserDomainMask] objectAtIndex:0];
 
 	userPath = [userPath URLByAppendingPathComponent:kApplicationSupportFolderName isDirectory:YES];
 	userPath = [userPath URLByAppendingPathComponent:kScriptLogFileName isDirectory:NO];
