@@ -234,12 +234,8 @@ static dispatch_queue_t cec_global_queue;
 			if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"CEC callbacks failed");
 			return nil;
 		}
-
-		[self checkForDevices:nil];
-		if (self.hasConnection)
-			[self startDevicePinging];
-		else
-			[self startDevicePolling];
+        
+        [self open:nil];
 	}
 	
 	return self;
@@ -360,6 +356,44 @@ static dispatch_queue_t cec_global_queue;
 }
 
 #pragma mark - Device Detection
+
+
+// Disconnect from the CEC device.
+-(void)close:(void (^)(BOOL success))block {
+    
+    if (!self.hasConnection) {
+        if (block) block(YES);
+        return;
+    }
+    
+    self.hasConnection = NO;
+    [self stopDevicePinging];
+    
+	dispatch_async([DKCECDeviceController cecQueue], ^{
+        cec_close();
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (block) block(YES);
+        });
+    });
+    
+}
+
+// Search and connect to the CEC device.
+-(void)open:(void (^)(BOOL success))block {
+    
+    if (self.hasConnection) {
+        if (block) block(YES);
+        return;
+    }
+    
+    [self checkForDevices:nil];
+    if (self.hasConnection)
+        [self startDevicePinging];
+    else
+        [self startDevicePolling];
+    
+    if (block) block(YES);
+}
 
 -(void)startDevicePolling {
 

@@ -249,10 +249,16 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 
 -(void)workSpaceDidWake:(NSNotification *)notification {
 	[[DKCECBehaviourController sharedInstance] handleMacAwake];
+    [self.cecController open:^(BOOL success) {
+        NSLog(@"Reconnecting to CEC device after awake from sleep…");
+    }];
 }
 
 -(void)workSpaceDidSleep:(NSNotification *)notification {
 	[[DKCECBehaviourController sharedInstance] handleMacSleep];
+    [self.cecController close:^(BOOL success) {
+        NSLog(@"Sleeping - closing connection to CEC device.");
+    }];
 }
 
 -(void)workSpaceDidShutdown:(NSNotification *)notification {

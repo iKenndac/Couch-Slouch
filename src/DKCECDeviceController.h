@@ -40,6 +40,12 @@
 
 // ----
 
+// Disconnect from the CEC device.
+-(void)close:(void (^)(BOOL success))block;
+
+// Search and connect to the CEC device.
+-(void)open:(void (^)(BOOL success))block;
+
 // Switch to me!
 -(void)activateSource:(void (^)(BOOL success))block;
 
