@@ -51,7 +51,7 @@ static void * const kRebuildPopupsKVOContext = @"kRebuildPopupsKVOContext";
 }
 
 - (IBAction)openWebsite:(id)sender {
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kCouchSlouchWebsiteURL]];
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kCouchSlouchWebsiteScriptingPageURL]];
 }
 
 -(IBAction)popupChanged:(id)sender {

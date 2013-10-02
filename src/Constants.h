@@ -42,6 +42,7 @@ static NSString * const kAppleScriptMacAwokeFunctionName = @"CouchSlouch_MacAwok
 static NSString * const kAppleScriptMacSleptFunctionName = @"CouchSlouch_MacSlept";
 
 static NSString * const kCouchSlouchWebsiteURL = @"http://www.couch-slouch.com/";
+static NSString * const kCouchSlouchWebsiteScriptingPageURL = @"http://www.couch-slouch.com/scripting/";
 static NSString * const kApplicationSupportFolderName = @"Couch Slouch";
 static NSString * const kScriptsFolderName = @"Scripts";
 static NSString * const kExampleScriptName = @"Couch Slouch Example Script.scpt";
