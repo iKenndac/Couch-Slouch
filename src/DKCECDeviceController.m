@@ -235,7 +235,6 @@ static dispatch_queue_t cec_global_queue;
 			return nil;
 		}
         
-        [self open:nil];
 	}
 	
 	return self;
@@ -385,14 +384,16 @@ static dispatch_queue_t cec_global_queue;
         if (block) block(YES);
         return;
     }
-    
-    [self checkForDevices:nil];
-    if (self.hasConnection)
-        [self startDevicePinging];
-    else
-        [self startDevicePolling];
-    
-    if (block) block(YES);
+
+	[self findDeviceAndConnect:^{
+		if (self.hasConnection)
+			[self startDevicePinging];
+		else
+			[self startDevicePolling];
+
+		if (block) block(YES);
+	}];
+
 }
 
 -(void)startDevicePolling {
@@ -412,8 +413,15 @@ static dispatch_queue_t cec_global_queue;
 }
 
 -(void)checkForDevices:(NSTimer *)timer {
+	[self findDeviceAndConnect:nil];
+}
 
-	if (self.hasConnection) return;
+-(void)findDeviceAndConnect:(dispatch_block_t)block {
+
+	if (self.hasConnection) {
+		if (block) block();
+		return;
+	}
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
 		cec_adapter deviceList;
@@ -431,10 +439,16 @@ static dispatch_queue_t cec_global_queue;
 					self.hasConnection = YES;
 					[self stopDevicePolling];
 					[self startDevicePinging];
+					if (block) block();
 				});
+				return;
 			}
 		}
+
+		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(); });
+
 	});
+
 }
 
 -(void)startDevicePinging {

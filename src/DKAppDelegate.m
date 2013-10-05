@@ -16,6 +16,7 @@
 #import "DKShowMouseGridLocalAction.h"
 #import <Sparkle/Sparkle.h>
 #import "DKMouseGridWindowController.h"
+#import "DKCECDeviceController+SoftReset.h"
 
 static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 static void * const kTriggerStartupBehaviourOnConnectionContext = @"kTriggerStartupBehaviourOnConnectionContext";
@@ -45,6 +46,26 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 	self.cecController = [DKCECDeviceController new];
 	self.cecController.delegate = self;
 	[DKCECBehaviourController sharedInstance].device = self.cecController;
+
+	[self.cecController open:^(BOOL success) {
+		if (!self.cecController.hasConnection) {
+
+			/* 
+			 Not having a connection at this point is often fine, however, either the
+			 CEC adapter or Mac OS X or *something* has a bug that causes the
+			 serial port service on the adapter to not be recognised if it's plugged
+			 in while the system boots. This can be fixed by finding the device on the
+			 USB bus directly and soft-resetting it.
+			 */
+
+			BOOL didReset = [self.cecController softResetCECAdapter];
+			if (didReset)
+				NSLog(@"A CEC adapter was found in limbo and reset.");
+
+			// Once you call open on DKCECDeviceController, it carries on
+			// looking for devices so no further action is needed.
+		}
+	}];
 
 	[DKKeyboardShortcutLocalAction class];
 	[DKLaunchApplicationLocalAction class];

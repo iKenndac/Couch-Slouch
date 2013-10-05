@@ -118,6 +118,7 @@
 		50C101B716543BA9002DD42D /* PHCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50C101B516543BA9002DD42D /* PHCommandHandler.cpp */; };
 		50CB484116581FE200F690EF /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; };
 		50CB484216581FF200F690EF /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; };
+		50D894F018004C8700D8A610 /* DKCECDeviceController+SoftReset.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D894EF18004C8700D8A610 /* DKCECDeviceController+SoftReset.m */; };
 		50E58DFC15FCC4FB00AB8441 /* tv-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */; };
 		50E58DFD15FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */; };
 		50E58DFE15FCC4FB00AB8441 /* tv-computer-highlighted-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */; };
@@ -390,6 +391,8 @@
 		50C101B516543BA9002DD42D /* PHCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PHCommandHandler.cpp; sourceTree = "<group>"; };
 		50C101B616543BA9002DD42D /* PHCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCommandHandler.h; sourceTree = "<group>"; };
 		50CB484016581FE200F690EF /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = vendor/Sparkle.framework; sourceTree = "<group>"; };
+		50D894EE18004C8700D8A610 /* DKCECDeviceController+SoftReset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+SoftReset.h"; sourceTree = "<group>"; };
+		50D894EF18004C8700D8A610 /* DKCECDeviceController+SoftReset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+SoftReset.m"; sourceTree = "<group>"; };
 		50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-av-computer-large.png"; sourceTree = "<group>"; };
 		50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-av-highlighted-computer-large.png"; sourceTree = "<group>"; };
 		50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-computer-highlighted-large.png"; sourceTree = "<group>"; };
@@ -828,6 +831,8 @@
 			children = (
 				503F575B15DD9148007F2F3E /* DKCECDeviceController.h */,
 				503F575C15DD9148007F2F3E /* DKCECDeviceController.m */,
+				50D894EE18004C8700D8A610 /* DKCECDeviceController+SoftReset.h */,
+				50D894EF18004C8700D8A610 /* DKCECDeviceController+SoftReset.m */,
 				50966FB315E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.h */,
 				50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */,
 				5055C7EA15DFB54C00B6B497 /* DKCECKeyMappingController.h */,
@@ -1171,6 +1176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				503F565915DD8179007F2F3E /* main.m in Sources */,
+				50D894F018004C8700D8A610 /* DKCECDeviceController+SoftReset.m in Sources */,
 				503F566015DD8179007F2F3E /* DKAppDelegate.m in Sources */,
 				503F572A15DD8221007F2F3E /* AdapterFactory.cpp in Sources */,
 				503F572B15DD8221007F2F3E /* USBCECAdapterCommands.cpp in Sources */,
