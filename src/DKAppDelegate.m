@@ -39,6 +39,7 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 @property (readwrite) BOOL isWaitingForStartupAction;
 @property (readwrite) BOOL isWaitingForWakeAction;
 @property (readwrite) io_connect_t powerPort;
+@property (readwrite) BOOL skipExitBehaviours;
 
 @end
 
@@ -173,6 +174,7 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 												forKey:kSkipQuitAlertUserDefaultsKey];
 	}
 
+	self.skipExitBehaviours = YES;
 	[[NSApplication sharedApplication] terminate:nil];
 }
 
@@ -350,12 +352,21 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
 
 }
 
--(void)systemWillShutdown:(dispatch_block_t)block {
-	[[DKCECBehaviourController sharedInstance] handleMacShutdown:^{
-		if (block) block();
-	}];
-}
+-(NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
 
+	if (self.skipExitBehaviours)
+		return NSTerminateNow;
+
+	[self.windowController close];
+
+	NSLog(@"Delaying application exit for behaviours…");
+	[[DKCECBehaviourController sharedInstance] handleMacShutdown:^{
+		NSLog(@"Exit behaviours done, allowing application exit.");
+		[[NSApplication sharedApplication] replyToApplicationShouldTerminate:YES];
+	}];
+
+	return NSTerminateLater;
+}
 
 #pragma mark - Key Mapping
 

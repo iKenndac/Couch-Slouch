@@ -399,12 +399,13 @@ static dispatch_queue_t cec_global_queue;
 -(void)startDevicePolling {
 
 	[self stopDevicePolling];
-	self.pollTimer = [NSTimer scheduledTimerWithTimeInterval:kDevicePollInterval
-													  target:self
-													selector:@selector(checkForDevices:)
-													userInfo:nil
-													 repeats:YES];
+	self.pollTimer = [NSTimer timerWithTimeInterval:kDevicePollInterval
+											 target:self
+										   selector:@selector(checkForDevices:)
+										   userInfo:nil
+											repeats:YES];
 
+	[[NSRunLoop currentRunLoop] addTimer:self.pollTimer forMode:NSRunLoopCommonModes];
 }
 
 -(void)stopDevicePolling {
@@ -454,11 +455,13 @@ static dispatch_queue_t cec_global_queue;
 -(void)startDevicePinging {
 	
 	[self stopDevicePinging];
-	self.pingTimer = [NSTimer scheduledTimerWithTimeInterval:kDevicePingInterval
+	self.pingTimer = [NSTimer timerWithTimeInterval:kDevicePingInterval
 													  target:self
 													selector:@selector(pingDevice:)
 													userInfo:nil
 													 repeats:YES];
+
+	[[NSRunLoop currentRunLoop] addTimer:self.pingTimer forMode:NSRunLoopCommonModes];
 }
 
 -(void)stopDevicePinging {
