@@ -64,6 +64,7 @@ static void * const kRebuildPopupsKVOContext = @"kRebuildPopupsKVOContext";
 
 	[[NSUserDefaults standardUserDefaults] setInteger:tag forKey:key];
 	[[NSUserDefaults standardUserDefaults] setValue:[scriptURL absoluteString] forKey:[key stringByAppendingString:kOnActionScriptUserDefaultsKeySuffix]];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 
 }
 
