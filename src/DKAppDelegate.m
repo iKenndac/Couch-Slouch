@@ -18,6 +18,13 @@
 #import "DKMouseGridWindowController.h"
 #import "DKCECDeviceController+SoftReset.h"
 
+#include <mach/mach_port.h>
+#include <mach/mach_interface.h>
+#include <mach/mach_init.h>
+
+#include <IOKit/pwr_mgt/IOPMLib.h>
+#include <IOKit/IOMessage.h>
+
 static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 static void * const kTriggerStartupBehaviourOnConnectionContext = @"kTriggerStartupBehaviourOnConnectionContext";
 static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVEventContext";
@@ -31,6 +38,7 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 @property (readwrite, nonatomic, strong) DKMouseGridWindowController *mouseGridController;
 @property (readwrite) BOOL isWaitingForStartupAction;
 @property (readwrite) BOOL isWaitingForWakeAction;
+@property (readwrite) io_connect_t powerPort;
 
 @end
 
@@ -120,21 +128,10 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 												 name:kApplicationShouldShowVirtualRemoteNotificationName
 											   object:nil];
 
-	NSNotificationCenter *workspaceCenter = [[NSWorkspace sharedWorkspace] notificationCenter];
-	[workspaceCenter addObserver:self
-						selector:@selector(workSpaceDidWake:)
-							name:NSWorkspaceDidWakeNotification
-						  object:nil];
-
-	[workspaceCenter addObserver:self
-						selector:@selector(workSpaceDidSleep:)
-							name:NSWorkspaceWillSleepNotification
-						  object:nil];
-
-	[workspaceCenter addObserver:self
-						selector:@selector(workspaceDidShutdown:)
-							name:NSWorkspaceWillPowerOffNotification
-						  object:nil];
+    IONotificationPortRef notifyPortRef;
+    io_object_t notifierObject;
+    self.powerPort = IORegisterForSystemPower((__bridge void *)self, &notifyPortRef, PowerNotificationCallBack, &notifierObject);
+    CFRunLoopAddSource(CFRunLoopGetCurrent(), IONotificationPortGetRunLoopSource(notifyPortRef), kCFRunLoopCommonModes);
 
 	self.updater = [SUUpdater sharedUpdater];
 }
@@ -193,7 +190,7 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 
 		if (self.cecController.hasConnection && self.isWaitingForStartupAction) {
 			self.isWaitingForStartupAction = NO;
-			[self workspaceDidStartup];
+			[self systemDidStartUp];
 		}
         
         if (self.cecController.hasConnection && self.isWaitingForWakeAction) {
@@ -267,14 +264,70 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 }
 
 -(void)handleSimulatedSleep {
-	[self workSpaceDidSleep:nil];
+	[self systemWillSleep:nil];
 }
 
 -(void)handleSimulatedWake {
-	[self workSpaceDidWake:nil];
+	[self systemDidAwake];
 }
 
--(void)workSpaceDidWake:(NSNotification *)notification {
+void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t messageType, void * messageArgument) {
+
+	DKAppDelegate *self = (__bridge DKAppDelegate *)refCon;
+
+    switch (messageType)  {
+
+        case kIOMessageCanSystemSleep:
+            /* Idle sleep is about to kick in. This message will not be sent for forced sleep.
+			 Applications have a chance to prevent sleep by calling IOCancelPowerChange.
+			 Most applications should not prevent idle sleep.
+
+			 Power Management waits up to 30 seconds for you to either allow or deny idle
+			 sleep. If you don't acknowledge this power change by calling either
+			 IOAllowPowerChange or IOCancelPowerChange, the system will wait 30
+			 seconds then go to sleep.
+			 */
+
+            //Uncomment to cancel idle sleep
+            //IOCancelPowerChange( root_port, (long)messageArgument );
+            // we will allow idle sleep
+            IOAllowPowerChange(self.powerPort, (long)messageArgument );
+            break;
+
+        case kIOMessageSystemWillSleep: {
+            /* The system WILL go to sleep. If you do not call IOAllowPowerChange or
+			 IOCancelPowerChange to acknowledge this message, sleep will be
+			 delayed by 30 seconds.
+
+			 NOTE: If you call IOCancelPowerChange to deny sleep it returns
+			 kIOReturnSuccess, however the system WILL still go to sleep.
+			 */
+			NSLog(@"Delaying system sleep for sleep behaviours…");
+			[self systemWillSleep:^{
+				NSLog(@"Sleep behaviours done, allowing system sleep.");
+				IOAllowPowerChange(self.powerPort, (long)messageArgument);
+			}];
+
+            break;
+
+		}
+
+        case kIOMessageSystemHasPoweredOn:
+			[self systemDidAwake];
+			break;
+
+        default:
+            break;
+
+    }
+}
+
+
+-(void)systemDidStartUp {
+	[[DKCECBehaviourController sharedInstance] handleMacStartup];
+}
+
+-(void)systemDidAwake {
     [self.cecController open:^(BOOL success) {
         NSLog(@"Reconnecting to CEC device after awake from sleep…");
         
@@ -287,20 +340,22 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
     }];
 }
 
--(void)workSpaceDidSleep:(NSNotification *)notification {
-	[[DKCECBehaviourController sharedInstance] handleMacSleep];
-    [self.cecController close:^(BOOL success) {
-        NSLog(@"Sleeping - closing connection to CEC device.");
-    }];
+-(void)systemWillSleep:(dispatch_block_t)block {
+	[[DKCECBehaviourController sharedInstance] handleMacSleep:^{
+		[self.cecController close:^(BOOL success) {
+			NSLog(@"Closing connection to CEC device due to system sleep.");
+			if (block) block();
+		}];
+	}];
+
 }
 
--(void)workSpaceDidShutdown:(NSNotification *)notification {
-	[[DKCECBehaviourController sharedInstance] handleMacShutdown];
+-(void)systemWillShutdown:(dispatch_block_t)block {
+	[[DKCECBehaviourController sharedInstance] handleMacShutdown:^{
+		if (block) block();
+	}];
 }
 
--(void)workspaceDidStartup {
-	[[DKCECBehaviourController sharedInstance] handleMacStartup];
-}
 
 #pragma mark - Key Mapping
 

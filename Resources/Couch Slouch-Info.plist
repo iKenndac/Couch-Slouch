@@ -38,5 +38,7 @@
 	<string>http://www.couch-slouch.com/updates/CouchSlouchUpdates.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>CouchSlouchPublicKey.pem</string>
+	<key>NSSupportsSuddenTermination</key>
+	<false/>
 </dict>
 </plist>
