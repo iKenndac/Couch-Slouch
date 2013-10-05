@@ -135,6 +135,7 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
     CFRunLoopAddSource(CFRunLoopGetCurrent(), IONotificationPortGetRunLoopSource(notifyPortRef), kCFRunLoopCommonModes);
 
 	self.updater = [SUUpdater sharedUpdater];
+	self.updater.delegate = self;
 }
 
 -(void)showMouseGrid:(NSNotification *)notification {
@@ -246,6 +247,10 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 
 }
 
+-(void)updaterWillRelaunchApplication:(SUUpdater *)updater {
+	self.skipExitBehaviours = YES;
+	[[NSNotificationCenter defaultCenter] postNotificationName:kDKPrepareForApplicationTerminationNotification object:nil];
+}
 
 #pragma mark - Behaviours
 

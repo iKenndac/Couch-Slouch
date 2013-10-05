@@ -17,6 +17,11 @@
 }
 
 -(void)awakeFromNib {
+
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(prepareforExit:)
+												 name:kDKPrepareForApplicationTerminationNotification
+											   object:nil];
 	
 	NSBundle *myBundle = [NSBundle bundleForClass:[self class]];
 
@@ -42,6 +47,9 @@
 }
 
 - (IBAction)closePreferencesWindow:(id)sender {
+	if (![self.preferencesWindow isVisible])
+		return;
+
 	[NSApp endSheet:self.preferencesWindow];
 	[self.preferencesWindow close];
 }
@@ -63,8 +71,16 @@
 }
 
 - (IBAction)closeAboutWindow:(id)sender {
+	if (![self.aboutWindow isVisible])
+		return;
+
 	[NSApp endSheet:self.aboutWindow];
 	[self.aboutWindow close];
+}
+
+-(void)prepareforExit:(NSNotification *)notification {
+	[self closeAboutWindow:nil];
+	[self closePreferencesWindow:nil];
 }
 
 @end

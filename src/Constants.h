@@ -11,6 +11,7 @@
 static NSString * const kLocalActionPlistRepClassKey = @"class";
 static NSString * const kDeviceKeyCodeKey = @"deviceCode";
 static NSString * const kApplicationLaunchedAtStartupParameter = @"LaunchedAtStartup";
+static NSString * const kDKPrepareForApplicationTerminationNotification = @"PrepareForApplicationTermination";
 
 static NSString * const kActionViewControllerClassKey = @"kActionViewControllerClassKey";
 static NSString * const kActionViewControllerDescriptionKey = @"kActionViewControllerDescriptionKey";
