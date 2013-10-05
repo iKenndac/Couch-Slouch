@@ -38,7 +38,7 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 
 -(void)applicationWillFinishLaunching:(NSNotification *)notification {
 
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:kApplicationLaunchedAtStartupParameter])
+	if ([[[NSProcessInfo processInfo] arguments] containsObject:kApplicationLaunchedAtStartupParameter])
 		self.isWaitingForStartupAction = YES;
 
 	[[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
