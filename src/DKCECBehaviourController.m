@@ -51,19 +51,19 @@ static DKCECBehaviourController *sharedInstance;
 #pragma mark - Mac Events
 
 -(void)handleMacStartup {
-	[self handleMacEventWithUserDefaultsKey:kOnMacAwokeUserDefaultsKey scriptFunction:kAppleScriptMacAwokeFunctionName];
+	[self handleMacEventWithUserDefaultsKey:kOnMacAwokeUserDefaultsKey scriptFunction:kAppleScriptMacAwokeFunctionName callback:nil];
 }
 
 -(void)handleMacAwake {
-	[self handleMacEventWithUserDefaultsKey:kOnMacAwokeUserDefaultsKey scriptFunction:kAppleScriptMacAwokeFunctionName];
+	[self handleMacEventWithUserDefaultsKey:kOnMacAwokeUserDefaultsKey scriptFunction:kAppleScriptMacAwokeFunctionName callback:nil];
 }
 
--(void)handleMacSleep {
-	[self handleMacEventWithUserDefaultsKey:kOnMacSleptUserDefaultsKey scriptFunction:kAppleScriptMacSleptFunctionName];
+-(void)handleMacSleep:(dispatch_block_t)block {
+	[self handleMacEventWithUserDefaultsKey:kOnMacSleptUserDefaultsKey scriptFunction:kAppleScriptMacSleptFunctionName callback:(dispatch_block_t)block];
 }
 
--(void)handleMacShutdown {
-	[self handleMacEventWithUserDefaultsKey:kOnMacSleptUserDefaultsKey scriptFunction:kAppleScriptMacSleptFunctionName];
+-(void)handleMacShutdown:(dispatch_block_t)block {
+	[self handleMacEventWithUserDefaultsKey:kOnMacSleptUserDefaultsKey scriptFunction:kAppleScriptMacSleptFunctionName callback:(dispatch_block_t)block];
 }
 
 #pragma mark - Error Handing
@@ -164,20 +164,22 @@ static DKCECBehaviourController *sharedInstance;
 	} else if (action == DKCECBehaviourActionSleepComputer) {
 		[self sleepComputer];
 	} else if (action == DKCECBehaviourActionTriggerScript) {
-		[self runScriptWithFunction:function scriptUserDefaultsKey:[userDefaultsKey stringByAppendingString:kOnActionScriptUserDefaultsKeySuffix]];
+		[self runScriptWithFunction:function scriptUserDefaultsKey:[userDefaultsKey stringByAppendingString:kOnActionScriptUserDefaultsKeySuffix] callback:nil];
 	}
 }
 
--(void)handleMacEventWithUserDefaultsKey:(NSString *)userDefaultsKey scriptFunction:(NSString *)function {
+-(void)handleMacEventWithUserDefaultsKey:(NSString *)userDefaultsKey scriptFunction:(NSString *)function callback:(dispatch_block_t)block {
 
 	DKCECTVBehaviourAction action = [[NSUserDefaults standardUserDefaults] integerForKey:userDefaultsKey];
 
 	if (action == DKCECTVBehaviourActionPowerOffTV) {
-		[self turnOffTV];
+		[self turnOffTV:block];
 	} else if (action == DKCECTVBehaviourActionPowerOnTV) {
-		[self turnOnTV];
+		[self turnOnTV:block];
 	} else if (action == DKCECTVBehaviourActionTriggerScript) {
-		[self runScriptWithFunction:function scriptUserDefaultsKey:[userDefaultsKey stringByAppendingString:kOnActionScriptUserDefaultsKeySuffix]];
+		[self runScriptWithFunction:function
+			  scriptUserDefaultsKey:[userDefaultsKey stringByAppendingString:kOnActionScriptUserDefaultsKeySuffix]
+						   callback:block];
 	}
 }
 
@@ -191,19 +193,21 @@ static DKCECBehaviourController *sharedInstance;
 	[systemEvents shutDown];
 }
 
--(void)turnOnTV {
+-(void)turnOnTV:(dispatch_block_t)block {
 	[self.device activateSource:^(BOOL success) {
 		if (!success) NSLog(@"Power on not successful!");
+		if (block) block();
 	}];
 }
 
--(void)turnOffTV {
+-(void)turnOffTV:(dispatch_block_t)block {
 	[self.device sendPowerOffToDevice:CECDEVICE_TV completion:^(BOOL success) {
 		if (!success) NSLog(@"Power off not successful!");
+		if (block) block();
 	}];
 }
 
--(void)runScriptWithFunction:(NSString *)function scriptUserDefaultsKey:(NSString *)userDefaultsKey  {
+-(void)runScriptWithFunction:(NSString *)function scriptUserDefaultsKey:(NSString *)userDefaultsKey callback:(dispatch_block_t)block {
 
 	NSURL *scriptURL = nil;
 
@@ -213,16 +217,17 @@ static DKCECBehaviourController *sharedInstance;
 
 	if (scriptURL == nil || ![scriptURL checkResourceIsReachableAndReturnError:nil]) {
 		[self handleNoScriptError:scriptURL];
+		if (block) block();
 		return;
 	}
 
-	[self executeScriptOverXPCAtURL:scriptURL functionName:function];
+	[self executeScriptOverXPCAtURL:scriptURL functionName:function callback:(dispatch_block_t)block];
 
 	return;
 
 }
 
--(void)executeScriptOverXPCAtURL:(NSURL *)scriptURL functionName:(NSString *)functionName {
+-(void)executeScriptOverXPCAtURL:(NSURL *)scriptURL functionName:(NSString *)functionName callback:(dispatch_block_t)block {
 
 	if (self.xpcConnection == nil) {
 		self.xpcConnection = [[NSXPCConnection alloc] initWithServiceName:kScriptRunnerXPCServiceName];
@@ -231,6 +236,8 @@ static DKCECBehaviourController *sharedInstance;
 
 		self.scriptProxy = [self.xpcConnection remoteObjectProxyWithErrorHandler:^(NSError *error) {
 			NSLog(@"Got error %@", error);
+			if (block) block();
+			return;
 		}];
 	}
 
@@ -240,13 +247,21 @@ static DKCECBehaviourController *sharedInstance;
 
 			NSInteger errorCode = [errorDictionary[NSAppleScriptErrorNumber] integerValue];
 			if (errorCode == errAEEventNotHandled) {
-				dispatch_async(dispatch_get_main_queue(), ^{ [self handleScriptAtURL:scriptURL didntHandleFunctionError:functionName]; });
+				dispatch_async(dispatch_get_main_queue(), ^{
+					[self handleScriptAtURL:scriptURL didntHandleFunctionError:functionName];
+					if (block) block();
+				});
 				return;
 			}
 
-			dispatch_async(dispatch_get_main_queue(), ^{ [self handleScriptAtURL:scriptURL threwError:errorDictionary]; });
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[self handleScriptAtURL:scriptURL threwError:errorDictionary];
+				if (block) block();
+			});
 			
 		}
+
+		if (block) block();
 	}];
 
 }

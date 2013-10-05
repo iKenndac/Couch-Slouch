@@ -23,7 +23,7 @@
 
 -(void)handleMacStartup;
 -(void)handleMacAwake;
--(void)handleMacSleep;
--(void)handleMacShutdown;
+-(void)handleMacSleep:(dispatch_block_t)block;
+-(void)handleMacShutdown:(dispatch_block_t)block;
 
 @end
