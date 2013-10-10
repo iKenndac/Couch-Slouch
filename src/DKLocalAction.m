@@ -37,6 +37,18 @@ static NSMutableArray *registeredViewControllers;
 	return [NSArray arrayWithArray:registeredViewControllers];
 }
 
++(id <DKLocalAction>)localActionWithPropertyList:(id)plist {
+
+	NSString *className = [plist valueForKey:kLocalActionPlistRepClassKey];
+	Class actionClass = NSClassFromString(className);
+
+	if (actionClass == nil)
+		return nil;
+
+	id <DKLocalAction> action = [[actionClass alloc] initWithPropertyListRepresentation:plist];
+	return action;
+}
+
 -(id)initWithDeviceKeyCode:(cec_user_control_code)deviceCode {
 	self = [super init];
 

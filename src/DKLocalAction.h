@@ -31,6 +31,8 @@
 +(void)registerViewControllerClass:(Class)controllerClass description:(NSString *)desc forLocalActionOfClass:(Class)localActionClass;
 +(NSArray *)registeredConfigViewControllers;
 
++(id <DKLocalAction>)localActionWithPropertyList:(id)plist;
+
 -(NSString *)deviceKeyCodeDisplayName;
 
 @property (nonatomic, readonly) cec_user_control_code deviceKeyCode;

@@ -137,18 +137,11 @@ static NSString * const kKeyMappingActionsKey = @"actions";
 
 		for (NSDictionary *dict in actionRepresentations) {
 
-			NSString *className = [dict valueForKey:kLocalActionPlistRepClassKey];
-			Class actionClass = NSClassFromString(className);
+			id <DKLocalAction> action = [DKLocalAction localActionWithPropertyList:dict];
 
-			if (actionClass != nil) {
-
-				id <DKLocalAction> action = [actionClass alloc];
-				if ([action conformsToProtocol:@protocol(DKLocalAction)]) {
-					action = [action initWithPropertyListRepresentation:dict];
-					action.parentMapping = self;
-					if (action)
-						[mutableActions addObject:action];
-				}
+			if (action) {
+				action.parentMapping = self;
+				[mutableActions addObject:action];
 			}
 		}
 		self.actions = [NSArray arrayWithArray:mutableActions];
