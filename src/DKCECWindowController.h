@@ -17,10 +17,12 @@
 @property (weak) IBOutlet NSToolbarItem *keybindsToolbarItem;
 @property (weak) IBOutlet NSToolbarItem *behavioursToolbarItem;
 @property (weak) IBOutlet NSToolbarItem *setupToolbarItem;
+@property (weak) IBOutlet NSToolbarItem *compassToolbarItem;
 
 - (IBAction)switchToKeybindsView:(id)sender;
 - (IBAction)switchToBehavioursView:(id)sender;
 - (IBAction)switchToSetupView:(id)sender;
+- (IBAction)switchToCompassView:(id)sender;
 
 -(BOOL)shouldConsumeKeypresses;
 -(void)handleKeypress:(cec_keypress)press;

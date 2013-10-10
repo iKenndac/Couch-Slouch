@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4504" systemVersion="13A584" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4511" systemVersion="13A598" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1080" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4511"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DKCECWindowController">
             <connections>
                 <outlet property="behavioursToolbarItem" destination="40" id="45"/>
+                <outlet property="compassToolbarItem" destination="cZ4-OH-bYP" id="QMh-aB-Kdk"/>
                 <outlet property="keybindsToolbarItem" destination="31" id="33"/>
                 <outlet property="setupToolbarItem" destination="34" id="39"/>
                 <outlet property="window" destination="1" id="3"/>
@@ -18,7 +19,7 @@
         <window title="Couch Slouch" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" visibleAtLaunch="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <rect key="contentRect" x="196" y="240" width="720" height="422"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="720" height="422"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -75,11 +76,31 @@
                             </connections>
                         </button>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="1DB0FE6C-606A-4794-9AF7-2BECC2F337B7" label="Compass" paletteLabel="Compass" image="toolbar-compass" selectable="YES" id="cZ4-OH-bYP">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="38" height="38"/>
+                        <size key="maxSize" width="38" height="38"/>
+                        <button key="view" id="cQj-DR-h59">
+                            <rect key="frame" x="9" y="14" width="38" height="38"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="toolbar-compass" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="BPM-x7-VLP">
+                                <behavior key="behavior" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="switchToBehavioursView:" target="-2" id="JpT-C4-9sD"/>
+                            </connections>
+                        </button>
+                        <connections>
+                            <action selector="switchToCompassView:" target="-2" id="Ewp-VR-M42"/>
+                        </connections>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="34"/>
                     <toolbarItem reference="31"/>
                     <toolbarItem reference="40"/>
+                    <toolbarItem reference="cZ4-OH-bYP"/>
                     <toolbarItem reference="6"/>
                     <toolbarItem reference="9"/>
                 </defaultToolbarItems>
@@ -91,6 +112,7 @@
     </objects>
     <resources>
         <image name="toolbar-behaviours" width="38" height="38"/>
+        <image name="toolbar-compass" width="128" height="128"/>
         <image name="toolbar-general" width="36" height="36"/>
         <image name="toolbar-keybinds" width="44" height="33"/>
     </resources>

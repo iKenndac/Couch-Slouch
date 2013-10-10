@@ -10,6 +10,7 @@
 #import "DKKeybindsViewController.h"
 #import "DKSetupViewController.h"
 #import "DKBehavioursViewController.h"
+#import "DKCompassConfigViewController.h"
 #import "DKAppDelegate.h"
 #import "Constants.h"
 
@@ -17,6 +18,7 @@
 
 @property (nonatomic, strong, readwrite) DKKeybindsViewController *keybindsViewController;
 @property (nonatomic, strong, readwrite) DKBehavioursViewController *behaviourViewController;
+@property (nonatomic, strong, readwrite) DKCompassConfigViewController *compassViewController;
 @property (nonatomic, strong, readwrite) DKSetupViewController *setupViewController;
 @property (nonatomic, strong, readwrite) DKHDMIAddressSetupWindowController *addressSetupController;
 
@@ -30,6 +32,7 @@
 		self.keybindsViewController = [DKKeybindsViewController new];
 		self.behaviourViewController = [DKBehavioursViewController new];
 		self.setupViewController = [DKSetupViewController new];
+		self.compassViewController = [DKCompassConfigViewController new];
 		self.setupViewController.windowController = self;
 		[self.window center];
 	}
@@ -102,6 +105,11 @@
 - (IBAction)switchToSetupView:(id)sender {
 	self.currentViewController = self.setupViewController;
 	self.window.toolbar.selectedItemIdentifier = self.setupToolbarItem.itemIdentifier;
+}
+
+- (IBAction)switchToCompassView:(id)sender {
+	self.currentViewController = self.compassViewController;
+	self.window.toolbar.selectedItemIdentifier = self.compassToolbarItem.itemIdentifier;
 }
 
 -(void)showHDMIConfigSheet:(BOOL)canCancel {
