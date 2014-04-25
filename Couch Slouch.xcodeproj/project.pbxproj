@@ -98,6 +98,8 @@
 		508FD9C115E5682A00661E0D /* DKDoNothingLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */; };
 		508FD9C315E56AD400661E0D /* DKLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C215E56AD300661E0D /* DKLocalAction.m */; };
 		508FD9C715E576AD00661E0D /* DKActionConfigurationTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */; };
+		508FF10F190ACE140034F567 /* AQCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 508FF10D190ACE140034F567 /* AQCommandHandler.cpp */; };
+		508FF112190ACE450034F567 /* RHCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 508FF110190ACE450034F567 /* RHCommandHandler.cpp */; };
 		5093453D17F8319300A1725E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093453C17F8319300A1725E /* Images.xcassets */; };
 		50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */; };
 		509E10DF15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */; };
@@ -372,6 +374,10 @@
 		508FD9C215E56AD300661E0D /* DKLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLocalAction.m; sourceTree = "<group>"; };
 		508FD9C515E576AD00661E0D /* DKActionConfigurationTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKActionConfigurationTableCellView.h; sourceTree = "<group>"; };
 		508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKActionConfigurationTableCellView.m; sourceTree = "<group>"; };
+		508FF10D190ACE140034F567 /* AQCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AQCommandHandler.cpp; sourceTree = "<group>"; };
+		508FF10E190ACE140034F567 /* AQCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQCommandHandler.h; sourceTree = "<group>"; };
+		508FF110190ACE450034F567 /* RHCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RHCommandHandler.cpp; sourceTree = "<group>"; };
+		508FF111190ACE450034F567 /* RHCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHCommandHandler.h; sourceTree = "<group>"; };
 		5093453C17F8319300A1725E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		50966FB315E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+KeyCodeTranslation.h"; sourceTree = "<group>"; };
 		50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+KeyCodeTranslation.m"; sourceTree = "<group>"; };
@@ -700,10 +706,14 @@
 			children = (
 				503F56C615DD8221007F2F3E /* ANCommandHandler.cpp */,
 				503F56C715DD8221007F2F3E /* ANCommandHandler.h */,
+				508FF10D190ACE140034F567 /* AQCommandHandler.cpp */,
+				508FF10E190ACE140034F567 /* AQCommandHandler.h */,
 				503F56C815DD8221007F2F3E /* CECCommandHandler.cpp */,
 				503F56C915DD8221007F2F3E /* CECCommandHandler.h */,
 				50C101B516543BA9002DD42D /* PHCommandHandler.cpp */,
 				50C101B616543BA9002DD42D /* PHCommandHandler.h */,
+				508FF110190ACE450034F567 /* RHCommandHandler.cpp */,
+				508FF111190ACE450034F567 /* RHCommandHandler.h */,
 				503F56CA15DD8221007F2F3E /* RLCommandHandler.cpp */,
 				503F56CB15DD8221007F2F3E /* RLCommandHandler.h */,
 				503F56CC15DD8221007F2F3E /* SLCommandHandler.cpp */,
@@ -1238,6 +1248,7 @@
 				503F573F15DD8221007F2F3E /* SLCommandHandler.cpp in Sources */,
 				503F574015DD8221007F2F3E /* VLCommandHandler.cpp in Sources */,
 				503F574115DD8221007F2F3E /* LibCEC.cpp in Sources */,
+				508FF10F190ACE140034F567 /* AQCommandHandler.cpp in Sources */,
 				503F574315DD8221007F2F3E /* LibCECC.cpp in Sources */,
 				503F574615DD8221007F2F3E /* adl-edid.cpp in Sources */,
 				503F574715DD8221007F2F3E /* nv-edid.cpp in Sources */,
@@ -1261,6 +1272,7 @@
 				508FD9BD15E5607700661E0D /* DKLaunchApplicationLocalAction.m in Sources */,
 				508FD9C115E5682A00661E0D /* DKDoNothingLocalAction.m in Sources */,
 				508FD9C315E56AD400661E0D /* DKLocalAction.m in Sources */,
+				508FF112190ACE450034F567 /* RHCommandHandler.cpp in Sources */,
 				508FD9C715E576AD00661E0D /* DKActionConfigurationTableCellView.m in Sources */,
 				509E10DF15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m in Sources */,
 				509E10E815E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m in Sources */,
