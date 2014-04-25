@@ -8,6 +8,7 @@
 
 #import "DKCECKeyMappingController.h"
 #import "DKDoNothingLocalAction.h"
+#import "DKCECDeviceController+KeyCodeTranslation.h"
 #import "Constants.h"
 
 static NSString * const kBaseMappingUserDefaultsKey = @"BaseMapping";
@@ -16,6 +17,7 @@ static NSString * const kAppMappingsUserDefaultsKey = @"ApplicationMappings";
 @interface DKCECKeyMappingController ()
 
 @property (nonatomic, readwrite, strong) NSMutableDictionary *mappingStorage;
+@property (nonatomic, readwrite, strong) NSDictionary *aliasStorage;
 @property (nonatomic, readwrite, strong) DKCECKeyMapping *baseMapping;
 
 @end
@@ -56,18 +58,32 @@ static DKCECKeyMappingController *sharedController;
 		}
 
 		[self saveMappings];
+
+
+		NSURL *aliasFile = [[NSBundle mainBundle] URLForResource:@"KeyAliases" withExtension:@"plist"];
+		NSDictionary *aliases = [NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfURL:aliasFile]
+																		  options:0
+																		   format:nil
+																			error:nil];
+		self.aliasStorage = aliases;
 	}
 	return self;
 }
 
--(BOOL)keyCode:(cec_user_control_code)keyCode isAliasForKeyCode:(cec_user_control_code)baseKeyCode {
+-(cec_user_control_code)keyCodeByResolvingAliasesFromKeyCode:(cec_user_control_code)code {
 
-	if (keyCode == CEC_USER_CONTROL_CODE_AN_RETURN && baseKeyCode == CEC_USER_CONTROL_CODE_EXIT) return YES;
-	if (keyCode == CEC_USER_CONTROL_CODE_FORWARD && baseKeyCode == CEC_USER_CONTROL_CODE_CHANNEL_UP) return YES;
-	if (keyCode == CEC_USER_CONTROL_CODE_BACKWARD && baseKeyCode == CEC_USER_CONTROL_CODE_CHANNEL_DOWN) return YES;
-	if (keyCode == CEC_USER_CONTROL_CODE_CONTENTS_MENU && baseKeyCode == CEC_USER_CONTROL_CODE_AN_CHANNELS_LIST) return YES;
+	NSString *codeString = [DKCECDeviceController stringForKeyCode:code];
+	NSString *resolvedCodeString = [self.aliasStorage valueForKey:codeString];
 
-	return NO;
+	if (resolvedCodeString.length == 0)
+		return code;
+
+	cec_user_control_code resolvedCode = [DKCECDeviceController keyCodeForString:resolvedCodeString];
+
+	if (resolvedCode == CEC_USER_CONTROL_CODE_UNKNOWN)
+		return code;
+
+	return resolvedCode;
 }
 
 -(void)dealloc {

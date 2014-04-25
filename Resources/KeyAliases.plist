@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CONTENTS_MENU</key>
+	<string>AN_CHANNELS_LIST</string>
+	<key>BACKWARD</key>
+	<string>CHANNEL_DOWN</string>
+	<key>FORWARD</key>
+	<string>CHANNEL_UP</string>
+	<key>AN_RETURN</key>
+	<string>EXIT</string>
+</dict>
+</plist>

@@ -386,6 +386,10 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
 
 -(void)cecController:(DKCECDeviceController *)controller didReceiveKeyDown:(cec_keypress)keyPress {
 
+	// First, resolve aliases.
+	DKCECKeyMappingController *keyMapper = [DKCECKeyMappingController sharedController];
+	keyPress.keycode = [keyMapper keyCodeByResolvingAliasesFromKeyCode:keyPress.keycode];
+
 	if ([self.mouseGridController shouldConsumeKeypress:keyPress]) {
 		[self.mouseGridController handleKeypress:keyPress];
 		return;
@@ -396,7 +400,6 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
 		return;
 	}
 
-	DKCECKeyMappingController *keyMapper = [DKCECKeyMappingController sharedController];
 	DKCECKeyMapping *appMapping = [keyMapper keyMappingForApplicationWithIdentifier:self.targetApplicationIdentifier];
 	id <DKLocalAction> action = [appMapping actionForKeyPress:keyPress];
 

@@ -130,6 +130,7 @@
 		50E58DFE15FCC4FB00AB8441 /* tv-computer-highlighted-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */; };
 		50E58DFF15FCC4FB00AB8441 /* tv-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */; };
 		50E58E0015FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */; };
+		50F2D51C190AFF71004C21B6 /* KeyAliases.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50F2D51B190AFF71004C21B6 /* KeyAliases.plist */; };
 		50FF7DF316177569008324F0 /* DKShowMouseGridLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */; };
 		50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50FF7DF91617827D008324F0 /* DKMouseGridWindowController.xib */; };
 		50FF7DFB161792E9008324F0 /* PlainAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50FF7DFA161792E9008324F0 /* PlainAppIcon.png */; };
@@ -191,7 +192,7 @@
 /* Begin PBXFileReference section */
 		37F810A618073A1400DA211C /* DKCompassConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCompassConfigViewController.h; sourceTree = "<group>"; };
 		37F810A718073A1400DA211C /* DKCompassConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCompassConfigViewController.m; sourceTree = "<group>"; };
-		37F810AC18073B6200DA211C /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/DKCompassConfigViewController.xib; sourceTree = "<group>"; };
+		37F810AC18073B6200DA211C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKCompassConfigViewController.xib; sourceTree = "<group>"; };
 		37F810AF18073CC200DA211C /* DKCompassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCompassController.h; sourceTree = "<group>"; };
 		37F810B018073CC200DA211C /* DKCompassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCompassController.m; sourceTree = "<group>"; };
 		37F810B218073CEF00DA211C /* DKCompassFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCompassFace.h; sourceTree = "<group>"; };
@@ -416,6 +417,7 @@
 		50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-computer-large.png"; sourceTree = "<group>"; };
 		50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-highlighted-av-computer-large.png"; sourceTree = "<group>"; };
 		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		50F2D51B190AFF71004C21B6 /* KeyAliases.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeyAliases.plist; sourceTree = "<group>"; };
 		50FF7DF116177569008324F0 /* DKShowMouseGridLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKShowMouseGridLocalAction.h; sourceTree = "<group>"; };
 		50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKShowMouseGridLocalAction.m; sourceTree = "<group>"; };
 		50FF7DF81617827D008324F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKMouseGridWindowController.xib; sourceTree = "<group>"; };
@@ -815,6 +817,7 @@
 				5047670115F6B13300BF2DA7 /* ButtonGroups.plist */,
 				5047670215F6B13300BF2DA7 /* Couch Slouch-Info.plist */,
 				5047670315F6B13300BF2DA7 /* DefaultKeybinds.plist */,
+				50F2D51B190AFF71004C21B6 /* KeyAliases.plist */,
 				5047670415F6B13300BF2DA7 /* Credits.rtf */,
 				5047671215F6B13300BF2DA7 /* InfoPlist.strings */,
 				5047671415F6B13300BF2DA7 /* Localizable.strings */,
@@ -1176,6 +1179,7 @@
 				508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */,
 				508B7A8015FE78700014BC2A /* menubar-on.png in Resources */,
 				5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */,
+				50F2D51C190AFF71004C21B6 /* KeyAliases.plist in Resources */,
 				50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */,
 				50FF7DFB161792E9008324F0 /* PlainAppIcon.png in Resources */,
 				50A8BFFF17F872670021E825 /* Couch Slouch Example Script.scpt in Resources */,

@@ -17,7 +17,7 @@
 
 +(DKCECKeyMappingController *)sharedController;
 
--(BOOL)keyCode:(cec_user_control_code)keyCode isAliasForKeyCode:(cec_user_control_code)baseKeyCode;
+-(cec_user_control_code)keyCodeByResolvingAliasesFromKeyCode:(cec_user_control_code)code;
 
 @property (nonatomic, readonly, strong) DKCECKeyMapping *baseMapping;
 @property (nonatomic, readonly) NSArray *applicationMappings;
