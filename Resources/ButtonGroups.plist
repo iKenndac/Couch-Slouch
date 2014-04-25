@@ -84,7 +84,38 @@
 				<string>PAGE_DOWN</string>
 				<string>FORWARD</string>
 				<string>BACKWARD</string>
+				<string>DISPLAY_INFORMATION</string>
+				<string>DATA</string>
+				<string>SOUND_SELECT</string>
+				<string>INPUT_SELECT</string>
+				<string>HELP</string>
+				<string>POWER</string>
+				<string>VOLUME_UP</string>
+				<string>VOLUME_DOWN</string>
+				<string>MUTE</string>
+				<string>STOP_RECORD</string>
+				<string>PAUSE_RECORD</string>
+				<string>ANGLE</string>
+				<string>SUB_PICTURE</string>
+				<string>VIDEO_ON_DEMAND</string>
 				<string>ELECTRONIC_PROGRAM_GUIDE</string>
+				<string>TIMER_PROGRAMMING</string>
+				<string>INITIAL_CONFIGURATION</string>
+				<string>PLAY_FUNCTION</string>
+				<string>PAUSE_PLAY_FUNCTION</string>
+				<string>RECORD_FUNCTION</string>
+				<string>PAUSE_RECORD_FUNCTION</string>
+				<string>STOP_FUNCTION</string>
+				<string>MUTE_FUNCTION</string>
+				<string>RESTORE_VOLUME_FUNCTION</string>
+				<string>TUNE_FUNCTION</string>
+				<string>SELECT_MEDIA_FUNCTION</string>
+				<string>SELECT_AV_INPUT_FUNCTION</string>
+				<string>SELECT_AUDIO_INPUT_FUNCTION</string>
+				<string>POWER_TOGGLE_FUNCTION</string>
+				<string>POWER_OFF_FUNCTION</string>
+				<string>POWER_ON_FUNCTION</string>
+				<string>F5</string>
 			</array>
 		</dict>
 	</array>
