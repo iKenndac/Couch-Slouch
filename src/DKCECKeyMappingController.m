@@ -59,6 +59,13 @@ static DKCECKeyMappingController *sharedController;
 	return self;
 }
 
+-(BOOL)keyCode:(cec_user_control_code)keyCode isAliasForKeyCode:(cec_user_control_code)baseKeyCode {
+
+	if (keyCode == CEC_USER_CONTROL_CODE_AN_RETURN && baseKeyCode == CEC_USER_CONTROL_CODE_EXIT) return YES;
+
+	return NO;
+}
+
 -(void)dealloc {
 	[self saveMappings];
 }

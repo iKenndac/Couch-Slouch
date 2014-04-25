@@ -39,8 +39,4 @@
 
 -(void)performActionWithKeyPress:(cec_keypress)keyPress {}
 
--(BOOL)matchesKeyPress:(cec_keypress)keyPress {
-	return keyPress.keycode == self.deviceKeyCode;
-}
-
 @end

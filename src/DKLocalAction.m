@@ -71,7 +71,11 @@ static NSMutableArray *registeredViewControllers;
 
 -(id)propertyListRepresentation { return [NSDictionary dictionary]; }
 -(void)performActionWithKeyPress:(cec_keypress)keyPress {}
--(BOOL)matchesKeyPress:(cec_keypress)keyPress { return keyPress.keycode == self.deviceKeyCode; }
+
+-(BOOL)matchesKeyPress:(cec_keypress)keyPress {
+	return (keyPress.keycode == self.deviceKeyCode ||
+	[[DKCECKeyMappingController sharedController] keyCode:keyPress.keycode isAliasForKeyCode:self.deviceKeyCode]);
+}
 
 -(NSString *)deviceKeyCodeDisplayName {
 	NSString *str = [NSString stringWithFormat:@"CEC_USER_CONTROL_CODE_%@", [DKCECDeviceController stringForKeyCode:self.deviceKeyCode]];
