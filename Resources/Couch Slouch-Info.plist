@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0b5</string>
+	<string>1.0b6</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -32,13 +32,13 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSSupportsSuddenTermination</key>
+	<false/>
 	<key>NSUserNotificationAlertStyle</key>
 	<string>banner</string>
 	<key>SUFeedURL</key>
 	<string>http://www.couch-slouch.com/updates/CouchSlouchUpdates.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>CouchSlouchPublicKey.pem</string>
-	<key>NSSupportsSuddenTermination</key>
-	<false/>
 </dict>
 </plist>
