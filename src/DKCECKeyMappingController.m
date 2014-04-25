@@ -7,6 +7,7 @@
 //
 
 #import "DKCECKeyMappingController.h"
+#import "DKDoNothingLocalAction.h"
 #import "Constants.h"
 
 static NSString * const kBaseMappingUserDefaultsKey = @"BaseMapping";
@@ -203,7 +204,12 @@ static NSString * const kKeyMappingActionsKey = @"actions";
 		if ([potentialAction matchesKeyPress:keypress])
 			return potentialAction;
 	}
-	return nil;
+
+	// If we get here, there's no action for the given keypress. Maybe
+	// the user messed around with the plist, or we added new keycodes.
+	DKLocalAction *action = [[DKDoNothingLocalAction alloc] initWithDeviceKeyCode:keypress.keycode];
+	[self addAction:action];
+	return action;
 }
 
 -(void)addAction:(id <DKLocalAction>)action {
