@@ -206,7 +206,7 @@ static dispatch_queue_t cec_global_queue;
 
 		cec_device_type_list list;
 		memset(&list, 0, sizeof(cec_device_type_list));
-		list.types[0] = CEC_DEVICE_TYPE_PLAYBACK_DEVICE;
+		list.types[0] = CEC_DEVICE_TYPE_RECORDING_DEVICE;
 		list.types[1] = CEC_DEVICE_TYPE_RESERVED;
 		list.types[2] = CEC_DEVICE_TYPE_RESERVED;
 		list.types[3] = CEC_DEVICE_TYPE_RESERVED;
