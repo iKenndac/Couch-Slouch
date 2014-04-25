@@ -63,6 +63,9 @@ static DKCECKeyMappingController *sharedController;
 -(BOOL)keyCode:(cec_user_control_code)keyCode isAliasForKeyCode:(cec_user_control_code)baseKeyCode {
 
 	if (keyCode == CEC_USER_CONTROL_CODE_AN_RETURN && baseKeyCode == CEC_USER_CONTROL_CODE_EXIT) return YES;
+	if (keyCode == CEC_USER_CONTROL_CODE_FORWARD && baseKeyCode == CEC_USER_CONTROL_CODE_CHANNEL_UP) return YES;
+	if (keyCode == CEC_USER_CONTROL_CODE_BACKWARD && baseKeyCode == CEC_USER_CONTROL_CODE_CHANNEL_DOWN) return YES;
+	if (keyCode == CEC_USER_CONTROL_CODE_CONTENTS_MENU && baseKeyCode == CEC_USER_CONTROL_CODE_AN_CHANNELS_LIST) return YES;
 
 	return NO;
 }
