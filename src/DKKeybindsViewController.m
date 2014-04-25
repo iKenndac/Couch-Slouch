@@ -13,6 +13,7 @@
 static NSString * const kGroupsFileGroupsKey = @"Groups";
 static NSString * const kGroupsFileGroupTitleKeyKey = @"Name";
 static NSString * const kGroupsFileGroupButtonsKey = @"Buttons";
+static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 
 @interface DKKeybindsViewController ()
 
@@ -42,7 +43,21 @@ static NSString * const kGroupsFileGroupButtonsKey = @"Buttons";
 																	   options:0
 																		format:nil
 																		 error:nil];
-		self.groups = [dict valueForKey:kGroupsFileGroupsKey];
+
+		NSArray *groups = [dict valueForKey:kGroupsFileGroupsKey];
+
+#if !DEBUG
+		NSMutableArray *strippedArray = [groups mutableCopy];
+		for (NSDictionary *group in groups) {
+			if ([group[kGroupsFileGroupTitleKeyKey] isEqualToString:kGroupsFileDebugGroupName]) {
+				[strippedArray removeObject:group];
+			}
+		}
+
+		groups = [NSArray arrayWithArray:strippedArray];
+#endif
+
+			self.groups = groups;
     }
     
     return self;

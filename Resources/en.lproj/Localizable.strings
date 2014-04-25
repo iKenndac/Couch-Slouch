@@ -28,6 +28,7 @@
 "NumbersGroupTitle" = "Numbers";
 "MediaControlGroupTitle" = "Media Control";
 "FunctionKeysGroupTitle" = "Function Keys";
+"DebugGroupTitle" = "Debug";
 
 "no connection title" = "No CEC-HDMI device found.";
 "connected but not active source title" = "This Mac is not the active TV source.";

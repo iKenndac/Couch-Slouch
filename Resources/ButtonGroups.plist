@@ -65,7 +65,7 @@
 		</dict>
 		<dict>
 			<key>Name</key>
-			<string>Debug</string>
+			<string>DebugGroupTitle</string>
 			<key>Buttons</key>
 			<array>
 				<string>AN_CHANNELS_LIST</string>
