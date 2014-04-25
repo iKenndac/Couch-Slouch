@@ -456,7 +456,43 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
 
 }
 
--(void)cecController:(DKCECDeviceController *)controller didReceiveCommand:(cec_command)command {}
+-(void)cecController:(DKCECDeviceController *)controller didReceiveCommand:(cec_command)command {
+
+	if (command.initiator == CECDEVICE_TV) {
+
+		if (command.opcode == CEC_OPCODE_PLAY) {
+			// TV is telling us to play. Translate this into a PlayPause keypress.
+			if (command.parameters.size == 1) {
+				if (command.parameters.data[0] == CEC_PLAY_MODE_PLAY_FORWARD) {
+					cec_keypress press;
+					memset(&press, 0, sizeof(cec_keypress));
+					press.keycode = CEC_USER_CONTROL_CODE_PLAY;
+					[self handleSimulatedKeyPress:press];
+				}
+				if (command.parameters.data[0] == CEC_PLAY_MODE_PLAY_STILL) {
+					cec_keypress press;
+					memset(&press, 0, sizeof(cec_keypress));
+					press.keycode = CEC_USER_CONTROL_CODE_PAUSE;
+					[self handleSimulatedKeyPress:press];
+				}
+			}
+		}
+
+		if (command.opcode == CEC_OPCODE_DECK_CONTROL) {
+			if (command.parameters.size == 1 &&
+				command.parameters.data[0] == CEC_DECK_CONTROL_MODE_STOP) {
+				// Send stop keypress
+				cec_keypress press;
+				memset(&press, 0, sizeof(cec_keypress));
+				press.keycode = CEC_USER_CONTROL_CODE_STOP;
+				[self handleSimulatedKeyPress:press];
+			}
+		}
+
+	}
+
+}
+
 -(void)cecController:(DKCECDeviceController *)controller didReceiveAlert:(libcec_alert)alert forParamter:(libcec_parameter)parameter {}
 -(void)cecController:(DKCECDeviceController *)controller activationDidChangeForLogicalDevice:(cec_logical_address)device toState:(BOOL)activated {}
 
