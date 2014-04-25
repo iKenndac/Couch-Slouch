@@ -63,6 +63,30 @@
 				<string>NUMBER9</string>
 			</array>
 		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Debug</string>
+			<key>Buttons</key>
+			<array>
+				<string>AN_CHANNELS_LIST</string>
+				<string>ROOT_MENU</string>
+				<string>SETUP_MENU</string>
+				<string>CONTENTS_MENU</string>
+				<string>FAVORITE_MENU</string>
+				<string>DOT</string>
+				<string>CLEAR</string>
+				<string>ENTER</string>
+				<string>CHANNEL_UP</string>
+				<string>CHANNEL_DOWN</string>
+				<string>PREVIOUS_CHANNEL</string>
+				<string>NEXT_FAVORITE</string>
+				<string>PAGE_UP</string>
+				<string>PAGE_DOWN</string>
+				<string>FORWARD</string>
+				<string>BACKWARD</string>
+				<string>ELECTRONIC_PROGRAM_GUIDE</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>
