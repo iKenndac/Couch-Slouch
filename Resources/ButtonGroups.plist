@@ -23,6 +23,22 @@
 		</dict>
 		<dict>
 			<key>Name</key>
+			<string>CommandsGroupTitle</string>
+			<key>Buttons</key>
+			<array>
+				<string>ELECTRONIC_PROGRAM_GUIDE</string>
+				<string>AN_CHANNELS_LIST</string>
+				<string>CHANNEL_UP</string>
+				<string>CHANNEL_DOWN</string>
+				<string>PREVIOUS_CHANNEL</string>
+				<string>DISPLAY_INFORMATION</string>
+				<string>CLEAR</string>
+				<string>DATA</string>
+				<string>SUB_PICTURE</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Name</key>
 			<string>MediaControlGroupTitle</string>
 			<key>Buttons</key>
 			<array>
@@ -68,24 +84,14 @@
 			<string>DebugGroupTitle</string>
 			<key>Buttons</key>
 			<array>
-				<string>AN_CHANNELS_LIST</string>
 				<string>ROOT_MENU</string>
 				<string>SETUP_MENU</string>
-				<string>CONTENTS_MENU</string>
 				<string>FAVORITE_MENU</string>
 				<string>DOT</string>
-				<string>CLEAR</string>
 				<string>ENTER</string>
-				<string>CHANNEL_UP</string>
-				<string>CHANNEL_DOWN</string>
-				<string>PREVIOUS_CHANNEL</string>
 				<string>NEXT_FAVORITE</string>
 				<string>PAGE_UP</string>
 				<string>PAGE_DOWN</string>
-				<string>FORWARD</string>
-				<string>BACKWARD</string>
-				<string>DISPLAY_INFORMATION</string>
-				<string>DATA</string>
 				<string>SOUND_SELECT</string>
 				<string>INPUT_SELECT</string>
 				<string>HELP</string>
@@ -96,9 +102,7 @@
 				<string>STOP_RECORD</string>
 				<string>PAUSE_RECORD</string>
 				<string>ANGLE</string>
-				<string>SUB_PICTURE</string>
 				<string>VIDEO_ON_DEMAND</string>
-				<string>ELECTRONIC_PROGRAM_GUIDE</string>
 				<string>TIMER_PROGRAMMING</string>
 				<string>INITIAL_CONFIGURATION</string>
 				<string>PLAY_FUNCTION</string>
