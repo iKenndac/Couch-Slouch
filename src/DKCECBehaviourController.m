@@ -180,6 +180,8 @@ static DKCECBehaviourController *sharedInstance;
 		[self runScriptWithFunction:function
 			  scriptUserDefaultsKey:[userDefaultsKey stringByAppendingString:kOnActionScriptUserDefaultsKeySuffix]
 						   callback:block];
+	} else {
+		if (block) block();
 	}
 }
 
