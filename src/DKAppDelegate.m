@@ -427,7 +427,7 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
 	static NSDateFormatter *logDateFormatter = nil;
 	if (logDateFormatter == nil) {
 		logDateFormatter = [NSDateFormatter new];
-		logDateFormatter.dateStyle = NSDateFormatterShortStyle;
+		logDateFormatter.dateStyle = NSDateFormatterMediumStyle;
 		logDateFormatter.timeStyle = NSDateFormatterMediumStyle;
 	}
 
