@@ -312,6 +312,7 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
 			[self logMessageToDisk:@"Delaying system sleep for sleep behaviours…" ofSeverity:CEC_LOG_NOTICE];
 			[self systemWillSleep:^{
 				[self logMessageToDisk:@"Sleep behaviours done, allowing system sleep." ofSeverity:CEC_LOG_NOTICE];
+				[self flushLog];
 				IOAllowPowerChange(self.powerPort, (long)messageArgument);
 			}];
 
@@ -427,7 +428,7 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
 	if (logDateFormatter == nil) {
 		logDateFormatter = [NSDateFormatter new];
 		logDateFormatter.dateStyle = NSDateFormatterShortStyle;
-		logDateFormatter.timeStyle = NSDateFormatterShortStyle;
+		logDateFormatter.timeStyle = NSDateFormatterMediumStyle;
 	}
 
 	NSString *fullMessage = [NSString stringWithFormat:@"%@: (Log level %@): %@",
