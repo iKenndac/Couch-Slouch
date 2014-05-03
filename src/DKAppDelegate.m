@@ -69,7 +69,7 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 
 			BOOL didReset = [self.cecController softResetCECAdapter];
 			if (didReset)
-				NSLog(@"A CEC adapter was found in limbo and reset.");
+				[self logMessageToDisk:@"A CEC adapter was found in limbo and reset." ofSeverity:CEC_LOG_WARNING];
 
 			// Once you call open on DKCECDeviceController, it carries on
 			// looking for devices so no further action is needed.
@@ -309,9 +309,9 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
 			 NOTE: If you call IOCancelPowerChange to deny sleep it returns
 			 kIOReturnSuccess, however the system WILL still go to sleep.
 			 */
-			NSLog(@"Delaying system sleep for sleep behaviours…");
+			[self logMessageToDisk:@"Delaying system sleep for sleep behaviours…" ofSeverity:CEC_LOG_NOTICE];
 			[self systemWillSleep:^{
-				NSLog(@"Sleep behaviours done, allowing system sleep.");
+				[self logMessageToDisk:@"Sleep behaviours done, allowing system sleep." ofSeverity:CEC_LOG_NOTICE];
 				IOAllowPowerChange(self.powerPort, (long)messageArgument);
 			}];
 
@@ -336,7 +336,7 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
 
 -(void)systemDidAwake {
     [self.cecController open:^(BOOL success) {
-        NSLog(@"Reconnecting to CEC device after awake from sleep…");
+        [self logMessageToDisk:@"Reconnecting to CEC device after awake from sleep…" ofSeverity:CEC_LOG_NOTICE];
         
         if (self.cecController.hasConnection) {
             [[DKCECBehaviourController sharedInstance] handleMacAwake];
@@ -350,7 +350,7 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
 -(void)systemWillSleep:(dispatch_block_t)block {
 	[[DKCECBehaviourController sharedInstance] handleMacSleep:^{
 		[self.cecController close:^(BOOL success) {
-			NSLog(@"Closing connection to CEC device due to system sleep.");
+			[self logMessageToDisk:@"Closing connection to CEC device due to system sleep." ofSeverity:CEC_LOG_NOTICE];
 			if (block) block();
 		}];
 	}];
@@ -364,9 +364,9 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
 
 	[self.windowController close];
 
-	NSLog(@"Delaying application exit for behaviours…");
+	[self logMessageToDisk:@"Delaying application exit for behaviours…" ofSeverity:CEC_LOG_NOTICE];
 	[[DKCECBehaviourController sharedInstance] handleMacShutdown:^{
-		NSLog(@"Exit behaviours done, allowing application exit.");
+		[self logMessageToDisk:@"Exit behaviours done, allowing application exit." ofSeverity:CEC_LOG_NOTICE];
 		[[NSApplication sharedApplication] replyToApplicationShouldTerminate:YES];
 	}];
 
@@ -423,8 +423,15 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
 
 -(void)logMessageToDisk:(NSString *)msg ofSeverity:(cec_log_level)logLevel {
 
-	NSString *fullMessage = [NSString stringWithFormat:@"%@: log_level: %@ : %@",
-							 [NSDate date],
+	static NSDateFormatter *logDateFormatter = nil;
+	if (logDateFormatter == nil) {
+		logDateFormatter = [NSDateFormatter new];
+		logDateFormatter.dateStyle = NSDateFormatterShortStyle;
+		logDateFormatter.timeStyle = NSDateFormatterShortStyle;
+	}
+
+	NSString *fullMessage = [NSString stringWithFormat:@"%@: (Log level %@): %@",
+							 [logDateFormatter stringFromDate:[NSDate date]],
 							 @(logLevel),
 							 msg];
 
