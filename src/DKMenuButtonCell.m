@@ -28,6 +28,7 @@
 
         // need to generate a new event otherwise selection of button
         // after menu display fails
+		[[self menu] setFont:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSSmallControlSize]]];
         [NSMenu popUpContextMenu:[self menu] withEvent:newEvent forView:controlView];
 
         return YES;
