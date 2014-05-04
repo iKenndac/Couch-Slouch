@@ -24,6 +24,7 @@
 
 -(DKCECKeyMapping *)keyMappingForApplicationWithIdentifier:(NSString *)appIdentifier;
 -(DKCECKeyMapping *)duplicateMapping:(DKCECKeyMapping *)mapping withNewApplicationIdentifier:(NSString *)appIdentifier;
+-(void)addMapping:(DKCECKeyMapping *)mapping;
 -(void)removeMapping:(DKCECKeyMapping *)mapping;
 
 -(void)saveMappings;

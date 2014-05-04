@@ -110,6 +110,16 @@ static DKCECKeyMappingController *sharedController;
 		[self willChangeValueForKey:@"applicationMappings"];
 		[self.mappingStorage removeObjectForKey:mapping.applicationIdentifier];
 		[self didChangeValueForKey:@"applicationMappings"];
+		[self saveMappings];
+	}
+}
+
+-(void)addMapping:(DKCECKeyMapping *)mapping {
+	if (mapping.applicationIdentifier != nil) {
+		[self willChangeValueForKey:@"applicationMappings"];
+		[self.mappingStorage setValue:mapping forKey:mapping.applicationIdentifier];
+		[self didChangeValueForKey:@"applicationMappings"];
+		[self saveMappings];
 	}
 }
 
