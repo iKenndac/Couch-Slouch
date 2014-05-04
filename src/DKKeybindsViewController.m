@@ -125,11 +125,9 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 
 -(void)deleteBackward:(id)sender {
 
-	NSArray *mappings = self.flattenedMappingList;
+	if (self.currentMapping.applicationIdentifier.length > 0) {
 
-	if (sender == self.sourceList && self.sourceList.selectedRow < mappings.count) {
-
-		DKCECKeyMapping *mapping = mappings[self.sourceList.selectedRow];
+		DKCECKeyMapping *mapping = self.currentMapping;
 
 		NSAlert *deleteAlert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"keybinding delete alert title", @""), mapping.lastKnownName]
 											   defaultButton:NSLocalizedString(@"cancel button title", @"")
@@ -195,13 +193,12 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 
 -(IBAction)exportKeyBinding:(id)sender {
 
-	NSArray *mappings = self.flattenedMappingList;
-	if (self.sourceList.selectedRow >= mappings.count) {
+	if (self.currentMapping.applicationIdentifier.length == 0) {
 		NSBeep();
 		return;
 	}
 
-	DKCECKeyMapping *mapping = mappings[self.sourceList.selectedRow];
+	DKCECKeyMapping *mapping = self.currentMapping;
 
 	NSSavePanel *savePanel = [NSSavePanel savePanel];
 	savePanel.nameFieldStringValue = [NSString stringWithFormat:NSLocalizedString(@"keybindings file name formatter", @""), mapping.lastKnownName];
