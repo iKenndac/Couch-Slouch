@@ -21,6 +21,7 @@
 @property (strong) IBOutlet NSView *openPanelView;
 @property (weak) IBOutlet NSTableView *actionsList;
 
+-(void)attemptToImportKeybinding:(NSURL *)keyBindingURL;
 
 -(IBAction)addApplication:(id)sender;
 -(IBAction)exportKeyBinding:(id)sender;

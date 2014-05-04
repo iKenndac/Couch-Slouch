@@ -227,51 +227,54 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 	[openPanel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
 
 		if (result != NSFileHandlingPanelOKButton) return;
-
-		NSError *error = nil;
-		NSData *data = [NSData dataWithContentsOfURL:openPanel.URL options:0 error:&error];
-
-		if (data == nil) {
-			[self displayErrorToUser:error];
-			return;
-		}
-
-		id plistRep = [NSPropertyListSerialization propertyListWithData:data
-																options:0
-																 format:nil
-																  error:&error];
-
-		if (plistRep == nil) {
-			[self displayErrorToUser:error];
-			return;
-		}
-
-		DKCECKeyMapping *mapping = [[DKCECKeyMapping alloc] initWithPropertyListRepresentation:plistRep];
-		if (mapping == nil) {
-			[self displayErrorToUser:nil];
-			return;
-		}
-
-		DKCECKeyMapping *existingMapping = [[DKCECKeyMappingController sharedController] keyMappingForApplicationWithIdentifier:mapping.applicationIdentifier];
-
-		if (existingMapping == nil) {
-			[[DKCECKeyMappingController sharedController] addMapping:mapping];
-		} else {
-
-			NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"keybinding exists alert title", @""), mapping.lastKnownName]
-											 defaultButton:NSLocalizedString(@"cancel button title", @"")
-										   alternateButton:NSLocalizedString(@"replace button title", @"")
-											   otherButton:nil
-								 informativeTextWithFormat:NSLocalizedString(@"keybinding exists alert description", @"")];
-
-			if ([alert runModal] == NSAlertAlternateReturn) {
-				[[DKCECKeyMappingController sharedController] removeMapping:existingMapping];
-				[[DKCECKeyMappingController sharedController] addMapping:mapping];
-			}
-
-		}
-
+		[self attemptToImportKeybinding:openPanel.URL];
 	}];
+}
+
+-(void)attemptToImportKeybinding:(NSURL *)keyBindingURL {
+
+	NSError *error = nil;
+	NSData *data = [NSData dataWithContentsOfURL:keyBindingURL options:0 error:&error];
+
+	if (data == nil) {
+		[self displayErrorToUser:error];
+		return;
+	}
+
+	id plistRep = [NSPropertyListSerialization propertyListWithData:data
+															options:0
+															 format:nil
+															  error:&error];
+
+	if (plistRep == nil) {
+		[self displayErrorToUser:error];
+		return;
+	}
+
+	DKCECKeyMapping *mapping = [[DKCECKeyMapping alloc] initWithPropertyListRepresentation:plistRep];
+	if (mapping == nil) {
+		[self displayErrorToUser:nil];
+		return;
+	}
+
+	DKCECKeyMapping *existingMapping = [[DKCECKeyMappingController sharedController] keyMappingForApplicationWithIdentifier:mapping.applicationIdentifier];
+
+	if (existingMapping == nil) {
+		[[DKCECKeyMappingController sharedController] addMapping:mapping];
+	} else {
+
+		NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"keybinding exists alert title", @""), mapping.lastKnownName]
+										 defaultButton:NSLocalizedString(@"cancel button title", @"")
+									   alternateButton:NSLocalizedString(@"replace button title", @"")
+										   otherButton:nil
+							 informativeTextWithFormat:NSLocalizedString(@"keybinding exists alert description", @"")];
+
+		if ([alert runModal] == NSAlertAlternateReturn) {
+			[[DKCECKeyMappingController sharedController] removeMapping:existingMapping];
+			[[DKCECKeyMappingController sharedController] addMapping:mapping];
+		}
+
+	}
 }
 
 -(IBAction)addApplication:(id)sender {

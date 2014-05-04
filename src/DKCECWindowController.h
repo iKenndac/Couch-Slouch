@@ -9,10 +9,12 @@
 #import <Cocoa/Cocoa.h>
 #import "cectypes.h"
 #import "DKHDMIAddressSetupWindowController.h"
+#import "DKKeybindsViewController.h"
 
 @interface DKCECWindowController : NSWindowController <DKHDMIAddressSetupWindowControllerDelegate>
 
-@property (nonatomic, strong, readwrite) NSViewController *currentViewController;
+@property (nonatomic, strong, readonly) NSViewController *currentViewController;
+@property (nonatomic, strong, readonly) DKKeybindsViewController *keybindsViewController;
 
 @property (weak) IBOutlet NSToolbarItem *keybindsToolbarItem;
 @property (weak) IBOutlet NSToolbarItem *behavioursToolbarItem;

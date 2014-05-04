@@ -374,10 +374,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="323">
-                    <rect key="frame" x="18" y="20" width="100" height="17"/>
+                    <rect key="frame" x="18" y="20" width="102" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="96" id="342"/>
+                        <constraint firstAttribute="width" constant="98" id="342"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Add as copy of:" id="324">
                         <font key="font" metaFont="system"/>
@@ -386,7 +386,7 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="330">
-                    <rect key="frame" x="122" y="14" width="278" height="26"/>
+                    <rect key="frame" x="124" y="14" width="276" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="333" id="331">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>

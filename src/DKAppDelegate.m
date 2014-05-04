@@ -85,6 +85,13 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 	self.mouseGridController = [DKMouseGridWindowController new];
 }
 
+-(BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
+	[self.windowController switchToKeybindsView:nil];
+	[self showMainWindow:nil];
+	[self.windowController.keybindsViewController attemptToImportKeybinding:[NSURL fileURLWithPath:filename]];
+	return YES;
+}
+
 -(void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
 	self.remoteWindowController.delegate = self;

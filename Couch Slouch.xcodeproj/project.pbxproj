@@ -133,6 +133,7 @@
 		50F157EE1916631F00B7FFFA /* DKDeleteKeyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F157ED1916631F00B7FFFA /* DKDeleteKeyTableView.m */; };
 		50F157F1191681C500B7FFFA /* DKMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F157F0191681C500B7FFFA /* DKMenuButton.m */; };
 		50F157F4191681E700B7FFFA /* DKMenuButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F157F3191681E700B7FFFA /* DKMenuButtonCell.m */; };
+		50F157F619168D5B00B7FFFA /* KeybindingsIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 50F157F519168D5B00B7FFFA /* KeybindingsIcon.icns */; };
 		50F2D51C190AFF71004C21B6 /* KeyAliases.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50F2D51B190AFF71004C21B6 /* KeyAliases.plist */; };
 		50FF7DF316177569008324F0 /* DKShowMouseGridLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */; };
 		50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50FF7DF91617827D008324F0 /* DKMouseGridWindowController.xib */; };
@@ -426,6 +427,7 @@
 		50F157F0191681C500B7FFFA /* DKMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKMenuButton.m; path = src/DKMenuButton.m; sourceTree = SOURCE_ROOT; };
 		50F157F2191681E700B7FFFA /* DKMenuButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKMenuButtonCell.h; path = src/DKMenuButtonCell.h; sourceTree = SOURCE_ROOT; };
 		50F157F3191681E700B7FFFA /* DKMenuButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKMenuButtonCell.m; path = src/DKMenuButtonCell.m; sourceTree = SOURCE_ROOT; };
+		50F157F519168D5B00B7FFFA /* KeybindingsIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = KeybindingsIcon.icns; path = Graphics/KeybindingsIcon.icns; sourceTree = "<group>"; };
 		50F2D51B190AFF71004C21B6 /* KeyAliases.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeyAliases.plist; sourceTree = "<group>"; };
 		50FF7DF116177569008324F0 /* DKShowMouseGridLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKShowMouseGridLocalAction.h; sourceTree = "<group>"; };
 		50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKShowMouseGridLocalAction.m; sourceTree = "<group>"; };
@@ -821,6 +823,7 @@
 			children = (
 				50A8BFFE17F872510021E825 /* Couch Slouch Example Script.scpt */,
 				5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */,
+				50F157F519168D5B00B7FFFA /* KeybindingsIcon.icns */,
 				5093453C17F8319300A1725E /* Images.xcassets */,
 				50BA39E515F7CE650075E7DB /* Graphics */,
 				5047670115F6B13300BF2DA7 /* ButtonGroups.plist */,
@@ -1182,6 +1185,7 @@
 				50BA39F815F7DFA60075E7DB /* lamp-red.png in Resources */,
 				50BA39F915F7DFA60075E7DB /* lamp-yellow.png in Resources */,
 				50BA39FD15F7EA3D0075E7DB /* button-centre.png in Resources */,
+				50F157F619168D5B00B7FFFA /* KeybindingsIcon.icns in Resources */,
 				50BA39FE15F7EA3D0075E7DB /* button-left.png in Resources */,
 				50BA39FF15F7EA3D0075E7DB /* button-right.png in Resources */,
 				50A9953B15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib in Resources */,
