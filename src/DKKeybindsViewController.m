@@ -142,28 +142,25 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 	NSString *fileName = [[NSString stringWithFormat:NSLocalizedString(@"keybindings file name formatter", @""), mapping.lastKnownName]
 						  stringByAppendingPathExtension:kKeybindingsFileNameExtension];
 
-	NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:fileName];
+	NSURL *fileURL = [[NSURL fileURLWithPath:NSTemporaryDirectory()] URLByAppendingPathComponent:fileName];
 
 	NSError *exportError = nil;
-	if (![self exportMapping:mapping toPath:filePath error:&exportError]) {
+	if (![self exportMapping:mapping toURL:fileURL error:&exportError]) {
 		[self displayErrorToUser:exportError];
 		return;
 	}
 
-	if  (![[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceRecycleOperation
-													   source:[filePath stringByDeletingLastPathComponent]
-												  destination:nil
-														files:@[[filePath lastPathComponent]]
-														  tag:nil]) {
-		[self displayErrorToUser:nil];
-	}
-
-	// If we get here, the export and trash operation went successfully, so we can remove the mapping.
-	[[DKCECKeyMappingController sharedController] removeMapping:mapping];
-	
+	[[NSWorkspace sharedWorkspace] recycleURLs:@[fileURL] completionHandler:^(NSDictionary *newURLs, NSError *error) {
+		if (error != nil) {
+			[self displayErrorToUser:nil];
+		} else {
+			// If we get here, the export and trash operation went successfully, so we can remove the mapping.
+			[[DKCECKeyMappingController sharedController] removeMapping:mapping];
+		}
+	}];
 }
 
--(BOOL)exportMapping:(DKCECKeyMapping *)mapping toPath:(NSString *)aPath error:(NSError **)error {
+-(BOOL)exportMapping:(DKCECKeyMapping *)mapping toURL:(NSURL *)aURL error:(NSError **)error {
 	id plist = [mapping propertyListRepresentation];
 	NSData *data = [NSPropertyListSerialization dataWithPropertyList:plist
 															  format:NSPropertyListXMLFormat_v1_0
@@ -171,7 +168,7 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 															   error:error];
 
 	if (!data) return NO;
-	return [data writeToFile:aPath options:NSDataWritingAtomic error:error];
+	return [data writeToURL:aURL options:NSDataWritingAtomic error:error];
 }
 
 #pragma mark - IBActions
