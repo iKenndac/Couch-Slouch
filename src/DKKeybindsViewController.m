@@ -101,6 +101,26 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 	[alert beginSheetModalForWindow:self.view.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 
++(NSSet *)keyPathsForValuesAffectingCanExportSelectedBindings {
+	return [NSSet setWithObject:@"currentMapping"];
+}
+
+-(BOOL)canExportSelectedBindings {
+	return self.currentMapping.applicationIdentifier.length > 0;
+}
+
++(NSSet *)keyPathsForValuesAffectingExportBindingsMenuTitle {
+	return [NSSet setWithObject:@"currentMapping"];
+}
+
+-(NSString *)exportBindingsMenuTitle {
+	if (self.currentMapping.applicationIdentifier.length > 0) {
+		return [NSString stringWithFormat:NSLocalizedString(@"export keybinding title", @""), self.currentMapping.lastKnownName];
+	}
+
+	return NSLocalizedString(@"can't export keybinding title", @"");
+}
+
 #pragma mark - Keyboard
 
 -(void)deleteBackward:(id)sender {

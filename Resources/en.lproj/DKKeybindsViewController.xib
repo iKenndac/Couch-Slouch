@@ -326,6 +326,20 @@
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TTe-Co-P64" customClass="DKMenuButton">
+                            <rect key="frame" x="56" y="4" width="28" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="28" id="40t-jq-dwx"/>
+                            </constraints>
+                            <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="NSShareTemplate" imagePosition="only" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="O7I-Dk-sAf" customClass="DKMenuButtonCell">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="smallSystem"/>
+                                <connections>
+                                    <outlet property="menu" destination="OIs-sO-Ne5" id="3mR-jx-mGi"/>
+                                </connections>
+                            </buttonCell>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="251" firstAttribute="leading" secondItem="139" secondAttribute="leading" constant="20" symbolic="YES" id="262"/>
@@ -333,6 +347,8 @@
                         <constraint firstItem="263" firstAttribute="trailing" secondItem="139" secondAttribute="trailing" id="287"/>
                         <constraint firstItem="263" firstAttribute="leading" secondItem="139" secondAttribute="leading" constant="207" id="288"/>
                         <constraint firstItem="263" firstAttribute="centerY" secondItem="251" secondAttribute="centerY" id="374"/>
+                        <constraint firstItem="TTe-Co-P64" firstAttribute="centerY" secondItem="251" secondAttribute="centerY" id="8Dj-9Z-BxV"/>
+                        <constraint firstItem="TTe-Co-P64" firstAttribute="leading" secondItem="251" secondAttribute="trailing" constant="8" id="Qgh-Sj-Y7f"/>
                     </constraints>
                 </customView>
             </subviews>
@@ -398,8 +414,29 @@
                 <constraint firstAttribute="trailing" secondItem="330" secondAttribute="trailing" constant="20" id="344"/>
             </constraints>
         </customView>
+        <menu id="OIs-sO-Ne5">
+            <items>
+                <menuItem title="Import Key Bindings…" id="JA4-u3-3zU">
+                    <attributedString key="attributedTitle"/>
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="importKeyBinding:" target="-2" id="0Mw-zL-SE7"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="7Pl-lh-60B"/>
+                <menuItem title="Export &quot;AppName&quot;…" id="uWc-tU-SYJ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="exportKeyBinding:" target="-2" id="SWG-fJ-YQH"/>
+                        <binding destination="-2" name="enabled" keyPath="canExportSelectedBindings" id="T00-F5-C8d"/>
+                        <binding destination="-2" name="title" keyPath="exportBindingsMenuTitle" id="gv5-Rh-guy"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
     </objects>
     <resources>
         <image name="NSAddTemplate" width="8" height="8"/>
+        <image name="NSShareTemplate" width="18" height="16"/>
     </resources>
 </document>

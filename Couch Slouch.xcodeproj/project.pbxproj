@@ -131,6 +131,8 @@
 		50E58DFF15FCC4FB00AB8441 /* tv-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */; };
 		50E58E0015FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */; };
 		50F157EE1916631F00B7FFFA /* DKDeleteKeyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F157ED1916631F00B7FFFA /* DKDeleteKeyTableView.m */; };
+		50F157F1191681C500B7FFFA /* DKMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F157F0191681C500B7FFFA /* DKMenuButton.m */; };
+		50F157F4191681E700B7FFFA /* DKMenuButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F157F3191681E700B7FFFA /* DKMenuButtonCell.m */; };
 		50F2D51C190AFF71004C21B6 /* KeyAliases.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50F2D51B190AFF71004C21B6 /* KeyAliases.plist */; };
 		50FF7DF316177569008324F0 /* DKShowMouseGridLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */; };
 		50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50FF7DF91617827D008324F0 /* DKMouseGridWindowController.xib */; };
@@ -420,6 +422,10 @@
 		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		50F157EC1916631F00B7FFFA /* DKDeleteKeyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKDeleteKeyTableView.h; path = src/DKDeleteKeyTableView.h; sourceTree = SOURCE_ROOT; };
 		50F157ED1916631F00B7FFFA /* DKDeleteKeyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKDeleteKeyTableView.m; path = src/DKDeleteKeyTableView.m; sourceTree = SOURCE_ROOT; };
+		50F157EF191681C500B7FFFA /* DKMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKMenuButton.h; path = src/DKMenuButton.h; sourceTree = SOURCE_ROOT; };
+		50F157F0191681C500B7FFFA /* DKMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKMenuButton.m; path = src/DKMenuButton.m; sourceTree = SOURCE_ROOT; };
+		50F157F2191681E700B7FFFA /* DKMenuButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKMenuButtonCell.h; path = src/DKMenuButtonCell.h; sourceTree = SOURCE_ROOT; };
+		50F157F3191681E700B7FFFA /* DKMenuButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKMenuButtonCell.m; path = src/DKMenuButtonCell.m; sourceTree = SOURCE_ROOT; };
 		50F2D51B190AFF71004C21B6 /* KeyAliases.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeyAliases.plist; sourceTree = "<group>"; };
 		50FF7DF116177569008324F0 /* DKShowMouseGridLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKShowMouseGridLocalAction.h; sourceTree = "<group>"; };
 		50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKShowMouseGridLocalAction.m; sourceTree = "<group>"; };
@@ -1033,6 +1039,10 @@
 				508DEBFC16184EA800413CD9 /* DKButtonDecoratedTextField.m */,
 				508DEBFD16184EA800413CD9 /* DKFancyDividerView.h */,
 				508DEBFE16184EA800413CD9 /* DKFancyDividerView.m */,
+				50F157EF191681C500B7FFFA /* DKMenuButton.h */,
+				50F157F0191681C500B7FFFA /* DKMenuButton.m */,
+				50F157F2191681E700B7FFFA /* DKMenuButtonCell.h */,
+				50F157F3191681E700B7FFFA /* DKMenuButtonCell.m */,
 			);
 			name = "Custom UI";
 			path = ../ShortcutRecorder/Framework/Source;
@@ -1251,6 +1261,7 @@
 				503F573915DD8221007F2F3E /* CECRecordingDevice.cpp in Sources */,
 				503F573A15DD8221007F2F3E /* CECTuner.cpp in Sources */,
 				503F573B15DD8221007F2F3E /* CECTV.cpp in Sources */,
+				50F157F4191681E700B7FFFA /* DKMenuButtonCell.m in Sources */,
 				503F573C15DD8221007F2F3E /* ANCommandHandler.cpp in Sources */,
 				503F573D15DD8221007F2F3E /* CECCommandHandler.cpp in Sources */,
 				503F573E15DD8221007F2F3E /* RLCommandHandler.cpp in Sources */,
@@ -1290,6 +1301,7 @@
 				50A9953915F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m in Sources */,
 				502CA7A816163734006A9A52 /* DKMouseGridWindowController.m in Sources */,
 				502CA7AB16163B3F006A9A52 /* DKMouseGridView.m in Sources */,
+				50F157F1191681C500B7FFFA /* DKMenuButton.m in Sources */,
 				502CA7AE16164BB2006A9A52 /* DKFakeRemoteWindowController.m in Sources */,
 				50FF7DF316177569008324F0 /* DKShowMouseGridLocalAction.m in Sources */,
 				508DEBC71618449900413CD9 /* StartAtLoginController.m in Sources */,
