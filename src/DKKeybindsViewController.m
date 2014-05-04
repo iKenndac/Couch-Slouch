@@ -9,6 +9,7 @@
 #import "DKKeybindsViewController.h"
 #import "SRRecorderControl.h"
 #import "DKCECDeviceController+KeyCodeTranslation.h"
+#import "Constants.h"
 
 static NSString * const kGroupsFileGroupsKey = @"Groups";
 static NSString * const kGroupsFileGroupTitleKeyKey = @"Name";
@@ -93,6 +94,84 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 	[list addObjectsFromArray:controller.applicationMappings];
 	[list addObject:controller.baseMapping];
 	return list;
+}
+
+-(void)displayErrorToUser:(NSError *)error {
+	NSAlert *alert = [NSAlert alertWithError:error];
+	[alert beginSheetModalForWindow:self.view.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+}
+
+#pragma mark - Keyboard
+
+-(void)deleteBackward:(id)sender {
+
+	NSArray *mappings = self.flattenedMappingList;
+
+	if (sender == self.sourceList && self.sourceList.selectedRow < mappings.count) {
+
+		DKCECKeyMapping *mapping = mappings[self.sourceList.selectedRow];
+
+		NSAlert *deleteAlert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"preset delete alert title", @""), mapping.lastKnownName]
+											   defaultButton:NSLocalizedString(@"cancel button title", @"")
+											 alternateButton:NSLocalizedString(@"trash button title", @"")
+												 otherButton:nil
+								   informativeTextWithFormat:NSLocalizedString(@"preset delete alert description", @"")];
+
+		[deleteAlert beginSheetModalForWindow:self.view.window
+								modalDelegate:self
+							   didEndSelector:@selector(keybindDeleteAlertDidEnd:returnCode:contextInfo:)
+								  contextInfo:(__bridge void *)mapping];
+
+	} else {
+		NSBeep();
+	}
+}
+
+-(void)keybindDeleteAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+	if (returnCode == NSAlertAlternateReturn) {
+		DKCECKeyMapping *mapping = (__bridge DKCECKeyMapping *)contextInfo;
+		[self deleteMapping:mapping];
+	}
+}
+
+#pragma mark - Key Mappings Management
+
+-(void)deleteMapping:(DKCECKeyMapping *)mapping {
+
+	// First, export the mapping, then trash it.
+	NSString *fileName = [[NSString stringWithFormat:NSLocalizedString(@"keybindings file name formatter", @""), mapping.lastKnownName]
+						  stringByAppendingPathExtension:kKeybindingsFileNameExtension];
+
+	NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:fileName];
+
+	NSError *exportError = nil;
+	if (![self exportMapping:mapping toPath:filePath error:&exportError]) {
+		[self displayErrorToUser:exportError];
+		return;
+	}
+
+	if  (![[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceRecycleOperation
+													   source:[filePath stringByDeletingLastPathComponent]
+												  destination:nil
+														files:@[[filePath lastPathComponent]]
+														  tag:nil]) {
+		[self displayErrorToUser:nil];
+	}
+
+	// If we get here, the export and trash operation went successfully, so we can remove the mapping.
+	[[DKCECKeyMappingController sharedController] removeMapping:mapping];
+	
+}
+
+-(BOOL)exportMapping:(DKCECKeyMapping *)mapping toPath:(NSString *)aPath error:(NSError **)error {
+	id plist = [mapping propertyListRepresentation];
+	NSData *data = [NSPropertyListSerialization dataWithPropertyList:plist
+															  format:NSPropertyListXMLFormat_v1_0
+															 options:0
+															   error:error];
+
+	if (!data) return NO;
+	return [data writeToFile:aPath options:NSDataWritingAtomic error:error];
 }
 
 #pragma mark - IBActions

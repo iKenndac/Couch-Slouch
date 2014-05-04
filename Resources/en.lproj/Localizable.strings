@@ -8,9 +8,11 @@
 
 "ok button title" = "OK";
 "cancel button title" = "Cancel";
+"trash button title" = "Move to Trash";
 "quit button title" = "Quit";
 "version formatter" = "Version %@ (%@)";
 "cec version formatter" = "libCEC Version %@";
+"keybindings file name formatter" = "%@ Keybindings";
 
 "all applications title" = "All Applications";
 "all other applications title" = "Other Applications";
@@ -18,6 +20,9 @@
 "please choose the application title" = "Please choose the application to control.";
 "invalid application chosen title" = "Invalid application";
 "invalid application chosen description" = "The item chosen doesn't appear to be a valid application. Please choose another.";
+
+"preset delete alert title" = "Are you sure you want to delete the key bindings for %@?";
+"preset delete alert description" = "The key bindings will be moved to your computer's Trash. You can re-import them if you need them back.";
 
 "DKKeyboardShortcutLocalAction title" = "Keyboard Shortcut";
 "DKLaunchApplicationLocalAction title" = "Launch App";
