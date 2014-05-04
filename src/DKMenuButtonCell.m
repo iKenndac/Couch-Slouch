@@ -14,17 +14,17 @@
     // if menu defined show on left mouse
     if ([event type] == NSLeftMouseDown && [self menu]) {
 
-        NSPoint result = [controlView convertPoint:NSMakePoint(NSMidX(cellFrame), NSMidY(cellFrame)) toView:nil];
+        NSPoint result = [controlView convertPoint:NSMakePoint(NSMinX(cellFrame), NSMaxY(cellFrame)) toView:nil];
 
-        NSEvent *newEvent = [NSEvent mouseEventWithType: [event type]
-                                               location: result
-                                          modifierFlags: [event modifierFlags]
-                                              timestamp: [event timestamp]
-                                           windowNumber: [event windowNumber]
-                                                context: [event context]
-                                            eventNumber: [event eventNumber]
-                                             clickCount: [event clickCount]
-                                               pressure: [event pressure]];
+        NSEvent *newEvent = [NSEvent mouseEventWithType:[event type]
+                                               location:result
+                                          modifierFlags:[event modifierFlags]
+                                              timestamp:[event timestamp]
+                                           windowNumber:[event windowNumber]
+                                                context:[event context]
+                                            eventNumber:[event eventNumber]
+                                             clickCount:[event clickCount]
+                                               pressure:[event pressure]];
 
         // need to generate a new event otherwise selection of button
         // after menu display fails
