@@ -186,7 +186,10 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 															   error:error];
 
 	if (!data) return NO;
-	return [data writeToURL:aURL options:NSDataWritingAtomic error:error];
+	if (![data writeToURL:aURL options:NSDataWritingAtomic error:error]) return NO;
+	[aURL setResourceValue:@(YES) forKey:NSURLHasHiddenExtensionKey error:nil];
+
+	return YES;
 }
 
 #pragma mark - IBActions
