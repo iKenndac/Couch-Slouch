@@ -14,7 +14,7 @@
 			<key>CFBundleTypeIconFile</key>
 			<string>KeybindingsIcon</string>
 			<key>CFBundleTypeName</key>
-			<string>Couch Slouch Keybindings</string>
+			<string>Couch Slouch Key Bindings</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSItemContentTypes</key>
@@ -69,7 +69,7 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Couch Slouch Keybindings</string>
+			<string>Couch Slouch Key Bindings</string>
 			<key>UTTypeIconFile</key>
 			<string>KeybindingsIcon</string>
 			<key>UTTypeIdentifier</key>

@@ -13,7 +13,7 @@
 "quit button title" = "Quit";
 "version formatter" = "Version %@ (%@)";
 "cec version formatter" = "libCEC Version %@";
-"keybindings file name formatter" = "%@ Keybindings";
+"keybindings file name formatter" = "%@ Key Bindings";
 
 "all applications title" = "All Applications";
 "all other applications title" = "Other Applications";

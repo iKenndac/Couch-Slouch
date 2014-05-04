@@ -43,12 +43,12 @@
                             </connections>
                         </button>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="82D753C7-413E-4066-804B-22DB976C3568" label="Keybinds" paletteLabel="Keybinds" image="toolbar-keybinds" selectable="YES" id="31">
+                    <toolbarItem implicitItemIdentifier="82D753C7-413E-4066-804B-22DB976C3568" label="Key Bindings" paletteLabel="Key Bindings" image="toolbar-keybinds" selectable="YES" id="31">
                         <nil key="toolTip"/>
                         <size key="minSize" width="44" height="35"/>
                         <size key="maxSize" width="44" height="35"/>
                         <button key="view" id="29">
-                            <rect key="frame" x="6" y="14" width="44" height="35"/>
+                            <rect key="frame" x="16" y="14" width="44" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="toolbar-keybinds" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="30">
                                 <behavior key="behavior" lightByContents="YES"/>
