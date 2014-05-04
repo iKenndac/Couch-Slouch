@@ -105,6 +105,14 @@ static DKCECKeyMappingController *sharedController;
 	return newMapping;
 }
 
+-(void)removeMapping:(DKCECKeyMapping *)mapping {
+	if (mapping.applicationIdentifier != nil) {
+		[self willChangeValueForKey:@"applicationMappings"];
+		[self.mappingStorage removeObjectForKey:mapping.applicationIdentifier];
+		[self didChangeValueForKey:@"applicationMappings"];
+	}
+}
+
 -(void)saveMappings {
 
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
