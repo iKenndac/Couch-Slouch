@@ -9,6 +9,7 @@
 "ok button title" = "OK";
 "cancel button title" = "Cancel";
 "trash button title" = "Move to Trash";
+"replace button title" = "Replace";
 "quit button title" = "Quit";
 "version formatter" = "Version %@ (%@)";
 "cec version formatter" = "libCEC Version %@";
@@ -21,8 +22,10 @@
 "invalid application chosen title" = "Invalid application";
 "invalid application chosen description" = "The item chosen doesn't appear to be a valid application. Please choose another.";
 
-"preset delete alert title" = "Are you sure you want to delete the key bindings for %@?";
-"preset delete alert description" = "The key bindings will be moved to your computer's Trash. You can re-import them if you need them back.";
+"keybinding delete alert title" = "Are you sure you want to delete the key bindings for %@?";
+"keybinding delete alert description" = "The key bindings will be moved to your computer's Trash. You can re-import them if you need them back.";
+"keybinding exists alert title" = "Key bindings already exist for the application %@. Do you want to replace them?";
+"keybinding exists alert description" = "The existing key bindings will be overwritten. To save a copy of them for safekeeping, cancel this import and export the existing bindings first.";
 
 "DKKeyboardShortcutLocalAction title" = "Keyboard Shortcut";
 "DKLaunchApplicationLocalAction title" = "Launch App";

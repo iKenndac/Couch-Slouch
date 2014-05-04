@@ -111,11 +111,11 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 
 		DKCECKeyMapping *mapping = mappings[self.sourceList.selectedRow];
 
-		NSAlert *deleteAlert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"preset delete alert title", @""), mapping.lastKnownName]
+		NSAlert *deleteAlert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"keybinding delete alert title", @""), mapping.lastKnownName]
 											   defaultButton:NSLocalizedString(@"cancel button title", @"")
 											 alternateButton:NSLocalizedString(@"trash button title", @"")
 												 otherButton:nil
-								   informativeTextWithFormat:NSLocalizedString(@"preset delete alert description", @"")];
+								   informativeTextWithFormat:NSLocalizedString(@"keybinding delete alert description", @"")];
 
 		[deleteAlert beginSheetModalForWindow:self.view.window
 								modalDelegate:self
@@ -172,6 +172,90 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 }
 
 #pragma mark - IBActions
+
+-(IBAction)exportKeyBinding:(id)sender {
+
+	NSArray *mappings = self.flattenedMappingList;
+	if (self.sourceList.selectedRow >= mappings.count) {
+		NSBeep();
+		return;
+	}
+
+	DKCECKeyMapping *mapping = mappings[self.sourceList.selectedRow];
+
+	NSSavePanel *savePanel = [NSSavePanel savePanel];
+	savePanel.nameFieldStringValue = [NSString stringWithFormat:NSLocalizedString(@"keybindings file name formatter", @""), mapping.lastKnownName];
+	savePanel.allowedFileTypes = @[kKeybindingsFileNameExtension];
+	savePanel.allowsOtherFileTypes = NO;
+
+	[savePanel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
+
+		if (result != NSFileHandlingPanelOKButton) return;
+
+		NSError *error = nil;
+		if (![self exportMapping:mapping toURL:savePanel.URL error:&error]) {
+			[self displayErrorToUser:error];
+		}
+	}];
+
+}
+
+-(IBAction)importKeyBinding:(id)sender {
+
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+    openPanel.canChooseFiles = YES;
+	openPanel.allowedFileTypes = @[kKeybindingsFileNameExtension];
+	openPanel.allowsOtherFileTypes = NO;
+
+	[openPanel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
+
+		if (result != NSFileHandlingPanelOKButton) return;
+
+		NSError *error = nil;
+		NSData *data = [NSData dataWithContentsOfURL:openPanel.URL options:0 error:&error];
+
+		if (data == nil) {
+			[self displayErrorToUser:error];
+			return;
+		}
+
+		id plistRep = [NSPropertyListSerialization propertyListWithData:data
+																options:0
+																 format:nil
+																  error:&error];
+
+		if (plistRep == nil) {
+			[self displayErrorToUser:error];
+			return;
+		}
+
+		DKCECKeyMapping *mapping = [[DKCECKeyMapping alloc] initWithPropertyListRepresentation:plistRep];
+		if (mapping == nil) {
+			[self displayErrorToUser:nil];
+			return;
+		}
+
+		DKCECKeyMapping *existingMapping = [[DKCECKeyMappingController sharedController] keyMappingForApplicationWithIdentifier:mapping.applicationIdentifier];
+
+		if (existingMapping == nil) {
+			[[DKCECKeyMappingController sharedController] addMapping:mapping];
+		} else {
+
+			NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"keybinding exists alert title", @""), mapping.lastKnownName]
+											 defaultButton:NSLocalizedString(@"cancel button title", @"")
+										   alternateButton:NSLocalizedString(@"replace button title", @"")
+											   otherButton:nil
+								 informativeTextWithFormat:NSLocalizedString(@"keybinding exists alert description", @"")];
+
+			if ([alert runModal] == NSAlertAlternateReturn) {
+				[[DKCECKeyMappingController sharedController] removeMapping:existingMapping];
+				[[DKCECKeyMappingController sharedController] addMapping:mapping];
+			}
+
+		}
+
+	}];
+}
 
 -(IBAction)addApplication:(id)sender {
 	NSOpenPanel *openPanel = [NSOpenPanel openPanel];

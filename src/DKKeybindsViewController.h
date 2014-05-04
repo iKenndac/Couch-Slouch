@@ -23,6 +23,8 @@
 
 
 -(IBAction)addApplication:(id)sender;
+-(IBAction)exportKeyBinding:(id)sender;
+-(IBAction)importKeyBinding:(id)sender;
 
 -(void)handleKeypress:(cec_keypress)press;
 
