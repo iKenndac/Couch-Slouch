@@ -47,6 +47,8 @@
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSAppleScriptEnabled</key>
+	<true/>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2012-2014 Daniel Kennett. All rights reserved.</string>
 	<key>NSMainNibFile</key>
@@ -57,6 +59,8 @@
 	<false/>
 	<key>NSUserNotificationAlertStyle</key>
 	<string>banner</string>
+	<key>OSAScriptingDefinition</key>
+	<string>Couch Slouch.sdef</string>
 	<key>SUFeedURL</key>
 	<string>http://www.couch-slouch.com/updates/CouchSlouchUpdates.xml</string>
 	<key>SUPublicDSAKeyFile</key>

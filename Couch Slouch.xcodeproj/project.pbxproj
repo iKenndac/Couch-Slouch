@@ -102,6 +102,9 @@
 		508FF112190ACE450034F567 /* RHCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 508FF110190ACE450034F567 /* RHCommandHandler.cpp */; };
 		5093453D17F8319300A1725E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093453C17F8319300A1725E /* Images.xcassets */; };
 		50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */; };
+		509D1B441B19D7CD006194FB /* Couch Slouch.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 509D1B431B19D7CD006194FB /* Couch Slouch.sdef */; };
+		509D1B471B19DDCA006194FB /* NSApplication+AppleScriptAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 509D1B461B19DDCA006194FB /* NSApplication+AppleScriptAdditions.m */; };
+		509D1B4B1B19E138006194FB /* DKCECDeviceController+AppleScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 509D1B4A1B19E138006194FB /* DKCECDeviceController+AppleScript.m */; };
 		509E10DF15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */; };
 		509E10E815E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E10E615E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.m */; };
 		50A8BFFF17F872670021E825 /* Couch Slouch Example Script.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 50A8BFFE17F872510021E825 /* Couch Slouch Example Script.scpt */; };
@@ -386,6 +389,11 @@
 		5093453C17F8319300A1725E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		50966FB315E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+KeyCodeTranslation.h"; sourceTree = "<group>"; };
 		50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+KeyCodeTranslation.m"; sourceTree = "<group>"; };
+		509D1B431B19D7CD006194FB /* Couch Slouch.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Couch Slouch.sdef"; sourceTree = "<group>"; };
+		509D1B451B19DDCA006194FB /* NSApplication+AppleScriptAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+AppleScriptAdditions.h"; sourceTree = "<group>"; };
+		509D1B461B19DDCA006194FB /* NSApplication+AppleScriptAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+AppleScriptAdditions.m"; sourceTree = "<group>"; };
+		509D1B491B19E138006194FB /* DKCECDeviceController+AppleScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+AppleScript.h"; sourceTree = "<group>"; };
+		509D1B4A1B19E138006194FB /* DKCECDeviceController+AppleScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+AppleScript.m"; sourceTree = "<group>"; };
 		509E10DC15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLaunchApplicationLocalActionConfigViewController.h; sourceTree = "<group>"; };
 		509E10DD15E588B0001D0F4B /* DKLaunchApplicationLocalActionConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLaunchApplicationLocalActionConfigViewController.m; sourceTree = "<group>"; };
 		509E10E515E589DF001D0F4B /* DKKeyboardShortcutLocalActionConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKKeyboardShortcutLocalActionConfigViewController.h; sourceTree = "<group>"; };
@@ -821,6 +829,7 @@
 		5047670015F6B13300BF2DA7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				509D1B431B19D7CD006194FB /* Couch Slouch.sdef */,
 				50A8BFFE17F872510021E825 /* Couch Slouch Example Script.scpt */,
 				5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */,
 				50F157F519168D5B00B7FFFA /* KeybindingsIcon.icns */,
@@ -893,6 +902,8 @@
 				50D894EF18004C8700D8A610 /* DKCECDeviceController+SoftReset.m */,
 				50966FB315E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.h */,
 				50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */,
+				509D1B491B19E138006194FB /* DKCECDeviceController+AppleScript.h */,
+				509D1B4A1B19E138006194FB /* DKCECDeviceController+AppleScript.m */,
 				5055C7EA15DFB54C00B6B497 /* DKCECKeyMappingController.h */,
 				5055C7EB15DFB54C00B6B497 /* DKCECKeyMappingController.m */,
 				506B6F3417F3570B00325DD6 /* DKCECBehaviourController.h */,
@@ -1173,6 +1184,7 @@
 				5093453D17F8319300A1725E /* Images.xcassets in Resources */,
 				5047672015F6B13300BF2DA7 /* DKLaunchApplicationLocalActionConfigViewController.xib in Resources */,
 				5047672115F6B13300BF2DA7 /* DKSetupViewController.xib in Resources */,
+				509D1B441B19D7CD006194FB /* Couch Slouch.sdef in Resources */,
 				5047672215F6B13300BF2DA7 /* InfoPlist.strings in Resources */,
 				5047672315F6B13300BF2DA7 /* Localizable.strings in Resources */,
 				5047672415F6B13300BF2DA7 /* MainMenu.xib in Resources */,
@@ -1308,6 +1320,7 @@
 				50F157F1191681C500B7FFFA /* DKMenuButton.m in Sources */,
 				502CA7AE16164BB2006A9A52 /* DKFakeRemoteWindowController.m in Sources */,
 				50FF7DF316177569008324F0 /* DKShowMouseGridLocalAction.m in Sources */,
+				509D1B471B19DDCA006194FB /* NSApplication+AppleScriptAdditions.m in Sources */,
 				508DEBC71618449900413CD9 /* StartAtLoginController.m in Sources */,
 				508DEBFF16184EA800413CD9 /* DKBackgroundStyleForwarderView.m in Sources */,
 				506B6F3C17F70EC000325DD6 /* DKBehaviourScriptController.m in Sources */,
@@ -1316,6 +1329,7 @@
 				508DEC0116184EA800413CD9 /* DKFancyDividerView.m in Sources */,
 				508DEC0416184EC000413CD9 /* KNGradientExtensions.m in Sources */,
 				508DEC0716184ED000413CD9 /* KNStatusBarView.m in Sources */,
+				509D1B4B1B19E138006194FB /* DKCECDeviceController+AppleScript.m in Sources */,
 				508DEC0A16184EDA00413CD9 /* KNEmbossedTextField.m in Sources */,
 				50C101B716543BA9002DD42D /* PHCommandHandler.cpp in Sources */,
 			);
