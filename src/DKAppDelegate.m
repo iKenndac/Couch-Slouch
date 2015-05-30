@@ -86,6 +86,13 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 }
 
 -(BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
+
+    if ([filename isEqualToString:kApplicationLaunchedAtStartupParameter] ||
+        [filename isEqualToString:@"YES"] ||
+        [filename isEqualToString:@"NO"]) {
+        return YES;
+    }
+
 	[self.windowController switchToKeybindsView:nil];
 	[self showMainWindow:nil];
 	[self.windowController.keybindsViewController attemptToImportKeybinding:[NSURL fileURLWithPath:filename]];
