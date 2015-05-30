@@ -78,7 +78,7 @@
 		506B6F3617F3570B00325DD6 /* DKCECBehaviourController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506B6F3517F3570B00325DD6 /* DKCECBehaviourController.m */; };
 		506B6F3917F37B6C00325DD6 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506B6F3817F37B6C00325DD6 /* ScriptingBridge.framework */; };
 		506B6F3C17F70EC000325DD6 /* DKBehaviourScriptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506B6F3B17F70EC000325DD6 /* DKBehaviourScriptController.m */; };
-		5070857717F8A3B000F0CB4E /* org.danielkennett.CouchSlouchScriptRunner.xpc in Copy Script Runner */ = {isa = PBXBuildFile; fileRef = 50A8C00417F88DE50021E825 /* org.danielkennett.CouchSlouchScriptRunner.xpc */; };
+		5070857717F8A3B000F0CB4E /* org.danielkennett.CouchSlouchScriptRunner.xpc in Copy Script Runner */ = {isa = PBXBuildFile; fileRef = 50A8C00417F88DE50021E825 /* org.danielkennett.CouchSlouchScriptRunner.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */; };
 		508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7B15FE78700014BC2A /* menubar-noconnection.png */; };
 		508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7C15FE78700014BC2A /* menubar-off.png */; };
@@ -126,7 +126,7 @@
 		50BA39FF15F7EA3D0075E7DB /* button-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FC15F7EA3D0075E7DB /* button-right.png */; };
 		50C101B716543BA9002DD42D /* PHCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50C101B516543BA9002DD42D /* PHCommandHandler.cpp */; };
 		50CB484116581FE200F690EF /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; };
-		50CB484216581FF200F690EF /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; };
+		50CB484216581FF200F690EF /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		50D894F018004C8700D8A610 /* DKCECDeviceController+SoftReset.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D894EF18004C8700D8A610 /* DKCECDeviceController+SoftReset.m */; };
 		50E58DFC15FCC4FB00AB8441 /* tv-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */; };
 		50E58DFD15FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */; };
@@ -583,6 +583,8 @@
 				50ED687015E2EA2E0078261D /* Constants.h */,
 				503F565E15DD8179007F2F3E /* DKAppDelegate.h */,
 				503F565F15DD8179007F2F3E /* DKAppDelegate.m */,
+				509D1B451B19DDCA006194FB /* NSApplication+AppleScriptAdditions.h */,
+				509D1B461B19DDCA006194FB /* NSApplication+AppleScriptAdditions.m */,
 				502CA7AC16164BB1006A9A52 /* DKFakeRemoteWindowController.h */,
 				502CA7AD16164BB1006A9A52 /* DKFakeRemoteWindowController.m */,
 				5055C7CD15DFA08900B6B497 /* UI */,
@@ -1146,8 +1148,16 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DK;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Daniel Kennett";
+				TargetAttributes = {
+					508DEB7E1618404F00413CD9 = {
+						DevelopmentTeam = Z3SAA98JEE;
+					};
+					50A8C00317F88DE50021E825 = {
+						DevelopmentTeam = Z3SAA98JEE;
+					};
+				};
 			};
 			buildConfigurationList = 503F564215DD8179007F2F3E /* Build configuration list for PBXProject "Couch Slouch" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1488,7 +1498,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Developer ID Application: Daniel Kennett";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1518,7 +1528,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Developer ID Application: Daniel Kennett";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1586,6 +1596,7 @@
 				GCC_PREFIX_HEADER = "src/Couch Slouch Login Helper-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Couch Slouch Login Helper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
@@ -1602,6 +1613,7 @@
 				GCC_PREFIX_HEADER = "src/Couch Slouch Login Helper-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Couch Slouch Login Helper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
@@ -1634,6 +1646,7 @@
 				MACH_O_TYPE = mh_execute;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "org.danielkennett.$(TARGET_NAME:rfc1034identifier)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = xpc;
 			};
 			name = Debug;
@@ -1661,6 +1674,7 @@
 				MACH_O_TYPE = mh_execute;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "org.danielkennett.$(TARGET_NAME:rfc1034identifier)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = xpc;
 			};
 			name = Release;
