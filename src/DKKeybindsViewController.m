@@ -81,7 +81,8 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 }
 
 -(void)awakeFromNib {
-	[self tableViewSelectionDidChange:nil];
+    DKCECKeyMapping *mapping = [self tableView:self.sourceList objectValueForTableColumn:nil row:self.sourceList.selectedRow];
+    self.currentMapping = mapping;
 	[self.recorder setAllowsKeyOnly:YES escapeKeysRecord:YES];
 	self.actionsList.floatsGroupRows = YES;
 }

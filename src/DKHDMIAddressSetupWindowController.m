@@ -108,7 +108,7 @@ typedef enum {
 		transition.subtype = forwards ? kCATransitionFromRight : kCATransitionFromLeft;
 		self.wizardViewContainer.animations = @{ @"subviews" : transition };
 	} else {
-		self.wizardViewContainer.animations = nil;
+        self.wizardViewContainer.animations = @{};
 	}
 
 	if (self.currentView == nil)
