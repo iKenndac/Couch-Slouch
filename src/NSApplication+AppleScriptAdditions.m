@@ -20,7 +20,7 @@
 }
 
 -(BOOL)hasConnection {
-    return [[self applescriptCecController] hasConnection];
+    return [[self applescriptCecController] hasConnectionToDevice];
 }
 
 -(BOOL)isTVOn {

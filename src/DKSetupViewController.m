@@ -34,7 +34,7 @@
 										 [myBundle.infoDictionary valueForKey:@"CFBundleVersion"]];
 
 	self.aboutLibCECVersionView.stringValue = [NSString stringWithFormat:NSLocalizedString(@"cec version formatter", @""),
-											   [NSString stringWithFormat:@"%x", CEC_CLIENT_VERSION_CURRENT]];
+                                               [NSString stringWithFormat:@"%x", LIBCEC_VERSION_CURRENT]];
 
 }
 

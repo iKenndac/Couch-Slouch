@@ -24,7 +24,7 @@
 
     DKCECDeviceController *controller = [NSApplication sharedApplication].applescriptCecController;
 
-    if (!controller.hasConnection) {
+    if (!controller.hasConnectionToDevice) {
         self.scriptErrorNumber = NSReceiversCantHandleCommandScriptError;
         self.scriptErrorString = @"Cannot perform CEC commands with no CEC device present.";
         return nil;
@@ -50,7 +50,7 @@
 
     DKCECDeviceController *controller = [NSApplication sharedApplication].applescriptCecController;
 
-    if (!controller.hasConnection) {
+    if (!controller.hasConnectionToDevice) {
         self.scriptErrorNumber = NSReceiversCantHandleCommandScriptError;
         self.scriptErrorString = @"Cannot perform CEC commands with no CEC device present.";
         return nil;
@@ -76,7 +76,7 @@
 
     DKCECDeviceController *controller = [NSApplication sharedApplication].applescriptCecController;
 
-    if (!controller.hasConnection) {
+    if (!controller.hasConnectionToDevice) {
         self.scriptErrorNumber = NSReceiversCantHandleCommandScriptError;
         self.scriptErrorString = @"Cannot perform CEC commands with no CEC device present.";
         return nil;

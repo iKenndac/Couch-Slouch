@@ -8,3 +8,6 @@
 	path = vendor/KNSharedCodeRepository
 	url = git://github.com/iKenndac/KNSharedCodeRepository.git
 	
+[submodule "vendor/p8-platform"]
+	path = vendor/p8-platform
+	url = git@github.com:Pulse-Eight/platform.git

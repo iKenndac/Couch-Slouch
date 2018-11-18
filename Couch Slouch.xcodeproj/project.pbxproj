@@ -52,7 +52,6 @@
 		503F574715DD8221007F2F3E /* nv-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56DE15DD8221007F2F3E /* nv-edid.cpp */; };
 		503F574815DD8221007F2F3E /* os-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E215DD8221007F2F3E /* os-edid.cpp */; };
 		503F574915DD8221007F2F3E /* serialport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E615DD8221007F2F3E /* serialport.cpp */; };
-		503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E715DD8221007F2F3E /* serversocket.cpp */; };
 		503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575315DD845B007F2F3E /* IOKit.framework */; };
 		503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575515DD848E007F2F3E /* QuartzCore.framework */; };
 		503F575D15DD9148007F2F3E /* DKCECDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F575C15DD9148007F2F3E /* DKCECDeviceController.m */; };
@@ -234,7 +233,6 @@
 		503F566C15DD81D2007F2F3E /* cecc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecc.h; sourceTree = "<group>"; };
 		503F566D15DD81D2007F2F3E /* cecloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecloader.h; sourceTree = "<group>"; };
 		503F566E15DD81D2007F2F3E /* cectypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cectypes.h; sourceTree = "<group>"; };
-		503F569815DD8221007F2F3E /* env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = env.h; sourceTree = "<group>"; };
 		503F569B15DD8221007F2F3E /* AdapterCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdapterCommunication.h; sourceTree = "<group>"; };
 		503F569C15DD8221007F2F3E /* AdapterFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdapterFactory.cpp; sourceTree = "<group>"; };
 		503F569D15DD8221007F2F3E /* AdapterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdapterFactory.h; sourceTree = "<group>"; };
@@ -294,25 +292,11 @@
 		503F56DC15DD8221007F2F3E /* adl_structures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adl_structures.h; sourceTree = "<group>"; };
 		503F56DE15DD8221007F2F3E /* nv-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "nv-edid.cpp"; sourceTree = "<group>"; };
 		503F56DF15DD8221007F2F3E /* nv-edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "nv-edid.h"; sourceTree = "<group>"; };
-		503F56E015DD8221007F2F3E /* os.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = os.h; sourceTree = "<group>"; };
 		503F56E215DD8221007F2F3E /* os-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "os-edid.cpp"; sourceTree = "<group>"; };
-		503F56E315DD8221007F2F3E /* os-socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "os-socket.h"; sourceTree = "<group>"; };
-		503F56E415DD8221007F2F3E /* os-threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "os-threads.h"; sourceTree = "<group>"; };
-		503F56E515DD8221007F2F3E /* os-types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "os-types.h"; sourceTree = "<group>"; };
 		503F56E615DD8221007F2F3E /* serialport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = serialport.cpp; sourceTree = "<group>"; };
-		503F56E715DD8221007F2F3E /* serversocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = serversocket.cpp; sourceTree = "<group>"; };
 		503F56E915DD8221007F2F3E /* serialport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serialport.h; sourceTree = "<group>"; };
-		503F56EA15DD8221007F2F3E /* serversocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serversocket.h; sourceTree = "<group>"; };
-		503F56EB15DD8221007F2F3E /* socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = socket.h; sourceTree = "<group>"; };
-		503F56EC15DD8221007F2F3E /* tcp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tcp.h; sourceTree = "<group>"; };
-		503F56EE15DD8221007F2F3E /* mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mutex.h; sourceTree = "<group>"; };
-		503F56EF15DD8221007F2F3E /* threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threads.h; sourceTree = "<group>"; };
 		503F56F115DD8221007F2F3E /* baudrate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baudrate.h; sourceTree = "<group>"; };
-		503F56F215DD8221007F2F3E /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
 		503F56F315DD8221007F2F3E /* edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = edid.h; sourceTree = "<group>"; };
-		503F56F415DD8221007F2F3E /* StdString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StdString.h; sourceTree = "<group>"; };
-		503F56F515DD8221007F2F3E /* timeutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeutils.h; sourceTree = "<group>"; };
-		503F56F615DD8221007F2F3E /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		503F575315DD845B007F2F3E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		503F575515DD848E007F2F3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		503F575B15DD9148007F2F3E /* DKCECDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECDeviceController.h; sourceTree = "<group>"; };
@@ -423,6 +407,8 @@
 		50CB484016581FE200F690EF /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = vendor/Sparkle.framework; sourceTree = "<group>"; };
 		50D894EE18004C8700D8A610 /* DKCECDeviceController+SoftReset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+SoftReset.h"; sourceTree = "<group>"; };
 		50D894EF18004C8700D8A610 /* DKCECDeviceController+SoftReset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+SoftReset.m"; sourceTree = "<group>"; };
+		50E55F7521A1FA3600FD0E12 /* env.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = env.h; sourceTree = "<group>"; };
+		50E55F7621A1FA5F00FD0E12 /* os.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = os.h; path = vendor/libcec/src/platform/src/os.h; sourceTree = SOURCE_ROOT; };
 		50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-av-computer-large.png"; sourceTree = "<group>"; };
 		50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-av-highlighted-computer-large.png"; sourceTree = "<group>"; };
 		50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-computer-highlighted-large.png"; sourceTree = "<group>"; };
@@ -634,7 +620,6 @@
 		503F566F15DD8221007F2F3E /* src */ = {
 			isa = PBXGroup;
 			children = (
-				503F569815DD8221007F2F3E /* env.h */,
 				503F569915DD8221007F2F3E /* lib */,
 			);
 			name = src;
@@ -644,6 +629,7 @@
 		503F569915DD8221007F2F3E /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				50E55F7521A1FA3600FD0E12 /* env.h */,
 				503F569A15DD8221007F2F3E /* adapter */,
 				503F56B015DD8221007F2F3E /* CECClient.cpp */,
 				503F56B115DD8221007F2F3E /* CECClient.h */,
@@ -658,7 +644,8 @@
 				503F56D315DD8221007F2F3E /* LibCECC.cpp */,
 				503F56D615DD8221007F2F3E /* platform */,
 			);
-			path = lib;
+			name = lib;
+			path = libcec;
 			sourceTree = "<group>";
 		};
 		503F569A15DD8221007F2F3E /* adapter */ = {
@@ -750,12 +737,11 @@
 		503F56D615DD8221007F2F3E /* platform */ = {
 			isa = PBXGroup;
 			children = (
+				50E55F7621A1FA5F00FD0E12 /* os.h */,
 				503F56D715DD8221007F2F3E /* adl */,
 				503F56DD15DD8221007F2F3E /* nvidia */,
-				503F56E015DD8221007F2F3E /* os.h */,
 				503F56E115DD8221007F2F3E /* posix */,
 				503F56E815DD8221007F2F3E /* sockets */,
-				503F56ED15DD8221007F2F3E /* threads */,
 				503F56F015DD8221007F2F3E /* util */,
 			);
 			path = platform;
@@ -786,11 +772,7 @@
 			isa = PBXGroup;
 			children = (
 				503F56E215DD8221007F2F3E /* os-edid.cpp */,
-				503F56E315DD8221007F2F3E /* os-socket.h */,
-				503F56E415DD8221007F2F3E /* os-threads.h */,
-				503F56E515DD8221007F2F3E /* os-types.h */,
 				503F56E615DD8221007F2F3E /* serialport.cpp */,
-				503F56E715DD8221007F2F3E /* serversocket.cpp */,
 			);
 			path = posix;
 			sourceTree = "<group>";
@@ -799,31 +781,15 @@
 			isa = PBXGroup;
 			children = (
 				503F56E915DD8221007F2F3E /* serialport.h */,
-				503F56EA15DD8221007F2F3E /* serversocket.h */,
-				503F56EB15DD8221007F2F3E /* socket.h */,
-				503F56EC15DD8221007F2F3E /* tcp.h */,
 			);
 			path = sockets;
-			sourceTree = "<group>";
-		};
-		503F56ED15DD8221007F2F3E /* threads */ = {
-			isa = PBXGroup;
-			children = (
-				503F56EE15DD8221007F2F3E /* mutex.h */,
-				503F56EF15DD8221007F2F3E /* threads.h */,
-			);
-			path = threads;
 			sourceTree = "<group>";
 		};
 		503F56F015DD8221007F2F3E /* util */ = {
 			isa = PBXGroup;
 			children = (
 				503F56F115DD8221007F2F3E /* baudrate.h */,
-				503F56F215DD8221007F2F3E /* buffer.h */,
 				503F56F315DD8221007F2F3E /* edid.h */,
-				503F56F415DD8221007F2F3E /* StdString.h */,
-				503F56F515DD8221007F2F3E /* timeutils.h */,
-				503F56F615DD8221007F2F3E /* util.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -1305,7 +1271,6 @@
 				503F574815DD8221007F2F3E /* os-edid.cpp in Sources */,
 				37F810A918073A1400DA211C /* DKCompassConfigViewController.m in Sources */,
 				503F574915DD8221007F2F3E /* serialport.cpp in Sources */,
-				503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */,
 				503F575D15DD9148007F2F3E /* DKCECDeviceController.m in Sources */,
 				5055C7C715DF9EE800B6B497 /* DKCECWindowController.m in Sources */,
 				5055C7D415DFA5EB00B6B497 /* DKKeybindsViewController.m in Sources */,
