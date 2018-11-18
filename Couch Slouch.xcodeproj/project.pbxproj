@@ -11,7 +11,7 @@
 		37F810AB18073B6200DA211C /* DKCompassConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F810AD18073B6200DA211C /* DKCompassConfigViewController.xib */; };
 		37F810B118073CC200DA211C /* DKCompassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F810B018073CC200DA211C /* DKCompassController.m */; };
 		37F810B418073CEF00DA211C /* DKCompassFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F810B318073CEF00DA211C /* DKCompassFace.m */; };
-		5017A30315E2D85A00B88FE6 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FA15E2D85A00B88FE6 /* SRCommon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5017A30315E2D85A00B88FE6 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FA15E2D85A00B88FE6 /* SRCommon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-deprecated-declarations"; }; };
 		5017A30415E2D85A00B88FE6 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FC15E2D85A00B88FE6 /* SRKeyCodeTransformer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5017A30515E2D85A00B88FE6 /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FE15E2D85A00B88FE6 /* SRRecorderCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5017A30615E2D85A00B88FE6 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A30015E2D85A00B88FE6 /* SRRecorderControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -987,7 +987,6 @@
 				5042B38117F8A12200E4BC48 /* ScriptRunner-Info.plist */,
 			);
 			name = "Script Runner";
-			path = "Couch Slouch Script Runner";
 			sourceTree = "<group>";
 		};
 		50A9953415F927A200CDBB9B /* View Controllers */ = {
@@ -1061,7 +1060,6 @@
 				50F157F3191681E700B7FFFA /* DKMenuButtonCell.m */,
 			);
 			name = "Custom UI";
-			path = ../ShortcutRecorder/Framework/Source;
 			sourceTree = "<group>";
 		};
 		50FF7DF416177570008324F0 /* Actions */ = {
@@ -1148,14 +1146,20 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DK;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Daniel Kennett";
 				TargetAttributes = {
+					503F564715DD8179007F2F3E = {
+						DevelopmentTeam = RPBBKY7VG7;
+						ProvisioningStyle = Automatic;
+					};
 					508DEB7E1618404F00413CD9 = {
-						DevelopmentTeam = Z3SAA98JEE;
+						DevelopmentTeam = RPBBKY7VG7;
+						ProvisioningStyle = Automatic;
 					};
 					50A8C00317F88DE50021E825 = {
-						DevelopmentTeam = Z3SAA98JEE;
+						DevelopmentTeam = RPBBKY7VG7;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1497,16 +1501,24 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Daniel Kennett";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1540,16 +1552,24 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Daniel Kennett";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1573,7 +1593,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor\"",
@@ -1587,6 +1610,7 @@
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.CouchSlouch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1595,7 +1619,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor\"",
@@ -1609,6 +1636,7 @@
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.CouchSlouch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1618,13 +1646,17 @@
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Couch Slouch Login Helper-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Couch Slouch Login Helper-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.CouchSlouchLoginHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
@@ -1636,13 +1668,17 @@
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Couch Slouch Login Helper-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Couch Slouch Login Helper-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.CouchSlouchLoginHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
@@ -1661,7 +1697,10 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/ScriptRunner-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1677,6 +1716,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_NAME}";
 				PRODUCT_NAME = "org.danielkennett.$(TARGET_NAME:rfc1034identifier)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = xpc;
 			};
 			name = Debug;
@@ -1693,7 +1733,10 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/ScriptRunner-Prefix.pch";
@@ -1706,6 +1749,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_NAME}";
 				PRODUCT_NAME = "org.danielkennett.$(TARGET_NAME:rfc1034identifier)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = xpc;
 			};
 			name = Release;
