@@ -205,6 +205,8 @@
 		37F810B018073CC200DA211C /* DKCompassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCompassController.m; sourceTree = "<group>"; };
 		37F810B218073CEF00DA211C /* DKCompassFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCompassFace.h; sourceTree = "<group>"; };
 		37F810B318073CEF00DA211C /* DKCompassFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCompassFace.m; sourceTree = "<group>"; };
+		5001DEC821C2C6200074450D /* version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = version.h; path = "vendor/libcec-generated/version.h"; sourceTree = "<group>"; };
+		5001DEC921C2C6200074450D /* env.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = env.h; path = "vendor/libcec-generated/env.h"; sourceTree = "<group>"; };
 		5017A2F915E2D85A00B88FE6 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
 		5017A2FA15E2D85A00B88FE6 /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = "<group>"; };
 		5017A2FB15E2D85A00B88FE6 /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = "<group>"; };
@@ -409,7 +411,6 @@
 		50CB484016581FE200F690EF /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = vendor/Sparkle.framework; sourceTree = "<group>"; };
 		50D894EE18004C8700D8A610 /* DKCECDeviceController+SoftReset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+SoftReset.h"; sourceTree = "<group>"; };
 		50D894EF18004C8700D8A610 /* DKCECDeviceController+SoftReset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+SoftReset.m"; sourceTree = "<group>"; };
-		50E55F7521A1FA3600FD0E12 /* env.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = env.h; sourceTree = "<group>"; };
 		50E55F7621A1FA5F00FD0E12 /* os.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = os.h; path = vendor/libcec/src/platform/src/os.h; sourceTree = SOURCE_ROOT; };
 		50E55F7721A209DA00FD0E12 /* libp8-platform.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libp8-platform.a"; path = "vendor/p8-platform-build/libp8-platform.a"; sourceTree = "<group>"; };
 		50E55F7A21A20B2500FD0E12 /* drm-edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "drm-edid.h"; sourceTree = "<group>"; };
@@ -635,7 +636,6 @@
 		503F569915DD8221007F2F3E /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				50E55F7521A1FA3600FD0E12 /* env.h */,
 				503F569A15DD8221007F2F3E /* adapter */,
 				503F56B015DD8221007F2F3E /* CECClient.cpp */,
 				503F56B115DD8221007F2F3E /* CECClient.h */,
@@ -902,6 +902,8 @@
 			isa = PBXGroup;
 			children = (
 				50E55F7721A209DA00FD0E12 /* libp8-platform.a */,
+				5001DEC921C2C6200074450D /* env.h */,
+				5001DEC821C2C6200074450D /* version.h */,
 				503F566915DD819B007F2F3E /* libCEC */,
 				508DEBC01618449900413CD9 /* StartAtLoginController */,
 				5017A2F815E2D85A00B88FE6 /* ShortcutRecorder */,
