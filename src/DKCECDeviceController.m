@@ -34,47 +34,48 @@ static NSTimeInterval const kDevicePingInterval = 30.0;
 // ------------- Callbacks ------------------
 
 static void DKCBCecLogMessage(void *param, const cec_log_message* message) {
-
-#warning Pointers, async, bad
+    NSString *messageString = [NSString stringWithUTF8String:message->message];
+    cec_log_level messageSeverity = message->level;
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
 		if ([controller.delegate respondsToSelector:@selector(cecController:didLogMessage:ofSeverity:)])
-			[controller.delegate cecController:controller
-								 didLogMessage:[NSString stringWithUTF8String:message->message]
-									ofSeverity:message->level];
+            [controller.delegate cecController:controller didLogMessage:messageString ofSeverity:messageSeverity];
 	});
 }
 
 static void DKCBCecKeyPress(void *param, const cec_keypress* keyPress) {
-    #warning Pointers, async, bad
+    cec_keypress localKeyPress;
+    memcpy(&localKeyPress, keyPress, sizeof(localKeyPress));
+
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
-		[controller handleKeyPress:*keyPress];
+		[controller handleKeyPress:localKeyPress];
 	});
 }
 
 
 static void DKCBCecCommand(void *param, const cec_command* command) {
-
-#warning We have pointers here now, and there's async and stuff. This is bad.
+    cec_command localCommand;
+    memcpy(&localCommand, command, sizeof(localCommand));
 
 	DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
 
-	if (command->initiator == CECDEVICE_TV && command->destination == CECDEVICE_BROADCAST) {
+	if (localCommand.initiator == CECDEVICE_TV && localCommand.destination == CECDEVICE_BROADCAST) {
 		// TV is telling us important information!
-		if (command->opcode == CEC_OPCODE_STANDBY) {
+		if (localCommand.opcode == CEC_OPCODE_STANDBY) {
 			dispatch_async(dispatch_get_main_queue(), ^{
 				controller.isTVOn = NO;
 				controller.isActiveSource = NO;
 			});
 		}
 
-		if (command->opcode == CEC_OPCODE_ACTIVE_SOURCE) {
-			if (command->parameters.size < 2)
+		if (localCommand.opcode == CEC_OPCODE_ACTIVE_SOURCE) {
+            if (localCommand.parameters.size < 2) {
 				return;
+            }
 			
-			uint16_t iAddress = ((uint16_t)command->parameters.data[0] << 8) | ((uint16_t)command->parameters.data[1]);
+			uint16_t iAddress = ((uint16_t)localCommand.parameters.data[0] << 8) | ((uint16_t)localCommand.parameters.data[1]);
 
 			dispatch_async(dispatch_get_main_queue(), ^{
 				controller.isTVOn = YES;
@@ -82,11 +83,12 @@ static void DKCBCecCommand(void *param, const cec_command* command) {
 			});
 		}
 
-		if (command->opcode == CEC_OPCODE_SET_STREAM_PATH) {
-			if (command->parameters.size < 2)
+		if (localCommand.opcode == CEC_OPCODE_SET_STREAM_PATH) {
+            if (localCommand.parameters.size < 2) {
                 return;
+            }
 			
-			uint16_t iStreamAddress = ((uint16_t)command->parameters.data[0] << 8) | ((uint16_t)command->parameters.data[1]);
+			uint16_t iStreamAddress = ((uint16_t)localCommand.parameters.data[0] << 8) | ((uint16_t)localCommand.parameters.data[1]);
 
 			dispatch_async(dispatch_get_main_queue(), ^{
 				controller.isTVOn = YES;
@@ -94,13 +96,13 @@ static void DKCBCecCommand(void *param, const cec_command* command) {
 			});
 		}
 
-		if (command->opcode == CEC_OPCODE_ROUTING_CHANGE) {
+		if (localCommand.opcode == CEC_OPCODE_ROUTING_CHANGE) {
 
-			if (command->parameters.size < 4)
+            if (localCommand.parameters.size < 4) {
 				return;
+            }
 
-			//uint16_t iOldAddress = ((uint16_t)command.parameters.data[0] << 8) | ((uint16_t)command.parameters.data[1]);
-			uint16_t iNewAddress = ((uint16_t)command->parameters.data[2] << 8) | ((uint16_t)command->parameters.data[3]);
+			uint16_t iNewAddress = ((uint16_t)localCommand.parameters.data[2] << 8) | ((uint16_t)localCommand.parameters.data[3]);
 			
 			dispatch_async(dispatch_get_main_queue(), ^{
 				controller.isTVOn = YES;
@@ -110,17 +112,19 @@ static void DKCBCecCommand(void *param, const cec_command* command) {
 	}
 
 	dispatch_async(dispatch_get_main_queue(), ^{
-	if ([controller.delegate respondsToSelector:@selector(cecController:didReceiveCommand:)])
-		[controller.delegate cecController:controller
-						 didReceiveCommand:*command];
+        if ([controller.delegate respondsToSelector:@selector(cecController:didReceiveCommand:)]) {
+            [controller.delegate cecController:controller didReceiveCommand:localCommand];
+        }
 	});
 }
 
 static void DKCBCecConfigurationChanged(void *param, const libcec_configuration* config) {
-    #warning Pointers, async, bad
+    libcec_configuration localConfiguration;
+    memcpy(&localConfiguration, config, sizeof(localConfiguration));
+
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
-		[controller _didReceiveNewConfiguration:*config];
+		[controller _didReceiveNewConfiguration:localConfiguration];
 	});
 }
 
