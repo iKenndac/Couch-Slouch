@@ -99,7 +99,7 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 
 -(void)displayErrorToUser:(NSError *)error {
 	NSAlert *alert = [NSAlert alertWithError:error];
-	[alert beginSheetModalForWindow:self.view.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+	[alert beginSheetModalForWindow:self.view.window completionHandler:nil];
 }
 
 +(NSSet *)keyPathsForValuesAffectingCanExportSelectedBindings {
@@ -130,26 +130,18 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 
 		DKCECKeyMapping *mapping = self.currentMapping;
 
-		NSAlert *deleteAlert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"keybinding delete alert title", @""), mapping.lastKnownName]
-											   defaultButton:NSLocalizedString(@"cancel button title", @"")
-											 alternateButton:NSLocalizedString(@"trash button title", @"")
-												 otherButton:nil
-								   informativeTextWithFormat:NSLocalizedString(@"keybinding delete alert description", @"")];
-
-		[deleteAlert beginSheetModalForWindow:self.view.window
-								modalDelegate:self
-							   didEndSelector:@selector(keybindDeleteAlertDidEnd:returnCode:contextInfo:)
-								  contextInfo:(__bridge void *)mapping];
-
+        NSAlert *deleteAlert = [NSAlert new];
+        deleteAlert.messageText = [NSString stringWithFormat:NSLocalizedString(@"keybinding delete alert title", @""), mapping.lastKnownName];
+        deleteAlert.informativeText = NSLocalizedString(@"keybinding delete alert description", @"");
+        [deleteAlert addButtonWithTitle:NSLocalizedString(@"cancel button title", @"")];
+        [deleteAlert addButtonWithTitle:NSLocalizedString(@"trash button title", @"")];
+        [deleteAlert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse returnCode) {
+            if (returnCode == NSAlertSecondButtonReturn) {
+                [self deleteMapping:mapping];
+            }
+        }];
 	} else {
 		NSBeep();
-	}
-}
-
--(void)keybindDeleteAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
-	if (returnCode == NSAlertAlternateReturn) {
-		DKCECKeyMapping *mapping = (__bridge DKCECKeyMapping *)contextInfo;
-		[self deleteMapping:mapping];
 	}
 }
 
@@ -266,18 +258,15 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 	if (existingMapping == nil) {
 		[[DKCECKeyMappingController sharedController] addMapping:mapping];
 	} else {
-
-		NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"keybinding exists alert title", @""), mapping.lastKnownName]
-										 defaultButton:NSLocalizedString(@"cancel button title", @"")
-									   alternateButton:NSLocalizedString(@"replace button title", @"")
-										   otherButton:nil
-							 informativeTextWithFormat:NSLocalizedString(@"keybinding exists alert description", @"")];
-
-		if ([alert runModal] == NSAlertAlternateReturn) {
+        NSAlert *alert = [NSAlert new];
+        alert.messageText = [NSString stringWithFormat:NSLocalizedString(@"keybinding exists alert title", @""), mapping.lastKnownName];
+        alert.informativeText = NSLocalizedString(@"keybinding exists alert description", @"");
+        [alert addButtonWithTitle:NSLocalizedString(@"cancel button title", @"")];
+        [alert addButtonWithTitle:NSLocalizedString(@"replace button title", @"")];
+		if ([alert runModal] == NSAlertSecondButtonReturn) {
 			[[DKCECKeyMappingController sharedController] removeMapping:existingMapping];
 			[[DKCECKeyMappingController sharedController] addMapping:mapping];
 		}
-
 	}
 }
 
@@ -303,12 +292,11 @@ static NSString * const kGroupsFileDebugGroupName = @"DebugGroupTitle";
 							  if (mappingToDuplicate == nil) mappingToDuplicate = [controller baseMapping];
 							  [controller duplicateMapping:mappingToDuplicate withNewApplicationIdentifier:appBundle.bundleIdentifier];
 						  } else {
-							  [[NSAlert alertWithMessageText:NSLocalizedString(@"invalid application chosen title", @"")
-											   defaultButton:NSLocalizedString(@"ok button title", @"")
-											 alternateButton:@""
-												 otherButton:@""
-								   informativeTextWithFormat:NSLocalizedString(@"invalid application chosen description", @"")]
-							   runModal];
+                              NSAlert *alert = [NSAlert new];
+                              alert.messageText = NSLocalizedString(@"invalid application chosen title", @"");
+                              alert.informativeText = NSLocalizedString(@"invalid application chosen description", @"");
+                              [alert addButtonWithTitle:NSLocalizedString(@"ok button title", @"")];
+                              [alert runModal];
 						  }
 					  }];
 }

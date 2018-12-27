@@ -85,7 +85,7 @@
 		508DEB811618404F00413CD9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F564C15DD8179007F2F3E /* Cocoa.framework */; };
 		508DEB98161840B000413CD9 /* Couch Slouch Login Helper.app in Copy Login Helper */ = {isa = PBXBuildFile; fileRef = 508DEB7F1618404F00413CD9 /* Couch Slouch Login Helper.app */; };
 		508DEBA41618427C00413CD9 /* LoginHelper-main.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBA31618427C00413CD9 /* LoginHelper-main.m */; };
-		508DEBC71618449900413CD9 /* StartAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBC41618449900413CD9 /* StartAtLoginController.m */; };
+		508DEBC71618449900413CD9 /* StartAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBC41618449900413CD9 /* StartAtLoginController.m */; settings = {COMPILER_FLAGS = "-Wno-deprecated-declarations"; }; };
 		508DEBC91618455200413CD9 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508DEBC81618455200413CD9 /* ServiceManagement.framework */; };
 		508DEBFF16184EA800413CD9 /* DKBackgroundStyleForwarderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBFA16184EA800413CD9 /* DKBackgroundStyleForwarderView.m */; };
 		508DEC0016184EA800413CD9 /* DKButtonDecoratedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBFC16184EA800413CD9 /* DKButtonDecoratedTextField.m */; };
@@ -1524,7 +1524,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -1568,7 +1568,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
@@ -1597,7 +1597,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/vendor/p8-platform-build",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "-DHAVE_P8_USB=1";
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.CouchSlouch;
@@ -1630,7 +1630,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/vendor/p8-platform-build",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "-DHAVE_P8_USB=1";
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.CouchSlouch;
@@ -1711,7 +1711,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "Resources/ScriptRunner-Info.plist";
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_NAME}";
 				PRODUCT_NAME = "org.danielkennett.$(TARGET_NAME:rfc1034identifier)";
 				PROVISIONING_PROFILE = "";
@@ -1744,7 +1744,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "Resources/ScriptRunner-Info.plist";
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_NAME}";
 				PRODUCT_NAME = "org.danielkennett.$(TARGET_NAME:rfc1034identifier)";
 				PROVISIONING_PROFILE = "";

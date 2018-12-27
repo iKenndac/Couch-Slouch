@@ -65,12 +65,11 @@
 							  action.bundleIdentifier = appBundle.bundleIdentifier;
 							  [[DKCECKeyMappingController sharedController] saveMappings];
 						  } else {
-							  [[NSAlert alertWithMessageText:NSLocalizedString(@"invalid application chosen title", @"")
-											   defaultButton:NSLocalizedString(@"ok button title", @"")
-											 alternateButton:@""
-												 otherButton:@""
-								   informativeTextWithFormat:NSLocalizedString(@"invalid application chosen description", @"")]
-							   runModal];
+                              NSAlert *alert = [NSAlert new];
+                              alert.messageText = NSLocalizedString(@"invalid application chosen title", @"");
+                              alert.informativeText = NSLocalizedString(@"invalid application chosen description", @"");
+                              [alert addButtonWithTitle:NSLocalizedString(@"ok button title", @"")];
+                              [alert runModal];
 						  }
 					  }];
 }

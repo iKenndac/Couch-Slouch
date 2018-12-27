@@ -29,7 +29,7 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 static void * const kTriggerStartupBehaviourOnConnectionContext = @"kTriggerStartupBehaviourOnConnectionContext";
 static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVEventContext";
 
-@interface DKAppDelegate ()
+@interface DKAppDelegate () <SUUpdaterDelegate>
 
 @property (readwrite, nonatomic, copy) NSString *targetApplicationIdentifier;
 @property (readwrite, nonatomic, copy) NSArray *waitingLogs;
