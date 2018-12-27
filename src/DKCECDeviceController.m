@@ -501,8 +501,7 @@ static dispatch_queue_t cec_global_queue;
 	__block BOOL success = self.hasConnectionToDevice;
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-#warning This needs to be re-added to the C API
-		//if (success) success = (BOOL)libcec_activate_source(self->connection, 0);
+		if (success) success = (BOOL)libcec_activate_source(self->connection, 0);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(success); });
 	});
 }

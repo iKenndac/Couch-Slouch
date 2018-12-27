@@ -233,7 +233,7 @@
 		503F565A15DD8179007F2F3E /* Couch Slouch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Couch Slouch-Prefix.pch"; sourceTree = "<group>"; };
 		503F565E15DD8179007F2F3E /* DKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKAppDelegate.h; sourceTree = "<group>"; };
 		503F565F15DD8179007F2F3E /* DKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKAppDelegate.m; sourceTree = "<group>"; };
-		503F566B15DD81D2007F2F3E /* cec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cec.h; sourceTree = "<group>"; };
+		503F566B15DD81D2007F2F3E /* cec.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = cec.h; sourceTree = "<group>"; tabWidth = 2; };
 		503F566C15DD81D2007F2F3E /* cecc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecc.h; sourceTree = "<group>"; };
 		503F566D15DD81D2007F2F3E /* cecloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecloader.h; sourceTree = "<group>"; };
 		503F566E15DD81D2007F2F3E /* cectypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cectypes.h; sourceTree = "<group>"; };
@@ -286,9 +286,9 @@
 		503F56CD15DD8221007F2F3E /* SLCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCommandHandler.h; sourceTree = "<group>"; };
 		503F56CE15DD8221007F2F3E /* VLCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VLCommandHandler.cpp; sourceTree = "<group>"; };
 		503F56CF15DD8221007F2F3E /* VLCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLCommandHandler.h; sourceTree = "<group>"; };
-		503F56D015DD8221007F2F3E /* LibCEC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LibCEC.cpp; sourceTree = "<group>"; };
+		503F56D015DD8221007F2F3E /* LibCEC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = LibCEC.cpp; sourceTree = "<group>"; tabWidth = 2; };
 		503F56D115DD8221007F2F3E /* LibCEC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibCEC.h; sourceTree = "<group>"; };
-		503F56D315DD8221007F2F3E /* LibCECC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LibCECC.cpp; sourceTree = "<group>"; };
+		503F56D315DD8221007F2F3E /* LibCECC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = LibCECC.cpp; sourceTree = "<group>"; tabWidth = 2; };
 		503F56D815DD8221007F2F3E /* adl-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "adl-edid.cpp"; sourceTree = "<group>"; };
 		503F56D915DD8221007F2F3E /* adl-edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "adl-edid.h"; sourceTree = "<group>"; };
 		503F56DA15DD8221007F2F3E /* adl_defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adl_defines.h; sourceTree = "<group>"; };
