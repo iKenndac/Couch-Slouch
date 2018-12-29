@@ -118,9 +118,10 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 	self.statusBarItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	self.statusBarItem.highlightMode = YES;
 	self.statusBarItem.menu = self.statusBarMenu;
-	
-	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
-	[self addObserver:self forKeyPath:@"cecController.isActiveSource" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
+
+    [self addObserver:self forKeyPath:@"cecController.hasConnection" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
+    [self addObserver:self forKeyPath:@"cecController.isActiveSource" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
+    [self addObserver:self forKeyPath:@"cecController.hasAccessibilityPermission" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
 	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:NSKeyValueObservingOptionInitial context:kTriggerStartupBehaviourOnConnectionContext];
 
 	[self addObserver:self
@@ -196,7 +197,7 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	
     if (context == kUpdateMenuBarItemContext) {
-		if (!self.cecController.hasConnectionToDevice)
+		if (!self.cecController.hasConnectionToDevice || !self.cecController.hasAccessibilityPermission)
 			self.statusBarItem.image = [NSImage imageNamed:@"menubar-noconnection"];
 		else if (!self.cecController.isActiveSource)
 			self.statusBarItem.image = [NSImage imageNamed:@"menubar-off"];

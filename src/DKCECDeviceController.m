@@ -20,6 +20,7 @@ static NSTimeInterval const kDevicePingInterval = 30.0;
 
 @property (nonatomic, readwrite) cec_menu_state menuState;
 @property (nonatomic, readwrite) BOOL hasConnectionToDevice;
+@property (nonatomic, readwrite) BOOL hasAccessibilityPermission;
 @property (nonatomic, readwrite) NSTimer *pollTimer;
 @property (nonatomic, readwrite) NSTimer *pingTimer;
 @property (nonatomic, readwrite) BOOL isActiveSource;
@@ -238,6 +239,10 @@ static dispatch_queue_t cec_global_queue;
 			if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"CEC callbacks failed");
 			return nil;
 		}
+
+        [self refreshPermissions];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:)
+                                                     name:NSApplicationDidBecomeActiveNotification object:nil];
 	}
 	
 	return self;
@@ -252,10 +257,11 @@ static dispatch_queue_t cec_global_queue;
 }
 
 -(NSString *)humanReadableStatus {
-
-	if (!self.hasConnectionToDevice)
+    if (!self.hasAccessibilityPermission)
+        return NSLocalizedString(@"no accessibility permission title", @"");
+    else if (!self.hasConnectionToDevice)
 		return NSLocalizedString(@"no connection title", @"");
-	else if (!self.isActiveSource)
+    else if (!self.isActiveSource)
 		return NSLocalizedString(@"connected but not active source title", @"");
 	else
 		return NSLocalizedString(@"active source title", @"");
@@ -266,9 +272,11 @@ static dispatch_queue_t cec_global_queue;
 }
 
 -(NSString *)shortHumanReadableStatus {
-	if (!self.hasConnectionToDevice)
-		return NSLocalizedString(@"short no connection title", @"");
-	else if (!self.isActiveSource)
+    if (!self.hasAccessibilityPermission)
+        return NSLocalizedString(@"short no accessibility permission title", @"");
+    else if (!self.hasConnectionToDevice)
+        return NSLocalizedString(@"short no connection title", @"");
+    else if (!self.isActiveSource)
 		return NSLocalizedString(@"short connected but not active source title", @"");
 	else
 		return NSLocalizedString(@"short active source title", @"");
@@ -309,6 +317,7 @@ static dispatch_queue_t cec_global_queue;
 -(void)dealloc {
 	[self stopDevicePolling];
 	[self stopDevicePinging];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSApplicationDidBecomeActiveNotification object:nil];
 
 	free(cec_configuration);
 	cec_configuration = NULL;
@@ -357,6 +366,16 @@ static dispatch_queue_t cec_global_queue;
 
 		[self.keyPressStorage removeObjectForKey:@(press.keycode)];
 	}
+}
+
+#pragma mark - Local Permissions
+
+-(void)applicationDidBecomeActive:(NSNotification *)notification {
+    [self refreshPermissions];
+}
+
+-(void)refreshPermissions {
+    self.hasAccessibilityPermission = AXIsProcessTrusted();
 }
 
 #pragma mark - Device Detection
