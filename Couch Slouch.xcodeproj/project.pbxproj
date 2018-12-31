@@ -101,6 +101,7 @@
 		508FF112190ACE450034F567 /* RHCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 508FF110190ACE450034F567 /* RHCommandHandler.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
 		5093453D17F8319300A1725E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093453C17F8319300A1725E /* Images.xcassets */; };
 		50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */; };
+		50985DF921DA1FFC004B99F8 /* DKBackgroundColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50985DF821DA1FFC004B99F8 /* DKBackgroundColorView.m */; };
 		509D1B441B19D7CD006194FB /* Couch Slouch.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 509D1B431B19D7CD006194FB /* Couch Slouch.sdef */; };
 		509D1B471B19DDCA006194FB /* NSApplication+AppleScriptAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 509D1B461B19DDCA006194FB /* NSApplication+AppleScriptAdditions.m */; };
 		509D1B4B1B19E138006194FB /* DKCECDeviceController+AppleScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 509D1B4A1B19E138006194FB /* DKCECDeviceController+AppleScript.m */; };
@@ -377,6 +378,8 @@
 		5093453C17F8319300A1725E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		50966FB315E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+KeyCodeTranslation.h"; sourceTree = "<group>"; };
 		50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+KeyCodeTranslation.m"; sourceTree = "<group>"; };
+		50985DF721DA1FFC004B99F8 /* DKBackgroundColorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKBackgroundColorView.h; sourceTree = "<group>"; };
+		50985DF821DA1FFC004B99F8 /* DKBackgroundColorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKBackgroundColorView.m; sourceTree = "<group>"; };
 		509D1B431B19D7CD006194FB /* Couch Slouch.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Couch Slouch.sdef"; sourceTree = "<group>"; };
 		509D1B451B19DDCA006194FB /* NSApplication+AppleScriptAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+AppleScriptAdditions.h"; sourceTree = "<group>"; };
 		509D1B461B19DDCA006194FB /* NSApplication+AppleScriptAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+AppleScriptAdditions.m"; sourceTree = "<group>"; };
@@ -1030,6 +1033,8 @@
 				508DEBFC16184EA800413CD9 /* DKButtonDecoratedTextField.m */,
 				508DEBFD16184EA800413CD9 /* DKFancyDividerView.h */,
 				508DEBFE16184EA800413CD9 /* DKFancyDividerView.m */,
+				50985DF721DA1FFC004B99F8 /* DKBackgroundColorView.h */,
+				50985DF821DA1FFC004B99F8 /* DKBackgroundColorView.m */,
 				50F157EF191681C500B7FFFA /* DKMenuButton.h */,
 				50F157F0191681C500B7FFFA /* DKMenuButton.m */,
 				50F157F2191681E700B7FFFA /* DKMenuButtonCell.h */,
@@ -1267,6 +1272,7 @@
 				503F573115DD8221007F2F3E /* RPiCECAdapterDetection.cpp in Sources */,
 				503F573215DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp in Sources */,
 				503F573315DD8221007F2F3E /* CECClient.cpp in Sources */,
+				50985DF921DA1FFC004B99F8 /* DKBackgroundColorView.m in Sources */,
 				503F573415DD8221007F2F3E /* CECProcessor.cpp in Sources */,
 				503F573515DD8221007F2F3E /* CECAudioSystem.cpp in Sources */,
 				503F573615DD8221007F2F3E /* CECBusDevice.cpp in Sources */,
