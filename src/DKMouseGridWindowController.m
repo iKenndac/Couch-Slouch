@@ -8,6 +8,7 @@
 
 #import "DKMouseGridWindowController.h"
 #import "DKMouseGridView.h"
+#import "DKButtonDecoratedTextField.h"
 
 static CGFloat const kMouseNudgeDistance = 10.0;
 static CGFloat const kMinimumGridHeight = 16.0 * 3;
@@ -43,6 +44,11 @@ static NSTimeInterval kDoubleClickListenerBuffer = 0.5;
 	return self;
 }
 
+-(void)awakeFromNib {
+    [self.oneHelpbutton setFont:[NSFont monospacedDigitSystemFontOfSize:[NSFont systemFontSize] weight:NSFontWeightRegular]];
+    [self.nineHelpbutton setFont:[NSFont monospacedDigitSystemFontOfSize:[NSFont systemFontSize] weight:NSFontWeightRegular]];
+}
+
 -(void)showMouseGrid {
 	[self showWindow:nil];
 
@@ -53,7 +59,6 @@ static NSTimeInterval kDoubleClickListenerBuffer = 0.5;
 	self.helpWindow.alphaValue = 1.0;
 	self.helpWindowHasBeenHidden = NO;
 	[self.helpWindow orderFront:self];
-	
 }
 
 -(BOOL)shouldConsumeKeypress:(cec_keypress)press {

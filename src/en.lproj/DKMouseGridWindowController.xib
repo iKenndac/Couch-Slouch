@@ -9,6 +9,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="DKMouseGridWindowController">
             <connections>
                 <outlet property="helpWindow" destination="4" id="6"/>
+                <outlet property="nineHelpbutton" destination="25" id="ZRk-gJ-1AI"/>
+                <outlet property="oneHelpbutton" destination="7" id="eli-9n-5aL"/>
                 <outlet property="window" destination="1" id="3"/>
             </connections>
         </customObject>
@@ -17,18 +19,18 @@
         <window title="Grid Host" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="1">
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2304" height="1273"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
         </window>
-        <window title="Mouse Grid" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="4" userLabel="Panel - Help" customClass="NSPanel">
-            <windowStyleMask key="styleMask" titled="YES" utility="YES" HUD="YES"/>
-            <rect key="contentRect" x="283" y="305" width="439" height="95"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2304" height="1273"/>
+        <window title="Mouse Grid" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="4" userLabel="Panel - Help" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" utility="YES" nonactivatingPanel="YES" fullSizeContentView="YES"/>
+            <rect key="contentRect" x="283" y="305" width="439" height="105"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="5">
-                <rect key="frame" x="0.0" y="0.0" width="439" height="95"/>
+                <rect key="frame" x="0.0" y="0.0" width="439" height="105"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7" customClass="DKButtonDecoratedTextField">
@@ -39,7 +41,7 @@
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="1" id="8">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -50,7 +52,7 @@
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="9" id="28">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -61,15 +63,15 @@
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="-" id="34">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="55">
-                        <rect key="frame" x="18" y="20" width="96" height="17"/>
+                        <rect key="frame" x="19" y="20" width="96" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Select Section" id="56">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -80,7 +82,7 @@
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="←" id="67">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -91,7 +93,7 @@
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="→" id="74">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -102,7 +104,7 @@
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="↑" id="79">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -113,7 +115,7 @@
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="↓" id="99">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -124,7 +126,7 @@
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Nudge Cursor" id="124">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -135,7 +137,7 @@
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Select" id="130">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -143,7 +145,7 @@
                         <rect key="frame" x="287" y="20" width="64" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Click" id="145">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -154,57 +156,58 @@
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Exit" id="153">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="165">
-                        <rect key="frame" x="367" y="20" width="54" height="17"/>
+                        <rect key="frame" x="369" y="20" width="50" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Cancel" id="166">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="7" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" id="23"/>
-                    <constraint firstItem="25" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" id="29"/>
+                    <constraint firstItem="7" firstAttribute="top" secondItem="5" secondAttribute="top" constant="30" id="23"/>
                     <constraint firstItem="25" firstAttribute="baseline" secondItem="7" secondAttribute="baseline" id="30"/>
-                    <constraint firstItem="33" firstAttribute="top" secondItem="5" secondAttribute="top" constant="24" id="41"/>
+                    <constraint firstItem="33" firstAttribute="top" secondItem="5" secondAttribute="top" constant="34" id="41"/>
                     <constraint firstItem="55" firstAttribute="centerX" secondItem="33" secondAttribute="centerX" id="63"/>
-                    <constraint firstItem="25" firstAttribute="trailing" secondItem="55" secondAttribute="trailing" id="64"/>
                     <constraint firstItem="66" firstAttribute="baseline" secondItem="25" secondAttribute="baseline" id="69"/>
-                    <constraint firstItem="66" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" id="70"/>
                     <constraint firstItem="72" firstAttribute="baseline" secondItem="66" secondAttribute="baseline" id="75"/>
-                    <constraint firstItem="72" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" id="77"/>
-                    <constraint firstItem="78" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" id="81"/>
                     <constraint firstItem="78" firstAttribute="baseline" secondItem="72" secondAttribute="baseline" id="83"/>
                     <constraint firstItem="97" firstAttribute="baseline" secondItem="78" secondAttribute="baseline" id="115"/>
-                    <constraint firstItem="97" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" id="116"/>
                     <constraint firstItem="123" firstAttribute="leading" secondItem="66" secondAttribute="leading" id="125"/>
                     <constraint firstItem="123" firstAttribute="trailing" secondItem="97" secondAttribute="trailing" id="127"/>
                     <constraint firstItem="129" firstAttribute="baseline" secondItem="97" secondAttribute="baseline" id="132"/>
-                    <constraint firstItem="129" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" id="134"/>
                     <constraint firstItem="143" firstAttribute="trailing" secondItem="129" secondAttribute="trailing" id="147"/>
                     <constraint firstItem="129" firstAttribute="leading" secondItem="143" secondAttribute="leading" id="149"/>
-                    <constraint firstItem="151" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" id="155"/>
                     <constraint firstItem="151" firstAttribute="baseline" secondItem="129" secondAttribute="baseline" id="157"/>
-                    <constraint firstItem="165" firstAttribute="leading" secondItem="151" secondAttribute="leading" id="170"/>
                     <constraint firstItem="78" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="201" id="202"/>
-                    <constraint firstItem="55" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" id="203"/>
                     <constraint firstItem="7" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" id="204"/>
                     <constraint firstItem="66" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="129" id="205"/>
                     <constraint firstItem="72" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="165" id="206"/>
                     <constraint firstAttribute="trailing" secondItem="151" secondAttribute="trailing" constant="20" id="207"/>
-                    <constraint firstAttribute="trailing" secondItem="165" secondAttribute="trailing" constant="20" symbolic="YES" id="208"/>
                     <constraint firstItem="151" firstAttribute="leading" secondItem="129" secondAttribute="trailing" constant="20" id="210"/>
                     <constraint firstAttribute="bottom" secondItem="165" secondAttribute="bottom" constant="20" symbolic="YES" id="212"/>
                     <constraint firstAttribute="bottom" secondItem="123" secondAttribute="bottom" constant="20" symbolic="YES" id="213"/>
                     <constraint firstAttribute="bottom" secondItem="143" secondAttribute="bottom" constant="20" symbolic="YES" id="214"/>
                     <constraint firstAttribute="bottom" secondItem="55" secondAttribute="bottom" constant="20" symbolic="YES" id="215"/>
+                    <constraint firstItem="25" firstAttribute="leading" secondItem="33" secondAttribute="trailing" constant="1" id="3h0-UZ-tp0"/>
+                    <constraint firstItem="78" firstAttribute="top" secondItem="72" secondAttribute="top" id="5K9-1b-p6z"/>
+                    <constraint firstItem="25" firstAttribute="top" secondItem="7" secondAttribute="top" id="79D-PM-4gh"/>
+                    <constraint firstItem="97" firstAttribute="top" secondItem="78" secondAttribute="top" id="C5G-SA-BCB"/>
+                    <constraint firstItem="33" firstAttribute="leading" secondItem="7" secondAttribute="trailing" constant="2" id="EBf-CM-hJQ"/>
+                    <constraint firstItem="66" firstAttribute="top" secondItem="25" secondAttribute="top" id="GVR-4J-jWj"/>
+                    <constraint firstItem="72" firstAttribute="top" secondItem="66" secondAttribute="top" id="RLP-Ie-5i8"/>
+                    <constraint firstItem="25" firstAttribute="leading" secondItem="7" secondAttribute="trailing" constant="20" id="acL-F2-XLR"/>
+                    <constraint firstItem="165" firstAttribute="centerX" secondItem="151" secondAttribute="centerX" id="gao-VY-JSb"/>
+                    <constraint firstItem="151" firstAttribute="top" secondItem="129" secondAttribute="top" id="hpk-Fn-uGf"/>
+                    <constraint firstItem="129" firstAttribute="top" secondItem="97" secondAttribute="top" id="svF-Rw-aRf"/>
                 </constraints>
             </view>
+            <point key="canvasLocation" x="140" y="432"/>
         </window>
     </objects>
 </document>
