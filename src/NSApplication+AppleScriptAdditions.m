@@ -19,7 +19,7 @@
     return [[self applescriptCecController] isActiveSource];
 }
 
--(BOOL)hasConnection {
+-(BOOL)hasConnectionToDevice {
     return [[self applescriptCecController] hasConnectionToDevice];
 }
 

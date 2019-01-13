@@ -13,7 +13,7 @@
 			</property>
 			<property name="version" code="vers" description="The version of the application." type="text" access="r"/>
 			<property name="cec device is available" code="csda" description="Is there a CEC device available? If this property is false, no commands will work." type="boolean" access="r">
-				<cocoa key="hasConnection"/>
+				<cocoa key="hasConnectionToDevice"/>
 			</property>
 			<property name="tv is on" code="tvon" description="Is the TV connected to the CEC bus switched on?" type="boolean" access="r">
 				<cocoa key="isTVOn"/>

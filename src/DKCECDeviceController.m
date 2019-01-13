@@ -253,7 +253,7 @@ static dispatch_queue_t cec_global_queue;
 }
 
 +(NSSet *)keyPathsForValuesAffectingHumanReadableStatus {
-	return [NSSet setWithObjects:@"hasConnection", @"isActiveSource", @"hasAccessibilityPermission", nil];
+	return [NSSet setWithObjects:@"hasConnectionToDevice", @"isActiveSource", @"hasAccessibilityPermission", nil];
 }
 
 -(NSString *)humanReadableStatus {
@@ -283,7 +283,7 @@ static dispatch_queue_t cec_global_queue;
 }
 
 +(NSSet *)keyPathsForValuesAffectingStatusImage {
-	return [NSSet setWithObjects:@"hasConnection", @"isActiveSource", @"hasAccessibilityPermission", nil];
+	return [NSSet setWithObjects:@"hasConnectionToDevice", @"isActiveSource", @"hasAccessibilityPermission", nil];
 }
 
 -(NSImage *)statusImage {

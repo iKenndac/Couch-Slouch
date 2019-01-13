@@ -119,10 +119,10 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 	self.statusBarItem.highlightMode = YES;
 	self.statusBarItem.menu = self.statusBarMenu;
 
-    [self addObserver:self forKeyPath:@"cecController.hasConnection" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
+    [self addObserver:self forKeyPath:@"cecController.hasConnectionToDevice" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
     [self addObserver:self forKeyPath:@"cecController.isActiveSource" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
     [self addObserver:self forKeyPath:@"cecController.hasAccessibilityPermission" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
-	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:NSKeyValueObservingOptionInitial context:kTriggerStartupBehaviourOnConnectionContext];
+	[self addObserver:self forKeyPath:@"cecController.hasConnectionToDevice" options:NSKeyValueObservingOptionInitial context:kTriggerStartupBehaviourOnConnectionContext];
 
 	[self addObserver:self
 		   forKeyPath:@"cecController.isActiveSource"
