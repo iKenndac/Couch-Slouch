@@ -79,9 +79,6 @@
 		506B6F3C17F70EC000325DD6 /* DKBehaviourScriptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506B6F3B17F70EC000325DD6 /* DKBehaviourScriptController.m */; };
 		5070857717F8A3B000F0CB4E /* org.danielkennett.CouchSlouchScriptRunner.xpc in Copy Script Runner */ = {isa = PBXBuildFile; fileRef = 50A8C00417F88DE50021E825 /* org.danielkennett.CouchSlouchScriptRunner.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */; };
-		508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7B15FE78700014BC2A /* menubar-noconnection.png */; };
-		508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7C15FE78700014BC2A /* menubar-off.png */; };
-		508B7A8015FE78700014BC2A /* menubar-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7D15FE78700014BC2A /* menubar-on.png */; };
 		508DEB811618404F00413CD9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F564C15DD8179007F2F3E /* Cocoa.framework */; };
 		508DEB98161840B000413CD9 /* Couch Slouch Login Helper.app in Copy Login Helper */ = {isa = PBXBuildFile; fileRef = 508DEB7F1618404F00413CD9 /* Couch Slouch Login Helper.app */; };
 		508DEBA41618427C00413CD9 /* LoginHelper-main.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBA31618427C00413CD9 /* LoginHelper-main.m */; };
@@ -114,16 +111,7 @@
 		50A9953B15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A9953D15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib */; };
 		50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B9216115E922DA002218A7 /* SystemConfiguration.framework */; };
 		50BA39EB15F7CE650075E7DB /* computers-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E615F7CE650075E7DB /* computers-large.png */; };
-		50BA39EC15F7CE650075E7DB /* toolbar-behaviours.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E715F7CE650075E7DB /* toolbar-behaviours.png */; };
-		50BA39ED15F7CE650075E7DB /* toolbar-general.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E815F7CE650075E7DB /* toolbar-general.png */; };
-		50BA39EE15F7CE650075E7DB /* toolbar-keybinds.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */; };
 		50BA39EF15F7CE650075E7DB /* tv-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39EA15F7CE650075E7DB /* tv-large.png */; };
-		50BA39F715F7DFA60075E7DB /* lamp-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39F415F7DFA60075E7DB /* lamp-green.png */; };
-		50BA39F815F7DFA60075E7DB /* lamp-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39F515F7DFA60075E7DB /* lamp-red.png */; };
-		50BA39F915F7DFA60075E7DB /* lamp-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39F615F7DFA60075E7DB /* lamp-yellow.png */; };
-		50BA39FD15F7EA3D0075E7DB /* button-centre.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FA15F7EA3D0075E7DB /* button-centre.png */; };
-		50BA39FE15F7EA3D0075E7DB /* button-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FB15F7EA3D0075E7DB /* button-left.png */; };
-		50BA39FF15F7EA3D0075E7DB /* button-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FC15F7EA3D0075E7DB /* button-right.png */; };
 		50C101B716543BA9002DD42D /* PHCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50C101B516543BA9002DD42D /* PHCommandHandler.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
 		50CB484116581FE200F690EF /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; };
 		50CB484216581FF200F690EF /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -142,7 +130,6 @@
 		50F2D51C190AFF71004C21B6 /* KeyAliases.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50F2D51B190AFF71004C21B6 /* KeyAliases.plist */; };
 		50FF7DF316177569008324F0 /* DKShowMouseGridLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */; };
 		50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50FF7DF91617827D008324F0 /* DKMouseGridWindowController.xib */; };
-		50FF7DFB161792E9008324F0 /* PlainAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50FF7DFA161792E9008324F0 /* PlainAppIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -342,9 +329,6 @@
 		506B6F3A17F70EC000325DD6 /* DKBehaviourScriptController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBehaviourScriptController.h; sourceTree = "<group>"; };
 		506B6F3B17F70EC000325DD6 /* DKBehaviourScriptController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBehaviourScriptController.m; sourceTree = "<group>"; };
 		5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CouchSlouchPublicKey.pem; path = Resources/CouchSlouchPublicKey.pem; sourceTree = SOURCE_ROOT; };
-		508B7A7B15FE78700014BC2A /* menubar-noconnection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-noconnection.png"; sourceTree = "<group>"; };
-		508B7A7C15FE78700014BC2A /* menubar-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-off.png"; sourceTree = "<group>"; };
-		508B7A7D15FE78700014BC2A /* menubar-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-on.png"; sourceTree = "<group>"; };
 		508DEB7F1618404F00413CD9 /* Couch Slouch Login Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Couch Slouch Login Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		508DEBA11618427200413CD9 /* Couch Slouch Login Helper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Couch Slouch Login Helper-Info.plist"; path = "Resources/Couch Slouch Login Helper-Info.plist"; sourceTree = "<group>"; };
 		508DEBA31618427C00413CD9 /* LoginHelper-main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LoginHelper-main.m"; path = "src/LoginHelper-main.m"; sourceTree = "<group>"; };
@@ -399,16 +383,7 @@
 		50A9953C15F928AA00CDBB9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKHDMIAddressSetupWindowController.xib; sourceTree = "<group>"; };
 		50B9216115E922DA002218A7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		50BA39E615F7CE650075E7DB /* computers-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "computers-large.png"; sourceTree = "<group>"; };
-		50BA39E715F7CE650075E7DB /* toolbar-behaviours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-behaviours.png"; sourceTree = "<group>"; };
-		50BA39E815F7CE650075E7DB /* toolbar-general.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-general.png"; sourceTree = "<group>"; };
-		50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-keybinds.png"; sourceTree = "<group>"; };
 		50BA39EA15F7CE650075E7DB /* tv-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-large.png"; sourceTree = "<group>"; };
-		50BA39F415F7DFA60075E7DB /* lamp-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lamp-green.png"; sourceTree = "<group>"; };
-		50BA39F515F7DFA60075E7DB /* lamp-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lamp-red.png"; sourceTree = "<group>"; };
-		50BA39F615F7DFA60075E7DB /* lamp-yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lamp-yellow.png"; sourceTree = "<group>"; };
-		50BA39FA15F7EA3D0075E7DB /* button-centre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-centre.png"; sourceTree = "<group>"; };
-		50BA39FB15F7EA3D0075E7DB /* button-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-left.png"; sourceTree = "<group>"; };
-		50BA39FC15F7EA3D0075E7DB /* button-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-right.png"; sourceTree = "<group>"; };
 		50C101B516543BA9002DD42D /* PHCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PHCommandHandler.cpp; sourceTree = "<group>"; };
 		50C101B616543BA9002DD42D /* PHCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCommandHandler.h; sourceTree = "<group>"; };
 		50CB484016581FE200F690EF /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = vendor/Sparkle.framework; sourceTree = "<group>"; };
@@ -435,7 +410,6 @@
 		50FF7DF116177569008324F0 /* DKShowMouseGridLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKShowMouseGridLocalAction.h; sourceTree = "<group>"; };
 		50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKShowMouseGridLocalAction.m; sourceTree = "<group>"; };
 		50FF7DF81617827D008324F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKMouseGridWindowController.xib; sourceTree = "<group>"; };
-		50FF7DFA161792E9008324F0 /* PlainAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlainAppIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -992,25 +966,12 @@
 		50BA39E515F7CE650075E7DB /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				50FF7DFA161792E9008324F0 /* PlainAppIcon.png */,
-				508B7A7B15FE78700014BC2A /* menubar-noconnection.png */,
-				508B7A7C15FE78700014BC2A /* menubar-off.png */,
-				508B7A7D15FE78700014BC2A /* menubar-on.png */,
 				50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */,
 				50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */,
 				50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */,
 				50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */,
 				50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */,
-				50BA39FA15F7EA3D0075E7DB /* button-centre.png */,
-				50BA39FB15F7EA3D0075E7DB /* button-left.png */,
-				50BA39FC15F7EA3D0075E7DB /* button-right.png */,
 				50BA39E615F7CE650075E7DB /* computers-large.png */,
-				50BA39F415F7DFA60075E7DB /* lamp-green.png */,
-				50BA39F515F7DFA60075E7DB /* lamp-red.png */,
-				50BA39F615F7DFA60075E7DB /* lamp-yellow.png */,
-				50BA39E715F7CE650075E7DB /* toolbar-behaviours.png */,
-				50BA39E815F7CE650075E7DB /* toolbar-general.png */,
-				50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */,
 				50BA39EA15F7CE650075E7DB /* tv-large.png */,
 			);
 			path = Graphics;
@@ -1193,30 +1154,17 @@
 				5047672315F6B13300BF2DA7 /* Localizable.strings in Resources */,
 				5047672415F6B13300BF2DA7 /* MainMenu.xib in Resources */,
 				50BA39EB15F7CE650075E7DB /* computers-large.png in Resources */,
-				50BA39EC15F7CE650075E7DB /* toolbar-behaviours.png in Resources */,
-				50BA39ED15F7CE650075E7DB /* toolbar-general.png in Resources */,
-				50BA39EE15F7CE650075E7DB /* toolbar-keybinds.png in Resources */,
 				50BA39EF15F7CE650075E7DB /* tv-large.png in Resources */,
-				50BA39F715F7DFA60075E7DB /* lamp-green.png in Resources */,
-				50BA39F815F7DFA60075E7DB /* lamp-red.png in Resources */,
-				50BA39F915F7DFA60075E7DB /* lamp-yellow.png in Resources */,
-				50BA39FD15F7EA3D0075E7DB /* button-centre.png in Resources */,
 				50F157F619168D5B00B7FFFA /* KeybindingsIcon.icns in Resources */,
-				50BA39FE15F7EA3D0075E7DB /* button-left.png in Resources */,
-				50BA39FF15F7EA3D0075E7DB /* button-right.png in Resources */,
 				50A9953B15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib in Resources */,
 				50E58DFC15FCC4FB00AB8441 /* tv-av-computer-large.png in Resources */,
 				50E58DFD15FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png in Resources */,
 				50E58DFE15FCC4FB00AB8441 /* tv-computer-highlighted-large.png in Resources */,
 				50E58DFF15FCC4FB00AB8441 /* tv-computer-large.png in Resources */,
 				50E58E0015FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png in Resources */,
-				508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */,
-				508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */,
-				508B7A8015FE78700014BC2A /* menubar-on.png in Resources */,
 				5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */,
 				50F2D51C190AFF71004C21B6 /* KeyAliases.plist in Resources */,
 				50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */,
-				50FF7DFB161792E9008324F0 /* PlainAppIcon.png in Resources */,
 				50A8BFFF17F872670021E825 /* Couch Slouch Example Script.scpt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
