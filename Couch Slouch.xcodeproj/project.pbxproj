@@ -110,19 +110,12 @@
 		50A9953915F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9953715F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m */; };
 		50A9953B15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A9953D15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib */; };
 		50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B9216115E922DA002218A7 /* SystemConfiguration.framework */; };
-		50BA39EB15F7CE650075E7DB /* computers-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E615F7CE650075E7DB /* computers-large.png */; };
-		50BA39EF15F7CE650075E7DB /* tv-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39EA15F7CE650075E7DB /* tv-large.png */; };
 		50C101B716543BA9002DD42D /* PHCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50C101B516543BA9002DD42D /* PHCommandHandler.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
 		50CB484116581FE200F690EF /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; };
 		50CB484216581FF200F690EF /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		50D894F018004C8700D8A610 /* DKCECDeviceController+SoftReset.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D894EF18004C8700D8A610 /* DKCECDeviceController+SoftReset.m */; };
 		50E55F7821A209DA00FD0E12 /* libp8-platform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E55F7721A209DA00FD0E12 /* libp8-platform.a */; };
 		50E55F7C21A20B2500FD0E12 /* drm-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50E55F7B21A20B2500FD0E12 /* drm-edid.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
-		50E58DFC15FCC4FB00AB8441 /* tv-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */; };
-		50E58DFD15FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */; };
-		50E58DFE15FCC4FB00AB8441 /* tv-computer-highlighted-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */; };
-		50E58DFF15FCC4FB00AB8441 /* tv-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */; };
-		50E58E0015FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */; };
 		50F157EE1916631F00B7FFFA /* DKDeleteKeyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F157ED1916631F00B7FFFA /* DKDeleteKeyTableView.m */; };
 		50F157F1191681C500B7FFFA /* DKMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F157F0191681C500B7FFFA /* DKMenuButton.m */; };
 		50F157F4191681E700B7FFFA /* DKMenuButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F157F3191681E700B7FFFA /* DKMenuButtonCell.m */; };
@@ -382,8 +375,6 @@
 		50A9953715F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKHDMIAddressSetupWindowController.m; sourceTree = "<group>"; };
 		50A9953C15F928AA00CDBB9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKHDMIAddressSetupWindowController.xib; sourceTree = "<group>"; };
 		50B9216115E922DA002218A7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		50BA39E615F7CE650075E7DB /* computers-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "computers-large.png"; sourceTree = "<group>"; };
-		50BA39EA15F7CE650075E7DB /* tv-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-large.png"; sourceTree = "<group>"; };
 		50C101B516543BA9002DD42D /* PHCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PHCommandHandler.cpp; sourceTree = "<group>"; };
 		50C101B616543BA9002DD42D /* PHCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCommandHandler.h; sourceTree = "<group>"; };
 		50CB484016581FE200F690EF /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = vendor/Sparkle.framework; sourceTree = "<group>"; };
@@ -393,11 +384,6 @@
 		50E55F7721A209DA00FD0E12 /* libp8-platform.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libp8-platform.a"; path = "vendor/p8-platform-build/libp8-platform.a"; sourceTree = "<group>"; };
 		50E55F7A21A20B2500FD0E12 /* drm-edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "drm-edid.h"; sourceTree = "<group>"; };
 		50E55F7B21A20B2500FD0E12 /* drm-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "drm-edid.cpp"; sourceTree = "<group>"; };
-		50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-av-computer-large.png"; sourceTree = "<group>"; };
-		50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-av-highlighted-computer-large.png"; sourceTree = "<group>"; };
-		50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-computer-highlighted-large.png"; sourceTree = "<group>"; };
-		50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-computer-large.png"; sourceTree = "<group>"; };
-		50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-highlighted-av-computer-large.png"; sourceTree = "<group>"; };
 		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		50F157EC1916631F00B7FFFA /* DKDeleteKeyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKDeleteKeyTableView.h; path = src/DKDeleteKeyTableView.h; sourceTree = SOURCE_ROOT; };
 		50F157ED1916631F00B7FFFA /* DKDeleteKeyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKDeleteKeyTableView.m; path = src/DKDeleteKeyTableView.m; sourceTree = SOURCE_ROOT; };
@@ -786,7 +772,6 @@
 				5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */,
 				50F157F519168D5B00B7FFFA /* KeybindingsIcon.icns */,
 				5093453C17F8319300A1725E /* Images.xcassets */,
-				50BA39E515F7CE650075E7DB /* Graphics */,
 				5047670115F6B13300BF2DA7 /* ButtonGroups.plist */,
 				5047670215F6B13300BF2DA7 /* Couch Slouch-Info.plist */,
 				5047670315F6B13300BF2DA7 /* DefaultKeybinds.plist */,
@@ -961,20 +946,6 @@
 				50A9953D15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib */,
 			);
 			name = "Setup Wizard";
-			sourceTree = "<group>";
-		};
-		50BA39E515F7CE650075E7DB /* Graphics */ = {
-			isa = PBXGroup;
-			children = (
-				50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */,
-				50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */,
-				50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */,
-				50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */,
-				50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */,
-				50BA39E615F7CE650075E7DB /* computers-large.png */,
-				50BA39EA15F7CE650075E7DB /* tv-large.png */,
-			);
-			path = Graphics;
 			sourceTree = "<group>";
 		};
 		50BA3A0315F7EB0B0075E7DB /* Custom UI */ = {
@@ -1153,15 +1124,8 @@
 				5047672215F6B13300BF2DA7 /* InfoPlist.strings in Resources */,
 				5047672315F6B13300BF2DA7 /* Localizable.strings in Resources */,
 				5047672415F6B13300BF2DA7 /* MainMenu.xib in Resources */,
-				50BA39EB15F7CE650075E7DB /* computers-large.png in Resources */,
-				50BA39EF15F7CE650075E7DB /* tv-large.png in Resources */,
 				50F157F619168D5B00B7FFFA /* KeybindingsIcon.icns in Resources */,
 				50A9953B15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib in Resources */,
-				50E58DFC15FCC4FB00AB8441 /* tv-av-computer-large.png in Resources */,
-				50E58DFD15FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png in Resources */,
-				50E58DFE15FCC4FB00AB8441 /* tv-computer-highlighted-large.png in Resources */,
-				50E58DFF15FCC4FB00AB8441 /* tv-computer-large.png in Resources */,
-				50E58E0015FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png in Resources */,
 				5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */,
 				50F2D51C190AFF71004C21B6 /* KeyAliases.plist in Resources */,
 				50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */,
