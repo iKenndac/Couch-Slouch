@@ -4,7 +4,7 @@ Couch Slouch allows, with the appropriate hardware, control of your Mac through 
 
 In plain English: Use your TV's remote control to control your Mac!
 
-Couch Slouch requires Mac OS X 10.8 (Mountain Lion) to build and run.
+Couch Slouch requires Mac OS X 10.10 (Yosemite) to build and run. If you just want to run Couch Slouch on your Mac, you can download it from the [Couch Slouch website](http://www.couch-slouch.com/).
 
 ## What is the "appropriate hardware"?
 
