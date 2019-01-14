@@ -29,7 +29,7 @@ static void * const kUpdateMenuBarItemContext = @"kUpdateMenuBarItemContext";
 static void * const kTriggerStartupBehaviourOnConnectionContext = @"kTriggerStartupBehaviourOnConnectionContext";
 static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVEventContext";
 
-@interface DKAppDelegate ()
+@interface DKAppDelegate () <SUUpdaterDelegate>
 
 @property (readwrite, nonatomic, copy) NSString *targetApplicationIdentifier;
 @property (readwrite, nonatomic, copy) NSArray *waitingLogs;
@@ -57,7 +57,7 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 	[DKCECBehaviourController sharedInstance].device = self.cecController;
 
 	[self.cecController open:^(BOOL success) {
-		if (!self.cecController.hasConnection) {
+		if (!self.cecController.hasConnectionToDevice) {
 
 			/* 
 			 Not having a connection at this point is often fine, however, either the
@@ -118,10 +118,11 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 	self.statusBarItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	self.statusBarItem.highlightMode = YES;
 	self.statusBarItem.menu = self.statusBarMenu;
-	
-	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
-	[self addObserver:self forKeyPath:@"cecController.isActiveSource" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
-	[self addObserver:self forKeyPath:@"cecController.hasConnection" options:NSKeyValueObservingOptionInitial context:kTriggerStartupBehaviourOnConnectionContext];
+
+    [self addObserver:self forKeyPath:@"cecController.hasConnectionToDevice" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
+    [self addObserver:self forKeyPath:@"cecController.isActiveSource" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
+    [self addObserver:self forKeyPath:@"cecController.hasAccessibilityPermission" options:NSKeyValueObservingOptionInitial context:kUpdateMenuBarItemContext];
+	[self addObserver:self forKeyPath:@"cecController.hasConnectionToDevice" options:NSKeyValueObservingOptionInitial context:kTriggerStartupBehaviourOnConnectionContext];
 
 	[self addObserver:self
 		   forKeyPath:@"cecController.isActiveSource"
@@ -196,7 +197,7 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	
     if (context == kUpdateMenuBarItemContext) {
-		if (!self.cecController.hasConnection)
+		if (!self.cecController.hasConnectionToDevice || !self.cecController.hasAccessibilityPermission)
 			self.statusBarItem.image = [NSImage imageNamed:@"menubar-noconnection"];
 		else if (!self.cecController.isActiveSource)
 			self.statusBarItem.image = [NSImage imageNamed:@"menubar-off"];
@@ -205,12 +206,12 @@ static void * const kTriggerBehaviourOnTVEventContext = @"kTriggerBehaviourOnTVE
 
 	} else if (context == kTriggerStartupBehaviourOnConnectionContext) {
 
-		if (self.cecController.hasConnection && self.isWaitingForStartupAction) {
+		if (self.cecController.hasConnectionToDevice && self.isWaitingForStartupAction) {
 			self.isWaitingForStartupAction = NO;
 			[self systemDidStartUp];
 		}
         
-        if (self.cecController.hasConnection && self.isWaitingForWakeAction) {
+        if (self.cecController.hasConnectionToDevice && self.isWaitingForWakeAction) {
             self.isWaitingForWakeAction = NO;
             [[DKCECBehaviourController sharedInstance] handleMacAwake];
         }
@@ -353,7 +354,7 @@ void PowerNotificationCallBack(void *refCon, io_service_t service, natural_t mes
     [self.cecController open:^(BOOL success) {
         [self logMessageToDisk:@"Reconnecting to CEC device after awake from sleep…" ofSeverity:CEC_LOG_NOTICE];
         
-        if (self.cecController.hasConnection) {
+        if (self.cecController.hasConnectionToDevice) {
             [[DKCECBehaviourController sharedInstance] handleMacAwake];
         } else {
             self.isWaitingForWakeAction = YES;

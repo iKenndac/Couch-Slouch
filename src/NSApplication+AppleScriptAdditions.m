@@ -19,8 +19,8 @@
     return [[self applescriptCecController] isActiveSource];
 }
 
--(BOOL)hasConnection {
-    return [[self applescriptCecController] hasConnection];
+-(BOOL)hasConnectionToDevice {
+    return [[self applescriptCecController] hasConnectionToDevice];
 }
 
 -(BOOL)isTVOn {

@@ -43,10 +43,12 @@
 "CommandsGroupTitle" = "Commands";
 
 "no connection title" = "No CEC-HDMI device found.";
+"no accessibility permission title" = "Accessibility access not granted. Restart Couch Slouch once given.";
 "connected but not active source title" = "This Mac is not the active TV source.";
 "active source title" = "This Mac is the active TV source.";
 
 "short no connection title" = "Status: No device found.";
+"short no accessibility permission title" = "Status: Needs accessibility access.";
 "short connected but not active source title" = "Status: Not active TV source.";
 "short active source title" = "Status: Active TV source.";
 

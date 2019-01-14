@@ -11,7 +11,7 @@
 		37F810AB18073B6200DA211C /* DKCompassConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F810AD18073B6200DA211C /* DKCompassConfigViewController.xib */; };
 		37F810B118073CC200DA211C /* DKCompassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F810B018073CC200DA211C /* DKCompassController.m */; };
 		37F810B418073CEF00DA211C /* DKCompassFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F810B318073CEF00DA211C /* DKCompassFace.m */; };
-		5017A30315E2D85A00B88FE6 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FA15E2D85A00B88FE6 /* SRCommon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5017A30315E2D85A00B88FE6 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FA15E2D85A00B88FE6 /* SRCommon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-deprecated-declarations"; }; };
 		5017A30415E2D85A00B88FE6 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FC15E2D85A00B88FE6 /* SRKeyCodeTransformer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5017A30515E2D85A00B88FE6 /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A2FE15E2D85A00B88FE6 /* SRRecorderCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5017A30615E2D85A00B88FE6 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5017A30015E2D85A00B88FE6 /* SRRecorderControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -23,36 +23,35 @@
 		503F564D15DD8179007F2F3E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F564C15DD8179007F2F3E /* Cocoa.framework */; };
 		503F565915DD8179007F2F3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565815DD8179007F2F3E /* main.m */; };
 		503F566015DD8179007F2F3E /* DKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F565F15DD8179007F2F3E /* DKAppDelegate.m */; };
-		503F572A15DD8221007F2F3E /* AdapterFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F569C15DD8221007F2F3E /* AdapterFactory.cpp */; };
-		503F572B15DD8221007F2F3E /* USBCECAdapterCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F569F15DD8221007F2F3E /* USBCECAdapterCommands.cpp */; };
-		503F572C15DD8221007F2F3E /* USBCECAdapterCommunication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A115DD8221007F2F3E /* USBCECAdapterCommunication.cpp */; };
-		503F572D15DD8221007F2F3E /* USBCECAdapterDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A315DD8221007F2F3E /* USBCECAdapterDetection.cpp */; };
-		503F572E15DD8221007F2F3E /* USBCECAdapterMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A515DD8221007F2F3E /* USBCECAdapterMessage.cpp */; };
-		503F572F15DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A715DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp */; };
-		503F573015DD8221007F2F3E /* RPiCECAdapterCommunication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56AA15DD8221007F2F3E /* RPiCECAdapterCommunication.cpp */; };
-		503F573115DD8221007F2F3E /* RPiCECAdapterDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56AC15DD8221007F2F3E /* RPiCECAdapterDetection.cpp */; };
-		503F573215DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56AE15DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp */; };
-		503F573315DD8221007F2F3E /* CECClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B015DD8221007F2F3E /* CECClient.cpp */; };
-		503F573415DD8221007F2F3E /* CECProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B315DD8221007F2F3E /* CECProcessor.cpp */; };
-		503F573515DD8221007F2F3E /* CECAudioSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B715DD8221007F2F3E /* CECAudioSystem.cpp */; };
-		503F573615DD8221007F2F3E /* CECBusDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B915DD8221007F2F3E /* CECBusDevice.cpp */; };
-		503F573715DD8221007F2F3E /* CECDeviceMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56BB15DD8221007F2F3E /* CECDeviceMap.cpp */; };
-		503F573815DD8221007F2F3E /* CECPlaybackDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56BD15DD8221007F2F3E /* CECPlaybackDevice.cpp */; };
-		503F573915DD8221007F2F3E /* CECRecordingDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56BF15DD8221007F2F3E /* CECRecordingDevice.cpp */; };
-		503F573A15DD8221007F2F3E /* CECTuner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C115DD8221007F2F3E /* CECTuner.cpp */; };
-		503F573B15DD8221007F2F3E /* CECTV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C315DD8221007F2F3E /* CECTV.cpp */; };
-		503F573C15DD8221007F2F3E /* ANCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C615DD8221007F2F3E /* ANCommandHandler.cpp */; };
-		503F573D15DD8221007F2F3E /* CECCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C815DD8221007F2F3E /* CECCommandHandler.cpp */; };
-		503F573E15DD8221007F2F3E /* RLCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56CA15DD8221007F2F3E /* RLCommandHandler.cpp */; };
-		503F573F15DD8221007F2F3E /* SLCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56CC15DD8221007F2F3E /* SLCommandHandler.cpp */; };
-		503F574015DD8221007F2F3E /* VLCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56CE15DD8221007F2F3E /* VLCommandHandler.cpp */; };
-		503F574115DD8221007F2F3E /* LibCEC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56D015DD8221007F2F3E /* LibCEC.cpp */; };
-		503F574315DD8221007F2F3E /* LibCECC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56D315DD8221007F2F3E /* LibCECC.cpp */; };
-		503F574615DD8221007F2F3E /* adl-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56D815DD8221007F2F3E /* adl-edid.cpp */; };
-		503F574715DD8221007F2F3E /* nv-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56DE15DD8221007F2F3E /* nv-edid.cpp */; };
-		503F574815DD8221007F2F3E /* os-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E215DD8221007F2F3E /* os-edid.cpp */; };
-		503F574915DD8221007F2F3E /* serialport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E615DD8221007F2F3E /* serialport.cpp */; };
-		503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E715DD8221007F2F3E /* serversocket.cpp */; };
+		503F572A15DD8221007F2F3E /* AdapterFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F569C15DD8221007F2F3E /* AdapterFactory.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F572B15DD8221007F2F3E /* USBCECAdapterCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F569F15DD8221007F2F3E /* USBCECAdapterCommands.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F572C15DD8221007F2F3E /* USBCECAdapterCommunication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A115DD8221007F2F3E /* USBCECAdapterCommunication.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F572D15DD8221007F2F3E /* USBCECAdapterDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A315DD8221007F2F3E /* USBCECAdapterDetection.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F572E15DD8221007F2F3E /* USBCECAdapterMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A515DD8221007F2F3E /* USBCECAdapterMessage.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F572F15DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56A715DD8221007F2F3E /* USBCECAdapterMessageQueue.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573015DD8221007F2F3E /* RPiCECAdapterCommunication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56AA15DD8221007F2F3E /* RPiCECAdapterCommunication.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573115DD8221007F2F3E /* RPiCECAdapterDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56AC15DD8221007F2F3E /* RPiCECAdapterDetection.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573215DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56AE15DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573315DD8221007F2F3E /* CECClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B015DD8221007F2F3E /* CECClient.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573415DD8221007F2F3E /* CECProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B315DD8221007F2F3E /* CECProcessor.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573515DD8221007F2F3E /* CECAudioSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B715DD8221007F2F3E /* CECAudioSystem.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573615DD8221007F2F3E /* CECBusDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56B915DD8221007F2F3E /* CECBusDevice.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573715DD8221007F2F3E /* CECDeviceMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56BB15DD8221007F2F3E /* CECDeviceMap.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573815DD8221007F2F3E /* CECPlaybackDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56BD15DD8221007F2F3E /* CECPlaybackDevice.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573915DD8221007F2F3E /* CECRecordingDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56BF15DD8221007F2F3E /* CECRecordingDevice.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573A15DD8221007F2F3E /* CECTuner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C115DD8221007F2F3E /* CECTuner.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573B15DD8221007F2F3E /* CECTV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C315DD8221007F2F3E /* CECTV.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573C15DD8221007F2F3E /* ANCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C615DD8221007F2F3E /* ANCommandHandler.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573D15DD8221007F2F3E /* CECCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56C815DD8221007F2F3E /* CECCommandHandler.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573E15DD8221007F2F3E /* RLCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56CA15DD8221007F2F3E /* RLCommandHandler.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F573F15DD8221007F2F3E /* SLCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56CC15DD8221007F2F3E /* SLCommandHandler.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F574015DD8221007F2F3E /* VLCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56CE15DD8221007F2F3E /* VLCommandHandler.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F574115DD8221007F2F3E /* LibCEC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56D015DD8221007F2F3E /* LibCEC.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F574315DD8221007F2F3E /* LibCECC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56D315DD8221007F2F3E /* LibCECC.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F574615DD8221007F2F3E /* adl-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56D815DD8221007F2F3E /* adl-edid.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F574715DD8221007F2F3E /* nv-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56DE15DD8221007F2F3E /* nv-edid.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F574815DD8221007F2F3E /* os-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E215DD8221007F2F3E /* os-edid.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		503F574915DD8221007F2F3E /* serialport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503F56E615DD8221007F2F3E /* serialport.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
 		503F575415DD845B007F2F3E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575315DD845B007F2F3E /* IOKit.framework */; };
 		503F575615DD848E007F2F3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F575515DD848E007F2F3E /* QuartzCore.framework */; };
 		503F575D15DD9148007F2F3E /* DKCECDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503F575C15DD9148007F2F3E /* DKCECDeviceController.m */; };
@@ -80,13 +79,10 @@
 		506B6F3C17F70EC000325DD6 /* DKBehaviourScriptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506B6F3B17F70EC000325DD6 /* DKBehaviourScriptController.m */; };
 		5070857717F8A3B000F0CB4E /* org.danielkennett.CouchSlouchScriptRunner.xpc in Copy Script Runner */ = {isa = PBXBuildFile; fileRef = 50A8C00417F88DE50021E825 /* org.danielkennett.CouchSlouchScriptRunner.xpc */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */; };
-		508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7B15FE78700014BC2A /* menubar-noconnection.png */; };
-		508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7C15FE78700014BC2A /* menubar-off.png */; };
-		508B7A8015FE78700014BC2A /* menubar-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 508B7A7D15FE78700014BC2A /* menubar-on.png */; };
 		508DEB811618404F00413CD9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503F564C15DD8179007F2F3E /* Cocoa.framework */; };
 		508DEB98161840B000413CD9 /* Couch Slouch Login Helper.app in Copy Login Helper */ = {isa = PBXBuildFile; fileRef = 508DEB7F1618404F00413CD9 /* Couch Slouch Login Helper.app */; };
 		508DEBA41618427C00413CD9 /* LoginHelper-main.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBA31618427C00413CD9 /* LoginHelper-main.m */; };
-		508DEBC71618449900413CD9 /* StartAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBC41618449900413CD9 /* StartAtLoginController.m */; };
+		508DEBC71618449900413CD9 /* StartAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBC41618449900413CD9 /* StartAtLoginController.m */; settings = {COMPILER_FLAGS = "-Wno-deprecated-declarations"; }; };
 		508DEBC91618455200413CD9 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508DEBC81618455200413CD9 /* ServiceManagement.framework */; };
 		508DEBFF16184EA800413CD9 /* DKBackgroundStyleForwarderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBFA16184EA800413CD9 /* DKBackgroundStyleForwarderView.m */; };
 		508DEC0016184EA800413CD9 /* DKButtonDecoratedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 508DEBFC16184EA800413CD9 /* DKButtonDecoratedTextField.m */; };
@@ -98,10 +94,11 @@
 		508FD9C115E5682A00661E0D /* DKDoNothingLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C015E5682A00661E0D /* DKDoNothingLocalAction.m */; };
 		508FD9C315E56AD400661E0D /* DKLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C215E56AD300661E0D /* DKLocalAction.m */; };
 		508FD9C715E576AD00661E0D /* DKActionConfigurationTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FD9C615E576AD00661E0D /* DKActionConfigurationTableCellView.m */; };
-		508FF10F190ACE140034F567 /* AQCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 508FF10D190ACE140034F567 /* AQCommandHandler.cpp */; };
-		508FF112190ACE450034F567 /* RHCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 508FF110190ACE450034F567 /* RHCommandHandler.cpp */; };
+		508FF10F190ACE140034F567 /* AQCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 508FF10D190ACE140034F567 /* AQCommandHandler.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
+		508FF112190ACE450034F567 /* RHCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 508FF110190ACE450034F567 /* RHCommandHandler.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
 		5093453D17F8319300A1725E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5093453C17F8319300A1725E /* Images.xcassets */; };
 		50966FB515E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */; };
+		50985DF921DA1FFC004B99F8 /* DKBackgroundColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50985DF821DA1FFC004B99F8 /* DKBackgroundColorView.m */; };
 		509D1B441B19D7CD006194FB /* Couch Slouch.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 509D1B431B19D7CD006194FB /* Couch Slouch.sdef */; };
 		509D1B471B19DDCA006194FB /* NSApplication+AppleScriptAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 509D1B461B19DDCA006194FB /* NSApplication+AppleScriptAdditions.m */; };
 		509D1B4B1B19E138006194FB /* DKCECDeviceController+AppleScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 509D1B4A1B19E138006194FB /* DKCECDeviceController+AppleScript.m */; };
@@ -113,26 +110,12 @@
 		50A9953915F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A9953715F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m */; };
 		50A9953B15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A9953D15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib */; };
 		50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B9216115E922DA002218A7 /* SystemConfiguration.framework */; };
-		50BA39EB15F7CE650075E7DB /* computers-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E615F7CE650075E7DB /* computers-large.png */; };
-		50BA39EC15F7CE650075E7DB /* toolbar-behaviours.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E715F7CE650075E7DB /* toolbar-behaviours.png */; };
-		50BA39ED15F7CE650075E7DB /* toolbar-general.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E815F7CE650075E7DB /* toolbar-general.png */; };
-		50BA39EE15F7CE650075E7DB /* toolbar-keybinds.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */; };
-		50BA39EF15F7CE650075E7DB /* tv-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39EA15F7CE650075E7DB /* tv-large.png */; };
-		50BA39F715F7DFA60075E7DB /* lamp-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39F415F7DFA60075E7DB /* lamp-green.png */; };
-		50BA39F815F7DFA60075E7DB /* lamp-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39F515F7DFA60075E7DB /* lamp-red.png */; };
-		50BA39F915F7DFA60075E7DB /* lamp-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39F615F7DFA60075E7DB /* lamp-yellow.png */; };
-		50BA39FD15F7EA3D0075E7DB /* button-centre.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FA15F7EA3D0075E7DB /* button-centre.png */; };
-		50BA39FE15F7EA3D0075E7DB /* button-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FB15F7EA3D0075E7DB /* button-left.png */; };
-		50BA39FF15F7EA3D0075E7DB /* button-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BA39FC15F7EA3D0075E7DB /* button-right.png */; };
-		50C101B716543BA9002DD42D /* PHCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50C101B516543BA9002DD42D /* PHCommandHandler.cpp */; };
+		50C101B716543BA9002DD42D /* PHCommandHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50C101B516543BA9002DD42D /* PHCommandHandler.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
 		50CB484116581FE200F690EF /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; };
 		50CB484216581FF200F690EF /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB484016581FE200F690EF /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		50D894F018004C8700D8A610 /* DKCECDeviceController+SoftReset.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D894EF18004C8700D8A610 /* DKCECDeviceController+SoftReset.m */; };
-		50E58DFC15FCC4FB00AB8441 /* tv-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */; };
-		50E58DFD15FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */; };
-		50E58DFE15FCC4FB00AB8441 /* tv-computer-highlighted-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */; };
-		50E58DFF15FCC4FB00AB8441 /* tv-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */; };
-		50E58E0015FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */; };
+		50E55F7821A209DA00FD0E12 /* libp8-platform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E55F7721A209DA00FD0E12 /* libp8-platform.a */; };
+		50E55F7C21A20B2500FD0E12 /* drm-edid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50E55F7B21A20B2500FD0E12 /* drm-edid.cpp */; settings = {COMPILER_FLAGS = "-Wno-macro-redefined -Wno-shorten-64-to-32"; }; };
 		50F157EE1916631F00B7FFFA /* DKDeleteKeyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F157ED1916631F00B7FFFA /* DKDeleteKeyTableView.m */; };
 		50F157F1191681C500B7FFFA /* DKMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F157F0191681C500B7FFFA /* DKMenuButton.m */; };
 		50F157F4191681E700B7FFFA /* DKMenuButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F157F3191681E700B7FFFA /* DKMenuButtonCell.m */; };
@@ -140,7 +123,6 @@
 		50F2D51C190AFF71004C21B6 /* KeyAliases.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50F2D51B190AFF71004C21B6 /* KeyAliases.plist */; };
 		50FF7DF316177569008324F0 /* DKShowMouseGridLocalAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */; };
 		50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50FF7DF91617827D008324F0 /* DKMouseGridWindowController.xib */; };
-		50FF7DFB161792E9008324F0 /* PlainAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50FF7DFA161792E9008324F0 /* PlainAppIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +186,8 @@
 		37F810B018073CC200DA211C /* DKCompassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCompassController.m; sourceTree = "<group>"; };
 		37F810B218073CEF00DA211C /* DKCompassFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCompassFace.h; sourceTree = "<group>"; };
 		37F810B318073CEF00DA211C /* DKCompassFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCompassFace.m; sourceTree = "<group>"; };
+		5001DEC821C2C6200074450D /* version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = version.h; path = "vendor/libcec-generated/version.h"; sourceTree = "<group>"; };
+		5001DEC921C2C6200074450D /* env.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = env.h; path = "vendor/libcec-generated/env.h"; sourceTree = "<group>"; };
 		5017A2F915E2D85A00B88FE6 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
 		5017A2FA15E2D85A00B88FE6 /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = "<group>"; };
 		5017A2FB15E2D85A00B88FE6 /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = "<group>"; };
@@ -230,11 +214,10 @@
 		503F565A15DD8179007F2F3E /* Couch Slouch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Couch Slouch-Prefix.pch"; sourceTree = "<group>"; };
 		503F565E15DD8179007F2F3E /* DKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKAppDelegate.h; sourceTree = "<group>"; };
 		503F565F15DD8179007F2F3E /* DKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKAppDelegate.m; sourceTree = "<group>"; };
-		503F566B15DD81D2007F2F3E /* cec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cec.h; sourceTree = "<group>"; };
+		503F566B15DD81D2007F2F3E /* cec.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = cec.h; sourceTree = "<group>"; tabWidth = 2; };
 		503F566C15DD81D2007F2F3E /* cecc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecc.h; sourceTree = "<group>"; };
 		503F566D15DD81D2007F2F3E /* cecloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecloader.h; sourceTree = "<group>"; };
 		503F566E15DD81D2007F2F3E /* cectypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cectypes.h; sourceTree = "<group>"; };
-		503F569815DD8221007F2F3E /* env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = env.h; sourceTree = "<group>"; };
 		503F569B15DD8221007F2F3E /* AdapterCommunication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdapterCommunication.h; sourceTree = "<group>"; };
 		503F569C15DD8221007F2F3E /* AdapterFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdapterFactory.cpp; sourceTree = "<group>"; };
 		503F569D15DD8221007F2F3E /* AdapterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdapterFactory.h; sourceTree = "<group>"; };
@@ -284,9 +267,9 @@
 		503F56CD15DD8221007F2F3E /* SLCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCommandHandler.h; sourceTree = "<group>"; };
 		503F56CE15DD8221007F2F3E /* VLCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VLCommandHandler.cpp; sourceTree = "<group>"; };
 		503F56CF15DD8221007F2F3E /* VLCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLCommandHandler.h; sourceTree = "<group>"; };
-		503F56D015DD8221007F2F3E /* LibCEC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LibCEC.cpp; sourceTree = "<group>"; };
+		503F56D015DD8221007F2F3E /* LibCEC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = LibCEC.cpp; sourceTree = "<group>"; tabWidth = 2; };
 		503F56D115DD8221007F2F3E /* LibCEC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibCEC.h; sourceTree = "<group>"; };
-		503F56D315DD8221007F2F3E /* LibCECC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LibCECC.cpp; sourceTree = "<group>"; };
+		503F56D315DD8221007F2F3E /* LibCECC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = LibCECC.cpp; sourceTree = "<group>"; tabWidth = 2; };
 		503F56D815DD8221007F2F3E /* adl-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "adl-edid.cpp"; sourceTree = "<group>"; };
 		503F56D915DD8221007F2F3E /* adl-edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "adl-edid.h"; sourceTree = "<group>"; };
 		503F56DA15DD8221007F2F3E /* adl_defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adl_defines.h; sourceTree = "<group>"; };
@@ -294,25 +277,11 @@
 		503F56DC15DD8221007F2F3E /* adl_structures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adl_structures.h; sourceTree = "<group>"; };
 		503F56DE15DD8221007F2F3E /* nv-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "nv-edid.cpp"; sourceTree = "<group>"; };
 		503F56DF15DD8221007F2F3E /* nv-edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "nv-edid.h"; sourceTree = "<group>"; };
-		503F56E015DD8221007F2F3E /* os.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = os.h; sourceTree = "<group>"; };
 		503F56E215DD8221007F2F3E /* os-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "os-edid.cpp"; sourceTree = "<group>"; };
-		503F56E315DD8221007F2F3E /* os-socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "os-socket.h"; sourceTree = "<group>"; };
-		503F56E415DD8221007F2F3E /* os-threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "os-threads.h"; sourceTree = "<group>"; };
-		503F56E515DD8221007F2F3E /* os-types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "os-types.h"; sourceTree = "<group>"; };
 		503F56E615DD8221007F2F3E /* serialport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = serialport.cpp; sourceTree = "<group>"; };
-		503F56E715DD8221007F2F3E /* serversocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = serversocket.cpp; sourceTree = "<group>"; };
 		503F56E915DD8221007F2F3E /* serialport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serialport.h; sourceTree = "<group>"; };
-		503F56EA15DD8221007F2F3E /* serversocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serversocket.h; sourceTree = "<group>"; };
-		503F56EB15DD8221007F2F3E /* socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = socket.h; sourceTree = "<group>"; };
-		503F56EC15DD8221007F2F3E /* tcp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tcp.h; sourceTree = "<group>"; };
-		503F56EE15DD8221007F2F3E /* mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mutex.h; sourceTree = "<group>"; };
-		503F56EF15DD8221007F2F3E /* threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threads.h; sourceTree = "<group>"; };
 		503F56F115DD8221007F2F3E /* baudrate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baudrate.h; sourceTree = "<group>"; };
-		503F56F215DD8221007F2F3E /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
 		503F56F315DD8221007F2F3E /* edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = edid.h; sourceTree = "<group>"; };
-		503F56F415DD8221007F2F3E /* StdString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StdString.h; sourceTree = "<group>"; };
-		503F56F515DD8221007F2F3E /* timeutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeutils.h; sourceTree = "<group>"; };
-		503F56F615DD8221007F2F3E /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		503F575315DD845B007F2F3E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		503F575515DD848E007F2F3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		503F575B15DD9148007F2F3E /* DKCECDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCECDeviceController.h; sourceTree = "<group>"; };
@@ -353,9 +322,6 @@
 		506B6F3A17F70EC000325DD6 /* DKBehaviourScriptController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBehaviourScriptController.h; sourceTree = "<group>"; };
 		506B6F3B17F70EC000325DD6 /* DKBehaviourScriptController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBehaviourScriptController.m; sourceTree = "<group>"; };
 		5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CouchSlouchPublicKey.pem; path = Resources/CouchSlouchPublicKey.pem; sourceTree = SOURCE_ROOT; };
-		508B7A7B15FE78700014BC2A /* menubar-noconnection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-noconnection.png"; sourceTree = "<group>"; };
-		508B7A7C15FE78700014BC2A /* menubar-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-off.png"; sourceTree = "<group>"; };
-		508B7A7D15FE78700014BC2A /* menubar-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-on.png"; sourceTree = "<group>"; };
 		508DEB7F1618404F00413CD9 /* Couch Slouch Login Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Couch Slouch Login Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		508DEBA11618427200413CD9 /* Couch Slouch Login Helper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Couch Slouch Login Helper-Info.plist"; path = "Resources/Couch Slouch Login Helper-Info.plist"; sourceTree = "<group>"; };
 		508DEBA31618427C00413CD9 /* LoginHelper-main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LoginHelper-main.m"; path = "src/LoginHelper-main.m"; sourceTree = "<group>"; };
@@ -389,6 +355,8 @@
 		5093453C17F8319300A1725E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		50966FB315E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+KeyCodeTranslation.h"; sourceTree = "<group>"; };
 		50966FB415E8F064008A4064 /* DKCECDeviceController+KeyCodeTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+KeyCodeTranslation.m"; sourceTree = "<group>"; };
+		50985DF721DA1FFC004B99F8 /* DKBackgroundColorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKBackgroundColorView.h; sourceTree = "<group>"; };
+		50985DF821DA1FFC004B99F8 /* DKBackgroundColorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKBackgroundColorView.m; sourceTree = "<group>"; };
 		509D1B431B19D7CD006194FB /* Couch Slouch.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Couch Slouch.sdef"; sourceTree = "<group>"; };
 		509D1B451B19DDCA006194FB /* NSApplication+AppleScriptAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+AppleScriptAdditions.h"; sourceTree = "<group>"; };
 		509D1B461B19DDCA006194FB /* NSApplication+AppleScriptAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+AppleScriptAdditions.m"; sourceTree = "<group>"; };
@@ -407,27 +375,15 @@
 		50A9953715F928A100CDBB9B /* DKHDMIAddressSetupWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKHDMIAddressSetupWindowController.m; sourceTree = "<group>"; };
 		50A9953C15F928AA00CDBB9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKHDMIAddressSetupWindowController.xib; sourceTree = "<group>"; };
 		50B9216115E922DA002218A7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		50BA39E615F7CE650075E7DB /* computers-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "computers-large.png"; sourceTree = "<group>"; };
-		50BA39E715F7CE650075E7DB /* toolbar-behaviours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-behaviours.png"; sourceTree = "<group>"; };
-		50BA39E815F7CE650075E7DB /* toolbar-general.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-general.png"; sourceTree = "<group>"; };
-		50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-keybinds.png"; sourceTree = "<group>"; };
-		50BA39EA15F7CE650075E7DB /* tv-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-large.png"; sourceTree = "<group>"; };
-		50BA39F415F7DFA60075E7DB /* lamp-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lamp-green.png"; sourceTree = "<group>"; };
-		50BA39F515F7DFA60075E7DB /* lamp-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lamp-red.png"; sourceTree = "<group>"; };
-		50BA39F615F7DFA60075E7DB /* lamp-yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lamp-yellow.png"; sourceTree = "<group>"; };
-		50BA39FA15F7EA3D0075E7DB /* button-centre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-centre.png"; sourceTree = "<group>"; };
-		50BA39FB15F7EA3D0075E7DB /* button-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-left.png"; sourceTree = "<group>"; };
-		50BA39FC15F7EA3D0075E7DB /* button-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-right.png"; sourceTree = "<group>"; };
 		50C101B516543BA9002DD42D /* PHCommandHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PHCommandHandler.cpp; sourceTree = "<group>"; };
 		50C101B616543BA9002DD42D /* PHCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHCommandHandler.h; sourceTree = "<group>"; };
 		50CB484016581FE200F690EF /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = vendor/Sparkle.framework; sourceTree = "<group>"; };
 		50D894EE18004C8700D8A610 /* DKCECDeviceController+SoftReset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKCECDeviceController+SoftReset.h"; sourceTree = "<group>"; };
 		50D894EF18004C8700D8A610 /* DKCECDeviceController+SoftReset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DKCECDeviceController+SoftReset.m"; sourceTree = "<group>"; };
-		50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-av-computer-large.png"; sourceTree = "<group>"; };
-		50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-av-highlighted-computer-large.png"; sourceTree = "<group>"; };
-		50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-computer-highlighted-large.png"; sourceTree = "<group>"; };
-		50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-computer-large.png"; sourceTree = "<group>"; };
-		50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv-highlighted-av-computer-large.png"; sourceTree = "<group>"; };
+		50E55F7621A1FA5F00FD0E12 /* os.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = os.h; path = vendor/libcec/src/platform/src/os.h; sourceTree = SOURCE_ROOT; };
+		50E55F7721A209DA00FD0E12 /* libp8-platform.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libp8-platform.a"; path = "vendor/p8-platform-build/libp8-platform.a"; sourceTree = "<group>"; };
+		50E55F7A21A20B2500FD0E12 /* drm-edid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "drm-edid.h"; sourceTree = "<group>"; };
+		50E55F7B21A20B2500FD0E12 /* drm-edid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "drm-edid.cpp"; sourceTree = "<group>"; };
 		50ED687015E2EA2E0078261D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		50F157EC1916631F00B7FFFA /* DKDeleteKeyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKDeleteKeyTableView.h; path = src/DKDeleteKeyTableView.h; sourceTree = SOURCE_ROOT; };
 		50F157ED1916631F00B7FFFA /* DKDeleteKeyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKDeleteKeyTableView.m; path = src/DKDeleteKeyTableView.m; sourceTree = SOURCE_ROOT; };
@@ -440,7 +396,6 @@
 		50FF7DF116177569008324F0 /* DKShowMouseGridLocalAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKShowMouseGridLocalAction.h; sourceTree = "<group>"; };
 		50FF7DF216177569008324F0 /* DKShowMouseGridLocalAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKShowMouseGridLocalAction.m; sourceTree = "<group>"; };
 		50FF7DF81617827D008324F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DKMouseGridWindowController.xib; sourceTree = "<group>"; };
-		50FF7DFA161792E9008324F0 /* PlainAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlainAppIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				506B6F3917F37B6C00325DD6 /* ScriptingBridge.framework in Frameworks */,
+				50E55F7821A209DA00FD0E12 /* libp8-platform.a in Frameworks */,
 				508DEBC91618455200413CD9 /* ServiceManagement.framework in Frameworks */,
 				50B9216215E922DA002218A7 /* SystemConfiguration.framework in Frameworks */,
 				5017A30B15E2D93400B88FE6 /* Carbon.framework in Frameworks */,
@@ -634,7 +590,6 @@
 		503F566F15DD8221007F2F3E /* src */ = {
 			isa = PBXGroup;
 			children = (
-				503F569815DD8221007F2F3E /* env.h */,
 				503F569915DD8221007F2F3E /* lib */,
 			);
 			name = src;
@@ -658,7 +613,8 @@
 				503F56D315DD8221007F2F3E /* LibCECC.cpp */,
 				503F56D615DD8221007F2F3E /* platform */,
 			);
-			path = lib;
+			name = lib;
+			path = libcec;
 			sourceTree = "<group>";
 		};
 		503F569A15DD8221007F2F3E /* adapter */ = {
@@ -750,12 +706,12 @@
 		503F56D615DD8221007F2F3E /* platform */ = {
 			isa = PBXGroup;
 			children = (
+				50E55F7621A1FA5F00FD0E12 /* os.h */,
+				50E55F7921A20B2500FD0E12 /* drm */,
 				503F56D715DD8221007F2F3E /* adl */,
 				503F56DD15DD8221007F2F3E /* nvidia */,
-				503F56E015DD8221007F2F3E /* os.h */,
 				503F56E115DD8221007F2F3E /* posix */,
 				503F56E815DD8221007F2F3E /* sockets */,
-				503F56ED15DD8221007F2F3E /* threads */,
 				503F56F015DD8221007F2F3E /* util */,
 			);
 			path = platform;
@@ -786,11 +742,7 @@
 			isa = PBXGroup;
 			children = (
 				503F56E215DD8221007F2F3E /* os-edid.cpp */,
-				503F56E315DD8221007F2F3E /* os-socket.h */,
-				503F56E415DD8221007F2F3E /* os-threads.h */,
-				503F56E515DD8221007F2F3E /* os-types.h */,
 				503F56E615DD8221007F2F3E /* serialport.cpp */,
-				503F56E715DD8221007F2F3E /* serversocket.cpp */,
 			);
 			path = posix;
 			sourceTree = "<group>";
@@ -799,31 +751,15 @@
 			isa = PBXGroup;
 			children = (
 				503F56E915DD8221007F2F3E /* serialport.h */,
-				503F56EA15DD8221007F2F3E /* serversocket.h */,
-				503F56EB15DD8221007F2F3E /* socket.h */,
-				503F56EC15DD8221007F2F3E /* tcp.h */,
 			);
 			path = sockets;
-			sourceTree = "<group>";
-		};
-		503F56ED15DD8221007F2F3E /* threads */ = {
-			isa = PBXGroup;
-			children = (
-				503F56EE15DD8221007F2F3E /* mutex.h */,
-				503F56EF15DD8221007F2F3E /* threads.h */,
-			);
-			path = threads;
 			sourceTree = "<group>";
 		};
 		503F56F015DD8221007F2F3E /* util */ = {
 			isa = PBXGroup;
 			children = (
 				503F56F115DD8221007F2F3E /* baudrate.h */,
-				503F56F215DD8221007F2F3E /* buffer.h */,
 				503F56F315DD8221007F2F3E /* edid.h */,
-				503F56F415DD8221007F2F3E /* StdString.h */,
-				503F56F515DD8221007F2F3E /* timeutils.h */,
-				503F56F615DD8221007F2F3E /* util.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -836,7 +772,6 @@
 				5076B4B61613781000A99AD0 /* CouchSlouchPublicKey.pem */,
 				50F157F519168D5B00B7FFFA /* KeybindingsIcon.icns */,
 				5093453C17F8319300A1725E /* Images.xcassets */,
-				50BA39E515F7CE650075E7DB /* Graphics */,
 				5047670115F6B13300BF2DA7 /* ButtonGroups.plist */,
 				5047670215F6B13300BF2DA7 /* Couch Slouch-Info.plist */,
 				5047670315F6B13300BF2DA7 /* DefaultKeybinds.plist */,
@@ -928,6 +863,9 @@
 		508DEBBF1618448100413CD9 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				50E55F7721A209DA00FD0E12 /* libp8-platform.a */,
+				5001DEC921C2C6200074450D /* env.h */,
+				5001DEC821C2C6200074450D /* version.h */,
 				503F566915DD819B007F2F3E /* libCEC */,
 				508DEBC01618449900413CD9 /* StartAtLoginController */,
 				5017A2F815E2D85A00B88FE6 /* ShortcutRecorder */,
@@ -987,7 +925,6 @@
 				5042B38117F8A12200E4BC48 /* ScriptRunner-Info.plist */,
 			);
 			name = "Script Runner";
-			path = "Couch Slouch Script Runner";
 			sourceTree = "<group>";
 		};
 		50A9953415F927A200CDBB9B /* View Controllers */ = {
@@ -1011,33 +948,6 @@
 			name = "Setup Wizard";
 			sourceTree = "<group>";
 		};
-		50BA39E515F7CE650075E7DB /* Graphics */ = {
-			isa = PBXGroup;
-			children = (
-				50FF7DFA161792E9008324F0 /* PlainAppIcon.png */,
-				508B7A7B15FE78700014BC2A /* menubar-noconnection.png */,
-				508B7A7C15FE78700014BC2A /* menubar-off.png */,
-				508B7A7D15FE78700014BC2A /* menubar-on.png */,
-				50E58DF715FCC4FB00AB8441 /* tv-av-computer-large.png */,
-				50E58DF815FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png */,
-				50E58DF915FCC4FB00AB8441 /* tv-computer-highlighted-large.png */,
-				50E58DFA15FCC4FB00AB8441 /* tv-computer-large.png */,
-				50E58DFB15FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png */,
-				50BA39FA15F7EA3D0075E7DB /* button-centre.png */,
-				50BA39FB15F7EA3D0075E7DB /* button-left.png */,
-				50BA39FC15F7EA3D0075E7DB /* button-right.png */,
-				50BA39E615F7CE650075E7DB /* computers-large.png */,
-				50BA39F415F7DFA60075E7DB /* lamp-green.png */,
-				50BA39F515F7DFA60075E7DB /* lamp-red.png */,
-				50BA39F615F7DFA60075E7DB /* lamp-yellow.png */,
-				50BA39E715F7CE650075E7DB /* toolbar-behaviours.png */,
-				50BA39E815F7CE650075E7DB /* toolbar-general.png */,
-				50BA39E915F7CE650075E7DB /* toolbar-keybinds.png */,
-				50BA39EA15F7CE650075E7DB /* tv-large.png */,
-			);
-			path = Graphics;
-			sourceTree = "<group>";
-		};
 		50BA3A0315F7EB0B0075E7DB /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1055,13 +965,23 @@
 				508DEBFC16184EA800413CD9 /* DKButtonDecoratedTextField.m */,
 				508DEBFD16184EA800413CD9 /* DKFancyDividerView.h */,
 				508DEBFE16184EA800413CD9 /* DKFancyDividerView.m */,
+				50985DF721DA1FFC004B99F8 /* DKBackgroundColorView.h */,
+				50985DF821DA1FFC004B99F8 /* DKBackgroundColorView.m */,
 				50F157EF191681C500B7FFFA /* DKMenuButton.h */,
 				50F157F0191681C500B7FFFA /* DKMenuButton.m */,
 				50F157F2191681E700B7FFFA /* DKMenuButtonCell.h */,
 				50F157F3191681E700B7FFFA /* DKMenuButtonCell.m */,
 			);
 			name = "Custom UI";
-			path = ../ShortcutRecorder/Framework/Source;
+			sourceTree = "<group>";
+		};
+		50E55F7921A20B2500FD0E12 /* drm */ = {
+			isa = PBXGroup;
+			children = (
+				50E55F7A21A20B2500FD0E12 /* drm-edid.h */,
+				50E55F7B21A20B2500FD0E12 /* drm-edid.cpp */,
+			);
+			path = drm;
 			sourceTree = "<group>";
 		};
 		50FF7DF416177570008324F0 /* Actions */ = {
@@ -1148,14 +1068,20 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DK;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Daniel Kennett";
 				TargetAttributes = {
+					503F564715DD8179007F2F3E = {
+						DevelopmentTeam = RPBBKY7VG7;
+						ProvisioningStyle = Automatic;
+					};
 					508DEB7E1618404F00413CD9 = {
-						DevelopmentTeam = Z3SAA98JEE;
+						DevelopmentTeam = RPBBKY7VG7;
+						ProvisioningStyle = Automatic;
 					};
 					50A8C00317F88DE50021E825 = {
-						DevelopmentTeam = Z3SAA98JEE;
+						DevelopmentTeam = RPBBKY7VG7;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1198,31 +1124,11 @@
 				5047672215F6B13300BF2DA7 /* InfoPlist.strings in Resources */,
 				5047672315F6B13300BF2DA7 /* Localizable.strings in Resources */,
 				5047672415F6B13300BF2DA7 /* MainMenu.xib in Resources */,
-				50BA39EB15F7CE650075E7DB /* computers-large.png in Resources */,
-				50BA39EC15F7CE650075E7DB /* toolbar-behaviours.png in Resources */,
-				50BA39ED15F7CE650075E7DB /* toolbar-general.png in Resources */,
-				50BA39EE15F7CE650075E7DB /* toolbar-keybinds.png in Resources */,
-				50BA39EF15F7CE650075E7DB /* tv-large.png in Resources */,
-				50BA39F715F7DFA60075E7DB /* lamp-green.png in Resources */,
-				50BA39F815F7DFA60075E7DB /* lamp-red.png in Resources */,
-				50BA39F915F7DFA60075E7DB /* lamp-yellow.png in Resources */,
-				50BA39FD15F7EA3D0075E7DB /* button-centre.png in Resources */,
 				50F157F619168D5B00B7FFFA /* KeybindingsIcon.icns in Resources */,
-				50BA39FE15F7EA3D0075E7DB /* button-left.png in Resources */,
-				50BA39FF15F7EA3D0075E7DB /* button-right.png in Resources */,
 				50A9953B15F928AA00CDBB9B /* DKHDMIAddressSetupWindowController.xib in Resources */,
-				50E58DFC15FCC4FB00AB8441 /* tv-av-computer-large.png in Resources */,
-				50E58DFD15FCC4FB00AB8441 /* tv-av-highlighted-computer-large.png in Resources */,
-				50E58DFE15FCC4FB00AB8441 /* tv-computer-highlighted-large.png in Resources */,
-				50E58DFF15FCC4FB00AB8441 /* tv-computer-large.png in Resources */,
-				50E58E0015FCC4FB00AB8441 /* tv-highlighted-av-computer-large.png in Resources */,
-				508B7A7E15FE78700014BC2A /* menubar-noconnection.png in Resources */,
-				508B7A7F15FE78700014BC2A /* menubar-off.png in Resources */,
-				508B7A8015FE78700014BC2A /* menubar-on.png in Resources */,
 				5076B4B71613781000A99AD0 /* CouchSlouchPublicKey.pem in Resources */,
 				50F2D51C190AFF71004C21B6 /* KeyAliases.plist in Resources */,
 				50FF7DF71617827D008324F0 /* DKMouseGridWindowController.xib in Resources */,
-				50FF7DFB161792E9008324F0 /* PlainAppIcon.png in Resources */,
 				50A8BFFF17F872670021E825 /* Couch Slouch Example Script.scpt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1278,6 +1184,7 @@
 				503F573115DD8221007F2F3E /* RPiCECAdapterDetection.cpp in Sources */,
 				503F573215DD8221007F2F3E /* RPiCECAdapterMessageQueue.cpp in Sources */,
 				503F573315DD8221007F2F3E /* CECClient.cpp in Sources */,
+				50985DF921DA1FFC004B99F8 /* DKBackgroundColorView.m in Sources */,
 				503F573415DD8221007F2F3E /* CECProcessor.cpp in Sources */,
 				503F573515DD8221007F2F3E /* CECAudioSystem.cpp in Sources */,
 				503F573615DD8221007F2F3E /* CECBusDevice.cpp in Sources */,
@@ -1297,11 +1204,11 @@
 				508FF10F190ACE140034F567 /* AQCommandHandler.cpp in Sources */,
 				503F574315DD8221007F2F3E /* LibCECC.cpp in Sources */,
 				503F574615DD8221007F2F3E /* adl-edid.cpp in Sources */,
+				50E55F7C21A20B2500FD0E12 /* drm-edid.cpp in Sources */,
 				503F574715DD8221007F2F3E /* nv-edid.cpp in Sources */,
 				503F574815DD8221007F2F3E /* os-edid.cpp in Sources */,
 				37F810A918073A1400DA211C /* DKCompassConfigViewController.m in Sources */,
 				503F574915DD8221007F2F3E /* serialport.cpp in Sources */,
-				503F574A15DD8221007F2F3E /* serversocket.cpp in Sources */,
 				503F575D15DD9148007F2F3E /* DKCECDeviceController.m in Sources */,
 				5055C7C715DF9EE800B6B497 /* DKCECWindowController.m in Sources */,
 				5055C7D415DFA5EB00B6B497 /* DKKeybindsViewController.m in Sources */,
@@ -1497,16 +1404,24 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Daniel Kennett";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1527,7 +1442,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -1540,16 +1455,24 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Daniel Kennett";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1563,7 +1486,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
@@ -1573,20 +1496,31 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Couch Slouch-Prefix.pch";
-				HEADER_SEARCH_PATHS = vendor/libcec/src;
+				HEADER_SEARCH_PATHS = (
+					vendor/libcec/src/libcec,
+					"vendor/p8-platform-build",
+				);
 				INFOPLIST_FILE = "Resources/Couch Slouch-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/vendor/p8-platform-build",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "-DHAVE_P8_USB=1";
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.CouchSlouch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1595,20 +1529,31 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Couch Slouch-Prefix.pch";
-				HEADER_SEARCH_PATHS = vendor/libcec/src;
+				HEADER_SEARCH_PATHS = (
+					vendor/libcec/src/libcec,
+					"vendor/p8-platform-build",
+				);
 				INFOPLIST_FILE = "Resources/Couch Slouch-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/vendor/p8-platform-build",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "-DHAVE_P8_USB=1";
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.CouchSlouch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1618,13 +1563,17 @@
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Couch Slouch Login Helper-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Couch Slouch Login Helper-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.CouchSlouchLoginHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
@@ -1636,13 +1585,17 @@
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Couch Slouch Login Helper-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Couch Slouch Login Helper-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.CouchSlouchLoginHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
@@ -1661,7 +1614,10 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/ScriptRunner-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1673,10 +1629,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "Resources/ScriptRunner-Info.plist";
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_NAME}";
 				PRODUCT_NAME = "org.danielkennett.$(TARGET_NAME:rfc1034identifier)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = xpc;
 			};
 			name = Debug;
@@ -1693,7 +1650,10 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/ScriptRunner-Prefix.pch";
@@ -1702,10 +1662,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "Resources/ScriptRunner-Info.plist";
 				MACH_O_TYPE = mh_execute;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_NAME}";
 				PRODUCT_NAME = "org.danielkennett.$(TARGET_NAME:rfc1034identifier)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = xpc;
 			};
 			name = Release;

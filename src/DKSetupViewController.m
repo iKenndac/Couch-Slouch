@@ -34,7 +34,7 @@
 										 [myBundle.infoDictionary valueForKey:@"CFBundleVersion"]];
 
 	self.aboutLibCECVersionView.stringValue = [NSString stringWithFormat:NSLocalizedString(@"cec version formatter", @""),
-											   [NSString stringWithFormat:@"%x", CEC_CLIENT_VERSION_CURRENT]];
+                                               [NSString stringWithFormat:@"%x", LIBCEC_VERSION_CURRENT]];
 
 }
 
@@ -55,19 +55,11 @@
 }
 
 - (IBAction)showPreferencesWindow:(id)sender {
-	[NSApp beginSheet:self.preferencesWindow
-	   modalForWindow:self.view.window
-		modalDelegate:nil
-	   didEndSelector:nil
-		  contextInfo:nil];
+    [self.view.window beginSheet:self.preferencesWindow completionHandler:nil];
 }
 
 - (IBAction)showAboutWindow:(id)sender {
-	[NSApp beginSheet:self.aboutWindow
-	   modalForWindow:self.view.window
-		modalDelegate:nil
-	   didEndSelector:nil
-		  contextInfo:nil];
+	[self.view.window beginSheet:self.aboutWindow completionHandler:nil];
 }
 
 - (IBAction)closeAboutWindow:(id)sender {

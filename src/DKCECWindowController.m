@@ -117,7 +117,7 @@
 	self.addressSetupController.cancelEnabled = canCancel;
 	self.addressSetupController.delegate = self;
 	[self.addressSetupController reset];
-	[NSApp beginSheet:self.addressSetupController.window modalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+    [self.window beginSheet:self.addressSetupController.window completionHandler:nil];
 }
 
 -(void)hdmiAddressSetup:(DKHDMIAddressSetupWindowController *)controller shouldCloseWithNewAddress:(NSNumber *)address {
@@ -125,8 +125,9 @@
 	[self.addressSetupController.window orderOut:self];
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHasDoneFirstLaunchUserDefaultsKey];
 	
-	if (address != nil)
+    if (address != nil) {
 		[((DKAppDelegate *)[NSApp delegate]).cecController updatePhysicalAddress:[address unsignedIntValue] completion:^(BOOL success) {}];
+    }
 }
 
 @end

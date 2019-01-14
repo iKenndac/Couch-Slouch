@@ -30,7 +30,8 @@
 @property (nonatomic, readonly) cec_menu_state menuState;
 @property (nonatomic, readonly) libcec_configuration *configuration;
 @property (nonatomic, readwrite, weak) id <DKCECDeviceControllerDelegate> delegate;
-@property (nonatomic, readonly) BOOL hasConnection;
+@property (nonatomic, readonly) BOOL hasConnectionToDevice;
+@property (nonatomic, readonly) BOOL hasAccessibilityPermission;
 @property (nonatomic, readonly, copy) NSString *humanReadableStatus;
 @property (nonatomic, readonly, copy) NSString *shortHumanReadableStatus;
 @property (nonatomic, readonly) NSImage *statusImage;

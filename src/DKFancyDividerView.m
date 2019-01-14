@@ -13,18 +13,16 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     // Drawing code here.
+    CGFloat scale = self.window == nil ? 1.0 : self.window.backingScaleFactor;
+    CGFloat lineHeight = 1.0 / scale;
 
-	[[[NSColor blackColor] colorWithAlphaComponent:0.1] set];
+    [[NSColor colorWithRed:0.784 green:0.780 blue:0.800 alpha:1.0] set];
 
-	[NSBezierPath strokeLineFromPoint:NSMakePoint(NSMinX(self.bounds), NSMaxY(self.bounds) - 0.5)
-							  toPoint:NSMakePoint(NSMaxX(self.bounds), NSMaxY(self.bounds) - 0.5)];
-
-	[[NSColor whiteColor] set];
-
-	[NSBezierPath strokeLineFromPoint:NSMakePoint(NSMinX(self.bounds), NSMaxY(self.bounds) - 1.5)
-							  toPoint:NSMakePoint(NSMaxX(self.bounds), NSMaxY(self.bounds) - 1.5)];
-
-
+    NSBezierPath *path = [NSBezierPath new];
+    path.lineWidth = lineHeight;
+    [path moveToPoint:NSMakePoint(NSMinX(self.bounds), NSMaxY(self.bounds) - 0.5)];
+    [path lineToPoint:NSMakePoint(NSMaxX(self.bounds), NSMaxY(self.bounds) - 0.5)];
+    [path stroke];
 }
 
 @end

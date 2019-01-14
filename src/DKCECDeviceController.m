@@ -19,7 +19,8 @@ static NSTimeInterval const kDevicePingInterval = 30.0;
 @interface DKCECDeviceController ()
 
 @property (nonatomic, readwrite) cec_menu_state menuState;
-@property (nonatomic, readwrite) BOOL hasConnection;
+@property (nonatomic, readwrite) BOOL hasConnectionToDevice;
+@property (nonatomic, readwrite) BOOL hasAccessibilityPermission;
 @property (nonatomic, readwrite) NSTimer *pollTimer;
 @property (nonatomic, readwrite) NSTimer *pingTimer;
 @property (nonatomic, readwrite) BOOL isActiveSource;
@@ -33,46 +34,49 @@ static NSTimeInterval const kDevicePingInterval = 30.0;
 
 // ------------- Callbacks ------------------
 
-static int DKCBCecLogMessage(void *param, const cec_log_message message) {
+static void DKCBCecLogMessage(void *param, const cec_log_message* message) {
+    NSString *messageString = [NSString stringWithUTF8String:message->message];
+    cec_log_level messageSeverity = message->level;
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
 		if ([controller.delegate respondsToSelector:@selector(cecController:didLogMessage:ofSeverity:)])
-			[controller.delegate cecController:controller
-								 didLogMessage:[NSString stringWithUTF8String:message.message]
-									ofSeverity:message.level];
+            [controller.delegate cecController:controller didLogMessage:messageString ofSeverity:messageSeverity];
 	});
-	return 1;
 }
 
-static int DKCBCecKeyPress(void *param, const cec_keypress keyPress) {
+static void DKCBCecKeyPress(void *param, const cec_keypress* keyPress) {
+    cec_keypress localKeyPress;
+    memcpy(&localKeyPress, keyPress, sizeof(localKeyPress));
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
-		[controller handleKeyPress:keyPress];
+		[controller handleKeyPress:localKeyPress];
 	});
-	return 1;
 }
 
 
-static int DKCBCecCommand(void *param, const cec_command command) {
+static void DKCBCecCommand(void *param, const cec_command* command) {
+    cec_command localCommand;
+    memcpy(&localCommand, command, sizeof(localCommand));
 
 	DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
 
-	if (command.initiator == CECDEVICE_TV && command.destination == CECDEVICE_BROADCAST) {
+	if (localCommand.initiator == CECDEVICE_TV && localCommand.destination == CECDEVICE_BROADCAST) {
 		// TV is telling us important information!
-		if (command.opcode == CEC_OPCODE_STANDBY) {
+		if (localCommand.opcode == CEC_OPCODE_STANDBY) {
 			dispatch_async(dispatch_get_main_queue(), ^{
 				controller.isTVOn = NO;
 				controller.isActiveSource = NO;
 			});
 		}
 
-		if (command.opcode == CEC_OPCODE_ACTIVE_SOURCE) {
-			if (command.parameters.size < 2)
-				return 1;
+		if (localCommand.opcode == CEC_OPCODE_ACTIVE_SOURCE) {
+            if (localCommand.parameters.size < 2) {
+				return;
+            }
 			
-			uint16_t iAddress = ((uint16_t)command.parameters.data[0] << 8) | ((uint16_t)command.parameters.data[1]);
+			uint16_t iAddress = ((uint16_t)localCommand.parameters.data[0] << 8) | ((uint16_t)localCommand.parameters.data[1]);
 
 			dispatch_async(dispatch_get_main_queue(), ^{
 				controller.isTVOn = YES;
@@ -80,11 +84,12 @@ static int DKCBCecCommand(void *param, const cec_command command) {
 			});
 		}
 
-		if (command.opcode == CEC_OPCODE_SET_STREAM_PATH) {
-			if (command.parameters.size < 2)
-				return 1;
+		if (localCommand.opcode == CEC_OPCODE_SET_STREAM_PATH) {
+            if (localCommand.parameters.size < 2) {
+                return;
+            }
 			
-			uint16_t iStreamAddress = ((uint16_t)command.parameters.data[0] << 8) | ((uint16_t)command.parameters.data[1]);
+			uint16_t iStreamAddress = ((uint16_t)localCommand.parameters.data[0] << 8) | ((uint16_t)localCommand.parameters.data[1]);
 
 			dispatch_async(dispatch_get_main_queue(), ^{
 				controller.isTVOn = YES;
@@ -92,13 +97,13 @@ static int DKCBCecCommand(void *param, const cec_command command) {
 			});
 		}
 
-		if (command.opcode == CEC_OPCODE_ROUTING_CHANGE) {
+		if (localCommand.opcode == CEC_OPCODE_ROUTING_CHANGE) {
 
-			if (command.parameters.size < 4)
-				return 1;
+            if (localCommand.parameters.size < 4) {
+				return;
+            }
 
-			//uint16_t iOldAddress = ((uint16_t)command.parameters.data[0] << 8) | ((uint16_t)command.parameters.data[1]);
-			uint16_t iNewAddress = ((uint16_t)command.parameters.data[2] << 8) | ((uint16_t)command.parameters.data[3]);
+			uint16_t iNewAddress = ((uint16_t)localCommand.parameters.data[2] << 8) | ((uint16_t)localCommand.parameters.data[3]);
 			
 			dispatch_async(dispatch_get_main_queue(), ^{
 				controller.isTVOn = YES;
@@ -108,23 +113,23 @@ static int DKCBCecCommand(void *param, const cec_command command) {
 	}
 
 	dispatch_async(dispatch_get_main_queue(), ^{
-	if ([controller.delegate respondsToSelector:@selector(cecController:didReceiveCommand:)])
-		[controller.delegate cecController:controller
-						 didReceiveCommand:command];
+        if ([controller.delegate respondsToSelector:@selector(cecController:didReceiveCommand:)]) {
+            [controller.delegate cecController:controller didReceiveCommand:localCommand];
+        }
 	});
-	return 1;
 }
 
-static int DKCBCecConfigurationChanged(void *param, const libcec_configuration config) {
+static void DKCBCecConfigurationChanged(void *param, const libcec_configuration* config) {
+    libcec_configuration localConfiguration;
+    memcpy(&localConfiguration, config, sizeof(localConfiguration));
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
-		[controller _didReceiveNewConfiguration:config];
+		[controller _didReceiveNewConfiguration:localConfiguration];
 	});
-	return 1;
 }
 
-static int DKCBCecAlert(void *param, const libcec_alert alert, const libcec_parameter parameter) {
+static void DKCBCecAlert(void *param, const libcec_alert alert, const libcec_parameter parameter) {
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		DKCECDeviceController *controller = (__bridge DKCECDeviceController *)param;
@@ -133,7 +138,6 @@ static int DKCBCecAlert(void *param, const libcec_alert alert, const libcec_para
 							   didReceiveAlert:alert
 								   forParamter:parameter];
 	});
-	return 1;
 }
 
 static int DKCBCecMenuStateChanged(void *param, const cec_menu_state menuState) {
@@ -164,6 +168,7 @@ static ICECCallbacks callbacks;
 
 @implementation DKCECDeviceController {
 	libcec_configuration *cec_configuration;
+    libcec_connection_t connection;
 }
 
 static dispatch_queue_t cec_global_queue;
@@ -175,13 +180,13 @@ static dispatch_queue_t cec_global_queue;
 	});
 
 	memset(&callbacks, 0, sizeof(ICECCallbacks));
-	callbacks.CBCecKeyPress = &DKCBCecKeyPress;
-	callbacks.CBCecCommand = &DKCBCecCommand;
-	callbacks.CBCecConfigurationChanged = &DKCBCecConfigurationChanged;
-	callbacks.CBCecAlert = &DKCBCecAlert;
-	callbacks.CBCecMenuStateChanged = &DKCBCecMenuStateChanged;
-	callbacks.CBCecSourceActivated = &DKCBCecSourceActivated;
-	callbacks.CBCecLogMessage = &DKCBCecLogMessage;
+	callbacks.keyPress = &DKCBCecKeyPress;
+	callbacks.commandReceived = &DKCBCecCommand;
+	callbacks.configurationChanged = &DKCBCecConfigurationChanged;
+	callbacks.alert = &DKCBCecAlert;
+	callbacks.menuStateChanged = &DKCBCecMenuStateChanged;
+	callbacks.sourceActivated = &DKCBCecSourceActivated;
+	callbacks.logMessage = &DKCBCecLogMessage;
 }
 
 +(dispatch_queue_t)cecQueue {
@@ -216,25 +221,28 @@ static dispatch_queue_t cec_global_queue;
 		memset(cec_configuration, 0, sizeof(libcec_configuration));
 		snprintf(cec_configuration->strDeviceName, 13, "%s", [name UTF8String]);
 		cec_configuration->deviceTypes = list;
-		cec_configuration->clientVersion = CEC_CLIENT_VERSION_CURRENT;
+        cec_configuration->clientVersion = LIBCEC_VERSION_CURRENT;
 
 		if ([defaults valueForKey:kPhysicalAddressUserDefaultsKey] != nil)
 			cec_configuration->iPhysicalAddress = (uint16_t)[[defaults valueForKey:kPhysicalAddressUserDefaultsKey] unsignedIntValue];
 		else
 			cec_configuration->iPhysicalAddress = CEC_INVALID_PHYSICAL_ADDRESS;
 
-		int retCode = cec_initialise(cec_configuration);
-		if (retCode < 1) {
-			if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"CEC init failed");
-			return nil;
-		}
+		connection = libcec_initialise(cec_configuration);
+        if (connection == NULL) {
+            if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"CEC init failed");
+            return nil;
+        }
 
-		retCode = cec_enable_callbacks((__bridge void *)self, &callbacks);
+        int retCode = libcec_enable_callbacks(connection, (__bridge void *)self, &callbacks);
 		if (retCode < 1) {
 			if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"CEC callbacks failed");
 			return nil;
 		}
-        
+
+        [self refreshPermissions];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:)
+                                                     name:NSApplicationDidBecomeActiveNotification object:nil];
 	}
 	
 	return self;
@@ -245,14 +253,15 @@ static dispatch_queue_t cec_global_queue;
 }
 
 +(NSSet *)keyPathsForValuesAffectingHumanReadableStatus {
-	return [NSSet setWithObjects:@"hasConnection", @"isActiveSource", nil];
+	return [NSSet setWithObjects:@"hasConnectionToDevice", @"isActiveSource", @"hasAccessibilityPermission", nil];
 }
 
 -(NSString *)humanReadableStatus {
-
-	if (!self.hasConnection)
+    if (!self.hasAccessibilityPermission)
+        return NSLocalizedString(@"no accessibility permission title", @"");
+    else if (!self.hasConnectionToDevice)
 		return NSLocalizedString(@"no connection title", @"");
-	else if (!self.isActiveSource)
+    else if (!self.isActiveSource)
 		return NSLocalizedString(@"connected but not active source title", @"");
 	else
 		return NSLocalizedString(@"active source title", @"");
@@ -263,21 +272,22 @@ static dispatch_queue_t cec_global_queue;
 }
 
 -(NSString *)shortHumanReadableStatus {
-	if (!self.hasConnection)
-		return NSLocalizedString(@"short no connection title", @"");
-	else if (!self.isActiveSource)
+    if (!self.hasAccessibilityPermission)
+        return NSLocalizedString(@"short no accessibility permission title", @"");
+    else if (!self.hasConnectionToDevice)
+        return NSLocalizedString(@"short no connection title", @"");
+    else if (!self.isActiveSource)
 		return NSLocalizedString(@"short connected but not active source title", @"");
 	else
 		return NSLocalizedString(@"short active source title", @"");
 }
 
 +(NSSet *)keyPathsForValuesAffectingStatusImage {
-	return [NSSet setWithObjects:@"hasConnection", @"isActiveSource", nil];
+	return [NSSet setWithObjects:@"hasConnectionToDevice", @"isActiveSource", @"hasAccessibilityPermission", nil];
 }
 
 -(NSImage *)statusImage {
-	
-	if (!self.hasConnection)
+	if (!self.hasConnectionToDevice || !self.hasAccessibilityPermission)
 		return [NSImage imageNamed:@"lamp-red"];
 	else if (!self.isActiveSource)
 		return [NSImage imageNamed:@"lamp-yellow"];
@@ -306,13 +316,16 @@ static dispatch_queue_t cec_global_queue;
 -(void)dealloc {
 	[self stopDevicePolling];
 	[self stopDevicePinging];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSApplicationDidBecomeActiveNotification object:nil];
 
 	free(cec_configuration);
 	cec_configuration = NULL;
 
+    libcec_connection_t this_connection = connection;
+    connection = NULL;
+
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		cec_close();
-		cec_destroy();
+        libcec_destroy(this_connection);
 	});
 }
 
@@ -354,22 +367,32 @@ static dispatch_queue_t cec_global_queue;
 	}
 }
 
+#pragma mark - Local Permissions
+
+-(void)applicationDidBecomeActive:(NSNotification *)notification {
+    [self refreshPermissions];
+}
+
+-(void)refreshPermissions {
+    self.hasAccessibilityPermission = AXIsProcessTrusted();
+}
+
 #pragma mark - Device Detection
 
 
 // Disconnect from the CEC device.
 -(void)close:(void (^)(BOOL success))block {
     
-    if (!self.hasConnection) {
+    if (!self.hasConnectionToDevice) {
         if (block) block(YES);
         return;
     }
     
-    self.hasConnection = NO;
+    self.hasConnectionToDevice = NO;
     [self stopDevicePinging];
     
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-        cec_close();
+        libcec_close(self->connection);
         dispatch_async(dispatch_get_main_queue(), ^{
             if (block) block(YES);
         });
@@ -380,13 +403,13 @@ static dispatch_queue_t cec_global_queue;
 // Search and connect to the CEC device.
 -(void)open:(void (^)(BOOL success))block {
     
-    if (self.hasConnection) {
+    if (self.hasConnectionToDevice) {
         if (block) block(YES);
         return;
     }
 
 	[self findDeviceAndConnect:^{
-		if (self.hasConnection)
+		if (self.hasConnectionToDevice)
 			[self startDevicePinging];
 		else
 			[self startDevicePolling];
@@ -419,7 +442,7 @@ static dispatch_queue_t cec_global_queue;
 
 -(void)findDeviceAndConnect:(dispatch_block_t)block {
 
-	if (self.hasConnection) {
+	if (self.hasConnectionToDevice) {
 		if (block) block();
 		return;
 	}
@@ -427,17 +450,17 @@ static dispatch_queue_t cec_global_queue;
 	dispatch_async([DKCECDeviceController cecQueue], ^{
 		cec_adapter deviceList;
 		memset(&deviceList, 0, sizeof(cec_adapter));
-		int retCode = cec_find_adapters(&deviceList, 1, NULL);
+		int retCode = libcec_find_adapters(self->connection, &deviceList, 1, NULL);
 
 		if (retCode < 0) {
 			if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: Failed with %u", NSStringFromClass([self class]), NSStringFromSelector(_cmd), retCode);
 		} else if (retCode > 0) {
 
-			retCode = cec_open(deviceList.path, CEC_DEFAULT_CONNECT_TIMEOUT);
+			retCode = libcec_open(self->connection, deviceList.path, CEC_DEFAULT_CONNECT_TIMEOUT);
 			if (retCode > 0) {
 				dispatch_async(dispatch_get_main_queue(), ^{
 					if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"Found device.");
-					self.hasConnection = YES;
+					self.hasConnectionToDevice = YES;
 					[self stopDevicePolling];
 					[self startDevicePinging];
 					if (block) block();
@@ -471,18 +494,18 @@ static dispatch_queue_t cec_global_queue;
 
 -(void)pingDevice:(NSTimer *)timer {
 
-	if (!self.hasConnection) return;
+	if (!self.hasConnectionToDevice) return;
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
 		
-		int retCode = cec_ping_adapters();
+		int retCode = libcec_ping_adapters(self->connection);
 		if (retCode == 1) return;
 		
 		if (DK_WITH_DEBUG_LOGGING) NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"Connection lost.");
-		cec_close();
+		libcec_close(self->connection);
 
 		dispatch_async(dispatch_get_main_queue(), ^{
-			self.hasConnection = NO;
+			self.hasConnectionToDevice = NO;
 			[self stopDevicePinging];
 			[self startDevicePolling];
 		});
@@ -493,60 +516,60 @@ static dispatch_queue_t cec_global_queue;
 
 -(void)activateSource:(void (^)(BOOL success))block {
 
-	__block BOOL success = self.hasConnection;
+	__block BOOL success = self.hasConnectionToDevice;
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		if (success) success = (BOOL)cec_activate_source(0);
+		if (success) success = (BOOL)libcec_activate_source(self->connection, 0);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(success); });
 	});
 }
 
 -(void)sendRawCommand:(cec_command)command completion:(void (^)(BOOL success))block {
 
-	__block BOOL success = self.hasConnection;
+	__block BOOL success = self.hasConnectionToDevice;
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		if (success) success = (BOOL)cec_transmit(&command);
+		if (success) success = (BOOL)libcec_transmit(self->connection, &command);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(success); });
 	});
 }
 
 -(void)sendPowerOnToDevice:(cec_logical_address)address completion:(void (^)(BOOL success))block {
 
-	__block BOOL success = self.hasConnection;
+	__block BOOL success = self.hasConnectionToDevice;
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		if (success) success = (BOOL)cec_power_on_devices(address);
+		if (success) success = (BOOL)libcec_power_on_devices(self->connection, address);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(success); });
 	});
 }
 
 -(void)sendPowerOffToDevice:(cec_logical_address)address completion:(void (^)(BOOL success))block {
 
-	__block BOOL success = self.hasConnection;
+	__block BOOL success = self.hasConnectionToDevice;
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		if (success) success = (BOOL)cec_standby_devices(address);
+		if (success) success = (BOOL)libcec_standby_devices(self->connection, address);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(success); });
 	});
 }
 
 -(void)requestPowerStatusOfDevice:(cec_logical_address)device completion:(void (^)(cec_power_status status))block {
 
-	if (!self.hasConnection) {
+	if (!self.hasConnectionToDevice) {
 		if (block) dispatch_async(dispatch_get_main_queue(), ^{ block(CEC_POWER_STATUS_UNKNOWN); });
 		return;
 	}
 	
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		cec_power_status status = cec_get_device_power_status(device);
+		cec_power_status status = libcec_get_device_power_status(self->connection, device);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(status); });
 	});
 }
 
 -(void)requestActiveDevicesOnHDMIBus:(void (^)(cec_logical_addresses devices))block {
 	
-	if (!self.hasConnection) {
+	if (!self.hasConnectionToDevice) {
 		cec_logical_addresses nothing;
 		memset(&nothing, 0, sizeof(cec_logical_address));
 		nothing.primary = CECDEVICE_UNKNOWN;
@@ -555,14 +578,14 @@ static dispatch_queue_t cec_global_queue;
 	}
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		cec_logical_addresses devices = cec_get_active_devices();
+		cec_logical_addresses devices = libcec_get_active_devices(self->connection);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(devices); });
 	});
 }
 
 -(void)requestLocalDevices:(void (^)(cec_logical_addresses devices))block {
 	
-	if (!self.hasConnection) {
+	if (!self.hasConnectionToDevice) {
 		cec_logical_addresses nothing;
 		memset(&nothing, 0, sizeof(cec_logical_address));
 		nothing.primary = CECDEVICE_UNKNOWN;
@@ -571,60 +594,60 @@ static dispatch_queue_t cec_global_queue;
 	}
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		cec_logical_addresses devices = cec_get_logical_addresses();
+		cec_logical_addresses devices = libcec_get_logical_addresses(self->connection);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(devices); });
 	});
 }
 
 -(void)requestIfAvailableDeviceOfType:(cec_device_type)wantedDevice completion:(void (^)(BOOL hasDeviceType))block {
 	
-	__block BOOL success = self.hasConnection;
+	__block BOOL success = self.hasConnectionToDevice;
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		if (success) success = (BOOL)cec_is_active_device_type(wantedDevice);
+		if (success) success = (BOOL)libcec_is_active_device_type(self->connection, wantedDevice);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(success); });
 	});
 }
 
 -(void)requestIfAvailableDevice:(cec_logical_address)device completion:(void (^)(BOOL hasDevice))block{
 
-	__block BOOL success = self.hasConnection;
+	__block BOOL success = self.hasConnectionToDevice;
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		if (success) success = (BOOL)cec_is_active_device(device);
+		if (success) success = (BOOL)libcec_is_active_device(self->connection, device);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(success); });
 	});
 }
 
 -(void)requestSourceDevice:(void (^)(cec_logical_address sourceDevice))block {
 
-	if (!self.hasConnection) {
+	if (!self.hasConnectionToDevice) {
 		if (block) dispatch_async(dispatch_get_main_queue(), ^{ block(CECDEVICE_UNKNOWN); });
 		return;
 	}
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		cec_logical_address device = cec_get_active_source();
+		cec_logical_address device = libcec_get_active_source(self->connection);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(device); });
 	});
 }
 
 -(void)requestIfDeviceIsSource:(cec_logical_address)device completion:(void (^)(BOOL isSource))block {
 
-	__block BOOL success = self.hasConnection;
+	__block BOOL success = self.hasConnectionToDevice;
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		if (success) success = (BOOL)cec_is_active_source(device);
+		if (success) success = (BOOL)libcec_is_active_source(self->connection, device);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(success); });
 	});
 }
 
 -(void)requestIfLocalIsSource:(void (^)(BOOL isSource))block {
 
-	__block BOOL success = self.hasConnection;
+	__block BOOL success = self.hasConnectionToDevice;
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		if (success) success = (BOOL)cec_is_libcec_active_source();
+		if (success) success = (BOOL)libcec_is_libcec_active_source(self->connection);
 		dispatch_async(dispatch_get_main_queue(), ^{ if (block) block(success); });
 	});
 }
@@ -636,7 +659,7 @@ static dispatch_queue_t cec_global_queue;
 	[self didChangeValueForKey:@"physicalAddressDisplayString"];
 
 	dispatch_async([DKCECDeviceController cecQueue], ^{
-		BOOL success = (cec_set_physical_address(address) == 1);
+		BOOL success = (libcec_set_physical_address(self->connection, address) == 1);
 		dispatch_async(dispatch_get_main_queue(), ^{
 			if (block) block(success);
 		});
