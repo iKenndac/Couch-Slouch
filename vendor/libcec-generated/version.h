@@ -71,5 +71,5 @@
 
 /* current libCEC version number */
 #define _LIBCEC_VERSION_CURRENT \
-        LIBCEC_VERSION_TO_UINT(4, 0, 3)
+        LIBCEC_VERSION_TO_UINT(4, 0, 4)
  
