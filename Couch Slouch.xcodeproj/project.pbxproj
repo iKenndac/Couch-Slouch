@@ -1072,15 +1072,15 @@
 				ORGANIZATIONNAME = "Daniel Kennett";
 				TargetAttributes = {
 					503F564715DD8179007F2F3E = {
-						DevelopmentTeam = RPBBKY7VG7;
+						DevelopmentTeam = Z3SAA98JEE;
 						ProvisioningStyle = Automatic;
 					};
 					508DEB7E1618404F00413CD9 = {
-						DevelopmentTeam = RPBBKY7VG7;
+						DevelopmentTeam = Z3SAA98JEE;
 						ProvisioningStyle = Automatic;
 					};
 					50A8C00317F88DE50021E825 = {
-						DevelopmentTeam = RPBBKY7VG7;
+						DevelopmentTeam = Z3SAA98JEE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1162,7 +1162,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /usr/bin/perl;
-			shellScript = "#Check if we're versioned under hg\nmy $revno = `git log --pretty=format:'' | wc -l`;\n\nif ($revno && $revno !~ m/fatal/i) {\n\n    #get the revno minus the new line\n    $revno =~ tr/+//d;\n    substr($revno, -1, 1, \"\");\n\t$revno =~ s/^\\s+//;\n\t$revno =~ s/\\s+$//;\n\n\tprint(\"Revision number is \" . $revno);\n\n    #open the info plist\n    open(my $input,  \"<\",  \"$ENV{BUILT_PRODUCTS_DIR}/$ENV{INFOPLIST_PATH}\")  or die \"Can't open Info.plist: $!\";\n    my $outputstring = \"\";\n\n    #loop through each line until we find CFBundleVersion, then substitute the next line\n    while (+<$input>) {\n        $outputstring .= \"$_\";\n        if (/[\\t ]+<key>CFBundleVersion<\\/key>\\n/) {\n            my $line = +<$input>;\n            $line =~ s/([\\t ]+<string>)(.*?)(<\\/string>)/$1.($revno).$3/eg;\n            $outputstring .= $line;\n        }\n    }\n\n    #write back out to Info.plist\n    open(my $output,  \">\",  \"$ENV{BUILT_PRODUCTS_DIR}/$ENV{INFOPLIST_PATH}\")  or die \"Can't open Info.plist: $!\";\n    print $output $outputstring;\n} else {\n    print \"This project is not versioned\";\n}";
+			shellScript = "#Check if we're versioned under hg\nmy $revno = `git log --pretty=format:'' | wc -l`;\n\nif ($revno && $revno !~ m/fatal/i) {\n\n    #get the revno minus the new line\n    $revno =~ tr/+//d;\n    substr($revno, -1, 1, \"\");\n    $revno =~ s/^\\s+//;\n    $revno =~ s/\\s+$//;\n\n    print(\"Revision number is \" . $revno);\n\n    #open the info plist\n    open(my $input,  \"<\",  \"$ENV{BUILT_PRODUCTS_DIR}/$ENV{INFOPLIST_PATH}\")  or die \"Can't open Info.plist: $!\";\n    my $outputstring = \"\";\n\n    #loop through each line until we find CFBundleVersion, then substitute the next line\n    while (+<$input>) {\n        $outputstring .= \"$_\";\n        if (/[\\t ]+<key>CFBundleVersion<\\/key>\\n/) {\n            my $line = +<$input>;\n            $line =~ s/([\\t ]+<string>)(.*?)(<\\/string>)/$1.($revno).$3/eg;\n            $outputstring .= $line;\n        }\n    }\n\n    #write back out to Info.plist\n    open(my $output,  \">\",  \"$ENV{BUILT_PRODUCTS_DIR}/$ENV{INFOPLIST_PATH}\")  or die \"Can't open Info.plist: $!\";\n    print $output $outputstring;\n} else {\n    print \"This project is not versioned\";\n}\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1499,7 +1499,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = RPBBKY7VG7;
+				DEVELOPMENT_TEAM = Z3SAA98JEE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor\"",
@@ -1532,7 +1532,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = RPBBKY7VG7;
+				DEVELOPMENT_TEAM = Z3SAA98JEE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor\"",
@@ -1566,7 +1566,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = RPBBKY7VG7;
+				DEVELOPMENT_TEAM = Z3SAA98JEE;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Couch Slouch Login Helper-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Couch Slouch Login Helper-Info.plist";
@@ -1588,7 +1588,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = RPBBKY7VG7;
+				DEVELOPMENT_TEAM = Z3SAA98JEE;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/Couch Slouch Login Helper-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Couch Slouch Login Helper-Info.plist";
@@ -1617,7 +1617,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = RPBBKY7VG7;
+				DEVELOPMENT_TEAM = Z3SAA98JEE;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/ScriptRunner-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1653,7 +1653,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = RPBBKY7VG7;
+				DEVELOPMENT_TEAM = Z3SAA98JEE;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/ScriptRunner-Prefix.pch";
